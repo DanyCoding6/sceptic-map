@@ -346,7 +346,7 @@ async function main() {
     report();
   } catch (err) {
     if (err instanceof BlockedError) {
-      console.error(`STOPPED: ${err.message}. Not retrying; tell Dany.`);
+      console.error(`STOPPED: ${err.message}. Not retrying; skip this source and log why.`);
       process.exit(2);
     }
     throw err;

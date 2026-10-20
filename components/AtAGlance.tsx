@@ -15,6 +15,7 @@ const SHORT: Record<(typeof VENDORS)[number], string> = {
 };
 
 const COMPETITORS = ["PagerDuty", "Rootly", "Datadog", "Resolve.ai"] as const;
+const LEAD: string[] = ["deskills_or_replaces_engineers", "data_access_and_security"]; // the rows finding 1 is about
 
 export function AtAGlance() {
   const competitorPages = stats.pagesByVendor[COMPETITORS[0]];
@@ -43,7 +44,7 @@ export function AtAGlance() {
         <tbody>
           {rows.map((o) => (
             <tr key={o.objection} className="border-t border-line">
-              <th scope="row" className="py-2 pr-2 text-left font-normal leading-snug">
+              <th scope="row" className={`py-2 pr-2 text-left leading-snug ${LEAD.includes(o.objection) ? "font-semibold" : "font-normal"}`}>
                 {o.label} <span className="text-muted tabular-nums">({o.count})</span>
               </th>
               {VENDORS.map((v) => {
@@ -68,7 +69,8 @@ export function AtAGlance() {
         ))}
       </ul>
       <p className="mt-3 text-xs leading-relaxed text-ink-2">
-        Shown with proof means a measured result, a named customer or a real incident; said, not shown means asserted without proof.
+        Shown with proof means a measured result, a named customer reporting a result on that objection, or a real incident; said, not shown means asserted without
+        proof. The two rows in bold are finding 1.
       </p>
       <p className="mt-2 text-xs leading-relaxed text-muted">
         incident.io, on these {rows.length} rows: {tally("incident.io", "SHOWN")} shown, {tally("incident.io", "SAID")} said, {tally("incident.io", "NOT_YET")} not yet. Its column rests on{" "}

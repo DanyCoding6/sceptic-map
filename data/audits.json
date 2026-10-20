@@ -103,30 +103,34 @@
     ]
   },
   "rowReads": {
-    "by": "Claude, reading every post in the two rows the lead finding rests on, after a simulated engineer review said the deskilling row was mixed (20 Oct)",
+    "by": "Claude, reading every post in the two rows the lead finding rests on (20 Oct); regrouped more strictly after a further review",
     "deskills_or_replaces_engineers": {
-      "skill": [
+      "skillFromIncidentTools": [
         "hn:41587962",
         "hn:44245190",
-        "hn:46825653",
-        "hn:46838068",
-        "hn:47248184",
         "hn:47276920",
-        "hn:48044576",
         "hn:49574444",
         "hn:49574872",
         "hn:49579634",
-        "hn:49851589",
         "hn:49993252",
-        "hn:47533663",
         "hn:44662746"
       ],
-      "replace": [
+      "replaced": [
         "hn:45634856",
         "hn:47252649",
         "hn:47890629",
         "hn:49705742",
-        "hn:45121412",
+        "hn:45121412"
+      ],
+      "relatedSkillFromAICode": [
+        "hn:46825653",
+        "hn:46838068",
+        "hn:47248184",
+        "hn:48044576",
+        "hn:47533663",
+        "hn:49851589"
+      ],
+      "relatedAccountability": [
         "hn:49467332",
         "hn:48022668",
         "hn:44050601",
@@ -144,7 +148,8 @@
         "hn:47234272",
         "hn:46689907"
       ],
-      "notFitWhy": "general complaints about AI coding or AI-written code, sarcasm about AI post-mortems, and one positive story"
+      "notFitWhy": "general complaints about AI coding or AI-written code, sarcasm about AI post-mortems, and one positive story",
+      "regrouped": "Round 3 (20 Oct): a simulated accuracy panel called the first read generous; posts about understanding lost through AI-written code, and about accountability or management mandates, are now counted as related rather than squarely on the objection."
     },
     "data_access_and_security": {
       "fit": [

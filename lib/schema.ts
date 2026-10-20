@@ -277,18 +277,3 @@ export const Stats = z.object({
   }),
 });
 export type Stats = z.infer<typeof Stats>;
-
-// Older incident.io lines that promise more than the current pages (data/fixes.json, hand-written).
-export const Fixes = z.object({
-  items: z.array(
-    z.object({
-      topic: z.string(),
-      olderClaimId: z.string(),
-      olderDate: z.string(), // as printed on the page; verify.ts checks it appears there
-      currentClaimId: z.string(),
-      currentLabel: z.string(),
-      suggest: z.string(),
-      suggestClaimIds: z.array(z.string()),
-    }),
-  ),
-});

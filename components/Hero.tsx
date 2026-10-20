@@ -27,8 +27,8 @@ export function Hero() {
       <p className="text-sm text-muted">Sceptic Map · an independent pitch · Made for the incident.io marketing team</p>
       <h1 className="mt-6 text-[1.75rem] font-semibold leading-tight tracking-tight sm:text-[2.3rem] sm:leading-[1.15]">{top.short ?? top.headline}</h1>
       <p className="mt-4 text-lg font-medium leading-snug text-accent-ink">
-        What it means for Investigations: it already shows proof that it works, and its promise on access is among the strictest here. Proving that promise is the
-        nearest win.
+        What it means for Investigations: it already shows evidence that it works, and with Rootly it makes the strictest promise on access. The quickest gain is to
+        show how &ldquo;pull request only&rdquo; is enforced.
       </p>
       <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-2">
         I&apos;m Dany, an Economics student at Cambridge; since 2021 I&apos;ve built an education audience of ~100K followers. I built a tool that sorts what engineers

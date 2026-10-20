@@ -55,16 +55,19 @@ export function computeNumbers(
   for (const [i, a] of top.entries()) {
     for (const b of top.slice(i + 1)) numbers[`either:${a}+${b}`] = items.filter((x) => x.objections.includes(a) || x.objections.includes(b)).length;
   }
-  // Hand reads of whole rows: how many posts in each group, and how many fit the label at all.
+  // Hand reads of whole rows: posts per group, then totals. Groups named "related…" are near the
+  // label but not squarely on it; "notFit" doesn't fit; every other group fits squarely ("core").
   for (const [o, groups] of Object.entries(reads)) {
     if (!groups || !OBJECTIONS.includes(o as Objection)) continue;
-    let fit = 0;
+    const total = { core: 0, related: 0 };
     for (const [g, ids] of Object.entries(groups)) {
       if (!Array.isArray(ids)) continue;
       numbers[`read:${o}:${g}`] = ids.length;
-      if (g !== "notFit") fit += ids.length;
+      if (g.startsWith("related")) total.related += ids.length;
+      else if (g !== "notFit") total.core += ids.length;
     }
-    numbers[`read:${o}:fit_all`] = fit;
+    numbers[`read:${o}:core`] = total.core;
+    numbers[`read:${o}:related`] = total.related;
   }
   // Coverage tallies, after any hand corrections: per objection and per vendor.
   for (const r of Rating.options) {

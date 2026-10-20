@@ -19,7 +19,7 @@ import {
   type Vendor,
   VENDORS,
 } from "../lib/schema";
-import { computeNumbers } from "../lib/numbers";
+import { computeNumbers, half } from "../lib/numbers";
 import { MODELS } from "./lib/anthropic";
 import { itemsPrompt, objectionDefinitions } from "./lib/classifier";
 import { callStructured, ledger, pool, reportSpend } from "./lib/llm";
@@ -32,7 +32,6 @@ const RATED: Objection[] = OBJECTIONS.filter((o) => o !== "other");
 const MAX_CLAIM_CHARS = 400;
 
 const isProof = (c: Claim) => c.proof !== "none" && c.proof !== "illustration";
-const half = (date: string) => `${date.slice(0, 4)}-H${Number(date.slice(5, 7)) <= 6 ? 1 : 2}`;
 const quoteRef = (i: ClassifiedItem): QuoteRef => ({ id: i.id, quote: i.best_quote!, url: i.url, date: i.date.slice(0, 10), thread: i.title });
 
 // Names in vendors_mentioned, mapped to the filter options on the site. Anything else is dropped.

@@ -2,7 +2,8 @@ import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { z } from "zod";
 import { computeNumbers } from "../lib/numbers";
-import { Claim, ClassifiedFile, Objection, Rating, Stats, Synthesis, Vendor, VENDORS } from "../lib/schema";
+import { buildStats } from "../lib/stats";
+import { Claim, ClassifiedFile, Objection, Rating, Synthesis, Vendor } from "../lib/schema";
 
 // data/synthesis.json + data/overrides.json (hand corrections, each with a note saying who proposed
 // it and why) -> data/site.json.
@@ -49,57 +50,10 @@ const Overrides = z.object({
 
 const readJson = (file: string) => JSON.parse(readFileSync(path.join(DATA, file), "utf8"));
 
-// Every pipeline fact the site quotes, computed here from the data files so none is typed by hand.
+// Every pipeline fact the site quotes (lib/stats.ts), written to data/stats.json.
 function writeStats(site: Synthesis) {
-  const classified = ClassifiedFile.parse(readJson("classified.json"));
-  const relevant = classified.items.filter((i) => i.relevant);
-  const cost = readJson("cost.json") as { runs: { costUsd: number }[] };
-  const agreement = readJson("agreement.json");
-  const audits = readJson("audits.json");
-  const stats: Stats = {
-    nCollected: classified.meta.nItems,
-    nRelevant: relevant.length,
-    nVendorAuthored: relevant.filter((i) => i.author_is_vendor).length,
-    nBase: site.meta.nBase,
-    nRemovedBySecondPass: classified.items.filter((i) => i.second_pass === "removed").length,
-    quotesKept: relevant.filter((i) => i.quote_check === "ok").length,
-    quotesDropped: relevant.filter((i) => i.quote_check === "not_verbatim" || i.quote_check === "too_long").length,
-    vendorPages: new Set(site.claims.map((c) => c.url)).size,
-    claims: site.claims.length,
-    ratings: site.coverage.length,
-    buyerSignal: site.items.filter((i) => i.buyer_signal === true).length,
-    nComments: site.numbers.n_comments,
-    nStories: site.numbers.n_stories,
-    pagesByVendor: Object.fromEntries(VENDORS.map((v) => [v, new Set(site.claims.filter((c) => c.vendor === v).map((c) => c.url)).size])),
-    costUsd: Number(cost.runs.reduce((sum, r) => sum + r.costUsd, 0).toFixed(2)),
-    agreement: {
-      method: agreement.method,
-      n: agreement.n,
-      stanceAgree: agreement.stance.agree,
-      kappa: agreement.stance.cohensKappa,
-      objectionJaccard: agreement.objections.meanJaccard,
-      objectionLabelled: agreement.objections.labelled,
-      objectionExact: agreement.objections.exactMatch,
-      vendorAuthored: agreement.vendorAuthored,
-    },
-    audits: {
-      by: audits.by,
-      keptN: audits.relevanceKept.n,
-      keptOnTopic: audits.relevanceKept.onTopic,
-      removedN: audits.relevanceRemoved.n,
-      removedRight: audits.relevanceRemoved.rightlyRemoved,
-      diyN: audits.diyTags.n,
-      diyRight: audits.diyTags.right,
-      quotesReviewed: audits.quoteReview.n,
-      quotesFailed: audits.quoteReview.problems,
-      ratingsReviewed: audits.ratingReview.n,
-      ratingsCorrected: audits.ratingReview.corrected,
-      postLaunchRatingsChanged: audits.postLaunch.ratingsChanged,
-      postLaunchReasonsReworded: audits.postLaunch.reasonsReworded,
-      postLaunchQuotesChecked: audits.postLaunch.newQuotesChecked,
-    },
-  };
-  writeFileSync(path.join(DATA, "stats.json"), JSON.stringify(Stats.parse(stats), null, 2));
+  const stats = buildStats(site, ClassifiedFile.parse(readJson("classified.json")), readJson("cost.json"), readJson("agreement.json"), readJson("audits.json"));
+  writeFileSync(path.join(DATA, "stats.json"), JSON.stringify(stats, null, 2));
 }
 
 function main() {

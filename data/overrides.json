@@ -47,7 +47,7 @@
     "iio-how-it-feels#7"
    ],
    "reason": "A named customer and a measured jump in accurate early updates show it working; the incident write-up (April 2026) is an internal one, on a feature then only on demo accounts.",
-   "note": "Round 2 review (20 Oct), simulated: the July 2025 autonomy point now appears once, in the 'Two older lines' box."
+   "note": "Round 2 review (20 Oct), simulated: the July 2025 autonomy point was moved to a private note."
   },
   {
    "vendor": "incident.io",
@@ -94,8 +94,8 @@
     "rootly-ai-sre#2",
     "rootly-ai-sre#22"
    ],
-   "reason": "Claims root causes in minutes, and 10x faster resolution in a headline, with no method, named customer or real incident; the worked example names no customer.",
-   "note": "Round 2 review (20 Oct), simulated: 'sample screen' was our inference."
+   "reason": "Claims root causes in minutes, and 10x faster resolution in a headline, with no method or real incident and no customer quoted on the agent.",
+   "note": "Round 3 review (20 Oct), simulated accuracy and decision panels: the page names customers, but none speaks about the agent."
   },
   {
    "vendor": "PagerDuty",
@@ -157,8 +157,8 @@
     "resolve-ai-sre#4",
     "resolve-ai-sre#10"
    ],
-   "reason": "A named customer says it identified dependencies across their systems, in a constrained environment; corrections becoming reusable knowledge is asserted.",
-   "note": "Post-launch review (20 Oct), simulated competitive PMM: restored the quote's own qualifier."
+   "reason": "A named Coinbase engineer says it identified dependencies, in a constrained environment; corrections becoming reusable knowledge is asserted.",
+   "note": "Round 3 review (20 Oct), simulated accuracy and decision panels: 'across their systems' wasn't in the quote."
   },
   {
    "vendor": "DIY",
@@ -178,11 +178,12 @@
    "rating": "SAID",
    "claimIds": [
     "iio-investigations#17",
+    "iio-cl-ticket-sync#1",
     "iio-cl-ga#13",
     "iio-investigations#15"
    ],
-   "reason": "Its only change is a pull request you review, one of the two strictest promises here, and it is the only option to name an outside audit (SOC 2) on the pages checked. Nothing shows how “pull request only” is enforced or what it can read; a link to the SOC 2 report and a page on its permissions would.",
-   "note": "Round 2 review (20 Oct), simulated: credits SOC 2 (the only outside audit named on any page checked) and the strictness of the promise; asks for proof of enforcement and read scope."
+   "reason": "Its only change is a pull request you review, and Kubernetes access can be limited to chosen namespaces; its product page also mentions SOC 2. Nothing lists everything it reads or shows how “pull request only” is enforced.",
+   "note": "Round 3 review (20 Oct), simulated accuracy and decision panels: the old reason said nothing shows what it can read, but a September changelog lets you scope Kubernetes to chosen namespaces; 'only outside audit' rested on one page per competitor."
   },
   {
    "vendor": "incident.io",
@@ -194,7 +195,7 @@
     "iio-launch-plans#1"
    ],
    "reason": "Nexus is said to tell a real problem from noise, and it can hold a page until it has a first hypothesis, but nothing measures fewer alerts. The launch post lists noise reduction as a future plan.",
-   "note": "Round 2 review (20 Oct), simulated: cited the wrong launch-post claim for the roadmap point; the July 2025 point now appears once, in the box."
+   "note": "Round 2 review (20 Oct), simulated: cited the wrong launch-post claim for the roadmap point; the July 2025 point was moved to a private note."
   },
   {
    "vendor": "incident.io",
@@ -206,8 +207,8 @@
     "iio-building#4",
     "iio-cl-plugin#2"
    ],
-   "reason": "Says in-house builds tie up a full-time team and rarely measure accuracy, that its own took two years, and offers a plugin so your own agent can use its skills. No named customer or side-by-side against a DIY build.",
-   "note": "Post-launch review (20 Oct), simulated competitive PMM: \"anecdotes\" undersold the two-year build and the point about measuring accuracy."
+   "reason": "Says people who build their own often end up with a full-time team keeping it running, and rarely measure accuracy; its own took two years. It also offers a plugin so your own agent can use its skills. No named customer or side-by-side against a DIY build.",
+   "note": "Round 3 review (20 Oct), simulated accuracy and decision panels: closer to the source's wording."
   },
   {
    "vendor": "PagerDuty",
@@ -335,8 +336,8 @@
     "pagerduty-sre-agent#13",
     "pagerduty-sre-agent#12"
    ],
-   "reason": "Its agent runs your approved automations and can attempt remediation before escalating, within rules you define. Nothing shows the permissions behind that, or an audit.",
-   "note": "Round 2 review (20 Oct), simulated: the old reason missed that this agent acts on production."
+   "reason": "Its agent runs your approved automations and can attempt remediation before escalating, within rules you define. No permissions model or audit is shown.",
+   "note": "Round 3 review (20 Oct), simulated accuracy and decision panels: varied the wording (same ending as Resolve's cell)."
   },
   {
    "vendor": "Resolve.ai",
@@ -374,6 +375,52 @@
    "claimIds": [],
    "reason": "Doesn't apply: this column is the general model itself.",
    "note": "Round 2 review (20 Oct), simulated: category error."
+  },
+  {
+   "vendor": "Rootly",
+   "objection": "data_access_and_security",
+   "rating": "SAID",
+   "claimIds": [
+    "rootly-ai-sre#19",
+    "rootly-ai-sre#20",
+    "rootly-ai-sre#11"
+   ],
+   "reason": "Every change needs explicit human sign-off, it reads your code repositories, and it covers PII redaction, a bring-your-own key and no training on your data. No audit is named on the page.",
+   "note": "Round 3 review (20 Oct), simulated accuracy and decision panels: the old reason missed that Rootly says what it reads and requires sign-off for every change."
+  },
+  {
+   "vendor": "PagerDuty",
+   "objection": "wrong_or_hallucinated_cause",
+   "rating": "SAID",
+   "claimIds": [
+    "pagerduty-sre-agent#2",
+    "pagerduty-sre-agent#8"
+   ],
+   "reason": "Claims governance reduces hallucinations and accuracy improves over time, but gives no measured error rate or example incident.",
+   "note": "Round 3 review (20 Oct), simulated accuracy and decision panels: dropped a closing hedge."
+  },
+  {
+   "vendor": "PagerDuty",
+   "objection": "not_capable_yet",
+   "rating": "SAID",
+   "claimIds": [
+    "pagerduty-sre-agent#1",
+    "pagerduty-sre-agent#13",
+    "pagerduty-sre-agent#8"
+   ],
+   "reason": "Asserts it investigates, remediates and confirms fixes, but shows no measured outcome, named customer or real incident.",
+   "note": "Round 3 review (20 Oct), simulated accuracy and decision panels: dropped a closing hedge."
+  },
+  {
+   "vendor": "PagerDuty",
+   "objection": "diy_with_general_agent",
+   "rating": "SAID",
+   "claimIds": [
+    "pagerduty-sre-agent#3",
+    "pagerduty-sre-agent#9"
+   ],
+   "reason": "Implies value through experience and integration breadth, but makes no direct comparison with a self-built agent.",
+   "note": "Round 3 review (20 Oct), simulated accuracy and decision panels: dropped a closing hedge."
   }
  ],
  "findings": [
@@ -382,9 +429,9 @@
    "rank": 1,
    "scope": "all",
    "short": "Engineers worry that AI incident tools will deskill or replace them, and about what those tools can touch in production. On the pages checked, none of the {vendors_rated} options shows proof on either.",
-   "headline": "Deskilling or replacement ({count:deskills_or_replaces_engineers} of {n_base} posts) and production access ({count:data_access_and_security}): on the pages checked, every option asserts and none shows proof. Investigations is closest on access.",
-   "note": "Read one by one, {read:deskills_or_replaces_engineers:fit_all} of the {count:deskills_or_replaces_engineers} deskilling posts and {read:data_access_and_security:fit_all} of the {count:data_access_and_security} access posts fit their label; the rest are general complaints about AI.",
-   "implication": "Closest to proof on deskilling is Datadog: named customers say newer engineers get a head start, but nobody shows anyone learning. On access, Investigations makes one of the two strictest promises (its only change is a pull request you review) and is the only option to name an outside audit, SOC 2; PagerDuty's and Resolve's agents can act on their own within rules you set. Showing how “pull request only” is enforced, and linking the SOC 2 report, would turn that into proof.",
+   "headline": "Deskilling or replacement, and production access: on the pages checked, every option asserts and none shows proof. Investigations and Rootly make the strictest promises on access.",
+   "note": "The model counts {count:deskills_or_replaces_engineers} deskilling or replacement posts and {count:data_access_and_security} on access. Read one by one, {read:deskills_or_replaces_engineers:core} of the {count:deskills_or_replaces_engineers} are squarely about AI tools deskilling or replacing engineers, {read:deskills_or_replaces_engineers:related} are related (skills lost to AI-written code, or who is accountable) and the rest don't fit; {read:data_access_and_security:core} of the {count:data_access_and_security} access posts fit.",
+   "implication": "Closest to proof on deskilling is Datadog: named customers say newer engineers get a head start, but nobody shows anyone learning. On access, Investigations' only change is a pull request you review, and its product page mentions SOC 2, which none of the competitor pages checked does; PagerDuty's and Resolve's agents can act on their own within rules you set. Showing how “pull request only” is enforced, and everything it can read, would turn that promise into proof.",
    "quoteIds": [
     "hn:49579634",
     "hn:49220669"
@@ -393,14 +440,14 @@
     "iio-investigations#17",
     "iio-cl-ga#13"
    ],
-   "why": "Round 2 review (20 Oct), simulated: no ranking words (23 vs 20 is within label noise); counts given with a full read of both rows; credits incident.io's access promise and SOC 2; names Datadog as the nearest to proof on deskilling (engineer, competitive PMM and marketing-lead reviews)."
+   "why": "Round 2 review (20 Oct), simulated: no ranking words (23 vs 20 is within label noise); counts given with a full read of both rows; credits incident.io's access promise and SOC 2; names Datadog as the nearest to proof on deskilling (engineer, competitive PMM and marketing-lead reviews). Round 3 review (20 Oct), simulated accuracy and decision panels: 'closest on access' was an opinion; 'only option to name an outside audit' rested on one page per competitor (their trust pages weren't checked); the read is regrouped more strictly; counts moved from the headline to the note."
   },
   {
    "id": "f1",
    "rank": 2,
    "scope": "all",
    "headline": "{diy:uses} of {n_base} posts use or recommend a general AI tool for incident work, {diy:uses:positive} of them positive about it; only {diy:uses:unneeded} of those {diy:uses} argue that makes a dedicated product unnecessary.",
-   "implication": "incident.io argues on its blog that in-house builds rarely measure accuracy, and ships a plugin for the agents engineers already use. The missing piece is a published score: Investigations against a bare model on the same past incidents, which its daily backtests could produce without showing any customer's data.",
+   "implication": "incident.io argues on its blog that in-house builds rarely measure accuracy, and ships a plugin for the agents engineers already use. What's missing is a published score from its daily backtests: Investigations against a general agent with the same access, on the same frozen past incidents. A total across incidents need show no customer's data.",
    "quoteIds": [
     "hn:49125357",
     "hn:41360976"
@@ -408,9 +455,10 @@
    "claimIds": [
     "iio-building#4",
     "iio-cl-plugin#2",
-    "iio-investigations#12"
+    "iio-investigations#12",
+    "iio-building#6"
    ],
-   "why": "Round 2 review (20 Oct), simulated: the 13 'product unnecessary' included 5 posts outside the 73 users; the subset is now computed (diy:uses:unneeded). Backtests can give a score without publishing customer incidents."
+   "why": "Round 2 review (20 Oct), simulated: the 13 'product unnecessary' included 5 posts outside the 73 users; the subset is now computed (diy:uses:unneeded). Backtests can give a score without publishing customer incidents. Round 3 review (20 Oct), simulated accuracy and decision panels: the fair comparison is a general agent with the same access, not a bare model; an outsider shouldn't say what incident.io's data allows."
   },
   {
    "id": "f3",

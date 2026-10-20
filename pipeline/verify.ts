@@ -1,7 +1,8 @@
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import path from "node:path";
-import { BattleCard, ClassifiedFile, Fixes, OBJECTIONS, RawItem, Stats, Synthesis } from "../lib/schema";
-import { computeNumbers } from "../lib/numbers";
+import { BattleCard, ClassifiedFile, OBJECTIONS, RawItem, Stats, Synthesis } from "../lib/schema";
+import { computeNumbers, half } from "../lib/numbers";
+import { buildStats } from "../lib/stats";
 import { isVerbatim } from "./lib/text";
 
 // Runs before every build (npm "prebuild"). Fails the build if anything on the page can't be
@@ -17,7 +18,6 @@ const fail = (msg: string) => errors.push(msg);
 const site = Synthesis.parse(readJson("site.json"));
 const stats = Stats.parse(readJson("stats.json"));
 const card = BattleCard.parse(readJson("battlecard.json"));
-const fixes = Fixes.parse(readJson("fixes.json"));
 const classified = ClassifiedFile.parse(readJson("classified.json"));
 const source = new Map(classified.items.map((i) => [i.id, i]));
 
@@ -85,7 +85,6 @@ for (const [o, groups] of Object.entries((audits.rowReads ?? {}) as Record<strin
 for (const k of new Set([...Object.keys(expected), ...Object.keys(site.numbers)])) {
   if (site.numbers[k] !== expected[k]) fail(`number ${k}: site says ${site.numbers[k]}, data gives ${expected[k]}`);
 }
-const half = (d: string) => `${d.slice(0, 4)}-H${Number(d.slice(5, 7)) <= 6 ? 1 : 2}`;
 for (const o of OBJECTIONS) {
   const hits = base.filter((i) => i.objections.includes(o));
   const stat = site.objections.find((s) => s.objection === o)!;
@@ -102,6 +101,20 @@ const statsCheck: [string, number, number][] = [
   ["costUsd", stats.costUsd, Number((readJson("cost.json").runs as { costUsd: number }[]).reduce((a, r) => a + r.costUsd, 0).toFixed(2))],
 ];
 for (const [k, shown, actual] of statsCheck) if (shown !== actual) fail(`stats.${k}: ${shown} vs ${actual}`);
+// Every figure in stats.json (audits and agreement included) must be what the data files give.
+{
+  const rebuilt = buildStats(site, classified, readJson("cost.json"), readJson("agreement.json"), audits);
+  for (const [k, v] of Object.entries(rebuilt)) if (JSON.stringify(v) !== JSON.stringify((stats as Record<string, unknown>)[k])) fail(`stats.${k} doesn't match the data files`);
+}
+// Every rating cell is the pipeline's, or a correction logged in overrides.json.
+{
+  const synthCov = readJson("synthesis.json").coverage as { vendor: string; objection: string; rating: string; reason: string; claimIds: string[] }[];
+  const ovCov = ((existsSync(path.join(DATA, "overrides.json")) ? readJson("overrides.json").coverage : []) ?? []) as typeof synthCov;
+  for (const c of site.coverage) {
+    const src = ovCov.find((x) => x.vendor === c.vendor && x.objection === c.objection) ?? synthCov.find((x) => x.vendor === c.vendor && x.objection === c.objection);
+    if (!src || src.rating !== c.rating || src.reason !== c.reason || JSON.stringify(src.claimIds) !== JSON.stringify(c.claimIds)) fail(`coverage ${c.vendor}/${c.objection} isn't the pipeline's or a logged correction`);
+  }
+}
 // Agreement figures recompute from their per-item labels; audit figures match audits.json.
 {
   const ag = readJson("agreement.json");
@@ -172,16 +185,6 @@ for (const row of card.rows) {
   }
 }
 
-// 6b. Older-line fixes: every claim is incident.io's, and each date is printed on its page.
-const rawPages = existsSync(vendorFile) ? new Map(RawItem.array().parse(JSON.parse(readFileSync(vendorFile, "utf8"))).map((p) => [p.url, p.text])) : null;
-for (const f of fixes.items) {
-  for (const id of [f.olderClaimId, f.currentClaimId, ...f.suggestClaimIds]) {
-    if (!site.claims.some((c) => c.id === id && c.vendor === "incident.io")) fail(`fixes ${f.topic}: ${id} is not an incident.io claim`);
-  }
-  const older = site.claims.find((c) => c.id === f.olderClaimId);
-  if (rawPages && older && !rawPages.get(older.url)?.includes(f.olderDate)) fail(`fixes ${f.topic}: "${f.olderDate}" isn't on ${older.url}`);
-}
-
 // 7. Banned words in everything we wrote (vendor claims are their words, so they're excluded).
 const BANNED = /\b(ai-powered|revolutionary|game-changing|leverag(e|es|ed|ing)|unlock(s|ed|ing)?|seamless(ly)?|cutting-edge)\b|in today's fast-paced world/i;
 const ours: [string, string][] = [
@@ -189,7 +192,6 @@ const ours: [string, string][] = [
   ...site.coverage.map((c) => [`reason ${c.vendor}/${c.objection}`, c.reason] as [string, string]),
   ...card.rows.map((r) => [`battle card ${r.quoteId}`, `${r.respond} ${r.ask} ${r.sendLabel}`] as [string, string]),
   ["battle card avoid", card.avoid.join(" ")],
-  ...fixes.items.map((f) => [`fixes ${f.topic}`, `${f.topic} ${f.currentLabel} ${f.suggest}`] as [string, string]),
 ];
 const walk = (dir: string): string[] =>
   readdirSync(dir, { withFileTypes: true }).flatMap((e) => (e.isDirectory() ? walk(path.join(dir, e.name)) : /\.(tsx?|css)$/.test(e.name) ? [path.join(dir, e.name)] : []));

@@ -10,6 +10,7 @@ import { type MapProps, ScepticMap } from "@/components/ScepticMap";
 import { Section } from "@/components/Section";
 import { SummerProject } from "@/components/SummerProject";
 import { claimById, site } from "@/lib/data";
+import { half } from "@/lib/numbers";
 import { formatDate } from "@/lib/format";
 
 // The whole page is built from committed data at build time; nothing renders per request.
@@ -20,7 +21,7 @@ const titleOf = (url: string) => site.claims.find((c) => c.url === url)?.pageTit
 // Only what the map needs crosses to the browser.
 function mapProps(): MapProps {
   const halves = site.meta.halves.map((h) => h.half);
-  const half = (date: string) => halves.indexOf(`${date.slice(0, 4)}-H${Number(date.slice(5, 7)) <= 6 ? 1 : 2}`);
+  const halfIndex = (date: string) => halves.indexOf(half(date));
   const rows = site.objections.filter((s) => s.objection === "other" || s.count >= MIN_ROW_COUNT).map((s) => ({
     objection: s.objection,
     label: s.label,
@@ -41,7 +42,7 @@ function mapProps(): MapProps {
       }),
   }));
   const items = site.items.map((i) => ({
-    half: half(i.date),
+    half: halfIndex(i.date),
     objections: i.objections,
     vendors: i.vendors,
     buyer: i.buyer_signal === true,

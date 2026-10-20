@@ -162,7 +162,7 @@ async function main() {
     writeFileSync(path.join(DATA, "labels_sample.csv"), rows.join("\n") + "\n");
     console.log(`\nWrote data/labels_sample.csv: ${sample.length} random relevant items (seed ${SAMPLE_SEED}), without the model's labels.`);
     if (relevant.length < THIN_DATA_THRESHOLD) {
-      console.log(`\nTHIN DATA: only ${relevant.length} relevant items (threshold ${THIN_DATA_THRESHOLD}). Stop and ask Dany.`);
+      console.log(`\nTHIN DATA: only ${relevant.length} relevant items (threshold ${THIN_DATA_THRESHOLD}). Stop and review the queries before going on.`);
     }
   }
 

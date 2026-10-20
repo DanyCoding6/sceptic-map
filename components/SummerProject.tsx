@@ -45,6 +45,11 @@ export function SummerProject() {
           </li>
         ))}
       </ol>
+      <p className="mt-8 font-semibold">What it would need from incident.io</p>
+      <p className="mt-2 text-[15px] leading-relaxed text-ink-2">
+        A product marketer&apos;s time to agree the objection list and check the briefs, a sample of calls once security has reviewed it, and one named owner for what it
+        produces.
+      </p>
       <p className="mt-8 font-semibold">How I&apos;d measure it</p>
       <ul className="mt-2 list-disc space-y-1.5 pl-5 text-[15px] leading-relaxed text-ink-2">
         {MEASURES.map((m) => (
