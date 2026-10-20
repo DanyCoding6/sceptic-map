@@ -1,0 +1,285 @@
+id,url,thread,text,my_stance,my_objections
+"hn:46855985","https://news.ycombinator.com/item?id=46855985","Two kinds of AI users are emerging","Ironically, I find LLMs far better at helping me dive into unfamiliar code than at writing it.
+
+A few weeks ago a critical bug came in on a part of the app I’d never touched. I had Claude research the relevant code while I reproduced the bug locally, then had it check the logs. That confirmed where the error was, but not why. This was code that ran constantly without incident.
+
+So I had Claude look at the Excel doc the support person provided. Turns out there was a hidden worksheet throwing off the indices. You couldn’t even see the sheet inside Excel. I had Claude move it to the end where our indices wouldn’t be affected, ran it locally, and it worked. I handed the fixed document back to the support person and she confirmed it worked on her end too.
+
+Total time to resolution: 15 minutes, on a tricky bug in code I’d never seen before. That hidden sheet would have been maddening to find normally. I think we might be strongly overestimating the benefits of knowing a codebase these days.
+
+I’ve been programming professionally for about 20 years. I know this is a period of rapid change and we’re all adjusting. But I think getting overly precious about code in the age of coding agents is a coping mechanism, not a forward-looking stance. Code is cheap now. Write it and delete it.
+
+Make high leverage decisions and let the agent handle the rest. Make sure you’ve got decent tests. Review for security. Make peace with the fact that it’s cheaper to cut three times and measure once than it used to be to measure twice and cut once.","",""
+"hn:42257060","https://news.ycombinator.com/item?id=42257060","","Launch HN: Keep (YC W23) – AIOps and alert management
+
+Hey HN, Matvey, Shahar, and Tal from Keep (keephq.dev) here. Keep lets you easily centralize alerts from any monitoring tool and correlate (manually or AI-based), enrich, deduplicate, filter, and then run automation (such as auto-recovering or ticketing sync). For example, if you have Sentry for your exceptions, Prometheus for metrics, and your cloud provider for logs, you can easily send all the alerts to Keep and get a great interface to run workflows.
+
+Simply check it out yourself at https://playground.keephq.dev or just have a look at our repo https://github.com/keephq/keep
+
+We always had trouble with anything monitoring, observability and alerting, with and without OpenTelemtry. While trying almost every tool out there, we always lacked something and eventually found ourselves building complementary tools that fit our needs.
+
+Keep is like a swiss army knife for alerts - anything from collecting, enriching, correlating, and automating. We have over 90 integrations: anything from alerts, topology (CMDB), ticketing, databases, etc., a GitHub-Action-like interface for your monitoring stack (we did a Show HN for it here: https://news.ycombinator.com/item?id=37381268) triggers manually, cron, alert or incident-based, a smart correlation layer, where we use LLMs or pre-configured rules to correlate alerts into incidents (imagine “DB is down” and plenty of 5XX from other services), opinionated or customized deduplication rules to view only the alerts that matter, extraction and mapping capabilities to extract/add missing bits of information to alerts, a single pane of glass to see and manage everything in one place and batteries-included LLM: chat with your observability data
+
+Tools like BigPanda, Moogsoft, Splunk ITSI, or Datadog Event Management treat AIOps as a side quest – trying to vendor-lock or deploy AIOps for huge enterprises only while we build a tool that can serve organizations of any size.
+
+We are completely open-source (MIT license), and we monetize on a SaaS-managed version and enterprise features: SSO, RBAC, Auditing, 24/7 support, longer retention, and private deployments.
+
+We are excited to share what we’ve been working on for the last year and would love to hear your feedback and opinions!
+
+Hosted Demo: https://playground.keephq.dev
+
+Open Source: https://github.com/keephq/keep
+
+Landing Page: https://keephq.dev","",""
+"hn:44903632","https://news.ycombinator.com/item?id=44903632","","Show HN: I built free Slack app that remembers every incident for on-call heroes
+
+Hey HN,
+
+If you’ve been on-call, you know the drill. Pager goes off at 2 AM. You scramble into Slack, scroll through half a dozen threads, and realize… this exact alert happened three months ago. Someone debugged it, found the root cause, maybe even fixed it but that knowledge is buried somewhere in the channel history. So you start from zero. Again.
+
+That’s the pain we’re tackling with RobinRelay: a Slack-native assistant that remembers everything your team has already done during incidents and brings it back right when you need it. DEMO Video: https://www.youtube.com/watch?v=MHWsOZa0Gpc
+
+Here’s how it works today:
+
+When an alert is posted in Slack, RobinRelay checks if we’ve seen it before.
+
+If yes, it replies in-thread with past triage notes, root causes, and who fixed it all pulled from your actual Slack discussions, 6-month old messages.
+
+- It builds a knowledge base entirely from your team’s Slack history (no extra tools or documentation effort).
+
+- Weekly digest in Slack: most recurring alerts, top noisy services, most active responders.
+
+- Interactive RAG agent: you can DM RobinRelay or mention it under any alert and ask questions like “What usually causes this?” or “Has this happened in staging before?”
+
+We don’t hide or suppress alerts — we work with the alerts you already have, giving you instant context and history without changing your existing monitoring setup.
+We integrate with any alerting tool because we work with Slack API rather than Tools API's, it removes the burden of integration with thousands of tools.
+
+You can see alert summaries and heatmaps in the Slack App Home, it will help your team to improve alerts by seeing most frequent/noisy and we’re experimenting with features like auto-linking alerts to related services and proactive “should I remind you?” prompts.
+
+We’re still early and would love feedback on:
+
+Do you also discuss solutions/investigations in alerts channels of Slack?
+Do you spend time finding old messages?
+Would you like to have senior SRE co-pilot in your pocket while you are having coffee on Weekend?","",""
+"hn:45967204","https://news.ycombinator.com/item?id=45967204","","Show HN: MCP Server for OpenTelemetry
+
+Hey HN, Gal, Nir and Doron here.
+
+Over the past 2 years, we've helped teams debug everything from prompt issues to production outages.
+
+We kept running into the same problem: Jumping between our IDEs and our observability dashboards.  So, we built an open-source MCP server that connects any OpenTelemetry backend (Grafana, Jaeger, Datadog, Dynatrace, Traceloop) to our dev environment using an MCP.
+
+While there are many MCP servers built for specific providers (like Datadog’s - https://docs.datadoghq.com/bits_ai/mcp_server), they’re closed source (so we can’t easily extend them), and they’re locked to a single platform, so organizations that leverage multiple platforms, where data is scattered in between them, can’t really use them.
+
+We’re adding support for more providers every day - feel free to contribute your own.
+
+We would love your feedback and opinions - feel free to connect it to Claude or ChatGPT and try to investigate your own production data. What do you think about the set of tools that we currently expose? Do you think we should expose more or others?
+
+Github: https://github.com/traceloop/opentelemetry-mcp-server","",""
+"hn:41327409","https://news.ycombinator.com/item?id=41327409","Leveraging AI for efficient incident response","Can we see the recording of this webinar somewhere?","",""
+"hn:49012516","https://news.ycombinator.com/item?id=49012516","[dead]","Hi,
+
+I recently researched the hard problem for the inaccurate answers from SRE agent. I have a different opinion for the SRE agent in the market. TBH, what an oncall engineer only needs context +AI client to handle incidents. I don't see how SRE agent can be better. The key is how to organize the context, not the AI.
+
+So I wrote the blog in the link to explain it in details. Happy to discuss more.","",""
+"hn:47353981","https://news.ycombinator.com/item?id=47353981","","Show HN: LogClaw – Open-source AI SRE that auto-creates tickets from logs
+
+Hi HN, I'm Robel. I built LogClaw because I was tired of paying for Datadog and still waking up to pages that said ""something is wrong"" with no context.
+
+LogClaw is an open-source log intelligence platform that runs on Kubernetes. It ingests logs via OpenTelemetry and detects anomalies using signal-based composite scoring — not simple threshold alerting. The system extracts 8 failure-type signals (OOM, crashes, resource exhaustion, dependency failures, DB deadlocks, timeouts, connection errors, auth failures), combines them with statistical z-score analysis, blast radius, error velocity, and recurrence signals into a composite score. Critical failures (OOM, panics) trigger the immediate detection path in <100ms — before a time window even completes. The detection achieves 99.8% for critical failures while filtering noise (validation errors and 404s don't fire incidents).
+
+Once an anomaly is confirmed, a 5-layer trace correlation engine groups logs by traceId, maps service dependencies, tracks error propagation cascades, and computes blast radius across affected services. Then the Ticketing Agent pulls the correlated timeline, sends it to an LLM for root cause analysis, and creates a deduplicated ticket on Jira, ServiceNow, PagerDuty, OpsGenie, Slack, or Zammad. The loop from log noise to a filed ticket is about 90 seconds.
+
+Architecture: OTel Collector → Kafka (Strimzi, KRaft mode) → Bridge (Python, 4 concurrent threads: ETL, anomaly detection, OpenSearch indexing, trace correlation) → OpenSearch + Ticketing Agent. The AI layer supports OpenAI, Claude, or Ollama for fully air-gapped deployments. Everything deploys with a single Helm chart per tenant, namespace-isolated, no shared data plane.
+
+To try it locally:
+https://docs.logclaw.ai/local-development
+
+What it does NOT do yet:
+- Metrics and traces — this is logs-only right now. Metrics support is on the roadmap.
+- The anomaly detection is signal-based + statistical (composite scoring with z-score), not deep learning. It catches 99.8% of critical failures but won't detect subtle performance drift patterns yet.
+- The dashboard is functional but basic. We use OpenSearch Dashboards for the heavy lifting.
+
+Licensed Apache 2.0. The managed cloud version is $0.30/GB ingested if you don't want to self-host.
+
+Hi HN — I’m Robel.
+I built LogClaw after getting tired of waking up to alerts that only said “something is wrong” with no context.
+LogClaw is an open-source log intelligence platform for Kubernetes. It ingests logs via OpenTelemetry and detects operational failures using signal-based anomaly detection rather than simple thresholds.
+Instead of looking at a single metric, LogClaw extracts failure signals from logs (OOMs, crashes, dependency failures, DB deadlocks, timeouts, etc.) and combines them with statistical signals like error velocity, recurrence, z-score anomalies, and blast radius to compute a composite anomaly score.
+Critical failures bypass time windows and trigger detection in <100ms.
+Once an anomaly is confirmed, a correlation engine reconstructs the trace timeline across services, detects error propagation, and computes the blast radius.
+A ticketing agent then generates a root-cause summary and creates deduplicated incidents in Jira, ServiceNow, PagerDuty, OpsGenie, Slack, or Zammad.
+Architecture:
+OTel Collector → Kafka → Detection Engine → OpenSearch → Ticketing Agent
+Repo:
+https://github.com/logclaw/logclaw
+Would love feedback from people running large production systems.","",""
+"hn:41326765","https://news.ycombinator.com/item?id=41326765","Leveraging AI for efficient incident response","No. Youre missing the UX forest for the pedantry trees here. Ive worked on a team that did similar change detection with little to no ML magic. It matters how its presented as a hint (“top five suggested”) and not THE ANSWER. In addition its VERY common to do things like present confidence or weight to the user. And why theres a huge need for explainability.
+
+And this is just part of the diagnosis process. The system should still be providing breadcrumbs or short cuts for the user to test the suggested hypothesis.
+
+Which is why any responsible system like this will include feedback loops and evaluation of false positive/negative outcomes and tune for sensitivity & specificity over time.","",""
+"hn:49191792","https://news.ycombinator.com/item?id=49191792","Launch HN: HyperProbe (YC S26) – Agents that do read-only debugging in prod","> How is HyperProbe different from existing tools like AppSignal, Rollbar, and Embrace?
+
+These work only on either uncaught exceptions or wrapping up caught exceptions with their sdk.
+These tools will not help you with silent failures, like logic bugs where code executes cleanly without throwing, but produces the wrong business state. If every problem in your app ends up as an exception, sure you'll be able to catch the symptoms of where the exception got thrown. we can deal with these too, but these tools cant deal with the messy bugs where no exception fires.
+
+> Such very mature tools exist that auto-instrument, collect variables from the call stack, and pinpoint error causes.
+
+That is true for python using frame.f_locals (we use this as well)
+
+nodejs only gives it only till the lasy async boundary, after that v8 itself drops this data.
+java only gives you the current frame, to get variables beyond that you would needs JDI/JVMTI which would block your threads, usually unnacceptable in production
+
+To get around this safely, we add multiple probes all across the call chain and collate collected data using the traceId from the context (or thread id as a fallback);
+
+> Does this tool only exist to shore up poor system design?
+
+Returning 200 OK on a silent failure is 100% bad system design, I completely agree. But real-world production systems are full of legacy edge cases. (if that weren't true, L1/L2/L3 support team shenanigans wouldn't exist)
+
+Also, the exception will tell you that an exception occured in order service in GET /orders/{id}/payment, your trace will tell you payment service is giving 404 for that order ID
+
+what it wont tell you it happened becuase the webhook endpoint that your payment gateway calls is now receiving a new payment state called 'PENDING' and that you dont handle but still mark the payment as 'processed' for idempotency check.
+and now your order service is calling the payment service and its giving 404 because it never got written
+
+Bad design. 100% Agree, but has happened IRL.
+
+> putting engineers in a situation where debugging requires accessing unknown amounts of live sensitive customer data is generally considered bad practice (even if it happens often IRL)
+
+I think tells that teams would go to these extents to fix issues. Not ideal. I agree.
+
+> in a hurry to debug, it's easy to miss that a property should have been redacted; by then it's too late and sensitive data is exposed
+
+fair critique. we currently use in-process rule engines to filter known sensitive patterns, and users can add on to it. but we are also building out-of-process secondary checks (using NER/classifiers) to sanitize payloads before storage. It requires strict rules, but getting verified runtime evidence is far safer and faster than blindly guessing and shipping trial-and-error hotfixes to production. or waiting to be too sure.. a luxury that might not be possible everytime.
+
+>  Rollbar etc aggregate errors and captured data to identify patterns before a human (or agent, or tool) ever takes a look at it.
+
+There is merit in that as well, if you are looking at so many logs/traces, you kinda have to do it.
+We have a different approach, we use hypothesis driven conditional probing instead. probes are dropped dynamically as the understanding of the bug evolves in a session
+
+exmaple:
+
+console.log('hello');
+
+const x = await getThisValueSomehow();
+
+if (condition A) {
+
+console.log('i m in condition A');
+
+// do something;
+
+} else if (condtion B) {
+
+console.log('i m in condition B');
+
+// do something;
+
+}
+
+You can also place a probe before the branch to capture variable state when neither condition evaluates to true. You gather precise data on demand rather than paying to store petabytes of static trace data.
+
+>  A single captured instance can also be very misleading as to the true cause.
+
+We collect multiple snapshots per probe run. However, because we capture full variable state at the exact execution line, a single snapshot frequently reveals the root cause for that specific failure path. If that snapshot raises new questions, you/your agent simply drops more probes deeper down the call chain
+
+Thanks! This was very insightful","",""
+"hn:47869934","https://news.ycombinator.com/item?id=47869934","","Claude Code for the Outer Loop: An AI SRE Playbook","",""
+"hn:41587109","https://news.ycombinator.com/item?id=41587109","AI agents invade observability: snake oil or the future of SRE?","The issue I see is that this is pretty much the final boss for AI systems. Not because the tasks to do are inherently too difficult or whatever, but the integration of data and quality of that data is so variable that you just can't get something done reliably.
+
+Compare this to codebase AI, where much of the data you need lies in your codebase or repo. Even then, most of these coding tools aren't even close to automating meaningful coding tasks in practice, and while that doesn't mean they can't in the future, it's a long ways off!
+
+Now in the ops world, there's little to no guarantee that you'll have relevant diagnostic data coming out of a system that you need to diagnose it. That weird way you're using kafka right now? The reason for it is told via oral tradition on the team. Runbooks? Oh, those things that we don't bother looking at since they're out of date? ...and so on.
+
+The challenge here is in effective collection of quality data and context, not the AI models, and that's precisely what's so hard about operations engineering in the first place.","",""
+"hn:39660437","https://news.ycombinator.com/item?id=39660437","","Discovering AIOps","",""
+"hn:50058270","https://news.ycombinator.com/item?id=50058270","Show HN: AI SRE Arena, an Open Benchmark for AI SRE Agents on Kubernetes","It looks a very interesting project that benchmarks AI SRE Agents","",""
+"hn:50074416","https://news.ycombinator.com/item?id=50074416","","Agentic AI for network incident response","",""
+"hn:42268437","https://news.ycombinator.com/item?id=42268437","Launch HN: Keep (YC W23) – AIOps and alert management","I work in e-commerce at a large marketplace.
+
+In surprised because 500 deduplicated alerts requiring human attention is a normal day for my company. If something goes really wrong it'd start to get very expensive.","",""
+"hn:47362251","https://news.ycombinator.com/item?id=47362251","Show HN: LogClaw – Open-source AI SRE that auto-creates tickets from logs","It's designed to be SOC 2 compliant with your existing infra. You can spin up local Ollama instead of Claude/openAI APIs. But if you can use external Claude/OpenAI APIs over local Ollama [in-cluster llm].","",""
+"hn:49563683","https://news.ycombinator.com/item?id=49563683","Ask HN: Who is using MCP in production?","My employer Notion offers an MCP that’s mentioned in a few posts here.
+
+Notion’s monorepo has 16+ MCP configs with many in opt-in plugins developers choose to activate.
+
+Very useful; i particularly like sending an agent to debug an alert across slack/honeycomb/incident.io/materialize db","",""
+"hn:43476838","https://news.ycombinator.com/item?id=43476838","","Show HN: TicketSidekick - The FSD of Triage. Automates the Incident Lifecycle
+
+I'm excited to share TicketSidekick, an AI platform we've built to transform how engineering teams handle support tickets and incidents.
+
+The Problem We're Solving:
+Our founding team saw firsthand how valuable engineering resources were being consumed by repetitive triage tasks. Our research shows triage engineers spend 32.3% of their time on manual alert correlation, ticket categorization, and routing—tasks that can be fully automated.
+
+What TicketSidekick Does:
+- Complete Triage Automation: Uses ML to ingest, correlate, and filter alerts, eliminating false positives
+- Intelligent Incident Routing: Auto-categorizes and routes incidents to the right teams
+- AI-Powered Resolution: Automatically resolves common issues and generates responses for FAQs
+- Deep Analytics: Provides actionable insights on support operations and system health
+
+Early Results:
+- 45% reduction in average response time
+- 40% decrease in ticket resolution time
+
+We've designed TicketSidekick to integrate seamlessly with existing tools like Zendesk, ServiceNow, Jira, and various monitoring platforms.
+
+Our Vision:
+
+We're building what we call ""the FSD of Triage"" - starting with AI assistance for human agents, then gradually increasing automation capabilities based on your comfort level.
+
+Calculate Your Savings:
+See how much your organization could save with our ROI Calculator: https://www.ticketsidekick.com/calculator
+
+We're now accepting companies for our limited access program. Would love HN's feedback on our approach and the problems we're trying to solve.","",""
+"hn:47781238","https://news.ycombinator.com/item?id=47781238","Elevated errors on Claude.ai, API, Claude Code","If you think AI can replace an SRE in 2026 April, I've got a bridge to sell you. I'm not saying ""don't use AI."" I'm saying don't turn off your brain and let AI drop your production database.","",""
+"hn:41359918","https://news.ycombinator.com/item?id=41359918","Launch HN: Parity (YC S24) – AI for on-call engineers working with Kubernetes","And what is your average error rate per runbook step.","",""
+"hn:42261708","https://news.ycombinator.com/item?id=42261708","Launch HN: Keep (YC W23) – AIOps and alert management","What's an actual use case for this?","",""
+"hn:45915857","https://news.ycombinator.com/item?id=45915857","GitHub partial outage","Looking forward to the postmortem.
+
+Are they using AI agents this time to resolve the outage? Probably not.
+
+But this time, there is no CEO of GitHub to contact and good luck contacting Satya to solve the outage.","",""
+"hn:41262584","https://news.ycombinator.com/item?id=41262584","SREBench Competition","Not sure whether there's lots of people trying out commands right now (is it backed by a real k8s cluster?), but some commands are taking over 10 seconds to run. Not really a fair ""benchmark"" when the system's speed is variable.
+
+I also only got ""partially_correct"" for some, not sure whether it wanted more detail or just didn't like how I phrased things. Neat though.
+
+                      Success Rate        MTTR (Mean time to Resolution)
+  YOU:                50.00 %              1.80 min
+  PARITY AI SRE:      70 %                 2 min
+
+At least I'm faster than an AI?","",""
+"hn:44383599","https://news.ycombinator.com/item?id=44383599","Define policy forbidding use of AI code generators","People keep asking me if AI is going to take my job and recent experience shows that it very much is not.  AI is great for being mostly correct and then giving someone without enough context a mostly correct way to shoot themselves in the foot.
+
+AI further encourages the problem in DevOps/Systems Engineering/SRE where someone comes to you and says ""hey can you do this for me"" having come up with the solution instead of giving you the problem ""hey can you help me accomplish this""... AI gives them solutions which is more steps away to detangle into what really needs to be done.
+
+AI has knowledge, but it doesn't have taste.  Especially when it doesn't have all of the context a person with experience, it just has bad taste in solutions or just the absence of taste but with the additional problem that it makes it much easier for people to do things.
+
+Permissions on what people have access to read and permission to change is now going to have to be more restricted because not only are we dealing with folks who have limited experience with permissions, now we have them empowered by AI to do more things which are less advisable.","",""
+"hn:46815155","https://news.ycombinator.com/item?id=46815155","Benchmarking OpenTelemetry: Can AI trace your failed login?","> AI SRE in 2026 is what DevOps Anomaly Detection was in 2015 — bold claims backed by huge marketing budgets, but lacking independent verification. There are stories of SaaS vendors abruptly killing the observability stack. Our results mirror ClickHouse’s findings: while LLMs can assist, they lack the capabilities of a skilled SRE.
+
+The key is LLMs can assist. It would be nice if they went farther into this, and seen how much more quickly a human that wrote a complex prompt, or went back and forth with a coding agent, could do the tasks compared to an unassisted human. I'm confident that it's at a level that already has profound implications for SRE. And the current level of getting it right with a simple prompt is still impressive.","",""
+"hn:41359874","https://news.ycombinator.com/item?id=41359874","Launch HN: Parity (YC S24) – AI for on-call engineers working with Kubernetes","> it can be very reliable
+
+You need to quantify this. With actual numbers.
+
+I am getting very tired of seeing everyone pushing LLMs and being disingenuous about exactly how often it is getting things wrong. And what the impact of that is. There is a reason that AI is not taking off in the enterprise and that is because people who take their job seriously are getting tired too.","",""
+"hn:42062526","https://news.ycombinator.com/item?id=42062526","","Show HN: We released an AI Agent for Prometheus alerts and on-call","",""
+"hn:47114682","https://news.ycombinator.com/item?id=47114682","I built an AI that turns 3 AM messy logs into board-ready incident reports","’ve spent way too many nights at 3 AM trying to piece together what happened during a P1 incident. The hardest part isn't usually fixing the bug—it's writing the post-mortem report for the leadership 2 hours later while you're exhausted.
+
+Generic LLMs usually hallucinate or lose technical context when you dump 10k lines of logs into them. So I built ProdRescue AI.
+
+It’s specifically designed to:
+
+Sanitize PII automatically from logs.
+
+Correlate multi-service logs and Slack threads into a single timeline.
+
+Map every claim in the report back to a specific log line [evidence-backed].
+
+Generate '5 Whys' and action items based on SRE best practices.","",""
+"hn:49196798","https://news.ycombinator.com/item?id=49196798","Launch HN: HyperProbe (YC S26) – Agents that do read-only debugging in prod","Congratulations on the launch. I love the idea and the execution.
+
+When I looked into this a while back I explored using ptrace() to add breakpoints and even add functions at specific line numbers. But ptrace is so slow, and it doesn't work with bytecode-in-VM setups.
+
+What were some of the requirements you guys had when building HyperProbe? I can see low latency was one.","",""
+"hn:47354938","https://news.ycombinator.com/item?id=47354938","Show HN: LogClaw – Open-source AI SRE that auto-creates tickets from logs","How effective are LLMs at triaging issues? Has anyone found success using them to find the root cause? I've only been able to triage effectively for toy examples.","",""

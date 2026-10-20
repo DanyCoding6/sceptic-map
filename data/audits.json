@@ -1,0 +1,84 @@
+{
+  "by": "Claude, while building (reading each item in full); not hand-labelled by Dany",
+  "relevanceKept": {
+    "sample": "20 random items from the final 430 (relevant, not vendor-written), seed 101",
+    "n": 20,
+    "onTopic": 19,
+    "borderline": 1,
+    "offTopic": 0,
+    "borderlineIds": [
+      "hn:48319916"
+    ],
+    "ids": [
+      "hn:47354435",
+      "hn:41587345",
+      "hn:47058461",
+      "hn:44903013",
+      "hn:46761023",
+      "hn:41326372",
+      "hn:48319916",
+      "hn:46816750",
+      "hn:41588099",
+      "hn:47363650",
+      "hn:41588385",
+      "hn:44056411",
+      "hn:46769122",
+      "hn:48928753",
+      "hn:49575451",
+      "hn:41588067",
+      "hn:44679306",
+      "hn:46598455",
+      "hn:41327303",
+      "hn:43022961"
+    ]
+  },
+  "relevanceRemoved": {
+    "sample": "15 random items the Sonnet second pass removed (final run), seed 32",
+    "n": 15,
+    "rightlyRemoved": 13,
+    "wronglyRemoved": 2,
+    "wronglyRemovedIds": [
+      "hn:47384607",
+      "hn:46685040"
+    ]
+  },
+  "diyTags": {
+    "sample": "18 random items tagged as using or recommending a general AI tool, seed 4",
+    "n": 18,
+    "right": 16,
+    "borderline": 1,
+    "wrong": 1,
+    "wrongIds": [
+      "hn:46045969"
+    ],
+    "borderlineIds": [
+      "hn:46816572"
+    ]
+  },
+  "quoteReview": {
+    "sample": "every quote shown by default (findings, map rows, battle card), re-read with its full comment and the comment it replied to",
+    "n": 36,
+    "problems": 12,
+    "hidden": [
+      "hn:46689907",
+      "hn:46763607",
+      "hn:47750993",
+      "hn:46812683",
+      "hn:47058461",
+      "hn:44383599",
+      "hn:43396821",
+      "hn:50116758",
+      "hn:41358560",
+      "hn:41359817",
+      "hn:47354488"
+    ],
+    "removedFromRowOnly": [
+      "hn:41587109 (alert noise row; fine under 'lacks context')"
+    ]
+  },
+  "ratingReview": {
+    "sample": "all 72 rating reasons, checked against their cited claims and each vendor's other claims",
+    "n": 72,
+    "corrected": 15
+  }
+}

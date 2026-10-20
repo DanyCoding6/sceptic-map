@@ -1,0 +1,503 @@
+{
+  "method": "model-to-model: claude-sonnet-5-5 (independent re-run, same prompt) vs claude-haiku-5-5",
+  "n": 30,
+  "measuredAt": "2026-10-20T18:13:03.215Z",
+  "relevance": {
+    "referenceAlsoRelevant": 29,
+    "of": 30
+  },
+  "stance": {
+    "agree": 27,
+    "of": 30,
+    "cohensKappa": 0.85
+  },
+  "objections": {
+    "meanJaccard": 0.82
+  },
+  "perItem": [
+    {
+      "id": "hn:46855985",
+      "haiku": {
+        "stance": "positive",
+        "objections": [
+          "deskills_or_replaces_engineers"
+        ]
+      },
+      "reference": {
+        "relevant": true,
+        "stance": "positive",
+        "objections": []
+      },
+      "stanceMatch": true,
+      "objectionJaccard": 0
+    },
+    {
+      "id": "hn:42257060",
+      "haiku": {
+        "stance": "positive",
+        "objections": []
+      },
+      "reference": {
+        "relevant": true,
+        "stance": "positive",
+        "objections": []
+      },
+      "stanceMatch": true,
+      "objectionJaccard": 1
+    },
+    {
+      "id": "hn:44903632",
+      "haiku": {
+        "stance": "positive",
+        "objections": []
+      },
+      "reference": {
+        "relevant": true,
+        "stance": "positive",
+        "objections": []
+      },
+      "stanceMatch": true,
+      "objectionJaccard": 1
+    },
+    {
+      "id": "hn:45967204",
+      "haiku": {
+        "stance": "positive",
+        "objections": []
+      },
+      "reference": {
+        "relevant": true,
+        "stance": "positive",
+        "objections": []
+      },
+      "stanceMatch": true,
+      "objectionJaccard": 1
+    },
+    {
+      "id": "hn:41327409",
+      "haiku": {
+        "stance": "neutral",
+        "objections": []
+      },
+      "reference": {
+        "relevant": false,
+        "stance": "neutral",
+        "objections": []
+      },
+      "stanceMatch": true,
+      "objectionJaccard": 1
+    },
+    {
+      "id": "hn:49012516",
+      "haiku": {
+        "stance": "sceptical",
+        "objections": [
+          "wrong_or_hallucinated_cause",
+          "diy_with_general_agent"
+        ]
+      },
+      "reference": {
+        "relevant": true,
+        "stance": "sceptical",
+        "objections": [
+          "diy_with_general_agent",
+          "wrong_or_hallucinated_cause",
+          "just_an_llm_wrapper"
+        ]
+      },
+      "stanceMatch": true,
+      "objectionJaccard": 0.667
+    },
+    {
+      "id": "hn:47353981",
+      "haiku": {
+        "stance": "positive",
+        "objections": []
+      },
+      "reference": {
+        "relevant": true,
+        "stance": "positive",
+        "objections": []
+      },
+      "stanceMatch": true,
+      "objectionJaccard": 1
+    },
+    {
+      "id": "hn:41326765",
+      "haiku": {
+        "stance": "positive",
+        "objections": []
+      },
+      "reference": {
+        "relevant": true,
+        "stance": "mixed",
+        "objections": [
+          "cant_verify_reasoning"
+        ]
+      },
+      "stanceMatch": false,
+      "objectionJaccard": 0
+    },
+    {
+      "id": "hn:49191792",
+      "haiku": {
+        "stance": "positive",
+        "objections": [
+          "data_access_and_security"
+        ]
+      },
+      "reference": {
+        "relevant": true,
+        "stance": "positive",
+        "objections": [
+          "data_access_and_security"
+        ]
+      },
+      "stanceMatch": true,
+      "objectionJaccard": 1
+    },
+    {
+      "id": "hn:47869934",
+      "haiku": {
+        "stance": "neutral",
+        "objections": []
+      },
+      "reference": {
+        "relevant": true,
+        "stance": "positive",
+        "objections": []
+      },
+      "stanceMatch": false,
+      "objectionJaccard": 1
+    },
+    {
+      "id": "hn:41587109",
+      "haiku": {
+        "stance": "sceptical",
+        "objections": [
+          "alert_noise_unsolved",
+          "lacks_context_of_our_systems"
+        ]
+      },
+      "reference": {
+        "relevant": true,
+        "stance": "sceptical",
+        "objections": [
+          "lacks_context_of_our_systems",
+          "alert_noise_unsolved",
+          "not_capable_yet"
+        ]
+      },
+      "stanceMatch": true,
+      "objectionJaccard": 0.667
+    },
+    {
+      "id": "hn:39660437",
+      "haiku": {
+        "stance": "neutral",
+        "objections": []
+      },
+      "reference": {
+        "relevant": true,
+        "stance": "neutral",
+        "objections": []
+      },
+      "stanceMatch": true,
+      "objectionJaccard": 1
+    },
+    {
+      "id": "hn:50058270",
+      "haiku": {
+        "stance": "positive",
+        "objections": []
+      },
+      "reference": {
+        "relevant": true,
+        "stance": "positive",
+        "objections": []
+      },
+      "stanceMatch": true,
+      "objectionJaccard": 1
+    },
+    {
+      "id": "hn:50074416",
+      "haiku": {
+        "stance": "neutral",
+        "objections": []
+      },
+      "reference": {
+        "relevant": true,
+        "stance": "neutral",
+        "objections": []
+      },
+      "stanceMatch": true,
+      "objectionJaccard": 1
+    },
+    {
+      "id": "hn:42268437",
+      "haiku": {
+        "stance": "neutral",
+        "objections": []
+      },
+      "reference": {
+        "relevant": true,
+        "stance": "neutral",
+        "objections": [
+          "alert_noise_unsolved"
+        ]
+      },
+      "stanceMatch": true,
+      "objectionJaccard": 0
+    },
+    {
+      "id": "hn:47362251",
+      "haiku": {
+        "stance": "positive",
+        "objections": []
+      },
+      "reference": {
+        "relevant": true,
+        "stance": "positive",
+        "objections": []
+      },
+      "stanceMatch": true,
+      "objectionJaccard": 1
+    },
+    {
+      "id": "hn:49563683",
+      "haiku": {
+        "stance": "positive",
+        "objections": []
+      },
+      "reference": {
+        "relevant": true,
+        "stance": "positive",
+        "objections": []
+      },
+      "stanceMatch": true,
+      "objectionJaccard": 1
+    },
+    {
+      "id": "hn:43476838",
+      "haiku": {
+        "stance": "positive",
+        "objections": []
+      },
+      "reference": {
+        "relevant": true,
+        "stance": "positive",
+        "objections": []
+      },
+      "stanceMatch": true,
+      "objectionJaccard": 1
+    },
+    {
+      "id": "hn:47781238",
+      "haiku": {
+        "stance": "sceptical",
+        "objections": [
+          "not_capable_yet",
+          "data_access_and_security"
+        ]
+      },
+      "reference": {
+        "relevant": true,
+        "stance": "sceptical",
+        "objections": [
+          "not_capable_yet",
+          "deskills_or_replaces_engineers",
+          "data_access_and_security"
+        ]
+      },
+      "stanceMatch": true,
+      "objectionJaccard": 0.667
+    },
+    {
+      "id": "hn:41359918",
+      "haiku": {
+        "stance": "sceptical",
+        "objections": [
+          "wrong_or_hallucinated_cause"
+        ]
+      },
+      "reference": {
+        "relevant": true,
+        "stance": "sceptical",
+        "objections": [
+          "wrong_or_hallucinated_cause",
+          "cant_verify_reasoning"
+        ]
+      },
+      "stanceMatch": true,
+      "objectionJaccard": 0.5
+    },
+    {
+      "id": "hn:42261708",
+      "haiku": {
+        "stance": "neutral",
+        "objections": []
+      },
+      "reference": {
+        "relevant": true,
+        "stance": "neutral",
+        "objections": []
+      },
+      "stanceMatch": true,
+      "objectionJaccard": 1
+    },
+    {
+      "id": "hn:45915857",
+      "haiku": {
+        "stance": "sceptical",
+        "objections": [
+          "not_capable_yet"
+        ]
+      },
+      "reference": {
+        "relevant": true,
+        "stance": "sceptical",
+        "objections": [
+          "not_capable_yet"
+        ]
+      },
+      "stanceMatch": true,
+      "objectionJaccard": 1
+    },
+    {
+      "id": "hn:41262584",
+      "haiku": {
+        "stance": "sceptical",
+        "objections": [
+          "cant_verify_reasoning",
+          "other"
+        ]
+      },
+      "reference": {
+        "relevant": true,
+        "stance": "mixed",
+        "objections": [
+          "other"
+        ]
+      },
+      "stanceMatch": false,
+      "objectionJaccard": 0.5
+    },
+    {
+      "id": "hn:44383599",
+      "haiku": {
+        "stance": "sceptical",
+        "objections": [
+          "lacks_context_of_our_systems",
+          "data_access_and_security"
+        ]
+      },
+      "reference": {
+        "relevant": true,
+        "stance": "sceptical",
+        "objections": [
+          "lacks_context_of_our_systems",
+          "data_access_and_security"
+        ]
+      },
+      "stanceMatch": true,
+      "objectionJaccard": 1
+    },
+    {
+      "id": "hn:46815155",
+      "haiku": {
+        "stance": "positive",
+        "objections": []
+      },
+      "reference": {
+        "relevant": true,
+        "stance": "positive",
+        "objections": []
+      },
+      "stanceMatch": true,
+      "objectionJaccard": 1
+    },
+    {
+      "id": "hn:41359874",
+      "haiku": {
+        "stance": "sceptical",
+        "objections": [
+          "wrong_or_hallucinated_cause"
+        ]
+      },
+      "reference": {
+        "relevant": true,
+        "stance": "sceptical",
+        "objections": [
+          "wrong_or_hallucinated_cause",
+          "cant_verify_reasoning"
+        ]
+      },
+      "stanceMatch": true,
+      "objectionJaccard": 0.5
+    },
+    {
+      "id": "hn:42062526",
+      "haiku": {
+        "stance": "neutral",
+        "objections": []
+      },
+      "reference": {
+        "relevant": true,
+        "stance": "neutral",
+        "objections": []
+      },
+      "stanceMatch": true,
+      "objectionJaccard": 1
+    },
+    {
+      "id": "hn:47114682",
+      "haiku": {
+        "stance": "positive",
+        "objections": [
+          "wrong_or_hallucinated_cause"
+        ]
+      },
+      "reference": {
+        "relevant": true,
+        "stance": "positive",
+        "objections": [
+          "wrong_or_hallucinated_cause"
+        ]
+      },
+      "stanceMatch": true,
+      "objectionJaccard": 1
+    },
+    {
+      "id": "hn:49196798",
+      "haiku": {
+        "stance": "positive",
+        "objections": []
+      },
+      "reference": {
+        "relevant": true,
+        "stance": "positive",
+        "objections": []
+      },
+      "stanceMatch": true,
+      "objectionJaccard": 1
+    },
+    {
+      "id": "hn:47354938",
+      "haiku": {
+        "stance": "sceptical",
+        "objections": [
+          "not_capable_yet"
+        ]
+      },
+      "reference": {
+        "relevant": true,
+        "stance": "sceptical",
+        "objections": [
+          "not_capable_yet"
+        ]
+      },
+      "stanceMatch": true,
+      "objectionJaccard": 1
+    }
+  ]
+}

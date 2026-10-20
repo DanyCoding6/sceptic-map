@@ -1,0 +1,185 @@
+{
+  "runs": [
+    {
+      "script": "classify --limit 60",
+      "date": "2026-10-20T17:19:35.771Z",
+      "byModel": {
+        "claude-haiku-5-5": {
+          "calls": 6,
+          "inputTokens": 42754,
+          "outputTokens": 4882,
+          "cacheReadTokens": 0,
+          "costUsd": 0.006716400000000001
+        }
+      },
+      "costUsd": 0.0067
+    },
+    {
+      "script": "classify --limit 60",
+      "date": "2026-10-20T17:20:26.827Z",
+      "byModel": {
+        "claude-haiku-5-5": {
+          "calls": 6,
+          "inputTokens": 43312,
+          "outputTokens": 5583,
+          "cacheReadTokens": 0,
+          "costUsd": 0.0071227
+        }
+      },
+      "costUsd": 0.0071
+    },
+    {
+      "script": "classify",
+      "date": "2026-10-20T17:23:48.889Z",
+      "byModel": {
+        "claude-haiku-5-5": {
+          "calls": 397,
+          "inputTokens": 2467171,
+          "outputTokens": 368143,
+          "cacheReadTokens": 0,
+          "costUsd": 0.4307886
+        }
+      },
+      "costUsd": 0.4308
+    },
+    {
+      "script": "classify prompt eval (relevance)",
+      "date": "2026-10-20T17:25:56.744Z",
+      "byModel": {
+        "claude-haiku-5-5": {
+          "calls": 8,
+          "inputTokens": 37926,
+          "outputTokens": 14630,
+          "cacheReadTokens": 0,
+          "costUsd": 0.0111076
+        }
+      },
+      "costUsd": 0.0111
+    },
+    {
+      "script": "classify",
+      "date": "2026-10-20T17:32:08.028Z",
+      "byModel": {
+        "claude-haiku-5-5": {
+          "calls": 403,
+          "inputTokens": 2578993,
+          "outputTokens": 681108,
+          "cacheReadTokens": 0,
+          "costUsd": 0.5984532999999994
+        }
+      },
+      "costUsd": 0.5985
+    },
+    {
+      "script": "second-pass smoke test",
+      "date": "2026-10-20T18:04:21.910Z",
+      "byModel": {
+        "claude-sonnet-5-5": {
+          "calls": 1,
+          "inputTokens": 1695,
+          "outputTokens": 48,
+          "cacheReadTokens": 0,
+          "costUsd": 0.00387
+        }
+      },
+      "costUsd": 0.0039
+    },
+    {
+      "script": "classify",
+      "date": "2026-10-20T18:11:04.098Z",
+      "byModel": {
+        "claude-haiku-5-5": {
+          "calls": 403,
+          "inputTokens": 2632592,
+          "outputTokens": 681317,
+          "cacheReadTokens": 0,
+          "costUsd": 0.6039177
+        },
+        "claude-sonnet-5-5": {
+          "calls": 79,
+          "inputTokens": 315711,
+          "outputTokens": 10877,
+          "cacheReadTokens": 0,
+          "costUsd": 0.7401920000000003
+        }
+      },
+      "costUsd": 1.3441
+    },
+    {
+      "script": "classify",
+      "date": "2026-10-20T18:12:24.225Z",
+      "byModel": {
+        "claude-sonnet-5-5": {
+          "calls": 79,
+          "inputTokens": 327561,
+          "outputTokens": 10877,
+          "cacheReadTokens": 0,
+          "costUsd": 0.7638920000000001
+        }
+      },
+      "costUsd": 0.7639
+    },
+    {
+      "script": "agreement",
+      "date": "2026-10-20T18:13:03.231Z",
+      "byModel": {
+        "claude-sonnet-5-5": {
+          "calls": 3,
+          "inputTokens": 17573,
+          "outputTokens": 3579,
+          "cacheReadTokens": 0,
+          "costUsd": 0.070936
+        }
+      },
+      "costUsd": 0.0709
+    },
+    {
+      "script": "synthesise",
+      "date": "2026-10-20T18:38:41.522Z",
+      "byModel": {
+        "claude-sonnet-5-5": {
+          "calls": 1,
+          "inputTokens": 23039,
+          "outputTokens": 5264,
+          "cacheReadTokens": 0,
+          "costUsd": 0.098718
+        }
+      },
+      "costUsd": 0.0987
+    },
+    {
+      "script": "synthesise",
+      "date": "2026-10-20T18:43:43.134Z",
+      "byModel": {
+        "claude-sonnet-5-5": {
+          "calls": 36,
+          "inputTokens": 247307,
+          "outputTokens": 54903,
+          "cacheReadTokens": 0,
+          "costUsd": 1.043644
+        }
+      },
+      "costUsd": 1.0436
+    },
+    {
+      "script": "synthesise",
+      "date": "2026-10-20T18:47:01.923Z",
+      "byModel": {
+        "claude-sonnet-5-5": {
+          "calls": 35,
+          "inputTokens": 225597,
+          "outputTokens": 50531,
+          "cacheReadTokens": 0,
+          "costUsd": 0.956504
+        }
+      },
+      "costUsd": 0.9565
+    },
+    {
+      "script": "synthesise (stopped at findings; reconstructed)",
+      "date": "2026-10-20T18:37:09.521039Z",
+      "costUsd": 1.49,
+      "note": "$1.29 metered from the 89 cached responses that run produced, plus about $0.20 estimated for 2 failed findings calls that were not metered (each later findings call cost about $0.10)."
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "nCollected": 4022,
+  "nRelevant": 686,
+  "nVendorAuthored": 256,
+  "nBase": 430,
+  "nRemovedBySecondPass": 96,
+  "quotesKept": 558,
+  "quotesDropped": 18,
+  "vendorPages": 28,
+  "claims": 351,
+  "ratings": 72,
+  "buyerSignal": 8,
+  "costUsd": 6.83,
+  "agreement": {
+    "method": "model-to-model: claude-sonnet-5-5 (independent re-run, same prompt) vs claude-haiku-5-5",
+    "n": 30,
+    "stanceAgree": 27,
+    "kappa": 0.85,
+    "objectionJaccard": 0.82
+  },
+  "audits": {
+    "by": "Claude, while building (reading each item in full); not hand-labelled by Dany",
+    "keptN": 20,
+    "keptOnTopic": 19,
+    "removedN": 15,
+    "removedRight": 13,
+    "diyN": 18,
+    "diyRight": 16,
+    "quotesReviewed": 36,
+    "quotesFailed": 12,
+    "ratingsReviewed": 72,
+    "ratingsCorrected": 15
+  }
+}

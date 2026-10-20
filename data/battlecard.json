@@ -1,0 +1,40 @@
+{
+  "objection": "not_capable_yet",
+  "rows": [
+    {
+      "quoteId": "hn:43037480",
+      "respond": "Agree: you shouldn't have to trust it blind. Within seconds of an incident being declared, Investigations posts a first pass to the channel, with every hypothesis linked to its sources. Your engineers make the final call, and the product page says the only change it can make is a pull request they review and merge.",
+      "respondClaimIds": [
+        "iio-launch#1",
+        "iio-launch#4",
+        "iio-entered-chat#7",
+        "iio-investigations#17"
+      ],
+      "ask": "When someone is paged in the middle of the night, how long does it take them to get from the alert to a first theory they trust?",
+      "sendClaimId": "iio-how-it-feels#2",
+      "sendLabel": "A real incident, start to finish"
+    },
+    {
+      "quoteId": "hn:47354938",
+      "respond": "Don't argue about models in general; point to real incidents. incident.io publishes how fast an accurate update now reaches the channel, and turbopuffer's CTO compares it with a human doing the same search.",
+      "respondClaimIds": [
+        "iio-cl-2x-faster#1",
+        "iio-investigations#3"
+      ],
+      "ask": "Which of your past incidents would you want it tested on before you'd trust it?",
+      "sendClaimId": "iio-building#6",
+      "sendLabel": "How they test it on frozen past incidents"
+    },
+    {
+      "quoteId": "hn:48044576",
+      "respond": "Ask what made it costly, then show the safeguard. Every hypothesis links to its sources and lists the theories it ruled out, so the responder can challenge it rather than wait on it. incident.io also grades every hypothesis against what responders did in the real incident.",
+      "respondClaimIds": [
+        "iio-launch#4",
+        "iio-building#5"
+      ],
+      "ask": "When a tool got it wrong, what cost you more: the wrong answer, or not being able to see why?",
+      "sendClaimId": "iio-launch#4",
+      "sendLabel": "The reasoning, sources and ruled-out theories"
+    }
+  ]
+}
