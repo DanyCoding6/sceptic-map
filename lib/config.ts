@@ -3,6 +3,6 @@ export const CONFIG = {
   email: "daniyaalanawar@gmail.com",
   linkedin: "https://www.linkedin.com/in/daniyaal-anawar",
   github: "https://github.com/DanyCoding6/sceptic-map",
-  juniorTrader: null as string | null, // waiting on Dany
+  juniorTrader: "https://junior-trader.vercel.app/" as string | null,
   videoUrl: null as string | null, // MP4 or Loom link; a placeholder shows until Dany supplies it
 };

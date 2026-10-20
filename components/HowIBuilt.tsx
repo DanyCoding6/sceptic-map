@@ -1,4 +1,5 @@
 import { Section } from "@/components/Section";
+import { CONFIG } from "@/lib/config";
 import { site, stats } from "@/lib/data";
 import { formatNumber } from "@/lib/format";
 
@@ -79,7 +80,15 @@ export function HowIBuilt() {
       </div>
 
       <p className="mt-10 text-[17px] leading-relaxed">
-        How I build in general: ship early, then improve from what people tell me. JuniorTrader went live and got better through rounds of feedback from the people using it.
+        How I build in general: ship early, then improve from what people tell me.{" "}
+        {CONFIG.juniorTrader ? (
+          <a href={CONFIG.juniorTrader} className="font-medium text-accent-ink underline" target="_blank" rel="noopener noreferrer">
+            JuniorTrader
+          </a>
+        ) : (
+          "JuniorTrader"
+        )}{" "}
+        went live and got better through rounds of feedback from the people using it.
       </p>
 
       <h3 className="mt-10 text-lg font-semibold">What I&apos;d do differently</h3>
