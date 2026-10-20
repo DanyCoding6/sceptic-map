@@ -27,22 +27,29 @@ export function Hero() {
       <p className="text-sm text-muted">Sceptic Map · an independent pitch · Made for the incident.io marketing team</p>
       <h1 className="mt-6 text-[1.75rem] font-semibold leading-tight tracking-tight sm:text-[2.3rem] sm:leading-[1.15]">{top.short ?? top.headline}</h1>
       <p className="mt-4 text-lg font-medium leading-snug text-accent-ink">
-        What it means for Investigations: its pages already show proof that it finds causes. Proof on these two would put it ahead of every option here.
+        What it means for Investigations: it already shows proof that it works, and its promise on access is among the strictest here. Proving that promise is the
+        nearest win.
       </p>
       <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-2">
-        I&apos;m Dany, an Economics student at Cambridge. I built a tool that sorts what engineers say about AI incident tools and checks each objection against
-        incident.io&apos;s public pages. Next summer I&apos;d like to run it on your sales calls.
+        I&apos;m Dany, an Economics student at Cambridge; since 2021 I&apos;ve built an education audience of ~100K followers. I built a tool that sorts what engineers
+        say about AI incident tools and checks each objection against incident.io&apos;s public pages. Next summer I&apos;d like to run it on your sales calls.
       </p>
       <p className="mt-3 text-sm text-muted">
         Based on {nBase} Hacker News posts ({n.n_comments} comments, {n.n_stories} stories), {formatMonth(window.from)} to {formatMonth(window.to)}, with vendors&apos; own
         posts set aside.
       </p>
       <div className="mt-8 flex flex-wrap gap-3">
-        <a href="#map" className="rounded-md bg-accent-ink px-4 py-2.5 text-sm font-medium text-white hover:bg-[#0b5f58]">
+        <a href="#findings" className="rounded-md bg-accent-ink px-4 py-2.5 text-sm font-medium text-white hover:bg-[#0b5f58]">
           See the map
         </a>
         <a href="#summer" className="rounded-md px-4 py-2.5 text-sm font-medium text-accent-ink ring-1 ring-line hover:bg-wash">
           The summer project
+        </a>
+        <a
+          href={`mailto:${CONFIG.email}?subject=${encodeURIComponent("Sceptic Map: 15 minutes")}`}
+          className="rounded-md px-4 py-2.5 text-sm font-medium text-accent-ink ring-1 ring-line hover:bg-wash"
+        >
+          Email me
         </a>
       </div>
       {CONFIG.videoUrl && (

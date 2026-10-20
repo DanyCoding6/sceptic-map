@@ -6,6 +6,7 @@ export function MethodsBox() {
   const a = stats.agreement;
   const au = stats.audits;
   const competitorPages = stats.pagesByVendor.PagerDuty;
+  const n = site.numbers;
   return (
     <details id="methods" className="group mt-12 rounded-lg border border-line p-5 sm:p-6">
       <summary className="cursor-pointer list-none">
@@ -48,7 +49,8 @@ export function MethodsBox() {
             treat a gap of a few posts between rows as noise. While building, Claude read samples in full: {au.keptOnTopic} of {au.keptN} kept items were on topic,{" "}
             {au.removedRight} of {au.removedN} removed items were rightly removed, and {au.diyRight} of {au.diyN} &ldquo;uses a general AI tool&rdquo; tags were right. That
             tag means the author describes using or recommending ChatGPT, Claude, Claude Code, Cursor, Codex, Copilot, Gemini, MCP servers, or an agent or scripts they
-            built, for incident work.
+            built, for incident work ({n["diy:uses"]} posts). It differs from naming one ({n["diy:mentions"]}, the map&apos;s filter) and from the &ldquo;I could do this
+            myself&rdquo; objection ({n["diy:objection"]}), which comes from the other model&apos;s labels.
           </dd>
         </div>
         <div>
@@ -56,8 +58,12 @@ export function MethodsBox() {
           <dd className="text-ink-2">
             Claude re-read every quote shown by default ({au.quotesReviewed}) with its full comment and the comment it replied to. {au.quotesFailed} were misleading out of
             context or sat under the wrong objection, so they are no longer shown; the counts still use the model&apos;s labels. All {au.ratingsReviewed} rating reasons were
-            checked against their claims and {au.ratingsCorrected} corrected. After launch, a second review changed {au.postLaunchRatingsChanged} ratings and reworded{" "}
-            {au.postLaunchReasonsReworded} reasons, mostly competitor cells that over-reached; the {au.postLaunchQuotesChecked} quotes added then were checked the same way.
+            checked against their claims and {au.ratingsCorrected} corrected. After launch, two more rounds of review changed {au.postLaunchRatingsChanged} ratings and
+            reworded {au.postLaunchReasonsReworded} reasons, mostly competitor cells that over-reached; the {au.postLaunchQuotesChecked} quotes added then were checked the
+            same way. Each correction is in data/overrides.json with a note saying why. Claude also read every post in the two rows the lead finding rests on:{" "}
+            {n["read:deskills_or_replaces_engineers:fit_all"]} of {n["count:deskills_or_replaces_engineers"]} deskilling posts and{" "}
+            {n["read:data_access_and_security:fit_all"]} of {n["count:data_access_and_security"]} access posts fit their label. Other rows are likely as loose, so read
+            every count as an upper bound.
           </dd>
         </div>
         <div>
@@ -66,7 +72,7 @@ export function MethodsBox() {
             Code checks that every quote is word for word in its source ({stats.quotesDropped} failed and were dropped). Vendor claims are {stats.claims} sentences taken
             word for word from {stats.vendorPages} public pages: {stats.pagesByVendor["incident.io"]} of incident.io&apos;s, {competitorPages} AI SRE product page for each
             competitor, and {stats.pagesByVendor.DIY} for the do-it-yourself route. Competitor ratings describe that page only. Each rating is a model&apos;s judgement under
-            fixed rules, corrected by hand where a review found it wrong: proof means a measured result, a named customer or a real incident, and sample screens don&apos;t
+            fixed rules, corrected where a review found it wrong: proof means a measured result, a named customer or a real incident, and sample screens don&apos;t
             count.
           </dd>
         </div>

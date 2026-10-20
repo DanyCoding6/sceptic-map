@@ -56,8 +56,8 @@ export function BattleCard() {
       title="If a rep hears this tomorrow"
       intro={
         <>
-          A mini battle card on the alternative engineers already use: {n["diy:uses"]} of {n.n_base} posts use or recommend a general AI tool for incident work. Three ways
-          they put it, and answers built only from incident.io&apos;s public pages.
+          A mini battle card on the alternative engineers already use: {n["diy:uses"]} of {n.n_base} posts use or recommend a general AI tool for incident work. Below are
+          three ways they put it, with answers built only from incident.io&apos;s public pages.
         </>
       }
     >
@@ -70,35 +70,40 @@ export function BattleCard() {
           </p>
           <Row row={first} />
         </li>
-        {rest.map((row) => (
-          <li key={row.quoteId}>
-            <details className="group rounded-lg border border-line p-5">
-              <summary className="cursor-pointer list-none">
-                <span className="flex items-baseline justify-between gap-4">
-                  <span className="text-xs font-semibold uppercase tracking-wide text-muted">If they say</span>
-                  <span aria-hidden="true" className="text-sm text-accent-ink group-open:hidden">
-                    Show answer
-                  </span>
+        <li>
+          <details className="group rounded-lg border border-line p-5">
+            <summary className="cursor-pointer list-none">
+              <span className="flex items-baseline justify-between gap-4">
+                <span className="font-medium">Two more ways they put it, and what not to say</span>
+                <span aria-hidden="true" className="text-sm text-accent-ink group-open:hidden">
+                  Show
                 </span>
-                <span className="mt-1 block">
-                  <Said id={row.quoteId} />
-                </span>
-              </summary>
-              <Row row={row} />
-            </details>
-          </li>
-        ))}
+              </span>
+            </summary>
+            <div className="mt-4 space-y-8">
+              {rest.map((row) => (
+                <div key={row.quoteId}>
+                  <p className="text-xs font-semibold uppercase tracking-wide text-muted">If they say</p>
+                  <p className="mt-1">
+                    <Said id={row.quoteId} />
+                  </p>
+                  <Row row={row} />
+                </div>
+              ))}
+              {battleCard.avoid.length > 0 && (
+                <div className="rounded-lg bg-wash p-5">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-muted">What not to say</p>
+                  <ul className="mt-2 list-disc space-y-1.5 pl-5 text-[15px] leading-relaxed">
+                    {battleCard.avoid.map((a) => (
+                      <li key={a}>{a}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+          </details>
+        </li>
       </ol>
-      {battleCard.avoid.length > 0 && (
-        <div className="mt-6 rounded-lg bg-wash p-5">
-          <p className="text-xs font-semibold uppercase tracking-wide text-muted">What not to say</p>
-          <ul className="mt-2 list-disc space-y-1.5 pl-5 text-[15px] leading-relaxed">
-            {battleCard.avoid.map((a) => (
-              <li key={a}>{a}</li>
-            ))}
-          </ul>
-        </div>
-      )}
     </Section>
   );
 }

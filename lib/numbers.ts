@@ -7,10 +7,14 @@ const RATED: Objection[] = OBJECTIONS.filter((o) => o !== "other");
 const NAMED = ["incident.io", "PagerDuty", "Rootly", "Datadog", "Resolve.ai"] as const;
 export const half = (date: string) => `${date.slice(0, 4)}-H${Number(date.slice(5, 7)) <= 6 ? 1 : 2}`;
 
+// A hand read of every post in a row (data/audits.json rowReads): ids grouped by whether they fit the label.
+export type RowReads = Partial<Record<string, Record<string, string[] | string>>>;
+
 export function computeNumbers(
   items: SiteItem[],
   coverage: CoverageCell[],
   meta: { nCollected: number; nRelevant: number },
+  reads: RowReads = {},
 ): Record<string, number> {
   const halves = [...new Set(items.map((i) => half(i.date)))].sort();
   const uses = items.filter((i) => i.usesGeneralAI);
@@ -27,6 +31,7 @@ export function computeNumbers(
     vendors_rated: VENDORS.length,
     "diy:uses": uses.length,
     "diy:unneeded": items.filter((i) => i.productUnneeded).length,
+    "diy:uses:unneeded": uses.filter((i) => i.productUnneeded).length,
     "diy:objection": counts.find((c) => c.o === "diy_with_general_agent")!.n,
     "diy:mentions": items.filter((i) => i.vendors.includes("General AI tools")).length,
     "named:any_vendor": items.filter((i) => i.vendors.some((v) => (NAMED as readonly string[]).includes(v))).length,
@@ -49,6 +54,17 @@ export function computeNumbers(
   const top = counts.filter((c) => c.o !== "other").slice(0, 6).map((c) => c.o);
   for (const [i, a] of top.entries()) {
     for (const b of top.slice(i + 1)) numbers[`either:${a}+${b}`] = items.filter((x) => x.objections.includes(a) || x.objections.includes(b)).length;
+  }
+  // Hand reads of whole rows: how many posts in each group, and how many fit the label at all.
+  for (const [o, groups] of Object.entries(reads)) {
+    if (!groups || !OBJECTIONS.includes(o as Objection)) continue;
+    let fit = 0;
+    for (const [g, ids] of Object.entries(groups)) {
+      if (!Array.isArray(ids)) continue;
+      numbers[`read:${o}:${g}`] = ids.length;
+      if (g !== "notFit") fit += ids.length;
+    }
+    numbers[`read:${o}:fit_all`] = fit;
   }
   // Coverage tallies, after any hand corrections: per objection and per vendor.
   for (const r of Rating.options) {

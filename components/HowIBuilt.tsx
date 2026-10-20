@@ -1,26 +1,18 @@
 import { Section } from "@/components/Section";
-import { CONFIG } from "@/lib/config";
 import { site, stats } from "@/lib/data";
 import { formatNumber } from "@/lib/format";
 
-// Calls Dany made, as recorded in notes/build-log.md and the project's working notes.
+// Decisions Dany made, as recorded in notes/build-log.md and the project's working notes.
 const DECISIONS = [
   "Wrote the brief: the idea, the three ratings, and the rules (never invent a quote or a number, no usernames, respect robots.txt, say what the data can't tell you).",
   "Approved the vendor pages before any were fetched.",
   "Left Reddit out when it refused automated access, rather than set up its API, and said so in Methods.",
-  "Added “AI can't do this job yet” as an objection when it turned out to be the biggest thing hiding in “other”.",
-  "Added a second, stronger model that can only remove items, after an audit showed the first filter was too lenient.",
+  "Chose, from the options Claude laid out, to add “AI can't do this job yet” as an objection and to add a second model that can only remove items.",
   "Skipped hand-labelling to save time. It's the first thing I'd change.",
 ];
 
-// Three entries from notes/build-log.md, shortened. They happened as described.
+// Entries from notes/build-log.md, shortened. They happened as described.
 const LESSONS = [
-  {
-    title: "The first relevance filter let general AI-coding talk through",
-    what: "Many items the model called relevant were about coding agents, not incidents. They would have inflated objections such as “wrong cause”.",
-    caught: "Claude reading random samples from both the kept and the rejected piles.",
-    changed: "A sharper test in the prompt, more effort from the model, and a second model that can only remove items.",
-  },
   {
     title: "Every number checked out, but the sentences didn't",
     what: "The first draft findings passed every automated check and still overstated. One called a habit common among sceptics when most who had it were positive; one added counts that overlapped.",
@@ -29,18 +21,39 @@ const LESSONS = [
   },
   {
     title: "The agreement score flattered the labels",
-    what: `It counted two empty label sets as a perfect match, which made objection agreement look far better than it was. Where either model named an objection, it is ${stats.agreement.objectionJaccard}.`,
-    caught: "A simulated review after launch: Claude reading the page as an incident.io engineer would.",
+    what: `It counted two empty label sets as a perfect match, which made objection agreement look far better than it was. Where either model named an objection (${stats.agreement.objectionLabelled} items), agreement is ${stats.agreement.objectionJaccard}.`,
+    caught: "A second review after launch, which re-checked every number on the page.",
     changed: "The score now counts only items with an objection, and the build recomputes every number on the page, not just some of them.",
+  },
+  {
+    title: "The first relevance filter let general AI-coding talk through",
+    what: "Many items the model called relevant were about coding agents, not incidents. They would have inflated objections such as “wrong cause”.",
+    caught: "Claude reading random samples from both the kept and the rejected piles.",
+    changed: "A sharper test in the prompt, more effort from the model, and a second model that can only remove items. Some still gets through, so the two rows behind the lead finding were read in full.",
   },
 ];
 
 const DIFFERENTLY = [
   "Label a sample by hand before writing any prompts. Agreement between two models says little; a set labelled by a working SRE would say more.",
   "Rate competitors on as many pages as incident.io, not one product page each.",
-  "Record when each vendor page was published. Two older incident.io lines nearly passed as current.",
+  "Record when each vendor page was published; a date changes what a claim means.",
   "Go beyond Hacker News: it is one community, with few buyers in it.",
 ];
+
+function Lesson({ l }: { l: (typeof LESSONS)[number] }) {
+  return (
+    <div>
+      <p className="font-semibold">{l.title}</p>
+      <p className="mt-1 text-[15px] leading-relaxed">{l.what}</p>
+      <p className="mt-1 text-sm leading-relaxed text-ink-2">
+        <span className="font-medium">Caught by:</span> {l.caught}
+      </p>
+      <p className="text-sm leading-relaxed text-ink-2">
+        <span className="font-medium">Changed:</span> {l.changed}
+      </p>
+    </div>
+  );
+}
 
 export function HowIBuilt() {
   const steps = [
@@ -54,7 +67,7 @@ export function HowIBuilt() {
     <Section
       id="build"
       title="How I built it"
-      intro="I wrote the brief and made the calls; Claude Code wrote the code, ran the pipeline and did most of the checking. Code computes every number; the models only choose and write words, and code checks what they write."
+      intro="I wrote the brief and made the decisions; Claude Code wrote the code, ran the pipeline and did most of the checking. Code computes every number; the models only choose and write words, and code checks what they write."
     >
       <ol className="flex flex-col gap-2 sm:flex-row sm:items-stretch" aria-label="Pipeline, in order">
         {steps.map((s, i) => (
@@ -77,41 +90,27 @@ export function HowIBuilt() {
         Total API cost: <span className="font-semibold">${stats.costUsd.toFixed(2)}</span>, including runs I threw away while tuning.
       </p>
 
-      <h3 className="mt-10 text-lg font-semibold">Calls I made</h3>
+      <h3 className="mt-10 text-lg font-semibold">Decisions I made</h3>
       <ul className="mt-3 list-disc space-y-2 pl-5 text-[15px] leading-relaxed">
         {DECISIONS.map((d) => (
           <li key={d}>{d}</li>
         ))}
       </ul>
 
-      <h3 className="mt-10 text-lg font-semibold">Three things that went wrong</h3>
-      <div className="mt-4 space-y-6">
-        {LESSONS.map((l) => (
-          <div key={l.title}>
-            <p className="font-semibold">{l.title}</p>
-            <p className="mt-1 text-[15px] leading-relaxed">{l.what}</p>
-            <p className="mt-1 text-sm leading-relaxed text-ink-2">
-              <span className="font-medium">Caught by:</span> {l.caught}
-            </p>
-            <p className="text-sm leading-relaxed text-ink-2">
-              <span className="font-medium">Changed:</span> {l.changed}
-            </p>
-          </div>
-        ))}
+      <h3 className="mt-10 text-lg font-semibold">What went wrong</h3>
+      <div className="mt-4">
+        <Lesson l={LESSONS[0]} />
       </div>
-
-      <p className="mt-10 text-[17px] leading-relaxed">
-        How I build in general: ship early, then improve from what people tell me.{" "}
-        {CONFIG.juniorTrader ? (
-          <a href={CONFIG.juniorTrader} className="font-medium text-accent-ink underline" target="_blank" rel="noopener noreferrer">
-            JuniorTrader
-          </a>
-        ) : (
-          "JuniorTrader"
-        )}{" "}
-        went live and got better through rounds of feedback from the people using it. This page has had one round so far: five simulated reviews after launch (Claude reading it
-        as a marketing lead, a competitive product marketer, an engineer, a hiring manager and an editor) led to the fixes above. Real feedback is next.
-      </p>
+      <details className="group mt-6">
+        <summary className="cursor-pointer list-none font-medium text-accent-ink">
+          Two more <span className="group-open:hidden">(show)</span>
+        </summary>
+        <div className="mt-4 space-y-6">
+          {LESSONS.slice(1).map((l) => (
+            <Lesson key={l.title} l={l} />
+          ))}
+        </div>
+      </details>
 
       <details className="group mt-10">
         <summary className="cursor-pointer list-none text-lg font-semibold">

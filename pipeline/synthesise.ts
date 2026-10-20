@@ -12,7 +12,7 @@ import {
   OBJECTIONS,
   type ObjectionStat,
   type QuoteRef,
-  Rating,
+  ModelRating,
   RawItem,
   type SiteItem,
   Synthesis,
@@ -246,7 +246,7 @@ async function rateCoverage(vendor: Vendor, claims: Claim[], stats: ObjectionSta
     system: COVERAGE_PROMPT,
     user: `Vendor: ${vendor}\n\nObjections:\n\n${objectionsBlock}\n\nClaims from ${vendor}'s pages (${mine.length}):\n${claimsBlock || "(none)"}`,
     schema: z.object({
-      cells: z.array(z.object({ objection: z.enum(OBJECTIONS), rating: Rating, claim_ids: z.array(z.string()), reason: z.string() })),
+      cells: z.array(z.object({ objection: z.enum(OBJECTIONS), rating: ModelRating, claim_ids: z.array(z.string()), reason: z.string() })),
     }),
     effort: "high",
     maxTokens: 16000,
@@ -504,7 +504,7 @@ async function main() {
   console.log(`\nDIY: ${numbers["diy:uses"]} describe using or recommending a general AI tool for incident work; ${numbers["diy:unneeded"]} say a dedicated product is unnecessary; ${numbers["diy:objection"]} raise it as an objection; ${numbers["diy:mentions"]} name a general AI tool.`);
   console.log(`  uses by half: ${halves.map((h) => `${h} ${numbers[`diy:uses:${h}`]}/${numbers[`base:${h}`]}`).join(", ")}`);
 
-  const short = { SHOWN: "SHOWN", SAID: "said", NOT_YET: "-" } as const;
+  const short = { SHOWN: "SHOWN", SAID: "said", NOT_YET: "-", NA: "n/a" } as const;
   console.log(`\nCoverage (SHOWN = with proof, said = asserted, - = not yet):`);
   console.log(`  ${"objection".padEnd(32)}${VENDORS.map((v) => v.padEnd(12)).join("")}`);
   for (const o of RATED) {

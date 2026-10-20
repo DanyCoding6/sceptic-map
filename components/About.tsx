@@ -13,10 +13,7 @@ export function About() {
       <p className="text-[17px] leading-relaxed">
         Economics at St John&apos;s College, Cambridge (graduating 2028). Since 2021 I&apos;ve built an education audience of ~100K followers and 50M+ views. I run social media
         for the St John&apos;s May Ball and events for the Cambridge University Trading Society. I build with Claude Code: my latest, JuniorTrader, is a live app that turns
-        market news into quizzes and trade calls for people starting out as traders.
-      </p>
-      <p className="mt-4 text-[15px] leading-relaxed text-ink-2">
-        I&apos;m also President of the Cambridge University Pakistani Society, and I run a free mentoring programme for disadvantaged students applying to Cambridge Economics.
+        market news into quizzes and trade calls for people starting out as traders. I&apos;m also President of the Cambridge University Pakistani Society, and I run a free mentoring programme for disadvantaged students applying to Cambridge Economics.
       </p>
       <p className="mt-6 text-lg font-semibold">Available from the end of June to the start of October 2027.</p>
       <ul className="mt-6 space-y-2">

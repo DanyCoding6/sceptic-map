@@ -4,6 +4,7 @@ export const RATING_TEXT: Record<Rating, string> = {
   SHOWN: "Shown with proof",
   SAID: "Said, not shown",
   NOT_YET: "Not yet addressed",
+  NA: "Doesn't apply",
 };
 
 // Icon shape and label carry the meaning; colour only reinforces it.
@@ -18,6 +19,7 @@ export function Icon({ rating }: { rating: Rating }) {
         </>
       )}
       {rating === "NOT_YET" && <circle cx="6" cy="6" r="4.5" fill="none" stroke="var(--muted)" strokeWidth="1.5" />}
+      {rating === "NA" && <path d="M2.5 6 H9.5" stroke="var(--muted)" strokeWidth="1.5" strokeLinecap="round" />}
     </svg>
   );
 }
@@ -28,7 +30,7 @@ export function Badge({ rating, compact = false }: { rating: Rating; compact?: b
   return (
     <span className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-xs font-medium whitespace-nowrap ${tone}`}>
       <Icon rating={rating} />
-      {compact ? { SHOWN: "Shown", SAID: "Said", NOT_YET: "Not yet" }[rating] : RATING_TEXT[rating]}
+      {compact ? { SHOWN: "Shown", SAID: "Said", NOT_YET: "Not yet", NA: "Doesn't apply" }[rating] : RATING_TEXT[rating]}
     </span>
   );
 }

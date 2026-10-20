@@ -51,6 +51,7 @@
   "vendors_rated": 6,
   "diy:uses": 73,
   "diy:unneeded": 13,
+  "diy:uses:unneeded": 8,
   "diy:objection": 12,
   "diy:mentions": 72,
   "named:any_vendor": 31,
@@ -221,24 +222,31 @@
   "either:data_access_and_security+cant_verify_reasoning": 41,
   "either:data_access_and_security+diy_with_general_agent": 35,
   "either:cant_verify_reasoning+diy_with_general_agent": 32,
+  "read:deskills_or_replaces_engineers:skill": 14,
+  "read:deskills_or_replaces_engineers:replace": 9,
+  "read:deskills_or_replaces_engineers:notFit": 10,
+  "read:deskills_or_replaces_engineers:fit_all": 23,
+  "read:data_access_and_security:fit": 17,
+  "read:data_access_and_security:notFit": 6,
+  "read:data_access_and_security:fit_all": 17,
   "shown:wrong_or_hallucinated_cause": 4,
   "shown:cant_verify_reasoning": 2,
   "shown:data_access_and_security": 0,
   "shown:cost_or_pricing": 1,
   "shown:setup_and_integration_effort": 0,
   "shown:just_an_llm_wrapper": 0,
-  "shown:diy_with_general_agent": 1,
+  "shown:diy_with_general_agent": 0,
   "shown:lacks_context_of_our_systems": 3,
-  "shown:alert_noise_unsolved": 1,
+  "shown:alert_noise_unsolved": 0,
   "shown:deskills_or_replaces_engineers": 0,
   "shown:vendor_lock_in": 0,
   "shown:not_capable_yet": 4,
   "shown:vendor:incident.io": 4,
   "shown:vendor:PagerDuty": 0,
   "shown:vendor:Rootly": 0,
-  "shown:vendor:Datadog": 4,
+  "shown:vendor:Datadog": 3,
   "shown:vendor:Resolve.ai": 3,
-  "shown:vendor:DIY": 5,
+  "shown:vendor:DIY": 4,
   "said:wrong_or_hallucinated_cause": 2,
   "said:cant_verify_reasoning": 4,
   "said:data_access_and_security": 6,
@@ -247,14 +255,14 @@
   "said:just_an_llm_wrapper": 5,
   "said:diy_with_general_agent": 4,
   "said:lacks_context_of_our_systems": 3,
-  "said:alert_noise_unsolved": 4,
+  "said:alert_noise_unsolved": 5,
   "said:deskills_or_replaces_engineers": 6,
   "said:vendor_lock_in": 4,
   "said:not_capable_yet": 2,
   "said:vendor:incident.io": 8,
   "said:vendor:PagerDuty": 11,
   "said:vendor:Rootly": 11,
-  "said:vendor:Datadog": 7,
+  "said:vendor:Datadog": 8,
   "said:vendor:Resolve.ai": 6,
   "said:vendor:DIY": 5,
   "not_yet:wrong_or_hallucinated_cause": 0,
@@ -262,7 +270,7 @@
   "not_yet:data_access_and_security": 0,
   "not_yet:cost_or_pricing": 3,
   "not_yet:setup_and_integration_effort": 0,
-  "not_yet:just_an_llm_wrapper": 1,
+  "not_yet:just_an_llm_wrapper": 0,
   "not_yet:diy_with_general_agent": 1,
   "not_yet:lacks_context_of_our_systems": 0,
   "not_yet:alert_noise_unsolved": 1,
@@ -274,7 +282,25 @@
   "not_yet:vendor:Rootly": 1,
   "not_yet:vendor:Datadog": 1,
   "not_yet:vendor:Resolve.ai": 3,
-  "not_yet:vendor:DIY": 2
+  "not_yet:vendor:DIY": 1,
+  "na:wrong_or_hallucinated_cause": 0,
+  "na:cant_verify_reasoning": 0,
+  "na:data_access_and_security": 0,
+  "na:cost_or_pricing": 0,
+  "na:setup_and_integration_effort": 0,
+  "na:just_an_llm_wrapper": 1,
+  "na:diy_with_general_agent": 1,
+  "na:lacks_context_of_our_systems": 0,
+  "na:alert_noise_unsolved": 0,
+  "na:deskills_or_replaces_engineers": 0,
+  "na:vendor_lock_in": 0,
+  "na:not_capable_yet": 0,
+  "na:vendor:incident.io": 0,
+  "na:vendor:PagerDuty": 0,
+  "na:vendor:Rootly": 0,
+  "na:vendor:Datadog": 0,
+  "na:vendor:Resolve.ai": 0,
+  "na:vendor:DIY": 2
  },
  "objections": [
   {
@@ -5362,11 +5388,11 @@
    "objection": "data_access_and_security",
    "rating": "SAID",
    "claimIds": [
-    "iio-investigations#15",
     "iio-investigations#17",
-    "iio-cl-ga#13"
+    "iio-cl-ga#13",
+    "iio-investigations#15"
    ],
-   "reason": "Sandboxed code analysis, redaction, zero data retention and a pull request as the only change are asserted. Sceptics would want to see how “pull request only” is enforced, or an audit of it.",
+   "reason": "Its only change is a pull request you review, one of the two strictest promises here, and it is the only option to name an outside audit (SOC 2) on the pages checked. Nothing shows how “pull request only” is enforced or what it can read; a link to the SOC 2 report and a page on its permissions would.",
    "urls": [
     "https://incident.io/investigations",
     "https://incident.io/changelog/investigations-now-available-powered-by-nexus"
@@ -5461,13 +5487,13 @@
    "rating": "SAID",
    "claimIds": [
     "iio-nexus#4",
-    "iio-entered-chat#9",
-    "iio-launch#7"
+    "iio-cl-ga#18",
+    "iio-launch-plans#1"
    ],
-   "reason": "Nexus is said to tell a real problem from noise, but nothing measures fewer alerts. A July 2025 post says it “Eliminates alert fatigue”, while the August 2026 launch post lists noise reduction as future work.",
+   "reason": "Nexus is said to tell a real problem from noise, and it can hold a page until it has a first hypothesis, but nothing measures fewer alerts. The launch post lists noise reduction as a future plan.",
    "urls": [
     "https://incident.io/nexus",
-    "https://incident.io/blog/introducing-ai-sre",
+    "https://incident.io/changelog/investigations-now-available-powered-by-nexus",
     "https://incident.io/blog/introducing-investigations-powered-by-nexus"
    ],
    "overridden": true
@@ -5512,16 +5538,13 @@
    "claimIds": [
     "iio-investigations#3",
     "iio-cl-2x-faster#1",
-    "iio-how-it-feels#7",
-    "iio-entered-chat#3",
-    "iio-investigations#17"
+    "iio-how-it-feels#7"
    ],
-   "reason": "A named customer and a measured jump in accurate early updates show it working; the incident write-up (April 2026) is an internal one, on a feature then only on demo accounts. A July 2025 post says it “resolves what it can autonomously”, while the current product page says its only change is a pull request you review. One line, such as “diagnoses on its own, changes only with your approval”, would settle it.",
+   "reason": "A named customer and a measured jump in accurate early updates show it working; the incident write-up (April 2026) is an internal one, on a feature then only on demo accounts.",
    "urls": [
     "https://incident.io/investigations",
     "https://incident.io/changelog/investigations-are-2x-faster",
-    "https://incident.io/blog/how-it-feels-to-run-an-incident-with-ai-sre",
-    "https://incident.io/blog/introducing-ai-sre"
+    "https://incident.io/blog/how-it-feels-to-run-an-incident-with-ai-sre"
    ],
    "overridden": true
   },
@@ -5557,14 +5580,15 @@
    "objection": "data_access_and_security",
    "rating": "SAID",
    "claimIds": [
-    "pagerduty-sre-agent#12",
-    "pagerduty-sre-agent#7",
-    "pagerduty-sre-agent#2"
+    "pagerduty-sre-agent#1",
+    "pagerduty-sre-agent#13",
+    "pagerduty-sre-agent#12"
    ],
-   "reason": "Says it keeps your security controls and runs within defined rules, but doesn't explain permissions, read-only enforcement or audit. A named control example would help.",
+   "reason": "Its agent runs your approved automations and can attempt remediation before escalating, within rules you define. Nothing shows the permissions behind that, or an audit.",
    "urls": [
     "https://www.pagerduty.com/platform/ai-agents/sre/"
-   ]
+   ],
+   "overridden": true
   },
   {
    "vendor": "PagerDuty",
@@ -5707,7 +5731,7 @@
     "rootly-ai-sre#23",
     "rootly-ai-sre#5"
    ],
-   "reason": "Confidence scores and a visible reasoning chain are asserted. The only examples are sample screens with no named customer or date, so there's no real incident to inspect.",
+   "reason": "Confidence scores and a visible reasoning chain are asserted. The example investigation shown names no customer, so there's no real incident to inspect.",
    "urls": [
     "https://rootly.com/ai-sre"
    ],
@@ -5838,7 +5862,7 @@
     "rootly-ai-sre#2",
     "rootly-ai-sre#22"
    ],
-   "reason": "Claims root causes in minutes, and 10x faster resolution in a headline, with no method, named customer or real incident; the worked example is a sample screen.",
+   "reason": "Claims root causes in minutes, and 10x faster resolution in a headline, with no method, named customer or real incident; the worked example names no customer.",
    "urls": [
     "https://rootly.com/ai-sre"
    ],
@@ -5890,10 +5914,11 @@
    "claimIds": [
     "datadog-bits-investigation#10"
    ],
-   "reason": "Rate limits and cost controls are mentioned, but there is no pricing, token-cost figure or customer cost result.",
+   "reason": "The page links to a pricing page and mentions rate limits and cost controls, but gives no figure for what an investigation costs.",
    "urls": [
     "https://www.datadoghq.com/product/ai/bits-investigation/"
-   ]
+   ],
+   "overridden": true
   },
   {
    "vendor": "Datadog",
@@ -5949,11 +5974,11 @@
   {
    "vendor": "Datadog",
    "objection": "alert_noise_unsolved",
-   "rating": "SHOWN",
+   "rating": "SAID",
    "claimIds": [
     "datadog-bits-investigation#16"
    ],
-   "reason": "A named customer says it reduces noise, though with no figure and nothing on fixing alerts at source.",
+   "reason": "A named customer says it reduces noise, with no figure and nothing on fixing alerts at source.",
    "urls": [
     "https://www.datadoghq.com/product/ai/bits-investigation/"
    ],
@@ -5967,7 +5992,7 @@
     "datadog-bits-investigation#13",
     "datadog-bits-investigation#14"
    ],
-   "reason": "Named customers say newer engineers get a head start and skills may rise, but nothing shows engineers learning or keeping their skills.",
+   "reason": "Named customers say newer engineers get a head start and that skills may rise, the closest any option comes. Neither shows engineers learning or keeping their skills.",
    "urls": [
     "https://www.datadoghq.com/product/ai/bits-investigation/"
    ],
@@ -6020,7 +6045,7 @@
     "resolve-ai-sre#13",
     "resolve-ai-sre#10"
    ],
-   "reason": "Evidence trails and engineer review are promised, but the trail shown is a sample screen with no named customer or date.",
+   "reason": "Evidence trails and engineer review are promised; the example trail shown names no customer.",
    "urls": [
     "https://resolve.ai/product/ai-sre"
    ],
@@ -6034,10 +6059,11 @@
     "resolve-ai-sre#11",
     "resolve-ai-sre#9"
    ],
-   "reason": "Guardrails and engineer approval are asserted. No read-only mechanism, permissions detail, audit or compliance evidence is shown.",
+   "reason": "You set guardrails on what its agents may do on their own and what needs approval. Nothing shows the permissions behind that, or an audit.",
    "urls": [
     "https://resolve.ai/product/ai-sre"
-   ]
+   ],
+   "overridden": true
   },
   {
    "vendor": "Resolve.ai",
@@ -6231,27 +6257,26 @@
   {
    "vendor": "DIY",
    "objection": "just_an_llm_wrapper",
-   "rating": "NOT_YET",
+   "rating": "NA",
    "claimIds": [],
-   "reason": "No claim addresses substance or moat. Sceptics would need to hear what these builds add beyond the model, and how that was tested.",
+   "reason": "Doesn't apply: this column is the general model itself.",
    "urls": [
     "https://magarcia.io/using-claude-code-agent-teams-for-incident-investigation/",
     "https://engineering.hivebrite.io/blog/building-an-agentic-slackbot-with-claude-code/",
     "https://www.datadoghq.com/blog/datadog-mcp-server-use-cases/"
-   ]
+   ],
+   "overridden": true
   },
   {
    "vendor": "DIY",
    "objection": "diy_with_general_agent",
-   "rating": "SHOWN",
-   "claimIds": [
-    "diy-magarcia#1",
-    "diy-magarcia#5"
-   ],
-   "reason": "A general coding agent with MCP integrations found the root cause on a real incident in about ten minutes.",
+   "rating": "NA",
+   "claimIds": [],
+   "reason": "Doesn't apply: this column is the do-it-yourself route.",
    "urls": [
     "https://magarcia.io/using-claude-code-agent-teams-for-incident-investigation/"
-   ]
+   ],
+   "overridden": true
   },
   {
    "vendor": "DIY",
@@ -6330,9 +6355,10 @@
   {
    "id": "f2",
    "rank": 1,
-   "headline": "Beyond whether it works, engineers' two biggest objections are that AI deskills or replaces them (33 of 430 posts) and that it needs access to production (23). None of the 6 options mapped here shows proof on either.",
-   "short": "Beyond “does it work?”, engineers' biggest objections are deskilling (33 posts) and production access (23). None of the 6 options mapped shows proof on either.",
-   "implication": "Investigations already shows proof that it works. On these two, its pages assert, as every option here does: you work the problem with the agent, and its only change is a pull request you review. Proof could be a responder explaining a cause afterwards, and a page showing how “pull request only” is enforced. The deskilling posts span 30 threads.",
+   "headline": "Deskilling or replacement (33 of 430 posts) and production access (23): on the pages checked, every option asserts and none shows proof. Investigations is closest on access.",
+   "short": "Engineers worry that AI incident tools will deskill or replace them, and about what those tools can touch in production. On the pages checked, none of the 6 options shows proof on either.",
+   "note": "Read one by one, 23 of the 33 deskilling posts and 17 of the 23 access posts fit their label; the rest are general complaints about AI.",
+   "implication": "Closest to proof on deskilling is Datadog: named customers say newer engineers get a head start, but nobody shows anyone learning. On access, Investigations makes one of the two strictest promises (its only change is a pull request you review) and is the only option to name an outside audit, SOC 2; PagerDuty's and Resolve's agents can act on their own within rules you set. Showing how “pull request only” is enforced, and linking the SOC 2 report, would turn that into proof.",
    "whyRanked": "It is the less obvious concern, it outweighs wrong-cause complaints since 2025 in this data, and incident.io's claims only assert a position with no proof.",
    "n": 430,
    "scope": "all",
@@ -6351,17 +6377,16 @@
     }
    ],
    "claimIds": [
-    "iio-launch#3",
     "iio-investigations#17",
-    "iio-investigations#15"
+    "iio-cl-ga#13"
    ],
    "overridden": true
   },
   {
    "id": "f1",
    "rank": 2,
-   "headline": "73 of 430 posts use or recommend a general AI tool for incident work, 49 of them positively, but only 13 argue that makes a dedicated product unnecessary.",
-   "implication": "Most aren't arguing against buying; they're using what they already have. incident.io already argues that in-house builds rarely measure accuracy, and ships a plugin for the agents engineers use. What's missing is a public side-by-side: Investigations and a bare model on the same past incidents, from the backtests it already runs daily.",
+   "headline": "73 of 430 posts use or recommend a general AI tool for incident work, 49 of them positive about it; only 8 of those 73 argue that makes a dedicated product unnecessary.",
+   "implication": "incident.io argues on its blog that in-house builds rarely measure accuracy, and ships a plugin for the agents engineers already use. The missing piece is a published score: Investigations against a bare model on the same past incidents, which its daily backtests could produce without showing any customer's data.",
    "whyRanked": "It answers the do-it-yourself question directly: the behaviour is real, the stated objection is rare, and incident.io's own coverage here is only anecdote.",
    "n": 430,
    "scope": "all",
@@ -6390,7 +6415,7 @@
    "id": "f3",
    "rank": 3,
    "headline": "50 of 430 posts say the AI gets the cause wrong or that its reasoning can't be checked.",
-   "implication": "Investigations answers both with proof: a measured jump in accurate early updates, and every hypothesis linked to its sources. The next question is how often it's wrong. Each customer sees that on its own homepage, and incident.io's buyer's guide tells evaluators to push for precision and recall. No option here publishes a figure yet; one from its backtests would meet that bar first.",
+   "implication": "Investigations shows proof on both: a measured jump in accurate early updates, and an incident write-up in which its conclusion was checked against the code. The next question is how often it's wrong. Each customer can see its own rate on the Investigations homepage, and incident.io's buyer's guide tells evaluators to ask vendors for precision and recall; a published figure from its backtests would be the first from any option here.",
    "whyRanked": "It is well supported by the data but familiar, and incident.io already has proof on these objections, so the gain is in how it shows misses.",
    "n": 430,
    "scope": "all",
@@ -6410,7 +6435,7 @@
    ],
    "claimIds": [
     "iio-cl-2x-faster#1",
-    "iio-launch#4",
+    "iio-how-it-feels#4",
     "iio-cl-ga#14",
     "iio-vs-resolve#4"
    ],

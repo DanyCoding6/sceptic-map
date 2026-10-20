@@ -4,7 +4,8 @@ import { z } from "zod";
 import { computeNumbers } from "../lib/numbers";
 import { Claim, ClassifiedFile, Objection, Rating, Stats, Synthesis, Vendor, VENDORS } from "../lib/schema";
 
-// data/synthesis.json + data/overrides.json (optional, hand-written by Dany) -> data/site.json.
+// data/synthesis.json + data/overrides.json (hand corrections, each with a note saying who proposed
+// it and why) -> data/site.json.
 // Overrides may change a coverage rating, a finding's wording, rank or quotes, or an objection's
 // quotes. Numbers in edited text must still be {placeholders}, filled here from synthesis.numbers.
 
@@ -30,11 +31,12 @@ const Overrides = z.object({
         rank: z.number().optional(),
         headline: z.string().optional(),
         short: z.string().optional(),
+        note: z.string().optional(), // a line under the n, e.g. what a hand read of the posts found
         implication: z.string().optional(),
         scope: z.enum(["all", "since_2025"]).optional(),
         quoteIds: z.array(z.string()).length(2).optional(),
         claimIds: z.array(z.string()).optional(), // incident.io claims the edited wording rests on
-        note: z.string().optional(),
+        why: z.string().optional(), // why it was changed; not shown on the site
       }),
     )
     .default([]),
@@ -118,7 +120,8 @@ function main() {
       if (!(key in site.numbers)) problems.push(`unknown placeholder {${key}}`);
       return key in site.numbers ? site.numbers[key].toLocaleString("en-GB") : `{${key}}`;
     });
-  const handTyped = (t: string) => t.replace(/\{[^{}]+\}/g, "").replace(/\b20\d\d\b/g, "").match(/\d/);
+  // Digits allowed outside placeholders: years, and names that contain one ("SOC 2").
+  const handTyped = (t: string) => t.replace(/\{[^{}]+\}/g, "").replace(/\b20\d\d\b/g, "").replace(/\bSOC 2\b/g, "").match(/\d/);
   const quoteFor = (id: string) => {
     const item = site.items.find((i) => i.id === id);
     if (!item?.quote) {
@@ -162,7 +165,7 @@ function main() {
   }
 
   // Coverage tallies change with the corrections above, so recompute every number now.
-  site.numbers = computeNumbers(site.items, site.coverage, { nCollected: site.meta.nCollected, nRelevant: site.meta.nRelevant });
+  site.numbers = computeNumbers(site.items, site.coverage, { nCollected: site.meta.nCollected, nRelevant: site.meta.nRelevant }, readJson("audits.json").rowReads ?? {});
 
   // Re-fill every finding from its template (or its override), so no text keeps a stale number.
   const templates = raw.findingTemplates as Record<string, { headline: string; implication: string }>;
@@ -177,7 +180,7 @@ function main() {
       problems.push(`no finding ${o.id}`);
       continue;
     }
-    for (const field of ["headline", "short", "implication"] as const) {
+    for (const field of ["headline", "short", "implication", "note"] as const) {
       const text = o[field];
       if (text === undefined) continue;
       if (handTyped(text)) problems.push(`${o.id}.${field} has a typed number; use a {placeholder} from synthesis.json "numbers"`);

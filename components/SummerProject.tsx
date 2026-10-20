@@ -29,7 +29,11 @@ const MEASURES = [
 export function SummerProject() {
   const mail = `mailto:${CONFIG.email}?subject=${encodeURIComponent("Sceptic Map: 15 minutes")}`;
   return (
-    <Section id="summer" title="The summer project" intro="Turn this prototype into a tool that tells sales and marketing, every week, what buyers object to and where the proof is missing.">
+    <Section
+      id="summer"
+      title="The summer project"
+      intro="Turn this prototype into a tool that tells sales and marketing, every week, what buyers object to and where the proof is missing. Call tracking counts objections; this adds whether the messaging has proof for each one, and which proof a rep should send."
+    >
       <ol className="space-y-5">
         {PLAN.map((p) => (
           <li key={p.weeks} className="grid gap-x-4 sm:grid-cols-[7rem_1fr]">

@@ -82,12 +82,15 @@
     "corrected": 15
   },
   "postLaunch": {
-    "by": "Claude, acting on five simulated reviews (marketing lead, competitive PMM, AI engineer, hiring lens, editor) on 20 Oct",
-    "ratingsChanged": 2,
-    "reasonsReworded": 21,
+    "by": "Claude, acting on two rounds of simulated reviews (marketing lead, competitive PMM, AI engineer, hiring, editor) on 20 Oct",
+    "ratingsChanged": 5,
+    "reasonsReworded": 25,
     "ratingChanges": [
       "PagerDuty / vendor_lock_in: NOT_YET -> SAID",
-      "Resolve.ai / setup_and_integration_effort: SHOWN -> SAID"
+      "Datadog / alert_noise_unsolved: SHOWN -> SAID",
+      "Resolve.ai / setup_and_integration_effort: SHOWN -> SAID",
+      "DIY / just_an_llm_wrapper: NOT_YET -> NA",
+      "DIY / diy_with_general_agent: SHOWN -> NA"
     ],
     "newQuotesChecked": 3,
     "newQuoteIds": [
@@ -98,5 +101,80 @@
     "candidatesRejected": [
       "hn:49012516 (dead thread; the author was promoting their own blog)"
     ]
+  },
+  "rowReads": {
+    "by": "Claude, reading every post in the two rows the lead finding rests on, after a simulated engineer review said the deskilling row was mixed (20 Oct)",
+    "deskills_or_replaces_engineers": {
+      "skill": [
+        "hn:41587962",
+        "hn:44245190",
+        "hn:46825653",
+        "hn:46838068",
+        "hn:47248184",
+        "hn:47276920",
+        "hn:48044576",
+        "hn:49574444",
+        "hn:49574872",
+        "hn:49579634",
+        "hn:49851589",
+        "hn:49993252",
+        "hn:47533663",
+        "hn:44662746"
+      ],
+      "replace": [
+        "hn:45634856",
+        "hn:47252649",
+        "hn:47890629",
+        "hn:49705742",
+        "hn:45121412",
+        "hn:49467332",
+        "hn:48022668",
+        "hn:44050601",
+        "hn:43285975"
+      ],
+      "notFit": [
+        "hn:43902800",
+        "hn:45043842",
+        "hn:45109894",
+        "hn:46855985",
+        "hn:48150419",
+        "hn:50049303",
+        "hn:44261849",
+        "hn:46839811",
+        "hn:47234272",
+        "hn:46689907"
+      ],
+      "notFitWhy": "general complaints about AI coding or AI-written code, sarcasm about AI post-mortems, and one positive story"
+    },
+    "data_access_and_security": {
+      "fit": [
+        "hn:41327892",
+        "hn:41358144",
+        "hn:41358710",
+        "hn:41358790",
+        "hn:41360025",
+        "hn:41372581",
+        "hn:41587238",
+        "hn:44873642",
+        "hn:46747318",
+        "hn:47337764",
+        "hn:47363650",
+        "hn:47781238",
+        "hn:49186390",
+        "hn:49191341",
+        "hn:49220669",
+        "hn:45109894",
+        "hn:47276920"
+      ],
+      "notFit": [
+        "hn:44383599",
+        "hn:44662746",
+        "hn:46354836",
+        "hn:46838068",
+        "hn:48022668",
+        "hn:49191089"
+      ],
+      "notFitWhy": "about jobs, engineers' familiarity with code, or comparisons with other tools"
+    }
   }
 }

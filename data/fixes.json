@@ -5,10 +5,9 @@
       "olderClaimId": "iio-entered-chat#3",
       "olderDate": "July 2, 2025",
       "currentClaimId": "iio-investigations#17",
-      "currentLabel": "The product page now",
-      "suggest": "Say what the current pages support: it diagnoses on its own, and changes only with your approval.",
+      "currentLabel": "Product page, now",
+      "suggest": "The product page already says “Never takes action without you”. A dated note on the July 2025 post pointing there would settle it.",
       "suggestClaimIds": [
-        "iio-cl-ga#14",
         "iio-investigations#17"
       ]
     },
@@ -17,7 +16,7 @@
       "olderClaimId": "iio-entered-chat#9",
       "olderDate": "July 2, 2025",
       "currentClaimId": "iio-launch-plans#1",
-      "currentLabel": "The launch post (August 5, 2026) lists it among future plans",
+      "currentLabel": "Launch post, 5 August 2026: a future plan",
       "suggest": "Add a dated note to the July 2025 post that links to the launch post.",
       "suggestClaimIds": [
         "iio-launch-plans#1"

@@ -67,7 +67,21 @@ for (const c of base) {
     s.thread === (c.title ?? "");
   if (!same) fail(`item ${c.id} differs from classified.json`);
 }
-const expected = computeNumbers(site.items, site.coverage, { nCollected: classified.meta.nItems, nRelevant: classified.items.filter((i) => i.relevant).length });
+const audits = readJson("audits.json");
+const expected = computeNumbers(site.items, site.coverage, { nCollected: classified.meta.nItems, nRelevant: classified.items.filter((i) => i.relevant).length }, audits.rowReads ?? {});
+// The DIY tags on site items must be the pipeline's (synthesis.json), not edited afterwards.
+const synthItems = new Map((readJson("synthesis.json").items as { id: string; usesGeneralAI: boolean; productUnneeded: boolean }[]).map((i) => [i.id, i]));
+for (const s of site.items) {
+  const t = synthItems.get(s.id);
+  if (!t || t.usesGeneralAI !== s.usesGeneralAI || t.productUnneeded !== s.productUnneeded) fail(`item ${s.id}: DIY tags differ from synthesis.json`);
+}
+// A row read must cover exactly that row's posts, each once.
+for (const [o, groups] of Object.entries((audits.rowReads ?? {}) as Record<string, Record<string, unknown>>)) {
+  if (!OBJECTIONS.includes(o as never)) continue;
+  const ids = Object.values(groups).filter(Array.isArray).flat() as string[];
+  const row = base.filter((i) => i.objections.includes(o as never)).map((i) => i.id);
+  if (ids.length !== new Set(ids).size || ids.length !== row.length || row.some((id) => !ids.includes(id))) fail(`row read for ${o} doesn't cover that row's ${row.length} posts exactly`);
+}
 for (const k of new Set([...Object.keys(expected), ...Object.keys(site.numbers)])) {
   if (site.numbers[k] !== expected[k]) fail(`number ${k}: site says ${site.numbers[k]}, data gives ${expected[k]}`);
 }
@@ -88,18 +102,38 @@ const statsCheck: [string, number, number][] = [
   ["costUsd", stats.costUsd, Number((readJson("cost.json").runs as { costUsd: number }[]).reduce((a, r) => a + r.costUsd, 0).toFixed(2))],
 ];
 for (const [k, shown, actual] of statsCheck) if (shown !== actual) fail(`stats.${k}: ${shown} vs ${actual}`);
+// Agreement figures recompute from their per-item labels; audit figures match audits.json.
+{
+  const ag = readJson("agreement.json");
+  const jac = (a: string[], b: string[]) => [...new Set(a)].filter((x) => b.includes(x)).length / new Set([...a, ...b]).size;
+  const pairs = (ag.perItem as { haiku: { stance: string; objections: string[] }; reference: { stance: string; objections: string[] } }[]).filter((p) => p.haiku.objections.length || p.reference.objections.length);
+  const mean = Number((pairs.reduce((s, p) => s + jac(p.haiku.objections, p.reference.objections), 0) / pairs.length).toFixed(2));
+  const a = stats.agreement;
+  if (a.objectionJaccard !== mean || a.objectionLabelled !== pairs.length) fail(`agreement: stats say ${a.objectionJaccard} over ${a.objectionLabelled}, per-item labels give ${mean} over ${pairs.length}`);
+  if (a.stanceAgree !== (ag.perItem as { stanceMatch: boolean }[]).filter((p) => p.stanceMatch).length) fail("agreement: stance count doesn't recompute");
+  const au = stats.audits;
+  const checks: [string, number, number][] = [
+    ["quotesReviewed", au.quotesReviewed, audits.quoteReview.n],
+    ["quotesFailed", au.quotesFailed, audits.quoteReview.problems],
+    ["ratingsCorrected", au.ratingsCorrected, audits.ratingReview.corrected],
+    ["keptOnTopic", au.keptOnTopic, audits.relevanceKept.onTopic],
+    ["postLaunchRatingsChanged", au.postLaunchRatingsChanged, audits.postLaunch.ratingsChanged],
+  ];
+  for (const [k, shown, actual] of checks) if (shown !== actual) fail(`audits.${k}: stats say ${shown}, audits.json ${actual}`);
+}
 
 // 4. Findings: the filled text matches its template, each has n and two real quotes.
 const templates = readJson("synthesis.json").findingTemplates as Record<string, { headline: string; implication: string }>;
 const overrides = existsSync(path.join(DATA, "overrides.json")) ? readJson("overrides.json") : { findings: [] };
 const fill = (t: string) => t.replace(/\{([^{}]+)\}/g, (_, k: string) => (k in site.numbers ? site.numbers[k].toLocaleString("en-GB") : `{${k}}`));
 for (const f of site.findings) {
-  const o = (overrides.findings as { id: string; headline?: string; short?: string; implication?: string }[]).find((x) => x.id === f.id);
+  const o = (overrides.findings as { id: string; headline?: string; short?: string; implication?: string; note?: string }[]).find((x) => x.id === f.id);
   const headline = fill(o?.headline ?? templates[f.id].headline);
   const implication = fill(o?.implication ?? templates[f.id].implication.replace(/^What this means[^:]*:\s*/i, ""));
   if (headline !== f.headline) fail(`finding ${f.id}: headline doesn't match its template`);
   if (implication !== f.implication) fail(`finding ${f.id}: implication doesn't match its template`);
   if (o?.short && fill(o.short) !== f.short) fail(`finding ${f.id}: short headline doesn't match its template`);
+  if (o?.note && fill(o.note) !== f.note) fail(`finding ${f.id}: note doesn't match its template`);
   if (f.n !== (f.scope === "since_2025" ? expected.base_since_2025 : base.length)) fail(`finding ${f.id}: n ${f.n} doesn't match its scope (${f.scope})`);
   if (f.quotes.length !== 2) fail(`finding ${f.id}: needs 2 quotes`);
   for (const id of f.claimIds) if (!site.claims.some((c) => c.id === id && c.vendor === "incident.io")) fail(`finding ${f.id}: claim ${id} is not an incident.io claim`);
@@ -109,12 +143,13 @@ for (const f of site.findings) {
 // changes so a phrase stops being true, the build fails until the text is rewritten.
 const cell = (v: string, o: string) => site.coverage.find((c) => c.vendor === v && c.objection === o)?.rating;
 const worksObjections = ["not_capable_yet", "wrong_or_hallucinated_cause", "cant_verify_reasoning"];
-const beyondWorks = OBJECTIONS.filter((o) => o !== "other" && !worksObjections.includes(o)).sort((a, b) => expected[`count:${b}`] - expected[`count:${a}`]);
+const rated = OBJECTIONS.filter((o) => o !== "other").sort((a, b) => expected[`count:${b}`] - expected[`count:${a}`]);
 const phrases: [string, boolean][] = [
-  ["f2: deskilling and production access are the two biggest objections beyond whether it works", beyondWorks[0] === "deskills_or_replaces_engineers" && beyondWorks[1] === "data_access_and_security" && expected[`count:${beyondWorks[1]}`] > expected[`count:${beyondWorks[2]}`]],
+  ["f2: deskilling and production access are common objections (both in the five most raised)", rated.slice(0, 5).includes("deskills_or_replaces_engineers") && rated.slice(0, 5).includes("data_access_and_security")],
   ["f2: none of the options shows proof on either", expected["shown:deskills_or_replaces_engineers"] === 0 && expected["shown:data_access_and_security"] === 0],
   ["f2/f3: Investigations shows proof on whether it works", worksObjections.every((o) => cell("incident.io", o) === "SHOWN")],
-  ["f1: only a minority of general-AI users say a product is unnecessary", expected["diy:unneeded"] * 2 < expected["diy:uses"]],
+  ["f2: incident.io names the only outside audit (SOC 2) among the claims", site.claims.filter((c) => /SOC ?2/.test(c.quote)).every((c) => c.vendor === "incident.io")],
+  ["f1: only a minority of general-AI users say a product is unnecessary", expected["diy:uses:unneeded"] * 2 < expected["diy:uses"]],
   ["map: every competitor column rests on the same number of pages", new Set(["PagerDuty", "Rootly", "Datadog", "Resolve.ai"].map((v) => stats.pagesByVendor[v])).size === 1],
 ];
 for (const [what, ok] of phrases) if (!ok) fail(`phrase no longer true: ${what}`);
@@ -150,7 +185,7 @@ for (const f of fixes.items) {
 // 7. Banned words in everything we wrote (vendor claims are their words, so they're excluded).
 const BANNED = /\b(ai-powered|revolutionary|game-changing|leverag(e|es|ed|ing)|unlock(s|ed|ing)?|seamless(ly)?|cutting-edge)\b|in today's fast-paced world/i;
 const ours: [string, string][] = [
-  ...site.findings.flatMap((f) => [[`finding ${f.id}`, `${f.headline} ${f.short ?? ""} ${f.implication}`]] as [string, string][]),
+  ...site.findings.flatMap((f) => [[`finding ${f.id}`, `${f.headline} ${f.short ?? ""} ${f.implication} ${f.note ?? ""}`]] as [string, string][]),
   ...site.coverage.map((c) => [`reason ${c.vendor}/${c.objection}`, c.reason] as [string, string]),
   ...card.rows.map((r) => [`battle card ${r.quoteId}`, `${r.respond} ${r.ask} ${r.sendLabel}`] as [string, string]),
   ["battle card avoid", card.avoid.join(" ")],

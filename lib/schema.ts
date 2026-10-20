@@ -99,7 +99,9 @@ export const VENDORS = ["incident.io", "PagerDuty", "Rootly", "Datadog", "Resolv
 export const Vendor = z.enum(VENDORS);
 export type Vendor = z.infer<typeof Vendor>;
 
-export const Rating = z.enum(["SHOWN", "SAID", "NOT_YET"]);
+// NA: the objection doesn't apply to that option (only set by hand, e.g. "I could do this myself" for the DIY route).
+export const Rating = z.enum(["SHOWN", "SAID", "NOT_YET", "NA"]);
+export const ModelRating = z.enum(["SHOWN", "SAID", "NOT_YET"]); // what the rating model may answer
 export type Rating = z.infer<typeof Rating>;
 
 export const QuoteRef = z.object({
@@ -151,6 +153,7 @@ export const Finding = z.object({
   rank: z.number(),
   headline: z.string(),
   short: z.string().optional(), // a shorter one-sentence version for the hero, set in overrides.json
+  note: z.string().optional(), // a line shown under the n (set in overrides.json)
   implication: z.string(),
   whyRanked: z.string(),
   n: z.number(),
@@ -225,7 +228,7 @@ export const BattleCard = z.object({
     )
     .min(1)
     .max(3),
-  avoid: z.array(z.string()).max(3).default([]), // things a rep shouldn't say, each grounded in the cited pages
+  avoid: z.array(z.string()).max(5).default([]), // things a rep shouldn't say, each grounded in the cited pages
 });
 export type BattleCard = z.infer<typeof BattleCard>;
 

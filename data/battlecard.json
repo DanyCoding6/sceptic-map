@@ -15,11 +15,11 @@
     },
     {
       "quoteId": "hn:44772821",
-      "respond": "Don't compete with their editor; join it. incident.io's plugin gives the coding agent they already use its skills, and Nexus can be queried from Claude or Cursor over MCP. What the editor doesn't do is start on its own: Investigations starts when an incident is declared, and can hold a page until it has a first hypothesis.",
+      "respond": "Work with their setup: incident.io's plugin gives the coding agent they already use its skills, and Nexus answers questions from Claude or Cursor over MCP. What a home-made setup has to build and keep up is the context: Nexus keeps a model of their systems, and Investigations can hold a page until it has a first hypothesis.",
       "respondClaimIds": [
         "iio-cl-plugin#2",
         "iio-nexus#5",
-        "iio-ai-sre#1",
+        "iio-cl-ga#6",
         "iio-cl-ga#18"
       ],
       "ask": "Who opens Claude Code at 3am, and how long after the page does it have the logs it needs?",
@@ -28,11 +28,12 @@
     },
     {
       "quoteId": "hn:49186977",
-      "respond": "Partly, and say so: anyone can call the same models. incident.io's case is the work around the model, which took it two years. The measured result: a median of 3 minutes from an incident opening to an accurate message in the channel, down from 6.7.",
+      "respond": "Partly, and say so: anyone can call the same models. incident.io's case is the work around the model, which took it two years. The measured result: a median of 3 minutes from an incident opening to an accurate message in the channel, down from 6.7, with messages graded afterwards to check they still meet its bar.",
       "respondClaimIds": [
         "iio-building#21",
         "iio-building#2",
-        "iio-cl-2x-faster#1"
+        "iio-cl-2x-faster#1",
+        "iio-cl-2x-faster#10"
       ],
       "ask": "How long does your team take today to get from a page to a first theory they trust?",
       "sendClaimId": "iio-cl-2x-faster#1",
@@ -41,7 +42,9 @@
   ],
   "avoid": [
     "Arguing that the model is smarter. incident.io's own case is the work around the model.",
-    "Saying it fixes things on its own. The current product page says its only change is a pull request you review; a July 2025 post said more.",
+    "Saying it fixes things on its own. The product page says its only change is a pull request you review.",
+    "Calling it read-only. The promise is about changes, not about what it can read.",
+    "Claiming it beats a bare model. Nothing public compares the two yet.",
     "Knocking their setup. incident.io ships a plugin for it."
   ]
 }

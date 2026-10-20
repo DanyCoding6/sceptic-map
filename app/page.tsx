@@ -1,5 +1,5 @@
 import { About } from "@/components/About";
-import { AtAGlance, MIN_ROW_COUNT } from "@/components/AtAGlance";
+import { MIN_ROW_COUNT } from "@/components/AtAGlance";
 import { BattleCard } from "@/components/BattleCard";
 import { Findings } from "@/components/Findings";
 import { Footer } from "@/components/Footer";
@@ -69,18 +69,24 @@ export default function Home() {
           id="map"
           title="The Sceptic Map"
           wide
-          intro={
-            <>
-              <span className="font-medium text-foreground">Shown with proof</span> means a measured result, a named customer or a real incident.{" "}
-              <span className="font-medium text-foreground">Said, not shown</span> means asserted without proof.{" "}
-              <span className="font-medium text-foreground">Not yet addressed</span> means the pages checked don&apos;t answer it.
-            </>
-          }
+          intro="Every objection, most common first, with what engineers say and the reason behind each rating. Filter by what a post mentions."
         >
-          <AtAGlance />
-          <h3 className="mt-12 text-lg font-semibold">Every objection, with quotes</h3>
-          <p className="mt-1 mb-4 text-[15px] text-ink-2">Most common first. Filter by what a post mentions, or open a row for what engineers say and each rating&apos;s reason.</p>
-          <ScepticMap {...mapProps()} />
+          <details className="group rounded-lg border border-line p-4 sm:p-5">
+            <summary className="cursor-pointer list-none">
+              <span className="flex items-baseline justify-between gap-4">
+                <span className="font-semibold">Open the full map</span>
+                <span aria-hidden="true" className="text-sm text-accent-ink group-open:hidden">
+                  Show
+                </span>
+                <span aria-hidden="true" className="hidden text-sm text-accent-ink group-open:inline">
+                  Hide
+                </span>
+              </span>
+            </summary>
+            <div className="mt-4">
+              <ScepticMap {...mapProps()} />
+            </div>
+          </details>
           <MethodsBox />
         </Section>
         <BattleCard />

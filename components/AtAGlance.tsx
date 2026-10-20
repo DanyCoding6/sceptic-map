@@ -20,7 +20,8 @@ export function AtAGlance() {
   const competitorPages = stats.pagesByVendor[COMPETITORS[0]];
   const rows = site.objections.filter((o) => o.objection !== "other" && o.count >= MIN_ROW_COUNT);
   const rating = (v: string, o: string) => site.coverage.find((c) => c.vendor === v && c.objection === o)!.rating as Rating;
-  const tally = (v: string, r: Rating) => site.numbers[`${r.toLowerCase()}:vendor:${v}`];
+  // Counted over the rows shown, so the line under the grid matches the column above it.
+  const tally = (v: string, r: Rating) => rows.filter((o) => rating(v, o.objection) === r).length;
   return (
     <div>
       <table className="w-full table-fixed border-collapse text-sm">
@@ -60,16 +61,20 @@ export function AtAGlance() {
         </tbody>
       </table>
       <ul className="mt-3 flex flex-wrap gap-x-5 gap-y-1 text-xs text-ink-2">
-        {(["SHOWN", "SAID", "NOT_YET"] as const).map((r) => (
+        {(["SHOWN", "SAID", "NOT_YET", "NA"] as const).map((r) => (
           <li key={r} className="inline-flex items-center gap-1.5">
             <Icon rating={r} /> {RATING_TEXT[r]}
           </li>
         ))}
       </ul>
-      <p className="mt-3 text-xs leading-relaxed text-muted">
-        incident.io: {tally("incident.io", "SHOWN")} shown, {tally("incident.io", "SAID")} said, {tally("incident.io", "NOT_YET")} not yet. Its column rests on{" "}
+      <p className="mt-3 text-xs leading-relaxed text-ink-2">
+        Shown with proof means a measured result, a named customer or a real incident; said, not shown means asserted without proof.
+      </p>
+      <p className="mt-2 text-xs leading-relaxed text-muted">
+        incident.io, on these {rows.length} rows: {tally("incident.io", "SHOWN")} shown, {tally("incident.io", "SAID")} said, {tally("incident.io", "NOT_YET")} not yet. Its column rests on{" "}
         {stats.pagesByVendor["incident.io"]} of its pages; each competitor&apos;s on {competitorPages} AI SRE product page{competitorPages === 1 ? "" : "s"}; the DIY
-        column on {stats.pagesByVendor.DIY} pages (two engineers&apos; write-ups and Datadog&apos;s blog on its MCP server).
+        column on {stats.pagesByVendor.DIY} pages (two engineers&apos; write-ups and Datadog&apos;s blog on its MCP server), so its proof is single cases, not a product&apos;s
+        record.
       </p>
     </div>
   );
