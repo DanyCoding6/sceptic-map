@@ -80,5 +80,23 @@
     "sample": "all 72 rating reasons, checked against their cited claims and each vendor's other claims",
     "n": 72,
     "corrected": 15
+  },
+  "postLaunch": {
+    "by": "Claude, acting on five simulated reviews (marketing lead, competitive PMM, AI engineer, hiring lens, editor) on 20 Oct",
+    "ratingsChanged": 2,
+    "reasonsReworded": 21,
+    "ratingChanges": [
+      "PagerDuty / vendor_lock_in: NOT_YET -> SAID",
+      "Resolve.ai / setup_and_integration_effort: SHOWN -> SAID"
+    ],
+    "newQuotesChecked": 3,
+    "newQuoteIds": [
+      "hn:50009404",
+      "hn:44772821",
+      "hn:49186977"
+    ],
+    "candidatesRejected": [
+      "hn:49012516 (dead thread; the author was promoting their own blog)"
+    ]
   }
 }

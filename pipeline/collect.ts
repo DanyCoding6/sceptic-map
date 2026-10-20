@@ -215,13 +215,8 @@ async function collectHn(): Promise<void> {
   console.log(`\nHN: ${out.length} unique items written to data/raw/hn.json`);
 }
 
-// ---------- Reddit ----------
-
-// Reddit's public JSON returned 403 to this container on the first probe. Dany chose to skip
-// Reddit rather than register an OAuth app (19 Oct 2026), so the data is Hacker News only.
-function collectReddit(): void {
-  console.log("Reddit: skipped (403 on the first probe; Dany chose to skip rather than use OAuth).");
-}
+// Reddit isn't collected: its public JSON returned 403 on the first probe, and Dany chose to skip
+// it rather than register an OAuth app (19 Oct 2026). The data is Hacker News only.
 
 // ---------- Vendor pages ----------
 
@@ -280,7 +275,7 @@ function readRaw(file: string): RawItem[] {
 }
 
 function report(): void {
-  const all = [...readRaw("hn.json"), ...readRaw("reddit.json"), ...readRaw("vendors.json")];
+  const all = [...readRaw("hn.json"), ...readRaw("vendors.json")];
 
   // Dedupe by URL, then by normalised text hash (keeps the earliest copy of reposted text).
   all.sort((a, b) => a.date.localeCompare(b.date));
@@ -315,7 +310,7 @@ function report(): void {
   console.log(`\nItems after dedupe: ${kept.length} (removed ${urlDupes} URL duplicates, ${textDupes} repeated texts)`);
   console.log(`Date range: ${discussion[0]?.date.slice(0, 10)} to ${discussion.at(-1)?.date.slice(0, 10)}\n`);
 
-  for (const platform of ["hn", "reddit"] as const) {
+  for (const platform of ["hn"] as const) {
     const items = discussion.filter((i) => i.platform === platform);
     if (items.length === 0) {
       console.log(`${platform.toUpperCase()}: no items\n`);
@@ -347,7 +342,6 @@ async function main() {
   const started = Date.now();
   try {
     if (step === "hn" || step === "all") await collectHn();
-    if (step === "reddit" || step === "all") collectReddit();
     if (step === "vendors" || step === "all") await collectVendors();
     report();
   } catch (err) {

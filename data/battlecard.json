@@ -1,40 +1,47 @@
 {
-  "objection": "not_capable_yet",
+  "objection": "diy_with_general_agent",
   "rows": [
     {
-      "quoteId": "hn:43037480",
-      "respond": "Agree: you shouldn't have to trust it blind. Within seconds of an incident being declared, Investigations posts a first pass to the channel, with every hypothesis linked to its sources. Your engineers make the final call, and the product page says the only change it can make is a pull request they review and merge.",
+      "quoteId": "hn:50009404",
+      "respond": "Agree that the model isn't the difference. Ask how they'd know their own setup is right: incident.io says teams that build their own rarely measure accuracy, while it replays frozen past incidents and grades every hypothesis against what responders actually did.",
       "respondClaimIds": [
-        "iio-launch#1",
-        "iio-launch#4",
-        "iio-entered-chat#7",
-        "iio-investigations#17"
+        "iio-building#4",
+        "iio-building#6",
+        "iio-building#5"
       ],
-      "ask": "When someone is paged in the middle of the night, how long does it take them to get from the alert to a first theory they trust?",
-      "sendClaimId": "iio-how-it-feels#2",
-      "sendLabel": "A real incident, start to finish"
-    },
-    {
-      "quoteId": "hn:47354938",
-      "respond": "Don't argue about models in general; point to real incidents. incident.io publishes how fast an accurate update now reaches the channel, and turbopuffer's CTO compares it with a human doing the same search.",
-      "respondClaimIds": [
-        "iio-cl-2x-faster#1",
-        "iio-investigations#3"
-      ],
-      "ask": "Which of your past incidents would you want it tested on before you'd trust it?",
+      "ask": "The last time your agent named the wrong cause, how did you find out, and how long did it take?",
       "sendClaimId": "iio-building#6",
       "sendLabel": "How they test it on frozen past incidents"
     },
     {
-      "quoteId": "hn:48044576",
-      "respond": "Ask what made it costly, then show the safeguard. Every hypothesis links to its sources and lists the theories it ruled out, so the responder can challenge it rather than wait on it. incident.io also grades every hypothesis against what responders did in the real incident.",
+      "quoteId": "hn:44772821",
+      "respond": "Don't compete with their editor; join it. incident.io's plugin gives the coding agent they already use its skills, and Nexus can be queried from Claude or Cursor over MCP. What the editor doesn't do is start on its own: Investigations starts when an incident is declared, and can hold a page until it has a first hypothesis.",
       "respondClaimIds": [
-        "iio-launch#4",
-        "iio-building#5"
+        "iio-cl-plugin#2",
+        "iio-nexus#5",
+        "iio-ai-sre#1",
+        "iio-cl-ga#18"
       ],
-      "ask": "When a tool got it wrong, what cost you more: the wrong answer, or not being able to see why?",
-      "sendClaimId": "iio-launch#4",
-      "sendLabel": "The reasoning, sources and ruled-out theories"
+      "ask": "Who opens Claude Code at 3am, and how long after the page does it have the logs it needs?",
+      "sendClaimId": "iio-cl-plugin#2",
+      "sendLabel": "The plugin for the agent they already use"
+    },
+    {
+      "quoteId": "hn:49186977",
+      "respond": "Partly, and say so: anyone can call the same models. incident.io's case is the work around the model, which took it two years. The measured result: a median of 3 minutes from an incident opening to an accurate message in the channel, down from 6.7.",
+      "respondClaimIds": [
+        "iio-building#21",
+        "iio-building#2",
+        "iio-cl-2x-faster#1"
+      ],
+      "ask": "How long does your team take today to get from a page to a first theory they trust?",
+      "sendClaimId": "iio-cl-2x-faster#1",
+      "sendLabel": "The measured speed-up"
     }
+  ],
+  "avoid": [
+    "Arguing that the model is smarter. incident.io's own case is the work around the model.",
+    "Saying it fixes things on its own. The current product page says its only change is a pull request you review; a July 2025 post said more.",
+    "Knocking their setup. incident.io ships a plugin for it."
   ]
 }

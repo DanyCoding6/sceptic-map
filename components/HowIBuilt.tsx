@@ -3,32 +3,42 @@ import { CONFIG } from "@/lib/config";
 import { site, stats } from "@/lib/data";
 import { formatNumber } from "@/lib/format";
 
+// Calls Dany made, as recorded in notes/build-log.md and the project's working notes.
+const DECISIONS = [
+  "Wrote the brief: the idea, the three ratings, and the rules (never invent a quote or a number, no usernames, respect robots.txt, say what the data can't tell you).",
+  "Approved the vendor pages before any were fetched.",
+  "Left Reddit out when it refused automated access, rather than set up its API, and said so in Methods.",
+  "Added “AI can't do this job yet” as an objection when it turned out to be the biggest thing hiding in “other”.",
+  "Added a second, stronger model that can only remove items, after an audit showed the first filter was too lenient.",
+  "Skipped hand-labelling to save time. It's the first thing I'd change.",
+];
+
 // Three entries from notes/build-log.md, shortened. They happened as described.
 const LESSONS = [
   {
     title: "The first relevance filter let general AI-coding talk through",
     what: "Many items the model called relevant were about coding agents, not incidents. They would have inflated objections such as “wrong cause”.",
-    caught: "Reading random samples from both the kept and the rejected piles.",
-    changed: "A sharper test in the prompt, more effort from the model, and a second, stronger model that can only remove items.",
+    caught: "Claude reading random samples from both the kept and the rejected piles.",
+    changed: "A sharper test in the prompt, more effort from the model, and a second model that can only remove items.",
   },
   {
     title: "Every number checked out, but the sentences didn't",
-    what: "The first draft findings passed every automated check and still overstated. One called a habit common among sceptics when most who had it were positive; one added counts that overlapped; one claimed a shift from a single half-year.",
-    caught: "Recomputing the number behind every sentence by hand.",
-    changed: "Rules on overlaps, small counts and subgroups, and numbers written as placeholders that code fills from the data.",
+    what: "The first draft findings passed every automated check and still overstated. One called a habit common among sceptics when most who had it were positive; one added counts that overlapped.",
+    caught: "Recomputing the number behind every sentence.",
+    changed: "Rules on overlaps, small counts and subgroups, numbers written as placeholders that code fills, and checks that fail the build if a phrase like “only” stops being true.",
   },
   {
-    title: "Mock-ups counted as proof",
-    what: "Sample screens on vendor pages were counted as demos, which gave one competitor three “shown with proof” ratings from a single made-up example.",
-    caught: "Reading every claim behind every “shown with proof” rating.",
-    changed: "Real incidents and illustrations are now separate categories, and illustrations don't count as proof.",
+    title: "The agreement score flattered the labels",
+    what: `It counted two empty label sets as a perfect match, which made objection agreement look far better than it was. Where either model named an objection, it is ${stats.agreement.objectionJaccard}.`,
+    caught: "A simulated review after launch: Claude reading the page as an incident.io engineer would.",
+    changed: "The score now counts only items with an objection, and the build recomputes every number on the page, not just some of them.",
   },
 ];
 
 const DIFFERENTLY = [
-  "Label a small set by hand before writing any prompts. The agreement figure here is one model against another; a set labelled by a working SRE would make it mean more.",
-  "Record when each vendor page was published. One rating nearly described Investigations using a post written before it launched.",
-  "Ask a few SREs to check the objection list first. The most common objection, “AI can't do this job yet”, wasn't on my starting list.",
+  "Label a sample by hand before writing any prompts. Agreement between two models says little; a set labelled by a working SRE would say more.",
+  "Rate competitors on as many pages as incident.io, not one product page each.",
+  "Record when each vendor page was published. Two older incident.io lines nearly passed as current.",
   "Go beyond Hacker News: it is one community, with few buyers in it.",
 ];
 
@@ -41,7 +51,11 @@ export function HowIBuilt() {
     { name: "Site", detail: "A static page; no live API calls" },
   ];
   return (
-    <Section id="build" title="How I built it" intro="Code computes every number; the models only choose and write words, and code checks what they write.">
+    <Section
+      id="build"
+      title="How I built it"
+      intro="I wrote the brief and made the calls; Claude Code wrote the code, ran the pipeline and did most of the checking. Code computes every number; the models only choose and write words, and code checks what they write."
+    >
       <ol className="flex flex-col gap-2 sm:flex-row sm:items-stretch" aria-label="Pipeline, in order">
         {steps.map((s, i) => (
           <li key={s.name} className="flex flex-1 flex-col gap-2 sm:flex-row sm:items-center">
@@ -63,6 +77,13 @@ export function HowIBuilt() {
         Total API cost: <span className="font-semibold">${stats.costUsd.toFixed(2)}</span>, including runs I threw away while tuning.
       </p>
 
+      <h3 className="mt-10 text-lg font-semibold">Calls I made</h3>
+      <ul className="mt-3 list-disc space-y-2 pl-5 text-[15px] leading-relaxed">
+        {DECISIONS.map((d) => (
+          <li key={d}>{d}</li>
+        ))}
+      </ul>
+
       <h3 className="mt-10 text-lg font-semibold">Three things that went wrong</h3>
       <div className="mt-4 space-y-6">
         {LESSONS.map((l) => (
@@ -70,10 +91,10 @@ export function HowIBuilt() {
             <p className="font-semibold">{l.title}</p>
             <p className="mt-1 text-[15px] leading-relaxed">{l.what}</p>
             <p className="mt-1 text-sm leading-relaxed text-ink-2">
-              <span className="font-medium">How I caught it:</span> {l.caught}
+              <span className="font-medium">Caught by:</span> {l.caught}
             </p>
             <p className="text-sm leading-relaxed text-ink-2">
-              <span className="font-medium">What I changed:</span> {l.changed}
+              <span className="font-medium">Changed:</span> {l.changed}
             </p>
           </div>
         ))}
@@ -88,15 +109,20 @@ export function HowIBuilt() {
         ) : (
           "JuniorTrader"
         )}{" "}
-        went live and got better through rounds of feedback from the people using it.
+        went live and got better through rounds of feedback from the people using it. This page has had one round so far: five simulated reviews after launch (Claude reading it
+        as a marketing lead, a competitive product marketer, an engineer, a hiring manager and an editor) led to the fixes above. Real feedback is next.
       </p>
 
-      <h3 className="mt-10 text-lg font-semibold">What I&apos;d do differently</h3>
-      <ul className="mt-3 list-disc space-y-2 pl-5 text-[15px] leading-relaxed">
-        {DIFFERENTLY.map((d) => (
-          <li key={d}>{d}</li>
-        ))}
-      </ul>
+      <details className="group mt-10">
+        <summary className="cursor-pointer list-none text-lg font-semibold">
+          What I&apos;d do differently <span className="text-sm font-normal text-accent-ink group-open:hidden">Show</span>
+        </summary>
+        <ul className="mt-3 list-disc space-y-2 pl-5 text-[15px] leading-relaxed">
+          {DIFFERENTLY.map((d) => (
+            <li key={d}>{d}</li>
+          ))}
+        </ul>
+      </details>
     </Section>
   );
 }

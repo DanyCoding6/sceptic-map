@@ -154,6 +154,8 @@ export const Finding = z.object({
   implication: z.string(),
   whyRanked: z.string(),
   n: z.number(),
+  // The items a finding counts: all of them, or only those since 1 Jan 2025.
+  scope: z.enum(["all", "since_2025"]).default("all"),
   quotes: z.array(QuoteRef).length(2),
   claimIds: z.array(z.string()),
   overridden: z.boolean().optional(),
@@ -170,6 +172,9 @@ export const SiteItem = z.object({
   vendors: z.array(z.string()), // normalised names
   buyer_signal: z.union([z.boolean(), z.literal("unknown")]),
   usesGeneralAI: z.boolean(), // describes using or recommending a general AI tool for incident work
+  productUnneeded: z.boolean(), // argues a dedicated product is unnecessary (same tagger as usesGeneralAI)
+  kind: z.enum(["story", "comment"]),
+  thread: z.string(), // the Hacker News story title the item sits under
   quote: z.string().nullable(),
 });
 export type SiteItem = z.infer<typeof SiteItem>;
@@ -220,6 +225,7 @@ export const BattleCard = z.object({
     )
     .min(1)
     .max(3),
+  avoid: z.array(z.string()).max(3).default([]), // things a rep shouldn't say, each grounded in the cited pages
 });
 export type BattleCard = z.infer<typeof BattleCard>;
 
@@ -237,7 +243,19 @@ export const Stats = z.object({
   ratings: z.number(),
   buyerSignal: z.number(),
   costUsd: z.number(),
-  agreement: z.object({ method: z.string(), n: z.number(), stanceAgree: z.number(), kappa: z.number(), objectionJaccard: z.number() }),
+  nComments: z.number(),
+  nStories: z.number(),
+  pagesByVendor: z.record(z.string(), z.number()),
+  agreement: z.object({
+    method: z.string(),
+    n: z.number(),
+    stanceAgree: z.number(),
+    kappa: z.number(),
+    objectionJaccard: z.number(), // only over items where either side named an objection
+    objectionLabelled: z.number(),
+    objectionExact: z.number(),
+    vendorAuthored: z.number(),
+  }),
   audits: z.object({
     by: z.string(),
     keptN: z.number(),
@@ -250,6 +268,24 @@ export const Stats = z.object({
     quotesFailed: z.number(),
     ratingsReviewed: z.number(),
     ratingsCorrected: z.number(),
+    postLaunchRatingsChanged: z.number(),
+    postLaunchReasonsReworded: z.number(),
+    postLaunchQuotesChecked: z.number(),
   }),
 });
 export type Stats = z.infer<typeof Stats>;
+
+// Older incident.io lines that promise more than the current pages (data/fixes.json, hand-written).
+export const Fixes = z.object({
+  items: z.array(
+    z.object({
+      topic: z.string(),
+      olderClaimId: z.string(),
+      olderDate: z.string(), // as printed on the page; verify.ts checks it appears there
+      currentClaimId: z.string(),
+      currentLabel: z.string(),
+      suggest: z.string(),
+      suggestClaimIds: z.array(z.string()),
+    }),
+  ),
+});

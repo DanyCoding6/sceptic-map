@@ -46,11 +46,20 @@
   "n_relevant": 686,
   "n_vendor": 256,
   "n_base": 430,
+  "n_comments": 321,
+  "n_stories": 109,
   "vendors_rated": 6,
   "diy:uses": 73,
   "diy:unneeded": 13,
   "diy:objection": 12,
   "diy:mentions": 72,
+  "named:any_vendor": 31,
+  "base_since_2025": 303,
+  "named:incident.io": 4,
+  "named:PagerDuty": 12,
+  "named:Rootly": 3,
+  "named:Datadog": 13,
+  "named:Resolve.ai": 4,
   "base:2024-H1": 13,
   "diy:uses:2024-H1": 1,
   "base:2024-H2": 114,
@@ -63,8 +72,14 @@
   "diy:uses:2026-H1": 26,
   "base:2026-H2": 80,
   "diy:uses:2026-H2": 22,
+  "diy:uses:sceptical": 9,
+  "diy:uses:positive": 49,
+  "diy:uses:mixed": 8,
+  "diy:uses:neutral": 7,
   "count:not_capable_yet": 56,
   "sceptical:not_capable_yet": 46,
+  "threads:not_capable_yet": 34,
+  "count_since_2025:not_capable_yet": 35,
   "count:not_capable_yet:2024-H1": 0,
   "count:not_capable_yet:2024-H2": 21,
   "count:not_capable_yet:2025-H1": 4,
@@ -73,6 +88,8 @@
   "count:not_capable_yet:2026-H2": 4,
   "count:wrong_or_hallucinated_cause": 35,
   "sceptical:wrong_or_hallucinated_cause": 32,
+  "threads:wrong_or_hallucinated_cause": 21,
+  "count_since_2025:wrong_or_hallucinated_cause": 18,
   "count:wrong_or_hallucinated_cause:2024-H1": 0,
   "count:wrong_or_hallucinated_cause:2024-H2": 17,
   "count:wrong_or_hallucinated_cause:2025-H1": 2,
@@ -81,6 +98,8 @@
   "count:wrong_or_hallucinated_cause:2026-H2": 7,
   "count:deskills_or_replaces_engineers": 33,
   "sceptical:deskills_or_replaces_engineers": 26,
+  "threads:deskills_or_replaces_engineers": 30,
+  "count_since_2025:deskills_or_replaces_engineers": 32,
   "count:deskills_or_replaces_engineers:2024-H1": 0,
   "count:deskills_or_replaces_engineers:2024-H2": 1,
   "count:deskills_or_replaces_engineers:2025-H1": 5,
@@ -89,6 +108,8 @@
   "count:deskills_or_replaces_engineers:2026-H2": 8,
   "count:other": 32,
   "sceptical:other": 25,
+  "threads:other": 19,
+  "count_since_2025:other": 22,
   "count:other:2024-H1": 0,
   "count:other:2024-H2": 10,
   "count:other:2025-H1": 2,
@@ -97,6 +118,8 @@
   "count:other:2026-H2": 3,
   "count:data_access_and_security": 23,
   "sceptical:data_access_and_security": 18,
+  "threads:data_access_and_security": 16,
+  "count_since_2025:data_access_and_security": 16,
   "count:data_access_and_security:2024-H1": 0,
   "count:data_access_and_security:2024-H2": 7,
   "count:data_access_and_security:2025-H1": 1,
@@ -105,6 +128,8 @@
   "count:data_access_and_security:2026-H2": 4,
   "count:cant_verify_reasoning": 20,
   "sceptical:cant_verify_reasoning": 18,
+  "threads:cant_verify_reasoning": 16,
+  "count_since_2025:cant_verify_reasoning": 11,
   "count:cant_verify_reasoning:2024-H1": 0,
   "count:cant_verify_reasoning:2024-H2": 9,
   "count:cant_verify_reasoning:2025-H1": 3,
@@ -113,6 +138,8 @@
   "count:cant_verify_reasoning:2026-H2": 4,
   "count:diy_with_general_agent": 12,
   "sceptical:diy_with_general_agent": 8,
+  "threads:diy_with_general_agent": 7,
+  "count_since_2025:diy_with_general_agent": 11,
   "count:diy_with_general_agent:2024-H1": 0,
   "count:diy_with_general_agent:2024-H2": 1,
   "count:diy_with_general_agent:2025-H1": 0,
@@ -121,6 +148,8 @@
   "count:diy_with_general_agent:2026-H2": 3,
   "count:lacks_context_of_our_systems": 9,
   "sceptical:lacks_context_of_our_systems": 7,
+  "threads:lacks_context_of_our_systems": 8,
+  "count_since_2025:lacks_context_of_our_systems": 6,
   "count:lacks_context_of_our_systems:2024-H1": 0,
   "count:lacks_context_of_our_systems:2024-H2": 3,
   "count:lacks_context_of_our_systems:2025-H1": 1,
@@ -129,6 +158,8 @@
   "count:lacks_context_of_our_systems:2026-H2": 0,
   "count:alert_noise_unsolved": 9,
   "sceptical:alert_noise_unsolved": 7,
+  "threads:alert_noise_unsolved": 8,
+  "count_since_2025:alert_noise_unsolved": 5,
   "count:alert_noise_unsolved:2024-H1": 1,
   "count:alert_noise_unsolved:2024-H2": 3,
   "count:alert_noise_unsolved:2025-H1": 2,
@@ -137,6 +168,8 @@
   "count:alert_noise_unsolved:2026-H2": 0,
   "count:cost_or_pricing": 8,
   "sceptical:cost_or_pricing": 6,
+  "threads:cost_or_pricing": 8,
+  "count_since_2025:cost_or_pricing": 4,
   "count:cost_or_pricing:2024-H1": 0,
   "count:cost_or_pricing:2024-H2": 4,
   "count:cost_or_pricing:2025-H1": 0,
@@ -145,6 +178,8 @@
   "count:cost_or_pricing:2026-H2": 0,
   "count:vendor_lock_in": 6,
   "sceptical:vendor_lock_in": 4,
+  "threads:vendor_lock_in": 4,
+  "count_since_2025:vendor_lock_in": 6,
   "count:vendor_lock_in:2024-H1": 0,
   "count:vendor_lock_in:2024-H2": 0,
   "count:vendor_lock_in:2025-H1": 0,
@@ -153,6 +188,8 @@
   "count:vendor_lock_in:2026-H2": 1,
   "count:setup_and_integration_effort": 3,
   "sceptical:setup_and_integration_effort": 0,
+  "threads:setup_and_integration_effort": 2,
+  "count_since_2025:setup_and_integration_effort": 1,
   "count:setup_and_integration_effort:2024-H1": 0,
   "count:setup_and_integration_effort:2024-H2": 2,
   "count:setup_and_integration_effort:2025-H1": 0,
@@ -161,6 +198,8 @@
   "count:setup_and_integration_effort:2026-H2": 0,
   "count:just_an_llm_wrapper": 1,
   "sceptical:just_an_llm_wrapper": 1,
+  "threads:just_an_llm_wrapper": 1,
+  "count_since_2025:just_an_llm_wrapper": 1,
   "count:just_an_llm_wrapper:2024-H1": 0,
   "count:just_an_llm_wrapper:2024-H2": 0,
   "count:just_an_llm_wrapper:2025-H1": 0,
@@ -182,60 +221,60 @@
   "either:data_access_and_security+cant_verify_reasoning": 41,
   "either:data_access_and_security+diy_with_general_agent": 35,
   "either:cant_verify_reasoning+diy_with_general_agent": 32,
-  "diy:uses:sceptical": 9,
-  "diy:uses:positive": 49,
-  "diy:uses:mixed": 8,
-  "diy:uses:neutral": 7,
-  "base_since_2025": 303,
-  "count_since_2025:not_capable_yet": 35,
-  "count_since_2025:wrong_or_hallucinated_cause": 18,
-  "count_since_2025:deskills_or_replaces_engineers": 32,
-  "count_since_2025:other": 22,
-  "count_since_2025:data_access_and_security": 16,
-  "count_since_2025:cant_verify_reasoning": 11,
-  "count_since_2025:diy_with_general_agent": 11,
-  "count_since_2025:lacks_context_of_our_systems": 6,
-  "count_since_2025:alert_noise_unsolved": 5,
-  "count_since_2025:cost_or_pricing": 4,
-  "count_since_2025:vendor_lock_in": 6,
-  "count_since_2025:setup_and_integration_effort": 1,
-  "count_since_2025:just_an_llm_wrapper": 1,
   "shown:wrong_or_hallucinated_cause": 4,
-  "said:wrong_or_hallucinated_cause": 2,
-  "not_yet:wrong_or_hallucinated_cause": 0,
   "shown:cant_verify_reasoning": 2,
-  "said:cant_verify_reasoning": 4,
-  "not_yet:cant_verify_reasoning": 0,
   "shown:data_access_and_security": 0,
-  "said:data_access_and_security": 6,
-  "not_yet:data_access_and_security": 0,
   "shown:cost_or_pricing": 1,
-  "said:cost_or_pricing": 2,
-  "not_yet:cost_or_pricing": 3,
   "shown:setup_and_integration_effort": 0,
-  "said:setup_and_integration_effort": 6,
-  "not_yet:setup_and_integration_effort": 0,
   "shown:just_an_llm_wrapper": 0,
-  "said:just_an_llm_wrapper": 5,
-  "not_yet:just_an_llm_wrapper": 1,
   "shown:diy_with_general_agent": 1,
-  "said:diy_with_general_agent": 4,
-  "not_yet:diy_with_general_agent": 1,
-  "shown:lacks_context_of_our_systems": 2,
-  "said:lacks_context_of_our_systems": 4,
-  "not_yet:lacks_context_of_our_systems": 0,
+  "shown:lacks_context_of_our_systems": 3,
   "shown:alert_noise_unsolved": 1,
-  "said:alert_noise_unsolved": 4,
-  "not_yet:alert_noise_unsolved": 1,
-  "shown:deskills_or_replaces_engineers": 1,
-  "said:deskills_or_replaces_engineers": 5,
-  "not_yet:deskills_or_replaces_engineers": 0,
+  "shown:deskills_or_replaces_engineers": 0,
   "shown:vendor_lock_in": 0,
-  "said:vendor_lock_in": 2,
-  "not_yet:vendor_lock_in": 4,
   "shown:not_capable_yet": 4,
+  "shown:vendor:incident.io": 4,
+  "shown:vendor:PagerDuty": 0,
+  "shown:vendor:Rootly": 0,
+  "shown:vendor:Datadog": 4,
+  "shown:vendor:Resolve.ai": 3,
+  "shown:vendor:DIY": 5,
+  "said:wrong_or_hallucinated_cause": 2,
+  "said:cant_verify_reasoning": 4,
+  "said:data_access_and_security": 6,
+  "said:cost_or_pricing": 2,
+  "said:setup_and_integration_effort": 6,
+  "said:just_an_llm_wrapper": 5,
+  "said:diy_with_general_agent": 4,
+  "said:lacks_context_of_our_systems": 3,
+  "said:alert_noise_unsolved": 4,
+  "said:deskills_or_replaces_engineers": 6,
+  "said:vendor_lock_in": 4,
   "said:not_capable_yet": 2,
-  "not_yet:not_capable_yet": 0
+  "said:vendor:incident.io": 8,
+  "said:vendor:PagerDuty": 11,
+  "said:vendor:Rootly": 11,
+  "said:vendor:Datadog": 7,
+  "said:vendor:Resolve.ai": 6,
+  "said:vendor:DIY": 5,
+  "not_yet:wrong_or_hallucinated_cause": 0,
+  "not_yet:cant_verify_reasoning": 0,
+  "not_yet:data_access_and_security": 0,
+  "not_yet:cost_or_pricing": 3,
+  "not_yet:setup_and_integration_effort": 0,
+  "not_yet:just_an_llm_wrapper": 1,
+  "not_yet:diy_with_general_agent": 1,
+  "not_yet:lacks_context_of_our_systems": 0,
+  "not_yet:alert_noise_unsolved": 1,
+  "not_yet:deskills_or_replaces_engineers": 0,
+  "not_yet:vendor_lock_in": 2,
+  "not_yet:not_capable_yet": 0,
+  "not_yet:vendor:incident.io": 0,
+  "not_yet:vendor:PagerDuty": 1,
+  "not_yet:vendor:Rootly": 1,
+  "not_yet:vendor:Datadog": 1,
+  "not_yet:vendor:Resolve.ai": 3,
+  "not_yet:vendor:DIY": 2
  },
  "objections": [
   {
@@ -5268,6 +5307,18 @@
    "addresses": [
     "setup_and_integration_effort"
    ]
+  },
+  {
+   "id": "iio-launch-plans#1",
+   "vendor": "incident.io",
+   "url": "https://incident.io/blog/introducing-investigations-powered-by-nexus",
+   "pageTitle": "Introducing Investigations, powered by Nexus. | Blog | incident.io",
+   "quote": "Alert deflection and noise reduction",
+   "proof": "none",
+   "proofNote": "Listed among problems incident.io plans to apply the technology to next.",
+   "addresses": [
+    "alert_noise_unsolved"
+   ]
   }
  ],
  "coverage": [
@@ -5277,14 +5328,16 @@
    "rating": "SHOWN",
    "claimIds": [
     "iio-cl-2x-faster#1",
-    "iio-how-it-feels#2",
-    "iio-investigations#4"
+    "iio-investigations#5",
+    "iio-cl-ga#14",
+    "iio-how-it-feels#2"
    ],
-   "reason": "Now 68% of incidents get an accurate update within five minutes (up from 8%), and a real incident and a named customer show causes found. Sceptics would next ask how often it is wrong.",
+   "reason": "68% of incidents now get an accurate update within five minutes (up from 8%), a named customer says its people trust what it tells them, and each customer's homepage tracks how often it's right. What isn't public is an overall rate of wrong answers.",
    "urls": [
     "https://incident.io/changelog/investigations-are-2x-faster",
-    "https://incident.io/blog/how-it-feels-to-run-an-incident-with-ai-sre",
-    "https://incident.io/investigations"
+    "https://incident.io/investigations",
+    "https://incident.io/changelog/investigations-now-available-powered-by-nexus",
+    "https://incident.io/blog/how-it-feels-to-run-an-incident-with-ai-sre"
    ],
    "overridden": true
   },
@@ -5313,26 +5366,26 @@
     "iio-investigations#17",
     "iio-cl-ga#13"
    ],
-   "reason": "Sandboxing, redaction, PR-only changes and SOC 2 are asserted. Sceptics would want an audit report or a demonstration of how read-only is enforced.",
+   "reason": "Sandboxed code analysis, redaction, zero data retention and a pull request as the only change are asserted. Sceptics would want to see how “pull request only” is enforced, or an audit of it.",
    "urls": [
     "https://incident.io/investigations",
     "https://incident.io/changelog/investigations-now-available-powered-by-nexus"
-   ]
+   ],
+   "overridden": true
   },
   {
    "vendor": "incident.io",
    "objection": "cost_or_pricing",
    "rating": "SAID",
    "claimIds": [
+    "iio-cl-ga#8",
     "iio-cl-ga#6",
-    "iio-5-best#12",
-    "iio-building#16"
+    "iio-5-best#12"
    ],
-   "reason": "Nexus is included on every plan and per-user prices are listed, but those prices cover other products. No token-cost figures for Investigations.",
+   "reason": "Investigations is sold separately to Pro and Enterprise customers, with no public price; Nexus is included on every plan, and the per-user prices listed cover other products.",
    "urls": [
     "https://incident.io/changelog/investigations-now-available-powered-by-nexus",
-    "https://incident.io/blog/5-best-ai-powered-incident-management-platforms-2026",
-    "https://incident.io/blog/building-investigations-what-it-takes-to-build-an-ai-sre"
+    "https://incident.io/blog/5-best-ai-powered-incident-management-platforms-2026"
    ],
    "overridden": true
   },
@@ -5362,7 +5415,7 @@
     "iio-building#6",
     "iio-investigations#9"
    ],
-   "reason": "Argues the value is the work around the model: backtesting, an adversarial agent and Nexus. No published results show what that adds over a bare model.",
+   "reason": "Explains the work around the model in detail: replaying frozen past incidents, an adversarial agent and Nexus. Nothing compares it with a bare model on the same incidents.",
    "urls": [
     "https://incident.io/blog/building-investigations-what-it-takes-to-build-an-ai-sre",
     "https://incident.io/investigations"
@@ -5375,14 +5428,16 @@
    "rating": "SAID",
    "claimIds": [
     "iio-building#3",
+    "iio-building#2",
     "iio-building#4",
     "iio-cl-plugin#2"
    ],
-   "reason": "Anecdotes about unnamed teams' DIY costs and a plugin for your own coding agent. No named customer or measured comparison against a DIY build.",
+   "reason": "Says in-house builds tie up a full-time team and rarely measure accuracy, that its own took two years, and offers a plugin so your own agent can use its skills. No named customer or side-by-side against a DIY build.",
    "urls": [
     "https://incident.io/blog/building-investigations-what-it-takes-to-build-an-ai-sre",
     "https://incident.io/changelog/the-incident-io-plugin-our-skills-in-your-agent"
-   ]
+   ],
+   "overridden": true
   },
   {
    "vendor": "incident.io",
@@ -5405,16 +5460,17 @@
    "objection": "alert_noise_unsolved",
    "rating": "SAID",
    "claimIds": [
-    "iio-entered-chat#9",
     "iio-nexus#4",
-    "iio-vs-pagerduty#8"
+    "iio-entered-chat#9",
+    "iio-launch#7"
    ],
-   "reason": "Claims noise filtering and less alert fatigue, but offers no measured noise reduction. Investigations is mainly pitched at diagnosis, not alert quality.",
+   "reason": "Nexus is said to tell a real problem from noise, but nothing measures fewer alerts. A July 2025 post says it “Eliminates alert fatigue”, while the August 2026 launch post lists noise reduction as future work.",
    "urls": [
-    "https://incident.io/blog/introducing-ai-sre",
     "https://incident.io/nexus",
-    "https://incident.io/alternatives/pagerduty"
-   ]
+    "https://incident.io/blog/introducing-ai-sre",
+    "https://incident.io/blog/introducing-investigations-powered-by-nexus"
+   ],
+   "overridden": true
   },
   {
    "vendor": "incident.io",
@@ -5441,7 +5497,7 @@
     "iio-nexus#5",
     "iio-cl-ga#15"
    ],
-   "reason": "Says it works with your own coding agents and MCP clients. Data export, leaving the platform and model choice aren't addressed.",
+   "reason": "Works with your own coding agents over MCP and a plugin, and fixes can be handed to Cursor, GitLab Duo or your own agent. Nothing on exporting investigations or choosing the model.",
    "urls": [
     "https://incident.io/changelog/the-incident-io-plugin-our-skills-in-your-agent",
     "https://incident.io/nexus",
@@ -5460,7 +5516,7 @@
     "iio-entered-chat#3",
     "iio-investigations#17"
    ],
-   "reason": "A named customer, a measured jump in accurate early updates and a real incident resolved in minutes show it working. An earlier post says it resolves what it can on its own, while the product page says its only change is a pull request you review; sceptics would want one clear answer.",
+   "reason": "A named customer and a measured jump in accurate early updates show it working; the incident write-up (April 2026) is an internal one, on a feature then only on demo accounts. A July 2025 post says it “resolves what it can autonomously”, while the current product page says its only change is a pull request you review. One line, such as “diagnoses on its own, changes only with your approval”, would settle it.",
    "urls": [
     "https://incident.io/investigations",
     "https://incident.io/changelog/investigations-are-2x-faster",
@@ -5515,10 +5571,11 @@
    "objection": "cost_or_pricing",
    "rating": "NOT_YET",
    "claimIds": [],
-   "reason": "The free trial is mentioned, but nothing addresses pricing or usage costs. Engineers worried about spend would want to see how it is charged.",
+   "reason": "Its SRE Agent page mentions a free trial but not how the agent is priced or what usage costs.",
    "urls": [
     "https://www.pagerduty.com/platform/ai-agents/sre/"
-   ]
+   ],
+   "overridden": true
   },
   {
    "vendor": "PagerDuty",
@@ -5602,12 +5659,16 @@
   {
    "vendor": "PagerDuty",
    "objection": "vendor_lock_in",
-   "rating": "NOT_YET",
-   "claimIds": [],
-   "reason": "Integration breadth is stated, but nothing covers dependence on PagerDuty or model choice. Engineers would want to hear about portability or data export.",
+   "rating": "SAID",
+   "claimIds": [
+    "pagerduty-sre-agent#4",
+    "pagerduty-sre-agent#9"
+   ],
+   "reason": "Its SRE Agent page says it works across observability, automation and cloud tools, with over 750 integrations. Nothing on exporting data or choosing the model.",
    "urls": [
     "https://www.pagerduty.com/platform/ai-agents/sre/"
-   ]
+   ],
+   "overridden": true
   },
   {
    "vendor": "PagerDuty",
@@ -5646,10 +5707,11 @@
     "rootly-ai-sre#23",
     "rootly-ai-sre#5"
    ],
-   "reason": "Visible reasoning chains and evidence are asserted. The only demos are mock-ups, so sceptics have no real incident to inspect.",
+   "reason": "Confidence scores and a visible reasoning chain are asserted. The only examples are sample screens with no named customer or date, so there's no real incident to inspect.",
    "urls": [
     "https://rootly.com/ai-sre"
-   ]
+   ],
+   "overridden": true
   },
   {
    "vendor": "Rootly",
@@ -5670,10 +5732,11 @@
    "objection": "cost_or_pricing",
    "rating": "NOT_YET",
    "claimIds": [],
-   "reason": "No claim addresses pricing or token costs. Engineers worried about compounding usage would want to see how cost behaves at scale.",
+   "reason": "Its AI SRE page doesn't say how the agent is priced or how token use is charged.",
    "urls": [
     "https://rootly.com/ai-sre"
-   ]
+   ],
+   "overridden": true
   },
   {
    "vendor": "Rootly",
@@ -5775,7 +5838,7 @@
     "rootly-ai-sre#2",
     "rootly-ai-sre#22"
    ],
-   "reason": "Asserts fast root-cause finding but gives no measured figure; the worked example is a mock-up, not a real incident.",
+   "reason": "Claims root causes in minutes, and 10x faster resolution in a headline, with no method, named customer or real incident; the worked example is a sample screen.",
    "urls": [
     "https://rootly.com/ai-sre"
    ],
@@ -5942,10 +6005,11 @@
     "resolve-ai-sre#4",
     "resolve-ai-sre#6"
    ],
-   "reason": "Coinbase's named engineer reports accurate root causes 73% faster, and another customer says it matched the humans' root cause. Neither is independently measured.",
+   "reason": "Coinbase's named engineer reports accurate root causes 73% faster, in a constrained environment, and another customer says it matched the humans' root cause. Neither is independently measured.",
    "urls": [
     "https://resolve.ai/product/ai-sre"
-   ]
+   ],
+   "overridden": true
   },
   {
    "vendor": "Resolve.ai",
@@ -5956,10 +6020,11 @@
     "resolve-ai-sre#13",
     "resolve-ai-sre#10"
    ],
-   "reason": "Pages promise evidence trails and engineer review, but the trail shown is a mock-up, not a real incident.",
+   "reason": "Evidence trails and engineer review are promised, but the trail shown is a sample screen with no named customer or date.",
    "urls": [
     "https://resolve.ai/product/ai-sre"
-   ]
+   ],
+   "overridden": true
   },
   {
    "vendor": "Resolve.ai",
@@ -5979,21 +6044,22 @@
    "objection": "cost_or_pricing",
    "rating": "NOT_YET",
    "claimIds": [],
-   "reason": "No claim covers pricing or token costs. Sceptics would want to see cost per investigation.",
+   "reason": "Its AI SRE page doesn't say how the product is priced or what an investigation costs.",
    "urls": [
     "https://resolve.ai/product/ai-sre"
-   ]
+   ],
+   "overridden": true
   },
   {
    "vendor": "Resolve.ai",
    "objection": "setup_and_integration_effort",
-   "rating": "SHOWN",
+   "rating": "SAID",
    "claimIds": [
     "resolve-ai-sre#4",
     "resolve-ai-sre#8",
     "resolve-ai-sre#12"
    ],
-   "reason": "A named customer says it integrated cleanly into their existing stack, though no setup time is given.",
+   "reason": "A named customer says it integrated cleanly into their stack, and integrations are listed, but no setup time or effort is given.",
    "urls": [
     "https://resolve.ai/product/ai-sre"
    ],
@@ -6017,10 +6083,11 @@
    "objection": "diy_with_general_agent",
    "rating": "NOT_YET",
    "claimIds": [],
-   "reason": "No claim compares the product with building it on a general agent. Sceptics would want a side-by-side on a real incident.",
+   "reason": "Its AI SRE page doesn't compare the product with building your own on a general agent.",
    "urls": [
     "https://resolve.ai/product/ai-sre"
-   ]
+   ],
+   "overridden": true
   },
   {
    "vendor": "Resolve.ai",
@@ -6030,7 +6097,7 @@
     "resolve-ai-sre#4",
     "resolve-ai-sre#10"
    ],
-   "reason": "A named customer says it identified dependencies across their systems; corrections becoming reusable knowledge is asserted.",
+   "reason": "A named customer says it identified dependencies across their systems, in a constrained environment; corrections becoming reusable knowledge is asserted.",
    "urls": [
     "https://resolve.ai/product/ai-sre"
    ],
@@ -6067,10 +6134,11 @@
    "objection": "vendor_lock_in",
    "rating": "NOT_YET",
    "claimIds": [],
-   "reason": "No claim addresses lock-in, model choice or portability. Engineers would want to hear about data export and model flexibility.",
+   "reason": "Its AI SRE page doesn't address lock-in, model choice or exporting data.",
    "urls": [
     "https://resolve.ai/product/ai-sre"
-   ]
+   ],
+   "overridden": true
   },
   {
    "vendor": "Resolve.ai",
@@ -6080,10 +6148,11 @@
     "resolve-ai-sre#4",
     "resolve-ai-sre#6"
    ],
-   "reason": "A named Coinbase engineer cites 73% faster root causes, and another customer reports the same cause found 4-5 hours early. No autonomous 3am fix is shown.",
+   "reason": "A named Coinbase engineer cites root causes 73% faster, in what the quote calls a constrained environment, and another customer reports the same cause found 4-5 hours early. No autonomous 3am fix is shown.",
    "urls": [
     "https://resolve.ai/product/ai-sre"
-   ]
+   ],
+   "overridden": true
   },
   {
    "vendor": "DIY",
@@ -6137,10 +6206,11 @@
     "diy-magarcia#12",
     "diy-magarcia#13"
    ],
-   "reason": "The author gives an estimated $8–10 against $2–3 for one real incident, and says it is not for every investigation.",
+   "reason": "One write-up gives an estimated $8–10 in tokens against $2–3 for one real incident, and says it is not for every investigation. That covers tokens, not the time to build and run it.",
    "urls": [
     "https://magarcia.io/using-claude-code-agent-teams-for-incident-investigation/"
-   ]
+   ],
+   "overridden": true
   },
   {
    "vendor": "DIY",
@@ -6204,12 +6274,13 @@
    "objection": "alert_noise_unsolved",
    "rating": "NOT_YET",
    "claimIds": [],
-   "reason": "The write-ups note agents depend on data access, but none addresses noisy alerts or poor telemetry. A before-and-after on a noisy service would help.",
+   "reason": "The three write-ups note that agents depend on data access, but none addresses noisy alerts or poor telemetry.",
    "urls": [
     "https://magarcia.io/using-claude-code-agent-teams-for-incident-investigation/",
     "https://engineering.hivebrite.io/blog/building-an-agentic-slackbot-with-claude-code/",
     "https://www.datadoghq.com/blog/datadog-mcp-server-use-cases/"
-   ]
+   ],
+   "overridden": true
   },
   {
    "vendor": "DIY",
@@ -6257,43 +6328,14 @@
  ],
  "findings": [
   {
-   "id": "f1",
-   "rank": 1,
-   "headline": "73 of 430 comments use or recommend a general AI tool for incident work (49 positive, 9 sceptical), but only 12 raise \"I could do this myself\" as an objection.",
-   "short": "73 of 430 engineers' comments use or recommend a general AI tool for incident work, yet only 12 call that a reason not to buy a dedicated product.",
-   "implication": "For these engineers the baseline is a general AI tool they already use, so the story has to show what Investigations adds over pasting an alert into one. incident.io already makes the argument: in-house tools rarely get their accuracy measured, and the value is in the work around the model. The next step is evidence, such as a side-by-side of a bare model and Investigations on the same past incidents, using the daily backtesting it describes.",
-   "whyRanked": "It answers the do-it-yourself question directly: the behaviour is real, the stated objection is rare, and incident.io's own coverage here is only anecdote.",
-   "n": 430,
-   "quotes": [
-    {
-     "id": "hn:49125357",
-     "quote": "I also encouraged my team to paste any inquiries or alerts we got in our slack channel verbatim into codex and follow that procedure until it could figure it out as a one-shot.",
-     "url": "https://news.ycombinator.com/item?id=49125357",
-     "date": "2026-07-31",
-     "thread": "Google fixed more Chrome bugs in June than over the past two years, thanks to AI"
-    },
-    {
-     "id": "hn:41360976",
-     "quote": "I can already feed Claude or ChatGPT my kubectl output pretty easily",
-     "url": "https://news.ycombinator.com/item?id=41360976",
-     "date": "2024-08-26",
-     "thread": "Launch HN: Parity (YC S24) – AI for on-call engineers working with Kubernetes"
-    }
-   ],
-   "claimIds": [
-    "iio-building#4",
-    "iio-building#21",
-    "iio-investigations#12"
-   ],
-   "overridden": true
-  },
-  {
    "id": "f2",
-   "rank": 2,
-   "headline": "Since 2025, the second most common objection is that these tools deskill or replace engineers: 32 of 303 comments, close behind \"AI can't do this job yet\" (35).",
-   "implication": "The fear is concrete: who debugs when the tool is wrong, or when the person on call never built the knowledge? incident.io says engineers keep the final call and that Nexus raises the floor for new hires, and one real-incident write-up shows a responder new to that code checking the conclusion before acting. Evidence that responders can explain the cause afterwards would answer the concern.",
+   "rank": 1,
+   "headline": "Beyond whether it works, engineers' two biggest objections are that AI deskills or replaces them (33 of 430 posts) and that it needs access to production (23). None of the 6 options mapped here shows proof on either.",
+   "short": "Beyond “does it work?”, engineers' biggest objections are deskilling (33 posts) and production access (23). None of the 6 options mapped shows proof on either.",
+   "implication": "Investigations already shows proof that it works. On these two, its pages assert, as every option here does: you work the problem with the agent, and its only change is a pull request you review. Proof could be a responder explaining a cause afterwards, and a page showing how “pull request only” is enforced. The deskilling posts span 30 threads.",
    "whyRanked": "It is the less obvious concern, it outweighs wrong-cause complaints since 2025 in this data, and incident.io's claims only assert a position with no proof.",
    "n": 430,
+   "scope": "all",
    "quotes": [
     {
      "id": "hn:49579634",
@@ -6302,46 +6344,75 @@
      "date": "2026-09-05"
     },
     {
-     "id": "hn:47276920",
-     "quote": "This is example of someone who has let AI do too much of their \"thinking\" for them and it's led to brain rot.",
-     "url": "https://news.ycombinator.com/item?id=47276920",
-     "date": "2026-03-06"
+     "id": "hn:49220669",
+     "quote": "What makes \"read-only\" a guarantee rather than a convention? In Python a plain attribute read can hit a @property that lazy-loads from the DB; in Java a getter can mutate state or take a lock.",
+     "url": "https://news.ycombinator.com/item?id=49220669",
+     "date": "2026-08-08"
     }
    ],
    "claimIds": [
-    "iio-entered-chat#7",
-    "iio-nexus#8",
-    "iio-how-it-feels#4"
+    "iio-launch#3",
+    "iio-investigations#17",
+    "iio-investigations#15"
+   ],
+   "overridden": true
+  },
+  {
+   "id": "f1",
+   "rank": 2,
+   "headline": "73 of 430 posts use or recommend a general AI tool for incident work, 49 of them positively, but only 13 argue that makes a dedicated product unnecessary.",
+   "implication": "Most aren't arguing against buying; they're using what they already have. incident.io already argues that in-house builds rarely measure accuracy, and ships a plugin for the agents engineers use. What's missing is a public side-by-side: Investigations and a bare model on the same past incidents, from the backtests it already runs daily.",
+   "whyRanked": "It answers the do-it-yourself question directly: the behaviour is real, the stated objection is rare, and incident.io's own coverage here is only anecdote.",
+   "n": 430,
+   "scope": "all",
+   "quotes": [
+    {
+     "id": "hn:49125357",
+     "quote": "I also encouraged my team to paste any inquiries or alerts we got in our slack channel verbatim into codex and follow that procedure until it could figure it out as a one-shot.",
+     "url": "https://news.ycombinator.com/item?id=49125357",
+     "date": "2026-07-31"
+    },
+    {
+     "id": "hn:41360976",
+     "quote": "I can already feed Claude or ChatGPT my kubectl output pretty easily",
+     "url": "https://news.ycombinator.com/item?id=41360976",
+     "date": "2024-08-26"
+    }
+   ],
+   "claimIds": [
+    "iio-building#4",
+    "iio-cl-plugin#2",
+    "iio-investigations#12"
    ],
    "overridden": true
   },
   {
    "id": "f3",
    "rank": 3,
-   "headline": "50 of 430 comments say the AI gets the cause wrong or that its reasoning can't be checked; 32 of the 35 about wrong causes are sceptical.",
-   "implication": "Engineers want more than fewer wrong answers: they want to see what was checked and ruled out. incident.io's pages say it had to engineer against hallucination, that every hypothesis links to its sources and shows the theories it ruled out, and that invented citations are now rejected. Publishing misses alongside hits, with the timeline of a call it got wrong, would persuade this audience more than success stories alone.",
+   "headline": "50 of 430 posts say the AI gets the cause wrong or that its reasoning can't be checked.",
+   "implication": "Investigations answers both with proof: a measured jump in accurate early updates, and every hypothesis linked to its sources. The next question is how often it's wrong. Each customer sees that on its own homepage, and incident.io's buyer's guide tells evaluators to push for precision and recall. No option here publishes a figure yet; one from its backtests would meet that bar first.",
    "whyRanked": "It is well supported by the data but familiar, and incident.io already has proof on these objections, so the gain is in how it shows misses.",
    "n": 430,
+   "scope": "all",
    "quotes": [
     {
      "id": "hn:49207822",
      "quote": "Also in my experience, having my colleagues do root cause analysis (RCA) with LLM brings to me invalid RCAs which I have to rule out, instead of working on finding true RCA.",
      "url": "https://news.ycombinator.com/item?id=49207822",
-     "date": "2026-08-07",
-     "thread": "Born Against, or why hobby programming communities are against LLM usage"
+     "date": "2026-08-07"
     },
     {
      "id": "hn:49803288",
      "quote": "Same problem with postmortems. You get a clean AI writeup with root cause, timeline, and action items all in the right sections, but none of it tells you what was actually checked or ruled out along the way.",
      "url": "https://news.ycombinator.com/item?id=49803288",
-     "date": "2026-09-22",
-     "thread": "I don't want to read what you didn't write"
+     "date": "2026-09-22"
     }
    ],
    "claimIds": [
-    "iio-building#8",
+    "iio-cl-2x-faster#1",
     "iio-launch#4",
-    "iio-cl-dark-mode#4"
+    "iio-cl-ga#14",
+    "iio-vs-resolve#4"
    ],
    "overridden": true
   }
@@ -6356,6 +6427,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Ask HN: State of CD/CI Wrt AI? Anyone Using a GPT to Control Ops/SRE/CI Tasks?",
    "quote": "E.g. any control over things like AWS/AWS-CLI - or [whatever] infra deployment/ops workflows one may have?"
   },
   {
@@ -6367,6 +6441,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Five Why Problem Solver – Classic root cause analysis with AI",
    "quote": null
   },
   {
@@ -6382,6 +6459,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Problem solving across 100,633 lines of code – Gemini 1.5 Pro Demo [video]",
    "quote": "a Mad Max world of endless adrenaline and New Relic AI-enhanced alerts."
   },
   {
@@ -6395,6 +6475,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "ChatGPT went berserk",
    "quote": "It'll probably require AI. Being on-call for explicitly programmed systems is hard enough without the addition of emergent behaviors."
   },
   {
@@ -6406,6 +6489,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "AI-powered diagnostics for incident response",
    "quote": null
   },
   {
@@ -6417,6 +6503,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Automate on-call and support with a simple Slack-bot",
    "quote": null
   },
   {
@@ -6431,6 +6520,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Automate on-call and support with a simple Slack-bot",
    "quote": "we decided to build a simple slackbot to automate some manual stuff that we need for on-call."
   },
   {
@@ -6442,6 +6534,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Discovering AIOps",
    "quote": null
   },
   {
@@ -6455,6 +6550,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Rootly AI",
    "quote": null
   },
   {
@@ -6466,6 +6564,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "AI-Powered SRE",
    "quote": null
   },
   {
@@ -6477,6 +6578,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "AI Automated Alert Correlation",
    "quote": null
   },
   {
@@ -6488,6 +6592,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "AI in software engineering at Google: Progress and the path ahead",
    "quote": "There's no conceivable job that can't be eaten partially or mostly by AI, if not nearly entirely eaten in the future."
   },
   {
@@ -6499,6 +6606,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Leveraging AI for efficient incident response",
    "quote": null
   },
   {
@@ -6510,6 +6620,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "DevOps Isn't Dead, but It's Not in Great Health Either",
    "quote": "We will soon have AIOps instead."
   },
   {
@@ -6521,6 +6634,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "How to use GenAI for anomaly detection and automatic incident response",
    "quote": null
   },
   {
@@ -6532,6 +6648,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Leveraging AI in Incident Response",
    "quote": null
   },
   {
@@ -6543,6 +6662,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Building AI Agents for Autonomous Clouds: Challenges and Design Principles",
    "quote": "We report promising results and lay the groundwork to build a modular and robust framework for building, evaluating, and improving agents for autonomous clouds."
   },
   {
@@ -6556,6 +6678,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Ask HN: What is the Backup plan for another outage like this?",
    "quote": "Don’t worry there’s alot of Project Managers and product owners now working tirelessly on “AI” to fix this sort of thing."
   },
   {
@@ -6569,6 +6694,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Show HN: I built an open-source tool to make on-call suck less",
    "quote": "I like incident.io's take on LLMs with incident management: which is essentially assist, don't decide."
   },
   {
@@ -6583,6 +6711,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "SREBench Competition",
    "quote": "Not really a fair \"benchmark\" when the system's speed is variable."
   },
   {
@@ -6594,6 +6725,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "SREBench Competition",
    "quote": "More seriously usually issues where the observed behaviour is \"the system is slow\" are harder to root cause than complete outages."
   },
   {
@@ -6608,6 +6742,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "SREBench Competition",
    "quote": "I've thrown a few real-world problems at LLMs, and they have floundered on them, to the point of not even being able to emit coherent output."
   },
   {
@@ -6619,6 +6756,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Leveraging AI for efficient incident response",
    "quote": "This is really cool. My optimistic take on GenAI, at least with regard to software engineering, is that it seems like we're gonna have a lot of the boring / tedious parts of our jobs get a lot easier!"
   },
   {
@@ -6632,6 +6772,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Leveraging AI for efficient incident response",
    "quote": "IME a very very large number of impacting incidents arent strictly tied to “a” code change, if any at all."
   },
   {
@@ -6645,6 +6788,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Leveraging AI for efficient incident response",
    "quote": "42% accuracy on a tiny, outdated model - surely it would improve significantly by fine-tuning Llama 3.1 405B!"
   },
   {
@@ -6658,6 +6804,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Leveraging AI for efficient incident response",
    "quote": "After floating the results to a few folks up the chain we burned it and forget where."
   },
   {
@@ -6669,6 +6818,9 @@
    "vendors": [],
    "buyer_signal": true,
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Leveraging AI for efficient incident response",
    "quote": "We've shifted our oncall incident response over to mostly AI at this point. And it works quite well."
   },
   {
@@ -6682,6 +6834,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Leveraging AI for efficient incident response",
    "quote": "I'm going to point out the obvious problem here: 42% RC identification is shit."
   },
   {
@@ -6693,6 +6848,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Leveraging AI for efficient incident response",
    "quote": "It matters how its presented as a hint (“top five suggested”) and not THE ANSWER. In addition its VERY common to do things like present confidence or weight to the user."
   },
   {
@@ -6706,6 +6864,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Leveraging AI for efficient incident response",
    "quote": "Most people are lazy and get led astray with false information. This is a very dangerous thing."
   },
   {
@@ -6717,6 +6878,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Leveraging AI for efficient incident response",
    "quote": "Being able to provide the expertise in form of plain written English (or another language), will at least make it much more feasible to build them up. And it can also meaningfully be consumed by a human."
   },
   {
@@ -6730,6 +6894,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Leveraging AI for efficient incident response",
    "quote": "but 42% accuracy doesn't sound too impressive to me... maybe there's still some fine-tuning needed for better results?"
   },
   {
@@ -6741,6 +6908,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Leveraging AI for efficient incident response",
    "quote": "Really, a tool where 42% of incident responses the on call engineers are greeted by a pointer that likely lets them resolve the incident almost immediately and move on, rather than spending potentially hours figuring out which component it is they need to address and how, isn't impressive to you?"
   },
   {
@@ -6752,6 +6922,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Leveraging AI for efficient incident response",
    "quote": "On the investigation side of things I can definitely see how an AI driven troubleshooting process could be valuable."
   },
   {
@@ -6763,6 +6936,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Leveraging AI for efficient incident response",
    "quote": "This is a tool that seems really helpful considering the alternative is 0%."
   },
   {
@@ -6774,6 +6950,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Leveraging AI for efficient incident response",
    "quote": "How would an experienced engineer score on the same task?"
   },
   {
@@ -6787,6 +6966,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Leveraging AI for efficient incident response",
    "quote": "It depends on whether it's generating 58% of answers that lead on-call engineers down the wrong path."
   },
   {
@@ -6798,6 +6980,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Leveraging AI for efficient incident response",
    "quote": "Can we see the recording of this webinar somewhere?"
   },
   {
@@ -6811,6 +6996,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Leveraging AI for efficient incident response",
    "quote": "Any alert where the attacker controls some parts of the text that ends up in the model could be used to either evade it worse use it to hack it."
   },
   {
@@ -6822,6 +7010,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Leveraging AI for efficient incident response",
    "quote": "What does AI add to your playooks ?"
   },
   {
@@ -6835,6 +7026,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Leveraging AI for efficient incident response",
    "quote": "Personal insults aside, \"seems\" requires no evaluation if the success rate is outside what could be considered a sane confidence interval on trust."
   },
   {
@@ -6848,6 +7042,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Leveraging AI for efficient incident response",
    "quote": "there are so many distinct systems that I would be worried about identifying spurious correlations with completely unrelated products."
   },
   {
@@ -6859,6 +7056,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Leveraging AI for efficient incident response",
    "quote": "I'm guessing the being awake and fresh at 3am within a few seconds of the incident occuring part."
   },
   {
@@ -6872,6 +7072,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Leveraging AI for efficient incident response",
    "quote": "It will be a useful tool, but expert systems had a very restricted solution space."
   },
   {
@@ -6885,6 +7088,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Leveraging AI for efficient incident response",
    "quote": "Luckily I subscribe to my own consumer AI service to automate all this for me."
   },
   {
@@ -6896,6 +7102,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Leveraging AI for efficient incident response",
    "quote": "Curious if you explored any external tools before building in-house?"
   },
   {
@@ -6907,6 +7116,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Leveraging AI for efficient incident response",
    "quote": "What is your current tool chain in the effort?"
   },
   {
@@ -6920,6 +7132,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Leveraging AI for efficient incident response",
    "quote": "Given how AI can automate and scale bad decisions, isn’t leveraging the right word here?"
   },
   {
@@ -6933,6 +7148,9 @@
    "vendors": [],
    "buyer_signal": true,
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Leveraging AI for efficient incident response",
    "quote": "Meanwhile, we’ve tried AI products just for assigning incidents and are forced to turn them off because of how shitty of a job they do."
   },
   {
@@ -6946,6 +7164,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Leveraging AI for efficient incident response",
    "quote": "If you already have those, how much can an AI add?"
   },
   {
@@ -6959,6 +7180,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Leveraging AI for efficient incident response",
    "quote": "I can execute a playbook without AI at 3am in a few seconds using some orchestration tools. Without any AI."
   },
   {
@@ -6972,6 +7196,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Looming Liability Machines (LLMs)",
    "quote": "The gunghoe adoption and hamfisting of llms into critical processes, like an AWs migration to Java 17, or root cause analysis is plainly premature, naive, and dangerous."
   },
   {
@@ -6985,6 +7212,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Looming Liability Machines (LLMs)",
    "quote": "The main problem is. Most people cant tell the difference between an expert opinion and random words."
   },
   {
@@ -6998,6 +7228,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Leveraging AI for efficient incident response",
    "quote": "Yes very interesting potential, it looks like it can be increased in accuracy considerably because Llama 3.1 with 405B parameters has very similar performance with the latest GPT-4o."
   },
   {
@@ -7009,6 +7242,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Looming Liability Machines (LLMs)",
    "quote": "The major difference is that the black boxes presumably work differently but since they are both black boxes that doesn't matter much for which will do a better job at root cause analysis."
   },
   {
@@ -7022,6 +7258,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Looming Liability Machines (LLMs)",
    "quote": "TBQH I'd bet the following would yield pretty good results:"
   },
   {
@@ -7033,6 +7272,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Looming Liability Machines (LLMs)",
    "quote": "I'd argue that LLMs can actually be pretty effective tools for analyzing failures in complex systems."
   },
   {
@@ -7044,6 +7286,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "The AIOps library for removing automatically failure-unrelated metrics",
    "quote": null
   },
   {
@@ -7055,6 +7300,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Launch HN: Parity (YC S24) – AI for on-call engineers working with Kubernetes",
    "quote": "It would be kind of interesting if, based on an engineer accepting the suggestion, parity generated a new run book."
   },
   {
@@ -7068,6 +7316,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Launch HN: Parity (YC S24) – AI for on-call engineers working with Kubernetes",
    "quote": "hmmm idk how I would feel about giving an llm cluster access from a security pov"
   },
   {
@@ -7082,6 +7333,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Launch HN: Parity (YC S24) – AI for on-call engineers working with Kubernetes",
    "quote": null
   },
   {
@@ -7095,6 +7349,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Launch HN: Parity (YC S24) – AI for on-call engineers working with Kubernetes",
    "quote": "Other problem is that you become an extremely big target for bad actors as you have read/write (or just even read) access to all these k8s clusters."
   },
   {
@@ -7106,6 +7363,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Launch HN: Parity (YC S24) – AI for on-call engineers working with Kubernetes",
    "quote": "That said, a tool that runs through existing runbooks and improves them or suggests new ones would be extremely useful IMHO."
   },
   {
@@ -7120,6 +7380,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Launch HN: Parity (YC S24) – AI for on-call engineers working with Kubernetes",
    "quote": "Also, sometimes LLMs are wrong."
   },
   {
@@ -7133,6 +7396,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Launch HN: Parity (YC S24) – AI for on-call engineers working with Kubernetes",
    "quote": "An AI agent to triage the production issues caused by code generated by some other startup's generative AI bot."
   },
   {
@@ -7144,6 +7410,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Launch HN: Parity (YC S24) – AI for on-call engineers working with Kubernetes",
    "quote": "Once all that is configured, put some fake workloads on it and start misconfiguring it with your LLM wired up."
   },
   {
@@ -7157,6 +7426,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Launch HN: Parity (YC S24) – AI for on-call engineers working with Kubernetes",
    "quote": "Someone needs to explain to me how this is expected to work."
   },
   {
@@ -7168,6 +7440,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Launch HN: Parity (YC S24) – AI for on-call engineers working with Kubernetes",
    "quote": "If you are making any change to a Prod environment it needs to be thoroughly documented."
   },
   {
@@ -7181,6 +7456,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Launch HN: Parity (YC S24) – AI for on-call engineers working with Kubernetes",
    "quote": null
   },
   {
@@ -7194,6 +7472,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Launch HN: Parity (YC S24) – AI for on-call engineers working with Kubernetes",
    "quote": "You need to quantify this. With actual numbers."
   },
   {
@@ -7207,6 +7488,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Launch HN: Parity (YC S24) – AI for on-call engineers working with Kubernetes",
    "quote": "And what is your average error rate per runbook step."
   },
   {
@@ -7220,6 +7504,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Launch HN: Parity (YC S24) – AI for on-call engineers working with Kubernetes",
    "quote": "But when they are wrong they can be catastrophically wrong. You could be wasting time looking into the wrong problem with something like this."
   },
   {
@@ -7237,6 +7524,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Launch HN: Parity (YC S24) – AI for on-call engineers working with Kubernetes",
    "quote": "I would not want any data about my infrastructure sent to a public LLM, regardless of how sanitized things are."
   },
   {
@@ -7252,6 +7542,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Launch HN: Parity (YC S24) – AI for on-call engineers working with Kubernetes",
    "quote": "That second step hallucinating is far more likely when you are feeding it incorrect information from the first hallucination."
   },
   {
@@ -7265,6 +7558,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Launch HN: Parity (YC S24) – AI for on-call engineers working with Kubernetes",
    "quote": "how is what you're building different from other AI SRE solutions out there, like Cleric, Onegrep, Resolve, Beeps, and others?"
   },
   {
@@ -7278,6 +7574,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Launch HN: Parity (YC S24) – AI for on-call engineers working with Kubernetes",
    "quote": "Every LLM conversation is guaranteed to contain some level of hallucination. You will never get the percentage down to zero."
   },
   {
@@ -7289,6 +7588,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Launch HN: Parity (YC S24) – AI for on-call engineers working with Kubernetes",
    "quote": "So just to clarify, are you saying that Parity is focused on infrastructure issues, while something like Onegrep addresses the broader problem by providing context?"
   },
   {
@@ -7302,6 +7604,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Launch HN: Parity (YC S24) – AI for on-call engineers working with Kubernetes",
    "quote": "They are highly correlated even amongst LLMs from different vendors."
   },
   {
@@ -7318,6 +7623,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": true,
+   "kind": "comment",
+   "thread": "Launch HN: Parity (YC S24) – AI for on-call engineers working with Kubernetes",
    "quote": "I can already feed Claude or ChatGPT my kubectl output pretty easily"
   },
   {
@@ -7331,6 +7639,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Launch HN: Parity (YC S24) – AI for on-call engineers working with Kubernetes",
    "quote": "Why WOULDN'T you want to document what it is doing? I would never trust an AI that didn't tell me what it was doing and why."
   },
   {
@@ -7345,6 +7656,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Launch HN: Parity (YC S24) – AI for on-call engineers working with Kubernetes",
    "quote": "Otherwise, you're selling a self-driving car to executives who want the chauffeur without the salary. Sounds like a great idea, until you think about the tail cases."
   },
   {
@@ -7358,6 +7672,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Launch HN: Parity (YC S24) – AI for on-call engineers working with Kubernetes",
    "quote": "I use claude for my most of my unknown K8s bugs and it's impressive how useful it is (far more than my coding bugs)."
   },
   {
@@ -7369,6 +7686,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Launch HN: Parity (YC S24) – AI for on-call engineers working with Kubernetes",
    "quote": "Tools like k8sgpt are similar in purpose and show a strong potential to be useful. Look forward to seeing how this progresses."
   },
   {
@@ -7382,6 +7702,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Launch HN: Parity (YC S24) – AI for on-call engineers working with Kubernetes",
    "quote": "The AI needs to be integrated into Dev IDE. All my logging screaming is terrible decisions made by long ago Devs but getting them fixed now is impossible because they don't want to do it and no one is going to make them."
   },
   {
@@ -7395,6 +7718,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Launch HN: Parity (YC S24) – AI for on-call engineers working with Kubernetes",
    "quote": "That is legitimately scary."
   },
   {
@@ -7406,6 +7732,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Launch HN: Parity (YC S24) – AI for on-call engineers working with Kubernetes",
    "quote": "For e.g. a Kubernetes AI, you can nowadays just feed in the whole Kubernetes docs + a few reference Helm charts, tell it to stick close to the material, and you'll have next to no hallucinations."
   },
   {
@@ -7420,6 +7749,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Launch HN: Parity (YC S24) – AI for on-call engineers working with Kubernetes",
    "quote": "It is a serious problem when these tools are being pushed as trustworthy when they are anything but."
   },
   {
@@ -7434,6 +7766,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Launch HN: Parity (YC S24) – AI for on-call engineers working with Kubernetes",
    "quote": "This scares me. If I was confident enough in the runbook steps, they'd be automated already by a program."
   },
   {
@@ -7445,6 +7780,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "AI agents invade observability: snake oil or the future of SRE?",
    "quote": null
   },
   {
@@ -7458,6 +7796,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "AI agents invade observability: snake oil or the future of SRE?",
    "quote": "I cannot for the life of me understand why SRE of all roles would be the one to attempt to use agents for. IMO it's one of the last roles that it would apply, long after core development."
   },
   {
@@ -7469,6 +7810,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "AI agents invade observability: snake oil or the future of SRE?",
    "quote": "Noticing trends in logs ,especially across different systems, could be useful for identifying a lot problems before they break."
   },
   {
@@ -7482,6 +7826,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "AI agents invade observability: snake oil or the future of SRE?",
    "quote": "I feel AI will get in the way same as other products have done in the past."
   },
   {
@@ -7496,6 +7843,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "AI agents invade observability: snake oil or the future of SRE?",
    "quote": "The challenge here is in effective collection of quality data and context, not the AI models, and that's precisely what's so hard about operations engineering in the first place."
   },
   {
@@ -7507,6 +7857,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "AI agents invade observability: snake oil or the future of SRE?",
    "quote": "Yes. That's exactly where this stuff is going right now."
   },
   {
@@ -7520,6 +7873,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "AI agents invade observability: snake oil or the future of SRE?",
    "quote": "I wouldn’t trust an agent doing remediation but I would gladly take input from them regarding services that are acting up or have a trend to disaster."
   },
   {
@@ -7534,6 +7890,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "AI agents invade observability: snake oil or the future of SRE?",
    "quote": "but in ops that approach can make things worse burning more money and trust."
   },
   {
@@ -7548,6 +7907,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "AI agents invade observability: snake oil or the future of SRE?",
    "quote": "but I don't want it implementing system wide changes without feedback."
   },
   {
@@ -7559,6 +7921,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "AI agents invade observability: snake oil or the future of SRE?",
    "quote": "Nah it’s just AI SRE agents all the way down."
   },
   {
@@ -7572,6 +7937,9 @@
    ],
    "buyer_signal": true,
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "AI agents invade observability: snake oil or the future of SRE?",
    "quote": "I've used ChatGPT 4o to write complex log queries on legacy systems that would have been nearly impossible for me to do otherwise"
   },
   {
@@ -7585,6 +7953,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "AI agents invade observability: snake oil or the future of SRE?",
    "quote": "FWIW this is part of the promise of AIOps of the 2010s and it's still only barely starting to happen. I'm glad it has, but there's so, so far to go here."
   },
   {
@@ -7596,6 +7967,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "AI agents invade observability: snake oil or the future of SRE?",
    "quote": "The quality of such system will measure in how much it can do in a particular compute budget and theoretically can even self-stabilize by roi feedback."
   },
   {
@@ -7607,6 +7981,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "AI agents invade observability: snake oil or the future of SRE?",
    "quote": "I mean, doesn’t all that sound like something fine tuned LLMS would be great at? Well constrained tasks, if else statements, runbook -> automation."
   },
   {
@@ -7620,6 +7997,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "AI agents invade observability: snake oil or the future of SRE?",
    "quote": "Because the people creating and selling these solutions are charlatans who have probably never debugged a gnarly Linux issue; more importantly, they’re selling it to people who also don’t know any better."
   },
   {
@@ -7635,6 +8015,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "AI agents invade observability: snake oil or the future of SRE?",
    "quote": "That already exists, though? Log anomalies is a thing."
   },
   {
@@ -7646,6 +8029,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "AI agents invade observability: snake oil or the future of SRE?",
    "quote": "They can deliver tremendous value by doing portions of the job. i.e. bringing in relevant data for a given alert or writing post-mortems."
   },
   {
@@ -7657,6 +8043,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "AI agents invade observability: snake oil or the future of SRE?",
    "quote": "Yes. Not one AI but multiple AI agents, all working on different aspects of the problem autonomously and then coming together where needed to collaborate."
   },
   {
@@ -7670,6 +8059,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "AI agents invade observability: snake oil or the future of SRE?",
    "quote": "The mistakes will be dismissed as attributed to misuses, or weird installations, and the successes will fuel the hype."
   },
   {
@@ -7683,6 +8075,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "AI agents invade observability: snake oil or the future of SRE?",
    "quote": "I really can’t think of anything more counter-productive than AI post-mortems. The whole point of them is for the team to understand what were wrong and how processes can be improved in order to prevent issues happening again."
   },
   {
@@ -7696,6 +8091,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "AI agents invade observability: snake oil or the future of SRE?",
    "quote": "I think the past few years have amply demonstrated that they can be both snake oil and the future of SRE. A dim future indeed."
   },
   {
@@ -7709,6 +8107,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "AI agents invade observability: snake oil or the future of SRE?",
    "quote": "The words reliability and LLM do not currently belong in the same sentence."
   },
   {
@@ -7722,6 +8123,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "AI agents invade observability: snake oil or the future of SRE?",
    "quote": "SRE/Ops/Livesite is an incredibly hard problem and very easy to make shiny demos for products that will not reproduce those results when you need them most."
   },
   {
@@ -7735,6 +8139,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "AI agents invade observability: snake oil or the future of SRE?",
    "quote": "This paper explains why this is (and likely will be for some time) the case: https://link.springer.com/article/10.1007/s10676-024-09775-5"
   },
   {
@@ -7748,6 +8155,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "AI agents invade observability: snake oil or the future of SRE?",
    "quote": "Even then, you generally need someone smart enough to figure out what is causing the error."
   },
   {
@@ -7761,6 +8171,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "AI agents invade observability: snake oil or the future of SRE?",
    "quote": "I believe that expertise combined with automation can build a strong foundation that can be delegated to AI agents. Presumably not all of them will deliver greater good but let’s not lose hope, it’s still infancy."
   },
   {
@@ -7775,6 +8188,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "AI agents invade observability: snake oil or the future of SRE?",
    "quote": "Operations is the height of big picture complexity - exactly what AI is not good at."
   },
   {
@@ -7788,6 +8204,9 @@
    "vendors": [],
    "buyer_signal": true,
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Show HN: Oodle – serverless, fully-managed, drop-in replacement for Prometheus",
    "quote": "We are also starting use Oodle AI for helping with discovery of problem root cause faster."
   },
   {
@@ -7801,6 +8220,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "AI agent promotes itself to sysadmin, trashes boot sequence",
    "quote": "This is about what I expect when I hear \"AIOps\". Something that operates So Hard... until it doesn't."
   },
   {
@@ -7812,6 +8234,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Genie: Uber's Gen AI On-Call Copilot",
    "quote": null
   },
   {
@@ -7823,6 +8248,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Meta Uses LLMs to Improve Incident Response",
    "quote": "That said, I also think AI can play a massive role aiding humans, especially in undifferentiated tasks like checking deployments, code changes, past incidents, and when it comes to spotting patterns."
   },
   {
@@ -7836,6 +8264,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Meta Uses LLMs to Improve Incident Response",
    "quote": "So if you look at the flip side, the on call engineer is being misled by AI ~60% of the time."
   },
   {
@@ -7849,6 +8280,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Launch HN: Keep (YC W23) – AIOps and alert management",
    "quote": "$1/alert/month???"
   },
   {
@@ -7860,6 +8294,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Launch HN: Keep (YC W23) – AIOps and alert management",
    "quote": "TIL that BigPanda and Moogsoft solve the same problems which you are trying to solve :)"
   },
   {
@@ -7871,6 +8308,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Launch HN: Keep (YC W23) – AIOps and alert management",
    "quote": "What's an actual use case for this?"
   },
   {
@@ -7882,6 +8322,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Launch HN: Keep (YC W23) – AIOps and alert management",
    "quote": "500 deduplicated alerts requiring human attention is a normal day for my company."
   },
   {
@@ -7893,6 +8336,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "What Is an AI SRE",
    "quote": null
   },
   {
@@ -7904,6 +8350,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "What Types of Issues Do Devs Handle on On-Call? Would Workflow Automation Work?",
    "quote": "Would a tool that automates some on-call tasks be useful? I’m thinking of building software that lets devs create workflows to automate recurring issues."
   },
   {
@@ -7915,6 +8364,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "AI tool that helps SREs and DevOps teams",
    "quote": null
   },
   {
@@ -7926,6 +8378,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Ask HN: Any one know good AI SRE for Kubernetes?",
    "quote": null
   },
   {
@@ -7937,6 +8392,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Ask HN: Any one know good AI SRE for Kubernetes?",
    "quote": "It's neither SRE or AI related?"
   },
   {
@@ -7948,6 +8406,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Does anyone here uses AI in Production for performing DevOps and SRE tasks",
    "quote": null
   },
   {
@@ -7963,6 +8424,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Firing programmers for AI is a mistake",
    "quote": "These AI tools are also not good at answering PagerDuty to fix a production problem that is a result of the code they imagined."
   },
   {
@@ -7976,6 +8440,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Why is everyone trying to replace Software Engineers?",
    "quote": "I’ll believe it when I can page an AI at 3AM, go back to sleep, and have it autonomously root-cause and fix a production outage no matter the cause."
   },
   {
@@ -7989,6 +8456,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Distilled DeepSeek R1 Outperforms Llama 3 and GPT-4o in Classifying Error Logs",
    "quote": null
   },
   {
@@ -8003,6 +8473,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Atlassian announces end of support for Opsgenie",
    "quote": "Frankly, the thought of some black box AI system deciding when to silence incidents utterly terrifies me."
   },
   {
@@ -8016,6 +8489,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Atlassian announces end of support for Opsgenie",
    "quote": "incident response is the last place I'd want to see AI-anything, other than helping me write post-mortems maybe. Who's liable when your text generator decides to close an impacting incident?"
   },
   {
@@ -8031,6 +8507,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Atlassian announces end of support for Opsgenie",
    "quote": "then a slew of extremely recent (<1 year) companies leaning into AI incident response."
   },
   {
@@ -8042,6 +8521,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Breaking Up with On-Call",
    "quote": "The on-call software uses an LLM to summarize the tickets, and a vector db to find troubleshooting guides and similar tickets."
   },
   {
@@ -8056,6 +8538,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Breaking Up with On-Call",
    "quote": null
   },
   {
@@ -8069,6 +8554,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "There is no Vibe Engineering",
    "quote": "I dare say there are already people saying this, but I don't know of any SWEs (or anyone who has maintained a significant codebase) who would be willing to go on-call for such a system."
   },
   {
@@ -8080,6 +8568,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Show HN: MCP agents handle an incident workflow [video]",
    "quote": null
   },
   {
@@ -8091,6 +8582,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Avoiding skill atrophy in the age of AI",
    "quote": "Tons of AIOps stuff related to observability, monitoring, and remediation going on. In fact, I found that one the big topics at Kubecon in London."
   },
   {
@@ -8104,6 +8598,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Ask HN: How do folks without 'seniority' in a domain launch, e.g., 'AI in SRE",
    "quote": "The founders appear to be novice in terms of real world experience."
   },
   {
@@ -8118,6 +8615,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "As an experienced LLM user, I don't use generative LLMs often",
    "quote": "And when the oncall then has to rely on \"AI\" to fix the mess, because he didn't actually write the code himself, and really doesn't even know the codebase any more"
   },
   {
@@ -8129,6 +8629,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "What Is An AI SRE?",
    "quote": null
   },
   {
@@ -8140,6 +8643,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Show HN: SRE Assistant – An AI-powered agent for Kubernetes and AWS operations",
    "quote": "Built for SREs who want to streamline operations through conversational AI."
   },
   {
@@ -8151,6 +8657,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "What do people use for on-call these days?",
    "quote": "What does AI-native mean in the context of on-call and incident management?"
   },
   {
@@ -8164,6 +8673,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Watching AI drive Microsoft employees insane",
    "quote": null
   },
   {
@@ -8175,6 +8687,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "LLM function calls don't scale; code orchestration is simpler, more effective",
    "quote": "in an AIOps project we still perform a number of time series algorithms and then feed the results along with the original time series data to LLM. LLM will produce much more relevant and in-depth analysis than using the raw data along as input."
   },
   {
@@ -8188,6 +8703,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Management = Bullshit (LLM Edition)",
    "quote": "If I pulled out a DR plan in the middle of a crisis and found it was AI generated BS I'd be furious and after the head of whoever half-assed (zero-assed?) it."
   },
   {
@@ -8201,6 +8719,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "AIOps: Prove It an Open Letter to Vendors Selling AI for SREs",
    "quote": null
   },
   {
@@ -8212,6 +8733,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Show HN: OpenDeRisk – open-source intelligent app risk manager",
    "quote": "It sounds like an AI-SRE agent"
   },
   {
@@ -8225,6 +8749,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Surprisingly fast AI-generated kernels we didn't mean to publish yet",
    "quote": "With AI help I managed to extract the name of the specific file that had NTFS corruption and was crashing the server."
   },
   {
@@ -8239,6 +8766,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Show HN: Poseidon, an Oncall AI agent (open source alt to resolve.ai)",
    "quote": "Poseidon v0.1 analyzes past incidents, logs, metrics, and ops history to suggest root causes (demo in README)."
   },
   {
@@ -8250,6 +8780,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "It's the end of observability as we know it (and I feel fine)",
    "quote": "When diagnosing SRE type issues you want useful facts fast. You are playing detective and AI provides leads but you still need to make human decisions for most things."
   },
   {
@@ -8263,6 +8796,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "It's the end of observability as we know it (and I feel fine)",
    "quote": "Recently, I started using AI to help with analysis, and I found that it can give me clues in a few seconds that I might have spent half a day searching for."
   },
   {
@@ -8276,6 +8812,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "It's the end of observability as we know it (and I feel fine)",
    "quote": "It must burn a little blogging about an LLM-driven latency analysis _internal demo_ only to have Datadog launch a product in the same space a day later."
   },
   {
@@ -8289,6 +8828,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Cloudflare was down",
    "quote": "They should make the AI lead the postmortem."
   },
   {
@@ -8302,6 +8844,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "It's the end of observability as we know it (and I feel fine)",
    "quote": null
   },
   {
@@ -8313,6 +8858,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "AI Reliability Engineering: Welcome to the Third Age of SRE",
    "quote": null
   },
   {
@@ -8326,6 +8874,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "From LLM to AI Agent: What's the Real Journey Behind AI System Development?",
    "quote": "There's no way an LLM will be able to identify the root cause reliably. You'll probably need a human to evaluate the output at some point."
   },
   {
@@ -8340,6 +8891,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Define policy forbidding use of AI code generators",
    "quote": null
   },
   {
@@ -8353,6 +8907,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": true,
+   "kind": "story",
+   "thread": "Show HN: AIOps MCP – Log anomaly detection using Isolation Forest",
    "quote": "I built an open-source AIOps MCP (Monitoring & Control Plane) that detects anomalies in logs using Isolation Forest."
   },
   {
@@ -8366,6 +8923,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Ask HN: Is your company forcing use of AI?",
    "quote": "But llms generally are _amazing_ for my ops work. Feeding a codebase into one and then logs I’ve seen Claude code identify exact production issues with no other prompting."
   },
   {
@@ -8379,6 +8939,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "What to build instead of AI agents",
    "quote": "As soon as you get good at prompt templates / plans with Claude Code and the like to make them spin for 10min+ productively, this gets very obvious."
   },
   {
@@ -8390,6 +8953,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "AIOps in the Era of LLMs",
    "quote": null
   },
   {
@@ -8404,6 +8970,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Building better AI tools",
    "quote": "That also partly addresses the fundamental security problems of letting AI run commands in production, though in practice I do think it likely that people will run commands presented to them without careful checking."
   },
   {
@@ -8415,6 +8984,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Building better AI tools",
    "quote": "seeing the results of investigative steps all lined up next to each other and synthesized is a powerful way to learn those techniques for yourself."
   },
   {
@@ -8426,6 +8998,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Evaluating the different types of AI-powered Root Cause Analysis",
    "quote": null
   },
   {
@@ -8441,6 +9016,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "How Anthropic teams use Claude Code",
    "quote": "I was thinking this is cool, don't need to use my head on this, until I realized that the log entry simply did not exist. It was entirely made up."
   },
   {
@@ -8452,6 +9030,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Some Thoughts on \"Agentic DevOps\", AIOps, and Vibe Coding",
    "quote": null
   },
   {
@@ -8467,6 +9048,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Show HN: TraceRoot – Open-source agentic debugging for distributed services",
    "quote": "I like the idea of this and the use case, but don't love the tight coupling to openai. I'd love to see a framework for allowing BYOM."
   },
   {
@@ -8478,6 +9062,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Show HN: TraceRoot – Open-source agentic debugging for distributed services",
    "quote": "Why not use something like litellm?"
   },
   {
@@ -8493,6 +9080,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Show HN: TraceRoot – Open-source agentic debugging for distributed services",
    "quote": "any new project being locked in to OpenAI only is a large red flag for me."
   },
   {
@@ -8508,6 +9098,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Show HN: TraceRoot – Open-source agentic debugging for distributed services",
    "quote": "Adding model provider abstraction would significantly improve adoption, especially for organizations with specific LLM preferences or air-gapped environments that can't use OpenAI."
   },
   {
@@ -8523,6 +9116,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Show HN: TraceRoot – Open-source agentic debugging for distributed services",
    "quote": "Would TraceRoot do anything clever wrt the AI that such as a setup wouldn't/couldn't?"
   },
   {
@@ -8539,6 +9135,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": true,
+   "kind": "comment",
+   "thread": "Show HN: TraceRoot – Open-source agentic debugging for distributed services",
    "quote": "Cursor or ClaudeCode would give me all that I need. Are you doing something new here?"
   },
   {
@@ -8550,6 +9149,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Show HN: TraceRoot – Open-source agentic debugging for distributed services",
    "quote": "How do you evaluate the output of your trace tool? Are some benchmarks for tracing tools?"
   },
   {
@@ -8561,6 +9163,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Show HN: TraceRoot – Open-source agentic debugging for distributed services",
    "quote": "how are you evaluating the performance while you develop this. Do you have some golden set of examples that you evaluate against?"
   },
   {
@@ -8572,6 +9177,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Ask HN: Can no-code AI workflow tools replace runbooks?",
    "quote": "Is anyone here already using these no-code builders for “serious” infra automation or incident response?"
   },
   {
@@ -8583,6 +9191,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Show HN: TraceRoot – Open-source agentic debugging for distributed services",
    "quote": "I don't understand - otel does that unification already. Traces connected to logs etc.. I'm still missing something..."
   },
   {
@@ -8596,6 +9207,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": true,
+   "kind": "comment",
+   "thread": "Show HN: TraceRoot – Open-source agentic debugging for distributed services",
    "quote": "Sentry does that. Also most observability platforms have tracing built in. All of this can be fed into LLM using MCP."
   },
   {
@@ -8611,6 +9225,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": true,
+   "kind": "comment",
+   "thread": "Show HN: TraceRoot – Open-source agentic debugging for distributed services",
    "quote": "It's interesting to wonder if 80% of the question answering can be achieved as a prompts/otel.md over MCPs connected to Claude Code and let agentic reasoning do the rest"
   },
   {
@@ -8624,6 +9241,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Poisoned telemetry can turn AIOps into AI Oops, researchers show",
    "quote": null
   },
   {
@@ -8635,6 +9255,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Can LLMs replace on-call SREs?",
    "quote": null
   },
   {
@@ -8648,6 +9271,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "AI SRE Needs More Than AI: It Needs Operational Context",
    "quote": null
   },
   {
@@ -8661,6 +9287,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "AI SRE Needs More Than AI: It Needs Operational Context",
    "quote": "The challenge, however, comes after diagnosis. Despite better detection, the limiting factor has shifted: once the issue is identified, resolution still depends on human coordination."
   },
   {
@@ -8674,6 +9303,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Vibe Debugging: Enterprises' Up and Coming Nightmare",
    "quote": "What makes me think this is a bubble is the amount of emotion behind the decision making process (plus the fact that almost nobody is making a dime with this so far)."
   },
   {
@@ -8688,6 +9320,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "We rebuilt Cloud Life's infrastructure delivery with System Initiative",
    "quote": "This is some custom IaC system with AI Agents sprinkled on top. I guess if you want to get rid of SRE team and replace us with their consultants, whatever, I won't be here to care."
   },
   {
@@ -8699,6 +9334,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Ask HN: How are folks building debugging/DevOps agents?",
    "quote": "How are folks building devops agents that debug production outages?"
   },
   {
@@ -8715,6 +9353,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Launch HN: Datafruit (YC S25) – AI for DevOps",
    "quote": "We don't need AI YOLOing more stuff into Prod, we need AI to tell their bosses what downtime they are causing is costing our company so maybe, just maybe, they will actually care."
   },
   {
@@ -8730,6 +9371,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Ask HN: How AI is showing up in SRE, copilots and always-on tools",
    "quote": "Both models are now being used side-by-side: copilots for ad-hoc debugging and analysis, and always-on platforms for continuous coverage and operational resilience."
   },
   {
@@ -8741,6 +9385,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "SRE AI Agent Used at TikTok",
    "quote": null
   },
   {
@@ -8754,6 +9401,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Where's the shovelware? Why AI coding claims don't add up",
    "quote": "If we can delegate incident response to automated LLMs too, sure, why not. Let the CEO have his way and pay the reputational price. When it doesn't work, we can revert our git repos to the day LLMs didn't write all the code."
   },
   {
@@ -8765,6 +9415,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Can LLMs replace on call SREs today?",
    "quote": null
   },
   {
@@ -8776,6 +9429,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Investment Insights from Two Years of AI-Powered Postmortem Analysis",
    "quote": null
   },
   {
@@ -8787,6 +9443,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Agentic AI Architecture for On-Call Engineers",
    "quote": null
   },
   {
@@ -8800,6 +9459,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Uber will offer gig work like AI data labeling to drivers while not on the road",
    "quote": "Second sentence was describing their mission as making the SRE role no longer necessary for companies."
   },
   {
@@ -8813,6 +9475,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Claude outage",
    "quote": "Even worse the on-call folks who need to do recovery but need an LLM to do it, but surprise they are both on the same cloud provider."
   },
   {
@@ -8824,6 +9489,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "The Case That A.I. Is Thinking",
    "quote": "Today, I can toss a variety of logs at AI and if nothing else, get a sense of direction of why a handful of PCs are rejecting some web certificates."
   },
   {
@@ -8835,6 +9503,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "[dead]",
    "quote": "Now imagine if the system had seen it coming… and fixed itself before anyone noticed. That’s not science fiction, that’s AIOps."
   },
   {
@@ -8848,6 +9519,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "GitHub partial outage",
    "quote": "Are they using AI agents this time to resolve the outage? Probably not."
   },
   {
@@ -8862,6 +9536,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Ask HN: Anyone tried using AI SREs? What's missing?",
    "quote": "I’m exploring an idea in the AI + SRE space and trying to understand how people actually use these tools in production."
   },
   {
@@ -8873,6 +9550,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "AWS Security Incident Response now provides agentic AI-powered investigation",
    "quote": null
   },
   {
@@ -8886,6 +9566,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Gemini 3 beaks OpenAI's long-standing lead in SRE tasks",
    "quote": null
   },
   {
@@ -8901,6 +9584,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Built an AI Agent from Scratch to Measure Token Costs. Here's What I Found",
    "quote": "Real systems often have dozens of tools across domains, multi-turn conversations during incidents, and power users issuing many queries per day. Token costs don’t scale linearly. They compound."
   },
   {
@@ -8914,6 +9600,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Installed Claude Code on WordPress server, now I talk to it like ChatGPT [video]",
    "quote": "Bugs are found quickly now. I just log in, activate my @ diagnose agent, provide a report of what's going wrong."
   },
   {
@@ -8927,6 +9616,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Show HN: CodeModeTOON – MCP orchestrator for workflows in TypeScript",
    "quote": "Pre-built workflows: Research, K8s auditing, incident analysis."
   },
   {
@@ -8938,6 +9630,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Multi-Agent AI System Investigating Kubernetes Incidents Automatically",
    "quote": null
   },
   {
@@ -8949,6 +9644,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Show HN: ProdE – code change impact and root cause analysis for large codebases",
    "quote": null
   },
   {
@@ -8963,6 +9661,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Ask HN: How can I get better at using AI for programming?",
    "quote": "I am putting this through it's paces now but early results are VERY good!"
   },
   {
@@ -8974,6 +9675,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "AI agent that investigates CloudWatch alarms and delivers root cause analysis",
    "quote": null
   },
   {
@@ -8987,6 +9691,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Engineers who dismiss AI",
    "quote": "gave Claude some of the code to connect and it diagnosed a CREDENTIALS issue without seeing the credentials file nor seeing the error itself."
   },
   {
@@ -9000,6 +9707,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Skills for organizations, partners, the ecosystem",
    "quote": "For example, one of the ideas on my \"cool projects\" list is an SRE toolkit that can query across K8s, Loki/Prometheus, your cloud provider, your git provider and help quickly diagnose production issues."
   },
   {
@@ -9013,6 +9723,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Ex-Splunk execs' startup Resolve AI hits $1B valuation with Series A",
    "quote": null
   },
   {
@@ -9029,6 +9742,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Ask HN: How do you orchestrate ops across tools?",
    "quote": "Introducing AI into that mix usually means either one-off integrations or giving agents fairly broad access to systems that weren’t designed for it."
   },
   {
@@ -9044,6 +9760,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Ask HN: How do you orchestrate ops across tools?",
    "quote": "AI is great at cutting away ops noise (false alerts), OK at root cause analysis / debugging and terrible at actually prioritizing and fixing the thing."
   },
   {
@@ -9055,6 +9774,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Akmatori: Open-Source AI Agents for Incident Management",
    "quote": null
   },
   {
@@ -9068,6 +9790,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "AI SRE needs better observability, not bigger models",
    "quote": null
   },
   {
@@ -9079,6 +9804,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "AI SRE needs better observability, not bigger models",
    "quote": "But once an incident is resolved, you could ETL specific threads (filtering out noise) and the resulting RCA into ClickHouse as a vectorized document."
   },
   {
@@ -9090,6 +9818,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Show HN: Hawkeye – A CLI tool that watches logs and uses AI to explain issues",
    "quote": "It's pretty simple and probably rough around the edges. I've been using it to monitor my current project and it's saved me some debugging time."
   },
   {
@@ -9101,6 +9832,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Observability's past, present, and future",
    "quote": "Add richer context and pass it to an AI SRE tool."
   },
   {
@@ -9112,6 +9846,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "The AI SRE your SRE tells you not to worry about",
    "quote": null
   },
   {
@@ -9125,6 +9862,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Datadog, thank you for blocking us",
    "quote": "Seems a bit too perfect that the AI SRE gets unfairly blocked"
   },
   {
@@ -9140,6 +9880,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Datadog, thank you for blocking us",
    "quote": "Which is to say, I think everyone should have some humility here because how useful the systems end up being is very uncertain."
   },
   {
@@ -9153,6 +9896,9 @@
    ],
    "buyer_signal": true,
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Ask HN: Senior engineering mngrs: how has AI changed your day-to-day work?",
    "quote": "I paste real production symptoms (headers, cache status, curl repros, traces) and ask for ranked root-cause candidates + experiments."
   },
   {
@@ -9164,6 +9910,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Don't fall into the anti-AI hype",
    "quote": "At that point, yeah you'll probably need to keep a few human engineers around to run the system, but the system itself will manage the software."
   },
   {
@@ -9175,6 +9924,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Saving 675 Engineering Hours a Month Using an AI Slack On-Call Agent",
    "quote": null
   },
   {
@@ -9188,6 +9940,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Saving 675 Engineering Hours a Month Using an AI Slack On-Call Agent",
    "quote": "the usual manipulative massaged spiel."
   },
   {
@@ -9201,6 +9956,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "GitHub Incident",
    "quote": "They're AI, but they're supposed to be way better than a human SRE."
   },
   {
@@ -9214,6 +9972,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "2026: This is AGI",
    "quote": "How’s that working out? Whose site? How reliable?"
   },
   {
@@ -9227,6 +9988,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "The next two years of software engineering",
    "quote": "Maybe eventually you'll want to trust your corporate credit card to the LLMs too, but that's gonna be one of the last things where humans get taken out of the loop."
   },
   {
@@ -9241,6 +10005,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "What twenty years of DevOps has failed to do",
    "quote": "It has been extremely hard since that demo to trust any AI for system level debugging."
   },
   {
@@ -9256,6 +10023,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": true,
+   "kind": "comment",
+   "thread": "What twenty years of DevOps has failed to do",
    "quote": "I don't think you can come in now with this holier-than-thou best practice messaging just because platforms like yours have zero moat in this post-CC/Codex world."
   },
   {
@@ -9273,6 +10043,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "I was a top 0.01% Cursor user, then switched to Claude Code 2.0",
    "quote": null
   },
   {
@@ -9284,6 +10057,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Building an RL environment to train agents for production debugging",
    "quote": null
   },
   {
@@ -9295,6 +10071,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Linking Logs to Code: Introducing Statement IDs",
    "quote": "This is another step on the path to auto-healing - takes away a bunch of process effort and focuses on the root cause. AI SREs (and real ones) will love it"
   },
   {
@@ -9306,6 +10085,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Ask HN: Will agentic AI grow to handle technology leadership responsibilities?",
    "quote": "Do we still need a human developer on call?"
   },
   {
@@ -9321,6 +10103,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Ask HN: Would you trust an AI coworker with shell access to your infrastructure?",
    "quote": "But this raises a lot of uncomfortable questions."
   },
   {
@@ -9334,6 +10119,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Show HN: I embedded Claude inside a running Node app",
    "quote": "it isolated the relevant code path, disabled the risky behavior, restarted the process, and wrote a postmortem."
   },
   {
@@ -9347,6 +10135,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "The future of software engineering is SRE",
    "quote": "calling all Developers = SRE won't change the fact that AI can't program now without massive experienced people controlling it."
   },
   {
@@ -9360,6 +10151,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "The future of software engineering is SRE",
    "quote": "AI helps with one of those. Maybe."
   },
   {
@@ -9373,6 +10167,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "The future of software engineering is SRE",
    "quote": "As an SRE I can tell you AI can't do everything."
   },
   {
@@ -9386,6 +10183,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "The future of software engineering is SRE",
    "quote": "And I wish them luck, because the thought of current ai bots doing SRE work effectively is laughable."
   },
   {
@@ -9401,6 +10201,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "The future of software engineering is SRE",
    "quote": null
   },
   {
@@ -9412,6 +10215,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "The future of software engineering is SRE",
    "quote": "That's what they used to say about software engineering and yet this is becoming less and less obvious as capabilities increase."
   },
   {
@@ -9423,6 +10229,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "The future of software engineering is SRE",
    "quote": "Paraphrase: \"As an SRE I can tell you that the undetermined and unknowable potential of AI definitely won't involve my job being replaced.\""
   },
   {
@@ -9434,6 +10243,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "The future of software engineering is SRE",
    "quote": "With Vibecoding I imagine the LLM will get a MCP that allows them to schedule the jobs on Kubernetes or whatever IaaS and a fleet of agents will do the basic troubleshooting or whackamole type activities, leaving only the hard problems for human SRE."
   },
   {
@@ -9447,6 +10259,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "The future of software engineering is SRE",
    "quote": "Humans are still by far the most efficient and generalized reasoners, and putting the energy intensive, brittle ai model in charge of most implementation is setting yourself up to fail."
   },
   {
@@ -9458,6 +10273,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "The future of software engineering is SRE",
    "quote": "It's called AI SRE, and for now, it's mostly targeted at helping on-call engineers investigate and solve incidents."
   },
   {
@@ -9471,6 +10289,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Clawdbot - open source personal AI assistant",
    "quote": "It's handy for instance during an incident to be researching the problem, digging through Sentry or Clickhouse or the code and have it post updates directly to our #engineering channel for the team to see."
   },
   {
@@ -9484,6 +10305,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Benchmarking OpenTelemetry: Can AI trace your failed login?",
    "quote": "nobody is going to type \"fix my incident\" in production and have a nice time today outside of the most simple things that if they are possible to fix like this, could've been automated already anyway."
   },
   {
@@ -9497,6 +10321,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Benchmarking OpenTelemetry: Can AI trace your failed login?",
    "quote": null
   },
   {
@@ -9510,6 +10337,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Benchmarking OpenTelemetry: Can AI trace your failed login?",
    "quote": "I'm an SRE, AI does NOT struggle with 'simple SRE tasks' OTel instrumentation by no measure is a 'simple SRE task'"
   },
   {
@@ -9521,6 +10351,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Benchmarking OpenTelemetry: Can AI trace your failed login?",
    "quote": "There's no concrete simple goals, no mention of testing, no loop. No description of the problem space or what success should look like."
   },
   {
@@ -9532,6 +10365,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Benchmarking OpenTelemetry: Can AI trace your failed login?",
    "quote": "I'm confident that it's at a level that already has profound implications for SRE. And the current level of getting it right with a simple prompt is still impressive."
   },
   {
@@ -9543,6 +10379,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Benchmarking OpenTelemetry: Can AI trace your failed login?",
    "quote": "We've been experimenting with combining durable execution with debugging tasks, and it's working incredibly well!"
   },
   {
@@ -9556,6 +10395,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Benchmarking OpenTelemetry: Can AI trace your failed login?",
    "quote": "For AI-SRE tasks like finding root cause of bugs and errors, I believe the key is to provide tools to the agent to query metrics, logs, traces and understand the problem."
   },
   {
@@ -9569,6 +10411,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Benchmarking OpenTelemetry: Can AI trace your failed login?",
    "quote": "LLMs can identify this maybe, or help them implement the tracing faster, but those 10 minutes could also be spent on features for money."
   },
   {
@@ -9582,6 +10427,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "AI’s impact on engineering jobs may be different than expected",
    "quote": "The more AI is used in development, the more it will have to be used for on-call and similar troubleshooting, as nobody will actually understand how it works, or certainly the few engineers that prompt it won't be able to cover all roles."
   },
   {
@@ -9597,6 +10445,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "A Step Behind the Bleeding Edge: A Philosophy on AI in Dev",
    "quote": "Having a dev on call reduces time to restore service because the dev is familiar with the code. If developers stop reviewing code, they won't be familiar with it and won't be as effective. I am currently unaware of any viable agentic AI substitute for a dev on call capability."
   },
   {
@@ -9610,6 +10461,9 @@
    "vendors": [],
    "buyer_signal": false,
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Code is cheap. Show me the talk",
    "quote": "Frequently the boss is encouraging use of AI for efficiency without understanding the implications. And we'll just have the AI write the postmortem, so no big deal there. ;)"
   },
   {
@@ -9625,6 +10479,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Two kinds of AI users are emerging",
    "quote": "I think we might be strongly overestimating the benefits of knowing a codebase these days."
   },
   {
@@ -9636,6 +10493,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Why software stocks are getting pummelled",
    "quote": "Consider incident handling. What if your AI sets up monitoring that detects errors or outages, wakes up an agent, gives it the problem context, then sets it to work so it can debug the issue, produce a fix, then deploy it? You now have an end-to-end system that works 24/7."
   },
   {
@@ -9649,6 +10509,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Why software stocks are getting pummelled",
    "quote": "Have you ever been actually involved in trying to fix an error or outage? Like actually on an on-call rotation where you had to deal with reported issues?"
   },
   {
@@ -9660,6 +10523,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Auto-Jira: AI that detects errors, diagnoses root causes, and files Jira tickets",
    "quote": null
   },
   {
@@ -9673,6 +10539,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Coding agents have replaced every framework I used",
    "quote": "If you manage a code base this way at your company, sooner or later you will face a wall. What happens when the AI can't fix an important bug or is unable to add a very important feature?"
   },
   {
@@ -9686,6 +10555,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Coding agents have replaced every framework I used",
    "quote": "Amazon, which employs many thousands of SREs (or, well, pseudo-SREs; AIUI it's not quite the conventional SRE role), is presumably just doing so for charitable purposes, if they are so easy to replace with magic robots."
   },
   {
@@ -9699,6 +10571,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "AI-Driven SRE Tools. Please Stop",
    "quote": null
   },
   {
@@ -9710,6 +10585,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Lots of AI SRE, no AI incident management",
    "quote": null
   },
   {
@@ -9721,6 +10599,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Show HN: RunbookAI – Stop scrolling dashboards at 3 a.m., let AI investigate",
    "quote": "Most of this is pattern matching that follows a predictable decision tree. Exactly what an AI agent should be doing."
   },
   {
@@ -9732,6 +10613,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Why AI-SRE Needs Topology, Not Just Telemetry",
    "quote": null
   },
   {
@@ -9746,6 +10630,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Launch HN: Sonarly (YC W26) – AI agent to triage and fix your production alerts",
    "quote": "I think I'd be most concerned about having a separate development process outside of the main issue queue, where agents aren't necessarily integrated into the main workstream."
   },
   {
@@ -9757,6 +10644,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Launch HN: Sonarly (YC W26) – AI agent to triage and fix your production alerts",
    "quote": "Oh ffs my manager is going to be talking about this in the stand up"
   },
   {
@@ -9774,6 +10664,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Launch HN: Sonarly (YC W26) – AI agent to triage and fix your production alerts",
    "quote": "I would say 30% of the PRs i can merge, the remainder the LLM has applied a bandaid fix without digging deep enough into the root cause."
   },
   {
@@ -9790,6 +10683,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Launch HN: Sonarly (YC W26) – AI agent to triage and fix your production alerts",
    "quote": "the other issue is crazy token wastage, which gets expensive. my gut instinct re triaging is that i want to do it myself in the prompt - but if it prevents noise before reaching claude it may be useful for some folks just for the token savings."
   },
   {
@@ -9803,6 +10699,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Launch HN: Sonarly (YC W26) – AI agent to triage and fix your production alerts",
    "quote": "Adding more complexity to uncover issues caused by complexity defeats the purpose but I guess people need to sell shovels."
   },
   {
@@ -9818,6 +10717,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Launch HN: Sonarly (YC W26) – AI agent to triage and fix your production alerts",
    "quote": null
   },
   {
@@ -9829,6 +10731,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Launch HN: Sonarly (YC W26) – AI agent to triage and fix your production alerts",
    "quote": "but I’d think that if 70% of the PRs you receive are noise, an AI triager could be useful—if you give it the context it needs based on your best practices."
   },
   {
@@ -9844,6 +10749,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Show HN: Cursor for Observability",
    "quote": "I think the Root Cause analysis would be great if it didn’t show 0 for everything."
   },
   {
@@ -9860,6 +10768,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Launch HN: Sonarly (YC W26) – AI agent to triage and fix your production alerts",
    "quote": "Claude will typically resolve these in a surface level way when in practice they often require deeper changes"
   },
   {
@@ -9871,6 +10782,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Building an Autonomous AI Sysadmin with LangGraph, Ansible, and SQLite",
    "quote": "I wanted to move past the 'chatbot' phase of AI and build something that actually interacts with infrastructure. The biggest challenge wasn't the LLM—it was handling state and ensuring the AI didn't hallucinate math."
   },
   {
@@ -9884,6 +10798,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "I used Claude Code's agent teams on a production incident (field report)",
    "quote": null
   },
   {
@@ -9895,6 +10812,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "We built an AI SRE agent in 2 days",
    "quote": null
   },
   {
@@ -9906,6 +10826,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Building an Autonomous SRE Team with AI Agents: A 5-Day Experiment",
    "quote": null
   },
   {
@@ -9922,6 +10845,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "AI is making junior devs useless",
    "quote": "First thing everyone did during that incident was to ask their LLM of choice why the platform was down. Investigating by hand (and my findings thereof) was dismissed, because surely Claude knows best."
   },
   {
@@ -9933,6 +10859,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Incident postmortem in the age of AI agents",
    "quote": null
   },
   {
@@ -9946,6 +10875,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Nobody gets promoted for simplicity",
    "quote": "I definitely do not ever want to be in a position again where no one in the whole place knows how something works while the higher-ups are having a meltdown because something critical broke."
   },
   {
@@ -9957,6 +10889,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Nobody gets promoted for simplicity",
    "quote": "People on call will use AI as well. As long as the first AI left enough documentation and implemented traceability, the diagnosing AI should have an easier time proposing a fix."
   },
   {
@@ -9970,6 +10905,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Nobody gets promoted for simplicity",
    "quote": "in that utopia, the on-call guy doesn't have a job"
   },
   {
@@ -9985,6 +10923,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "[dead]",
    "quote": null
   },
   {
@@ -9999,6 +10940,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "I dropped our production database and now pay 10% more for AWS",
    "quote": "This is example of someone who has let AI do too much of their \"thinking\" for them and it's led to brain rot."
   },
   {
@@ -10010,6 +10954,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Learnings from Building an AI Root Cause Analysis Agent",
    "quote": null
   },
   {
@@ -10023,6 +10970,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Autopsy – Open-source CLI that diagnoses production incidents in 30 seconds",
    "quote": "Autopsy pulls your recent error logs and GitHub deploys, sends them to an LLM with a diagnostic prompt, and gives you a structured root cause analysis right in your terminal."
   },
   {
@@ -10037,6 +10987,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Redox OS has adopted a Certificate of Origin policy and a strict no-LLM policy",
    "quote": "My team actually demoed a PoC last week to hook up Codex to our Slack channel to become our first level on-call"
   },
   {
@@ -10048,6 +11001,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Show HN: Autopsy CLI – Open-source AI incident diagnosis in 30s",
    "quote": "It pulls your CloudWatch logs and GitHub deploys, passes them to an LLM, and returns a structured root cause analysis in your terminal in about 30 seconds."
   },
   {
@@ -10061,6 +11017,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Show HN: Klaus – OpenClaw on a VM, batteries included",
    "quote": "Basically how do you make sure your \"AI SRE\" does not deviate from it's task and cause mayhem in the VM, or worse. Exfiltrates secrets, or other nasty things? :)"
   },
   {
@@ -10074,6 +11033,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "OpenRCA benchmark – Improving Claude's root cause analysis accuracy by 12 pp",
    "quote": null
   },
   {
@@ -10089,6 +11051,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": true,
+   "kind": "comment",
+   "thread": "Show HN: LogClaw – Open-source AI SRE that auto-creates tickets from logs",
    "quote": "A human SRE never manually detects an error - we already have well-established anomaly detection implementations and wiring them to some ticket generation tool is also an established pattern."
   },
   {
@@ -10105,6 +11070,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Show HN: LogClaw – Open-source AI SRE that auto-creates tickets from logs",
    "quote": null
   },
   {
@@ -10116,6 +11084,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Show HN: LogClaw – Open-source AI SRE that auto-creates tickets from logs",
    "quote": "It's helping you classify based on actual current or potential problems with the app in the ways that a plain log message does not."
   },
   {
@@ -10129,6 +11100,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Show HN: LogClaw – Open-source AI SRE that auto-creates tickets from logs",
    "quote": "Huh? You vibecoded the repo in a week and claim it ready?"
   },
   {
@@ -10142,6 +11116,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Show HN: LogClaw – Open-source AI SRE that auto-creates tickets from logs",
    "quote": "LLMs aren't the fastest thing in the world, how much data can you realistically parse per second?"
   },
   {
@@ -10155,6 +11132,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Show HN: LogClaw – Open-source AI SRE that auto-creates tickets from logs",
    "quote": "I've only been able to triage effectively for toy examples."
   },
   {
@@ -10168,6 +11148,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Show HN: LogClaw – Open-source AI SRE that auto-creates tickets from logs",
    "quote": "This product could have prevented a lot of stress in my case, but it'd be a bit like a bandage on a missing limb."
   },
   {
@@ -10181,6 +11164,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Show HN: LogClaw – Open-source AI SRE that auto-creates tickets from logs",
    "quote": "Deciphering ramifications from a log message alone is a pretty unusual way to approach a problem."
   },
   {
@@ -10194,6 +11180,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Show HN: LogClaw – Open-source AI SRE that auto-creates tickets from logs",
    "quote": "They found that putting things into foundation models wasn't cutting it, that you had to have small finely-tuned models along with deterministic processes to use AI for RCA."
   },
   {
@@ -10205,6 +11194,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Show HN: LogClaw – Open-source AI SRE that auto-creates tickets from logs",
    "quote": "That still begs the question though: There are existing tools and solutions that do this. Why not, and would this being AI make a difference?"
   },
   {
@@ -10218,6 +11210,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Show HN: LogClaw – Open-source AI SRE that auto-creates tickets from logs",
    "quote": "id also be fine writing up agent skills for how to solve common problems, and be able to run through those, but only if its rock solid."
   },
   {
@@ -10233,6 +11228,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Show HN: LogClaw – Open-source AI SRE that auto-creates tickets from logs",
    "quote": "How is it SOC2 compliant? You have completed an audit?"
   },
   {
@@ -10244,6 +11242,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "LLM Costs of AI investigating production alerts",
    "quote": null
   },
   {
@@ -10255,6 +11256,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "How much has AI deskilled you? (Quiz of SREs)",
    "quote": null
   },
   {
@@ -10266,6 +11270,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "TraceLens – Paste an OpenTelemetry trace, get AI root cause analysis",
    "quote": null
   },
   {
@@ -10277,6 +11284,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "AgentSmith-HUB update (what changed recently)",
    "quote": "This is a real production use case for us: we use an Agent to assign confidence scores to alerts, and alerts scored below 0.2 are automatically handled through whitelisting by the Agent, which has significantly improved our operational efficiency."
   },
   {
@@ -10290,6 +11300,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Fixing Claude with Claude: Anthropic reports on AI site reliability engineering",
    "quote": null
   },
   {
@@ -10308,6 +11321,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Thoughts on slowing the fuck down",
    "quote": "I don't think that you will be able to add Claude as the Dev-On-Call to your pagerduty schedule. If you are in an industry that requires due diligence and you get sued for bugs that cause material damage and human suffering, then I don't think the \"blame it on Claude\" defense is going to land well in court."
   },
   {
@@ -10319,6 +11335,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Ask HN: How has your DevOps/SRE changed since AI was adopted in your company?",
    "quote": null
   },
   {
@@ -10330,6 +11349,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Launch HN: Relvy (YC F24) – On-call runbooks, automated",
    "quote": "Automating on-call runbooks is a massive pain point. Have you considered how generative AI might further enhance the diagnostic or remediation steps, perhaps by suggesting solutions based on past incidents?"
   },
   {
@@ -10343,6 +11365,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "The economics of software teams: Why most engineering orgs are flying blind",
    "quote": null
   },
   {
@@ -10357,6 +11382,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Show HN: Kelet – Root Cause Analysis agent for your LLM apps",
    "quote": "Every six months or so, someone at work does a hackathon project to automate outage analysis work SRE would likely perform. And every one of them I've seen has been underwhelming and wrong."
   },
   {
@@ -10371,6 +11399,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Elevated errors on Claude.ai, API, Claude Code",
    "quote": "If you think AI can replace an SRE in 2026 April, I've got a bridge to sell you. I'm not saying \"don't use AI.\" I'm saying don't turn off your brain and let AI drop your production database."
   },
   {
@@ -10385,6 +11416,9 @@
    ],
    "buyer_signal": true,
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Observability Stack – AI First?",
    "quote": "The main reason for exploring a switch is to automate root cause analysis, bug fixing, performance improvements, etc."
   },
   {
@@ -10396,6 +11430,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "I built an AI SRE in 60mins, you should too",
    "quote": null
   },
   {
@@ -10409,6 +11446,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Claude Code for the Outer Loop: An AI SRE Playbook",
    "quote": null
   },
   {
@@ -10422,6 +11462,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Meta tells staff it will cut 10% of jobs",
    "quote": "replacing SRE-4s with AI is the point"
   },
   {
@@ -10437,6 +11480,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Do I belong in tech anymore?",
    "quote": "Every team builds their own “agent” for diagnosing incidents which is announced to huge fanfare but people rarely end up using it irl."
   },
   {
@@ -10448,6 +11494,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Show HN: Pi-hosts – Give the Pi coding agent access to your servers",
    "quote": "Useful to let developers perform mundane tasks, or help coordinate incident response."
   },
   {
@@ -10459,6 +11508,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Who's on call? How Opus 4.6 helped us calculate this 2,500x faster",
    "quote": null
   },
   {
@@ -10470,6 +11522,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "AI On-Call Engineer That Fixes Prod While I Sleep",
    "quote": null
   },
   {
@@ -10481,6 +11536,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "SRE at 53 watching my role get automated – how do I build something of my own?",
    "quote": "I can see the writing on the wall as we actively train AI to replace what I do."
   },
   {
@@ -10492,6 +11550,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "SRE at 53 watching my role get automated – how do I build something of my own?",
    "quote": "If I were you I’d lean into your intuition of how precisely AI will replace what you do."
   },
   {
@@ -10505,6 +11566,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "SRE at 53 watching my role get automated – how do I build something of my own?",
    "quote": "there will be still a lot of (SRE) work building out hybrid cross-cloud that goes deep into cost and performance optimization - that AI cannot solve (e.g. have direct access to engineering in mid/big tech)."
   },
   {
@@ -10518,6 +11582,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Let's talk about LLMs",
    "quote": "When it produces more robust software and handles on-call shifts better than humans, I will consider programming done."
   },
   {
@@ -10532,6 +11599,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Today I've made the difficult decision to reduce the size of Coinbase by ~14%",
    "quote": "Which is the whole problem here, you need to be technical to understand and push back when agents are doing things wrong"
   },
   {
@@ -10546,6 +11616,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Vibe coding and agentic engineering are getting closer than I'd like",
    "quote": "I have experienced AI running in circles, in this case trying to find a root cause. It failed, and the user is left holding the bag."
   },
   {
@@ -10557,6 +11630,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Sandboxing AIOps and Agentic AI Security",
    "quote": null
   },
   {
@@ -10572,6 +11648,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Codex is now in the ChatGPT mobile app",
    "quote": "AI agents for devops and troubleshooting has been fairly powerful for me."
   },
   {
@@ -10583,6 +11662,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Prolog Coding Horror",
    "quote": "Where a LLM comes into the picture is analysis of the symptoms - resource relationships, ages, ownership, hypothesising root causes, generating cleanup plans, management reporting and so on."
   },
   {
@@ -10594,6 +11676,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "I Taught an AI to Be Our On-Call Engineer",
    "quote": null
   },
   {
@@ -10607,6 +11692,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Launch HN: Runtime (YC P26) – Sandboxed coding agents for everyone on a team",
    "quote": "you don't need AI to find out that the hard-capped concurrent request limit of 10 was the root cause. but you do need an AI to find it for you so you can joke about giving it a raise."
   },
   {
@@ -10620,6 +11708,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Blue Origin's New Glenn blows up during static fire test",
    "quote": "I was saying that an AI would more likely hallucinate an incorrect answer than correctly diagnose the root cause failure."
   },
   {
@@ -10631,6 +11722,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "AI in SRE: Where and how Google is deploying agentic AI to improve operations",
    "quote": null
   },
   {
@@ -10642,6 +11736,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "The IsUpMap lets you check the status of over 100 major sites at once",
    "quote": "AI could at least take an initial guess + try to find if anyone else is posting root cause theories elsewhere at the time and link to those (and a guess is fine enough)."
   },
   {
@@ -10656,6 +11753,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "LLMs are eroding my software engineering career and I don't know what to do",
    "quote": "Turns out AI had identified and \"fixed\" a symptom, not a root cause."
   },
   {
@@ -10669,6 +11769,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Claude Fable 5",
    "quote": "For bugfinding/incident response in distributed systems - which often involves extensive use of Datadog/Sentry MCPs and poring over heaps of logs in addition to reading tons of code - 4.8 has been significantly better than 4.6."
   },
   {
@@ -10682,6 +11785,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "The better the autopilot the worse the pilot",
    "quote": "And the inability to practice this under-the-hood reasoning is the main reason why I don't trust any modern AI based automation systems. They are helpers for some manual work, but they can't be automation."
   },
   {
@@ -10693,6 +11799,9 @@
    "vendors": [],
    "buyer_signal": false,
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Show HN: JustRebootIt, WAN latency monitor with LLM root cause analysis",
    "quote": "JRI runs a bunch of parallel pings & traceroutes, detects when a spike is happening, runs more detailed probes during the event, then can feed all that into an LLM for diagnosis."
   },
   {
@@ -10706,6 +11815,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Claude Debugs a Postgres Alarm: Multixacts, SLRU Caches, and a False Crisis",
    "quote": null
   },
   {
@@ -10717,6 +11829,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "What job interviews taught me about Kubernetes",
    "quote": "What used to require a team of 4 devops/SRE to support a medium sized company, can now be collapsed down into a a single part time SRE."
   },
   {
@@ -10730,6 +11845,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "AI Doesn't Replace On-Call Judgment",
    "quote": null
   },
   {
@@ -10741,6 +11859,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Using mirrord to verify AI-SRE fixes against the staging cluster",
    "quote": null
   },
   {
@@ -10752,6 +11873,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "The hard part of AI root cause analysis is no longer the model",
    "quote": null
   },
   {
@@ -10767,6 +11891,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "It Still Can't Do My Job: Four Years of Moving Goalposts (2022–2026)",
    "quote": "At IQ 200, the AI is finally qualified to carry a pager for production."
   },
   {
@@ -10780,6 +11907,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "I built an AI that diagnoses PagerDuty incidents and posts fixes to Slack",
    "quote": null
   },
   {
@@ -10791,6 +11921,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Can AI Do RCA?",
    "quote": null
   },
   {
@@ -10802,6 +11935,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Can AI Do RCA?",
    "quote": "Title: The hard part of AI root cause analysis is no longer the model"
   },
   {
@@ -10813,6 +11949,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "What Doom taught us about AI-assisted incident response",
    "quote": null
   },
   {
@@ -10828,6 +11967,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "The LLM Critics Are Right. I Use LLMs Anyway",
    "quote": "Gemini, claude and whatnot were involved, found nothing;"
   },
   {
@@ -10841,6 +11983,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "AI makes programming differently difficult",
    "quote": "The problem is if you don’t understand the root cause, you’ll at best feed the LLM a list of symptoms, and it will dutifully fix them."
   },
   {
@@ -10855,6 +12000,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": true,
+   "kind": "comment",
+   "thread": "[dead]",
    "quote": "TBH, what an oncall engineer only needs context +AI client to handle incidents. I don't see how SRE agent can be better."
   },
   {
@@ -10868,6 +12016,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "The arguments against open source AI are bad",
    "quote": "The OpenAI/Huggingface scenario proves the necessity of open models."
   },
   {
@@ -10879,6 +12030,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "AI Agent Blameless Postmortem Template",
    "quote": null
   },
   {
@@ -10890,6 +12044,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "The new rules of context engineering for Claude 5 generation models",
    "quote": "The two areas I get the most leverage out of AI are root cause analysis and vibe coding green field prototypes."
   },
   {
@@ -10901,6 +12058,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": true,
+   "kind": "story",
+   "thread": "Your team will build the best SRE agent",
    "quote": null
   },
   {
@@ -10915,6 +12075,9 @@
    ],
    "buyer_signal": true,
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Google fixed more Chrome bugs in June than over the past two years, thanks to AI",
    "quote": "I also encouraged my team to paste any inquiries or alerts we got in our slack channel verbatim into codex and follow that procedure until it could figure it out as a one-shot."
   },
   {
@@ -10926,6 +12089,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": true,
+   "kind": "story",
+   "thread": "Why your company should (try to) build its own AI SRE",
    "quote": null
   },
   {
@@ -10937,6 +12103,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Building the enterprise environment for agentic AI",
    "quote": "Tested on real kubernetes/kubernetes GitHub issues: 99% entity resolution, 15/15 root causes extracted, 64% token reduction vs passing raw text directly."
   },
   {
@@ -10950,6 +12119,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Pi's Minimalism Is Its Advantage",
    "quote": "The best example of different profiles is having a prod/nonprod bot that has grafana mcp for incident investigation"
   },
   {
@@ -10961,6 +12133,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Launch HN: HyperProbe (YC S26) – Agents that do read-only debugging in prod",
    "quote": "The ability to drop read-only probes into a live service without triggering a painful redeploy is a massive time-saver."
   },
   {
@@ -10972,6 +12147,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Launch HN: HyperProbe (YC S26) – Agents that do read-only debugging in prod",
    "quote": "How does it work? Using the NodeJs inspector API or other language equivalent to drop breakpoints?"
   },
   {
@@ -10985,6 +12163,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Launch HN: HyperProbe (YC S26) – Agents that do read-only debugging in prod",
    "quote": "the reversibility side seems mostly unsolved right now."
   },
   {
@@ -10996,6 +12177,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Launch HN: HyperProbe (YC S26) – Agents that do read-only debugging in prod",
    "quote": "How does the probe function technically. Inspector API I believe is unavailable on CloudFlare etc."
   },
   {
@@ -11007,6 +12191,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Launch HN: HyperProbe (YC S26) – Agents that do read-only debugging in prod",
    "quote": "I like your product and team. j think you have something here."
   },
   {
@@ -11020,6 +12207,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Launch HN: HyperProbe (YC S26) – Agents that do read-only debugging in prod",
    "quote": "We ran the pipeline that got it to prod on the same exact models you have access to. So the value prop is that you read the logs automatically instead of a developer directing a debug session?"
   },
   {
@@ -11031,6 +12221,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Launch HN: HyperProbe (YC S26) – Agents that do read-only debugging in prod",
    "quote": "Originally it was for teaching classes or helping colleagues, but it's also very helpful for agents."
   },
   {
@@ -11042,6 +12235,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Launch HN: HyperProbe (YC S26) – Agents that do read-only debugging in prod",
    "quote": "It really gives agents the ability to relatively safely look at the prod setup without exposing sensitive details or making changes, especially with e.g. terraform"
   },
   {
@@ -11053,6 +12249,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Launch HN: HyperProbe (YC S26) – Agents that do read-only debugging in prod",
    "quote": "Anyway, an MCP-managed passive debugger seems like a useful tool. Best of luck with it."
   },
   {
@@ -11067,6 +12266,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": true,
+   "kind": "comment",
+   "thread": "Launch HN: HyperProbe (YC S26) – Agents that do read-only debugging in prod",
    "quote": "If the app is using a decent instrumentation tool, the data shows what 'actually' happened, not what 'probably' happened."
   },
   {
@@ -11080,6 +12282,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Launch HN: HyperProbe (YC S26) – Agents that do read-only debugging in prod",
    "quote": "How do you enforce the read-only guarantee across language runtimes and probe types?"
   },
   {
@@ -11091,6 +12296,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Launch HN: HyperProbe (YC S26) – Agents that do read-only debugging in prod",
    "quote": "In-process agents live or die by staying boring under worst-case conditions."
   },
   {
@@ -11105,6 +12313,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Launch HN: HyperProbe (YC S26) – Agents that do read-only debugging in prod",
    "quote": "A single confident answer that's wrong is worse than no answer, because it sends a human down a road with the agent's credibility behind it."
   },
   {
@@ -11116,6 +12327,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Launch HN: HyperProbe (YC S26) – Agents that do read-only debugging in prod",
    "quote": "Positioning this as an AI-driven debugging layer on top of existing observability tools makes sense, and the read only probes for silent failures feel like a practical way to get runtime evidence without turning every incident into another log and redeploy cycle."
   },
   {
@@ -11127,6 +12341,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Launch HN: HyperProbe (YC S26) – Agents that do read-only debugging in prod",
    "quote": "Spot on and nice complement to the pre-merge half of this problem."
   },
   {
@@ -11138,6 +12355,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Launch HN: HyperProbe (YC S26) – Agents that do read-only debugging in prod",
    "quote": "Are you saying that hyperprobe would have in fact caught that issue?"
   },
   {
@@ -11149,6 +12369,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Launch HN: HyperProbe (YC S26) – Agents that do read-only debugging in prod",
    "quote": "Looks cool, do you have plans to make an open source version for on-premises installation?"
   },
   {
@@ -11160,6 +12383,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Launch HN: HyperProbe (YC S26) – Agents that do read-only debugging in prod",
    "quote": "Congratulations on the launch. I love the idea and the execution."
   },
   {
@@ -11171,6 +12397,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Launch HN: HyperProbe (YC S26) – Agents that do read-only debugging in prod",
    "quote": "it looks great lm gone try this out"
   },
   {
@@ -11184,6 +12413,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Born Against, or why hobby programming communities are against LLM usage",
    "quote": "Also in my experience, having my colleagues do root cause analysis (RCA) with LLM brings to me invalid RCAs which I have to rule out, instead of working on finding true RCA."
   },
   {
@@ -11195,6 +12427,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Incident Response in the Age of AI (Incident Fest)",
    "quote": null
   },
   {
@@ -11206,6 +12441,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Launch HN: HyperProbe (YC S26) – Agents that do read-only debugging in prod",
    "quote": "This makes a lot of sense, definitely agree with not mutating app memory from an SDK"
   },
   {
@@ -11222,6 +12460,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Launch HN: HyperProbe (YC S26) – Agents that do read-only debugging in prod",
    "quote": "What makes \"read-only\" a guarantee rather than a convention? In Python a plain attribute read can hit a @property that lazy-loads from the DB; in Java a getter can mutate state or take a lock."
   },
   {
@@ -11233,6 +12474,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Evaluating AI SRE Agents in Production (OpenSRE) – Evaluation",
    "quote": null
   },
   {
@@ -11244,6 +12488,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Evaluating AI SRE Agents in Production (OpenSRE) – Evaluation",
    "quote": "TL:DR - defer OpenSRE, not reject."
   },
   {
@@ -11257,6 +12504,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "When Claude is down, do they have a backup Claude to investigate the root cause?",
    "quote": "Investigating without AI sounds so 2024."
   },
   {
@@ -11272,6 +12522,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Software engineering is about managing complexity",
    "quote": "This feels like the kind of thing that should be a fire-able offense, but instead they're getting shout-outs from the CEO."
   },
   {
@@ -11283,6 +12536,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "From 3:00 Am Panic to Confidence: How I Use AI During On-Call Incidents",
    "quote": null
   },
   {
@@ -11296,6 +12552,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Ask HN: Who is using MCP in production?",
    "quote": "Very useful; i particularly like sending an agent to debug an alert across slack/honeycomb/incident.io/materialize db"
   },
   {
@@ -11309,6 +12568,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Ask HN: Who is using MCP in production?",
    "quote": "Having all of them made it trivial for the LLM to start with an alert, search the codebase for the alert source and then review the Prom stack for additional info."
   },
   {
@@ -11322,6 +12584,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "AI handles incidents, engineers lose touch with their systems",
    "quote": "This works for SREs with pre-AI experience and intuition, possibly less so with new recruits coming in post-AI."
   },
   {
@@ -11333,6 +12598,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "AI handles incidents, engineers lose touch with their systems",
    "quote": "An AI can handle routine incidents and then present learning cases from that routine work for training, because the skill in SRE is not the mechanical log grepping, grafana dashboard browsing etc but forming the hypothesis."
   },
   {
@@ -11346,6 +12614,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "AI handles incidents, engineers lose touch with their systems",
    "quote": "When someone else -whether AI agent or a human- solves the recurring minor problems for you, those problems become non-issue, get swept under the rug, just to accumulate more dust."
   },
   {
@@ -11363,6 +12634,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "AI handles incidents, engineers lose touch with their systems",
    "quote": "It was just making up random stuff about AWS and system resource limitations and when I was asking for the source like from where it got that info, it was like, “I’m sorry I prematurely concluded that without checking sources”."
   },
   {
@@ -11376,6 +12650,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "AI handles incidents, engineers lose touch with their systems",
    "quote": "Even if an engineer reads the output of the AI and understands the root cause of the problems and how to diagnose the incident, somehow it's hard for them to internalize the learning and apply it next time to a new incident."
   },
   {
@@ -11387,6 +12664,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "AI handles incidents, engineers lose touch with their systems",
    "quote": "I use AI to help investigate and gather evidence much more efficiently than I could ever do manually."
   },
   {
@@ -11398,6 +12678,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "AI handles incidents, engineers lose touch with their systems",
    "quote": "But was this team capable of patient, old school troubleshooting before they used AI?"
   },
   {
@@ -11409,6 +12692,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Ramp: How we built OCA, our AI on-call assistant",
    "quote": null
   },
   {
@@ -11422,6 +12708,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Pion, an agent designed to run any company autonomously",
    "quote": "Disposable reverse-centaurs are the key to unlocking trillions in shareholder value, you may not want it, but capital demands it on the basis of getting returns on the supersized AI investments."
   },
   {
@@ -11435,6 +12724,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": true,
+   "kind": "comment",
+   "thread": "Why my alert triage workflow needed a CLI",
    "quote": "It not only diagnoses the problem every time, correctly, but also figures out what went wrong, and why, and proposes how to fix the underlying causes."
   },
   {
@@ -11448,6 +12740,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "I don't want to read what you didn't write",
    "quote": "Same problem with postmortems. You get a clean AI writeup with root cause, timeline, and action items all in the right sections, but none of it tells you what was actually checked or ruled out along the way."
   },
   {
@@ -11461,6 +12756,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Ask HN: Has anyone built a leaderless multi-agent system?",
    "quote": "Context: previously, I wrote about running Claude Code as an AI SRE handling an incident end to end."
   },
   {
@@ -11474,6 +12772,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "First Principles Thinking",
    "quote": "Getting that on-call incident for a piece of code I own, when i've lost the mental map of what the black box does, it keeps me up at night."
   },
   {
@@ -11487,6 +12788,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "One Month Without AI",
    "quote": "This cut down time for investigations quite a bit."
   },
   {
@@ -11498,6 +12802,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "[dead]",
    "quote": "As LLMs have become more capable, our Data Platform Agent has evolved into something that is now widely used across the team—for SQL-related questions, on-call alert triage, lag monitoring, and scheduled workflows for fixing bad data."
   },
   {
@@ -11509,6 +12816,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Firebase SDK is crashing all iOS apps since this morning",
    "quote": "They're all reading from the new AI SRE book https://sre.google/resources/practices-and-processes/ai-engi..."
   },
   {
@@ -11522,6 +12832,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Sharing AI progress in mathematics",
    "quote": "But I'm good enough at programming and debugging so you'd might as well make me your first line SRE triager and give me access to your infrastructure everyone."
   },
   {
@@ -11535,6 +12848,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Jev-Driven SRE Diagnosis: What Worked and What Failed",
    "quote": "Adding a black box in there seems incredibly misguided, no?"
   },
   {
@@ -11549,6 +12865,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Jev-Driven SRE Diagnosis: What Worked and What Failed",
    "quote": "And as a tool it's great, as replacement it is just AI bros delusion"
   },
   {
@@ -11562,6 +12881,9 @@
    "vendors": [],
    "buyer_signal": true,
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Forever Junior: The Skills AI Can't Develop for You",
    "quote": "This is something that I worry about as well for my junior incident responders at my company."
   },
   {
@@ -11573,6 +12895,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Meta and Microsoft take steps to reduce employee usage of Claude AI",
    "quote": "Our ai basic analysis for SRE / k8s based platform is haiku and its surprisngly good."
   },
   {
@@ -11584,6 +12909,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Give Your Agent Context Before You Buy an AI SRE",
    "quote": null
   },
   {
@@ -11595,6 +12923,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Show HN: AI SRE Arena, an Open Benchmark for AI SRE Agents on Kubernetes",
    "quote": null
   },
   {
@@ -11610,6 +12941,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Show HN: AI SRE Arena, an Open Benchmark for AI SRE Agents on Kubernetes",
    "quote": "Cool that you guys created this, but interpreting the results: why wouldn't I just use Claude instead of an AI SRE tool?"
   },
   {
@@ -11623,6 +12957,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Why isn't the industry freaking out about DeepSeek 4.1 Flash?",
    "quote": "I use opus primarily, on a mix of pure coding tasks, and log parsing / incident investigation."
   },
   {
@@ -11637,6 +12974,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Cognitive Decline or Sanity Incline?",
    "quote": null
   },
   {
@@ -11648,6 +12988,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Fable Took My Job",
    "quote": "Not if a newcomer can be assisted by the other person or even just by AI in understanding the codebase."
   },
   {
@@ -11659,6 +13002,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "Show HN: AI SRE Arena, an Open Benchmark for AI SRE Agents on Kubernetes",
    "quote": "It looks a very interesting project that benchmarks AI SRE Agents"
   },
   {
@@ -11670,6 +13016,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": false,
+   "kind": "comment",
+   "thread": "AI is a tool and using it well takes skill",
    "quote": "I literally just ask a frontier model : \"Pull the latest log and root cause the issue.\". That's it, 10' later it comes back with a correct answer."
   },
   {
@@ -11681,6 +13030,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Agentic AI for network incident response",
    "quote": null
   },
   {
@@ -11694,6 +13046,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "Frontier SRE agent trained by Datadog",
    "quote": null
   },
   {
@@ -11705,6 +13060,9 @@
    "vendors": [],
    "buyer_signal": "unknown",
    "usesGeneralAI": false,
+   "productUnneeded": false,
+   "kind": "story",
+   "thread": "A Better Benchmark Harness for SRE Agents",
    "quote": null
   },
   {
@@ -11720,6 +13078,9 @@
    ],
    "buyer_signal": "unknown",
    "usesGeneralAI": true,
+   "productUnneeded": true,
+   "kind": "comment",
+   "thread": "Open Oncall: Open-Source Alternative to Devin Oncall",
    "quote": null
   }
  ]

@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "next typegen && tsc --noEmit",
     "pipeline:test-key": "tsx pipeline/test-key.ts",
     "pipeline:collect": "tsx pipeline/collect.ts",
     "pipeline:classify": "tsx pipeline/classify.ts",

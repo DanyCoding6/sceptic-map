@@ -11,8 +11,6 @@ const CACHE_DIR = path.join(process.cwd(), "cache", "http");
 // Minimum gap between requests to the same host. Anything not listed gets the default.
 const HOST_DELAY_MS: Record<string, number> = {
   "hn.algolia.com": 1000,
-  "www.reddit.com": 2000,
-  "oauth.reddit.com": 2000,
 };
 const DEFAULT_DELAY_MS = 2000;
 
@@ -48,7 +46,7 @@ export interface FetchOptions {
   body?: string;
   // Robots.txt applies to crawling web pages; token endpoints and public APIs that publish no robots.txt still pass.
   checkRobots?: boolean;
-  // Off for requests whose answer must be fresh (e.g. OAuth tokens).
+  // Off for requests whose answer must be fresh.
   cache?: boolean;
 }
 

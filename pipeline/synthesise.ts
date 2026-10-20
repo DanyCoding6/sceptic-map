@@ -19,6 +19,7 @@ import {
   type Vendor,
   VENDORS,
 } from "../lib/schema";
+import { computeNumbers } from "../lib/numbers";
 import { MODELS } from "./lib/anthropic";
 import { itemsPrompt, objectionDefinitions } from "./lib/classifier";
 import { callStructured, ledger, pool, reportSpend } from "./lib/llm";
@@ -150,7 +151,7 @@ async function pickQuotes(objection: Objection, candidates: ClassifiedItem[]): P
   return ids.map((id) => quoteRef(candidates.find((c) => c.id === id)!));
 }
 
-async function tagDiy(base: ClassifiedItem[], raw: Map<string, RawItem>) {
+export async function tagDiy(base: ClassifiedItem[], raw: Map<string, RawItem>) {
   const items = base.map((i) => raw.get(i.id)!);
   const batches: RawItem[][] = [];
   for (let i = 0; i < items.length; i += 10) batches.push(items.slice(i, i + 10));
@@ -381,6 +382,7 @@ ${quotePool.map((q) => `[${q.id}] ${q.date}: ${q.quote}`).join("\n")}`;
       implication: fill(f.implication.replace(/^What this means[^:]*:\s*/i, ""), numbers).text,
       whyRanked: f.why_ranked.replace(/\}+\s*$/, ""),
       n: numbers.n_base,
+      scope: "all" as const,
       quotes: f.quote_ids.map((id) => quotePool.find((q) => q.id === id)!),
       claimIds: f.claim_ids,
       template: { headline: f.headline, implication: f.implication },
@@ -437,45 +439,7 @@ async function main() {
   const pageUrlsByVendor = (v: Vendor) => vendorPages.filter((p) => p.vendor === v).map((p) => p.url);
   const coverage = (await pool([...VENDORS], 3, (v) => rateCoverage(v, claims, stats, pageUrlsByVendor(v)))).flat();
 
-  // 6. Every number a finding may cite.
-  const numbers: Record<string, number> = {
-    n_collected: classified.meta.nItems,
-    n_relevant: relevant.length,
-    n_vendor: relevant.length - base.length,
-    n_base: base.length,
-    vendors_rated: VENDORS.length,
-    "diy:uses": usesDiy.length,
-    "diy:unneeded": base.filter((i) => diyTags.get(i.id)?.unneeded).length,
-    "diy:objection": stats.find((s) => s.objection === "diy_with_general_agent")!.count,
-    "diy:mentions": base.filter((i) => i.vendors_mentioned.some((v) => normaliseVendor(v) === "General AI tools")).length,
-  };
-  for (const h of halves) {
-    numbers[`base:${h}`] = base.filter((i) => half(i.date) === h).length;
-    numbers[`diy:uses:${h}`] = usesDiy.filter((i) => half(i.date) === h).length;
-  }
-  for (const s of stats) {
-    numbers[`count:${s.objection}`] = s.count;
-    numbers[`sceptical:${s.objection}`] = s.sceptical;
-    for (const h of s.byHalf) numbers[`count:${s.objection}:${h.half}`] = h.count;
-  }
-  const top = stats.filter((s) => s.objection !== "other").slice(0, 6).map((s) => s.objection);
-  for (const [i, a] of top.entries()) {
-    for (const b of top.slice(i + 1)) {
-      numbers[`either:${a}+${b}`] = base.filter((x) => x.objections.includes(a) || x.objections.includes(b)).length;
-    }
-  }
-  for (const st of ["sceptical", "positive", "mixed", "neutral"] as const) numbers[`diy:uses:${st}`] = usesDiy.filter((i) => i.stance === st).length;
-  const since2025 = base.filter((i) => i.date >= "2025-01-01");
-  numbers.base_since_2025 = since2025.length;
-  for (const s of stats) numbers[`count_since_2025:${s.objection}`] = since2025.filter((i) => i.objections.includes(s.objection)).length;
-  for (const o of RATED) {
-    for (const r of Rating.options) numbers[`${r.toLowerCase()}:${o}`] = coverage.filter((c) => c.objection === o && c.rating === r).length;
-  }
-
-  // 7. Three ranked findings, written with placeholders that code fills.
-  console.log("Writing findings...");
-  const findings = await writeFindings({ numbers, stats, coverage, claims, diyQuotes, window });
-
+  // 6. Every number a finding may cite (the same function merge.ts and verify.ts use).
   const items: SiteItem[] = base.map((i) => ({
     id: i.id,
     url: i.url,
@@ -485,8 +449,17 @@ async function main() {
     vendors: [...new Set(i.vendors_mentioned.map(normaliseVendor).filter((v): v is string => v !== null))],
     buyer_signal: i.buyer_signal,
     usesGeneralAI: diyTags.get(i.id)?.uses ?? false,
+    productUnneeded: diyTags.get(i.id)?.unneeded ?? false,
+    kind: i.kind === "story" ? "story" : "comment",
+    thread: i.title ?? "",
     quote: i.best_quote,
   }));
+  const numbers = computeNumbers(items, coverage, { nCollected: classified.meta.nItems, nRelevant: relevant.length });
+
+  // 7. Three ranked findings, written with placeholders that code fills.
+  console.log("Writing findings...");
+  const findings = await writeFindings({ numbers, stats, coverage, claims, diyQuotes, window });
+
 
   const synthesis = Synthesis.parse({
     meta: {
@@ -558,7 +531,8 @@ async function main() {
   reportSpend("synthesise");
 }
 
-main().catch((err) => {
+// Only run when executed directly, so other scripts can import tagDiy.
+if (process.argv[1]?.endsWith("synthesise.ts")) main().catch((err) => {
   console.error(err);
   console.log("\nFailures:");
   for (const f of ledger.failures) console.log(`  ${f}`);

@@ -1,6 +1,7 @@
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import path from "node:path";
-import { BattleCard, ClassifiedFile, OBJECTIONS, RawItem, Stats, Synthesis } from "../lib/schema";
+import { BattleCard, ClassifiedFile, Fixes, OBJECTIONS, RawItem, Stats, Synthesis } from "../lib/schema";
+import { computeNumbers } from "../lib/numbers";
 import { isVerbatim } from "./lib/text";
 
 // Runs before every build (npm "prebuild"). Fails the build if anything on the page can't be
@@ -16,6 +17,7 @@ const fail = (msg: string) => errors.push(msg);
 const site = Synthesis.parse(readJson("site.json"));
 const stats = Stats.parse(readJson("stats.json"));
 const card = BattleCard.parse(readJson("battlecard.json"));
+const fixes = Fixes.parse(readJson("fixes.json"));
 const classified = ClassifiedFile.parse(readJson("classified.json"));
 const source = new Map(classified.items.map((i) => [i.id, i]));
 
@@ -46,37 +48,35 @@ if (existsSync(vendorFile)) {
   claimsChecked = true;
 }
 
-// 3. Every number recomputes from the classified data.
+// 3. Every number recomputes: site items must match the classified data, then every key in
+// site.numbers must equal what lib/numbers.ts computes (and no key may be missing or extra).
 const base = classified.items.filter((i) => i.relevant && !i.author_is_vendor);
-const half = (d: string) => `${d.slice(0, 4)}-H${Number(d.slice(5, 7)) <= 6 ? 1 : 2}`;
-const expect = (key: string, actual: number) => {
-  if (site.numbers[key] !== actual) fail(`number ${key}: site says ${site.numbers[key]}, data gives ${actual}`);
-};
-expect("n_base", base.length);
-expect("n_relevant", classified.items.filter((i) => i.relevant).length);
-expect("n_collected", classified.meta.nItems);
 if (site.items.length !== base.length) fail(`site has ${site.items.length} items, data has ${base.length}`);
+const siteItem = new Map(site.items.map((i) => [i.id, i]));
+for (const c of base) {
+  const s = siteItem.get(c.id);
+  if (!s) {
+    fail(`item ${c.id} missing from the site`);
+    continue;
+  }
+  const same =
+    s.date === c.date.slice(0, 10) &&
+    s.stance === c.stance &&
+    JSON.stringify(s.objections) === JSON.stringify(c.objections) &&
+    s.kind === (c.kind === "story" ? "story" : "comment") &&
+    s.thread === (c.title ?? "");
+  if (!same) fail(`item ${c.id} differs from classified.json`);
+}
+const expected = computeNumbers(site.items, site.coverage, { nCollected: classified.meta.nItems, nRelevant: classified.items.filter((i) => i.relevant).length });
+for (const k of new Set([...Object.keys(expected), ...Object.keys(site.numbers)])) {
+  if (site.numbers[k] !== expected[k]) fail(`number ${k}: site says ${site.numbers[k]}, data gives ${expected[k]}`);
+}
+const half = (d: string) => `${d.slice(0, 4)}-H${Number(d.slice(5, 7)) <= 6 ? 1 : 2}`;
 for (const o of OBJECTIONS) {
   const hits = base.filter((i) => i.objections.includes(o));
-  expect(`count:${o}`, hits.length);
-  expect(`sceptical:${o}`, hits.filter((i) => i.stance === "sceptical").length);
   const stat = site.objections.find((s) => s.objection === o)!;
   if (stat.count !== hits.length) fail(`objection ${o}: count ${stat.count}, data ${hits.length}`);
   for (const b of stat.byHalf) if (b.count !== hits.filter((i) => half(i.date) === b.half).length) fail(`objection ${o} ${b.half} miscounted`);
-}
-for (const h of site.meta.halves) expect(`base:${h.half}`, base.filter((i) => half(i.date) === h.half).length);
-expect("diy:uses", site.items.filter((i) => i.usesGeneralAI).length);
-for (const [key, value] of Object.entries(site.numbers)) {
-  const m = key.match(/^either:(\w+)\+(\w+)$/);
-  if (m) {
-    const n = base.filter((i) => i.objections.includes(m[1] as never) || i.objections.includes(m[2] as never)).length;
-    if (n !== value) fail(`number ${key}: ${value} vs ${n}`);
-  }
-  const s = key.match(/^count_since_2025:(\w+)$/);
-  if (s) {
-    const n = base.filter((i) => i.date >= "2025-01-01" && i.objections.includes(s[1] as never)).length;
-    if (n !== value) fail(`number ${key}: ${value} vs ${n}`);
-  }
 }
 const statsCheck: [string, number, number][] = [
   ["nBase", stats.nBase, base.length],
@@ -100,10 +100,24 @@ for (const f of site.findings) {
   if (headline !== f.headline) fail(`finding ${f.id}: headline doesn't match its template`);
   if (implication !== f.implication) fail(`finding ${f.id}: implication doesn't match its template`);
   if (o?.short && fill(o.short) !== f.short) fail(`finding ${f.id}: short headline doesn't match its template`);
-  if (f.n !== base.length) fail(`finding ${f.id}: n ${f.n}`);
+  if (f.n !== (f.scope === "since_2025" ? expected.base_since_2025 : base.length)) fail(`finding ${f.id}: n ${f.n} doesn't match its scope (${f.scope})`);
   if (f.quotes.length !== 2) fail(`finding ${f.id}: needs 2 quotes`);
   for (const id of f.claimIds) if (!site.claims.some((c) => c.id === id && c.vendor === "incident.io")) fail(`finding ${f.id}: claim ${id} is not an incident.io claim`);
 }
+
+// 4b. The words around the numbers. Each check backs a phrase in the findings; if the data
+// changes so a phrase stops being true, the build fails until the text is rewritten.
+const cell = (v: string, o: string) => site.coverage.find((c) => c.vendor === v && c.objection === o)?.rating;
+const worksObjections = ["not_capable_yet", "wrong_or_hallucinated_cause", "cant_verify_reasoning"];
+const beyondWorks = OBJECTIONS.filter((o) => o !== "other" && !worksObjections.includes(o)).sort((a, b) => expected[`count:${b}`] - expected[`count:${a}`]);
+const phrases: [string, boolean][] = [
+  ["f2: deskilling and production access are the two biggest objections beyond whether it works", beyondWorks[0] === "deskills_or_replaces_engineers" && beyondWorks[1] === "data_access_and_security" && expected[`count:${beyondWorks[1]}`] > expected[`count:${beyondWorks[2]}`]],
+  ["f2: none of the options shows proof on either", expected["shown:deskills_or_replaces_engineers"] === 0 && expected["shown:data_access_and_security"] === 0],
+  ["f2/f3: Investigations shows proof on whether it works", worksObjections.every((o) => cell("incident.io", o) === "SHOWN")],
+  ["f1: only a minority of general-AI users say a product is unnecessary", expected["diy:unneeded"] * 2 < expected["diy:uses"]],
+  ["map: every competitor column rests on the same number of pages", new Set(["PagerDuty", "Rootly", "Datadog", "Resolve.ai"].map((v) => stats.pagesByVendor[v])).size === 1],
+];
+for (const [what, ok] of phrases) if (!ok) fail(`phrase no longer true: ${what}`);
 
 // 5. Coverage: every rating has a URL, cites its own vendor's claims, and SHOWN cites real proof.
 for (const c of site.coverage) {
@@ -123,12 +137,24 @@ for (const row of card.rows) {
   }
 }
 
+// 6b. Older-line fixes: every claim is incident.io's, and each date is printed on its page.
+const rawPages = existsSync(vendorFile) ? new Map(RawItem.array().parse(JSON.parse(readFileSync(vendorFile, "utf8"))).map((p) => [p.url, p.text])) : null;
+for (const f of fixes.items) {
+  for (const id of [f.olderClaimId, f.currentClaimId, ...f.suggestClaimIds]) {
+    if (!site.claims.some((c) => c.id === id && c.vendor === "incident.io")) fail(`fixes ${f.topic}: ${id} is not an incident.io claim`);
+  }
+  const older = site.claims.find((c) => c.id === f.olderClaimId);
+  if (rawPages && older && !rawPages.get(older.url)?.includes(f.olderDate)) fail(`fixes ${f.topic}: "${f.olderDate}" isn't on ${older.url}`);
+}
+
 // 7. Banned words in everything we wrote (vendor claims are their words, so they're excluded).
 const BANNED = /\b(ai-powered|revolutionary|game-changing|leverag(e|es|ed|ing)|unlock(s|ed|ing)?|seamless(ly)?|cutting-edge)\b|in today's fast-paced world/i;
 const ours: [string, string][] = [
   ...site.findings.flatMap((f) => [[`finding ${f.id}`, `${f.headline} ${f.short ?? ""} ${f.implication}`]] as [string, string][]),
   ...site.coverage.map((c) => [`reason ${c.vendor}/${c.objection}`, c.reason] as [string, string]),
   ...card.rows.map((r) => [`battle card ${r.quoteId}`, `${r.respond} ${r.ask} ${r.sendLabel}`] as [string, string]),
+  ["battle card avoid", card.avoid.join(" ")],
+  ...fixes.items.map((f) => [`fixes ${f.topic}`, `${f.topic} ${f.currentLabel} ${f.suggest}`] as [string, string]),
 ];
 const walk = (dir: string): string[] =>
   readdirSync(dir, { withFileTypes: true }).flatMap((e) => (e.isDirectory() ? walk(path.join(dir, e.name)) : /\.(tsx?|css)$/.test(e.name) ? [path.join(dir, e.name)] : []));

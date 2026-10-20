@@ -82,7 +82,7 @@ export function ScepticMap({ rows, items, halves, vendorOptions, partialNote }: 
     <div>
       <div className="flex flex-col gap-3 rounded-lg bg-wash p-4 sm:flex-row sm:items-center sm:justify-between">
         <label className="flex items-center gap-2 text-sm">
-          <span className="text-ink-2">Comments that mention</span>
+          <span className="text-ink-2">Posts that mention</span>
           <select
             value={vendor}
             onChange={(e) => setVendor(e.target.value)}
@@ -91,24 +91,24 @@ export function ScepticMap({ rows, items, halves, vendorOptions, partialNote }: 
             <option value="all">anything ({items.length})</option>
             {vendorOptions.map((v) => (
               <option key={v} value={v}>
-                {v} ({items.filter((i) => i.vendors.includes(v)).length})
+                {v === "General AI tools" ? "a general AI tool by name" : v} ({items.filter((i) => i.vendors.includes(v)).length})
               </option>
             ))}
           </select>
         </label>
         <label className="flex items-center gap-2 text-sm text-ink-2">
           <input type="checkbox" checked={buyerOnly} onChange={(e) => setBuyerOnly(e.target.checked)} className="h-4 w-4 accent-[var(--accent-ink)]" />
-          Buyer-signal comments only ({buyerTotal})
+          Buyer-signal posts only ({buyerTotal})
         </label>
       </div>
 
       <p className="mt-4 text-sm text-ink-2" aria-live="polite">
-        {n} comment{n === 1 ? "" : "s"} in this view.{" "}
+        {n} post{n === 1 ? "" : "s"} in this view.{" "}
         {buyerOnly
-          ? `Only ${buyerTotal} of ${items.length} comments show the author runs a team or buys tools for one. That gap is why the summer project starts with sales calls.`
+          ? `Only ${buyerTotal} of ${items.length} posts show the author runs a team or buys tools for one. That gap is why the summer project starts with sales calls.`
           : n < 60
             ? "Small numbers: read these rows as examples, not a measure."
-            : "Bars compare objections; each row shows how many comments raise it."}
+            : "A post can raise more than one objection. Open a row for quotes and every rating."}
       </p>
 
       <ul className="mt-4 divide-y divide-line border-y border-line">
@@ -124,7 +124,16 @@ export function ScepticMap({ rows, items, halves, vendorOptions, partialNote }: 
                 onClick={() => setOpen(isOpen ? null : row.objection)}
                 className="grid w-full grid-cols-[minmax(0,1fr)_4.5rem] items-center gap-x-4 gap-y-2 py-4 text-left hover:bg-wash/60 sm:grid-cols-[minmax(0,1fr)_10rem_5.5rem_3rem_1rem]"
               >
-                <span className="font-medium leading-snug">{row.label}</span>
+                <span className="flex flex-wrap items-center gap-x-2 gap-y-1">
+                  <span className="font-medium leading-snug">{row.label}</span>
+                  {iio && (
+                    <span className="inline-flex items-center gap-1 text-xs text-ink-2">
+                      <span className="sr-only">incident.io:</span>
+                      <span aria-hidden="true">incident.io</span>
+                      <Badge rating={iio.rating} compact />
+                    </span>
+                  )}
+                </span>
                 <span className="col-start-1 row-start-2 sm:col-start-auto sm:row-start-auto" aria-hidden="true">
                   <span className="block h-2 rounded-r bg-accent-wash">
                     <span className="block h-2 rounded-r bg-accent transition-[width] duration-300" style={{ width: `${(count / maxCount) * 100}%` }} />
@@ -162,7 +171,7 @@ export function ScepticMap({ rows, items, halves, vendorOptions, partialNote }: 
                         {iio.quote && <p className="mt-2 text-sm italic leading-relaxed text-ink-2">&ldquo;{iio.quote.replace(/^[“"]+|[”"]+$/g, "")}&rdquo;</p>}
                         <Sources claims={iio.sources} />
                       </div>
-                      <h3 className="mt-6 text-xs font-semibold uppercase tracking-wide text-muted">How the others compare</h3>
+                      <h3 className="mt-6 text-xs font-semibold uppercase tracking-wide text-muted">How the others&apos; pages compare</h3>
                       <ul className="mt-3 space-y-3">
                         {row.coverage
                           .filter((c) => c.vendor !== "incident.io")

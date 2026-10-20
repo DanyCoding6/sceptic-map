@@ -1,278 +1,463 @@
 {
-  "coverage": [
-    {
-      "vendor": "incident.io",
-      "objection": "wrong_or_hallucinated_cause",
-      "rating": "SHOWN",
-      "claimIds": [
-        "iio-cl-2x-faster#1",
-        "iio-how-it-feels#2",
-        "iio-investigations#4"
-      ],
-      "reason": "Now 68% of incidents get an accurate update within five minutes (up from 8%), and a real incident and a named customer show causes found. Sceptics would next ask how often it is wrong.",
-      "note": "Phase 5 hostile review (20 Oct), proposed by Claude: the generated reason read the 68% as an accuracy rate; it is the share of incidents with an accurate update within five minutes."
-    },
-    {
-      "vendor": "incident.io",
-      "objection": "cant_verify_reasoning",
-      "rating": "SHOWN",
-      "claimIds": [
-        "iio-cl-ga#2",
-        "iio-how-it-feels#4",
-        "iio-how-it-feels#5"
-      ],
-      "reason": "Every finding links to its evidence, and a real incident write-up shows the responder judging the conclusion plausible, then Claude and Investigations checking it against the codebase.",
-      "note": "Phase 5 hostile review (20 Oct), proposed by Claude: the generated reason said the responder checked the code; the write-up says the responder judged it plausible and Claude/Investigations checked the code."
-    },
-    {
-      "vendor": "incident.io",
-      "objection": "setup_and_integration_effort",
-      "rating": "SAID",
-      "claimIds": [
-        "iio-5-best#8",
-        "iio-vs-resolve#1",
-        "iio-vs-pagerduty#3"
-      ],
-      "reason": "Being operational in days is asserted. The one named setup story is a migration to its on-call product, so a named Investigations onboarding would close this.",
-      "note": "Phase 5 hostile review (20 Oct), proposed by Claude: the generated reason said a page 'admits tuning is needed'; that page says competitors need tuning."
-    },
-    {
-      "vendor": "incident.io",
-      "objection": "not_capable_yet",
-      "rating": "SHOWN",
-      "claimIds": [
-        "iio-investigations#3",
-        "iio-cl-2x-faster#1",
-        "iio-how-it-feels#7",
-        "iio-entered-chat#3",
-        "iio-investigations#17"
-      ],
-      "reason": "A named customer, a measured jump in accurate early updates and a real incident resolved in minutes show it working. An earlier post says it resolves what it can on its own, while the product page says its only change is a pull request you review; sceptics would want one clear answer.",
-      "note": "Phase 5 hostile review (20 Oct), proposed by Claude: replaces the Phase 3 override, which said unattended fixes aren't claimed; an earlier incident.io post does claim autonomous resolution."
-    },
-    {
-      "vendor": "incident.io",
-      "objection": "vendor_lock_in",
-      "rating": "SAID",
-      "claimIds": [
-        "iio-cl-plugin#2",
-        "iio-nexus#5",
-        "iio-cl-ga#15"
-      ],
-      "reason": "Says it works with your own coding agents and MCP clients. Data export, leaving the platform and model choice aren't addressed.",
-      "note": "Phase 5 hostile review (20 Oct), proposed by Claude: was NOT_YET, but these claims address the objection the same way DIY's SAID rating does."
-    },
-    {
-      "vendor": "incident.io",
-      "objection": "cost_or_pricing",
-      "rating": "SAID",
-      "claimIds": [
-        "iio-cl-ga#6",
-        "iio-5-best#12",
-        "iio-building#16"
-      ],
-      "reason": "Nexus is included on every plan and per-user prices are listed, but those prices cover other products. No token-cost figures for Investigations.",
-      "note": "Phase 5 hostile review (20 Oct), proposed by Claude: cites the claim that actually says 'included on every plan'."
-    },
-    {
-      "vendor": "incident.io",
-      "objection": "just_an_llm_wrapper",
-      "rating": "SAID",
-      "claimIds": [
-        "iio-building#21",
-        "iio-building#6",
-        "iio-investigations#9"
-      ],
-      "reason": "Argues the value is the work around the model: backtesting, an adversarial agent and Nexus. No published results show what that adds over a bare model.",
-      "note": "Phase 5 hostile review (20 Oct), proposed by Claude: cites the adversarial-agent claim the reason relies on."
-    },
-    {
-      "vendor": "Rootly",
-      "objection": "not_capable_yet",
-      "rating": "SAID",
-      "claimIds": [
-        "rootly-ai-sre#1",
-        "rootly-ai-sre#2",
-        "rootly-ai-sre#22"
-      ],
-      "reason": "Asserts fast root-cause finding but gives no measured figure; the worked example is a mock-up, not a real incident.",
-      "note": "Phase 5 hostile review (20 Oct), proposed by Claude: the generated reason quoted a '10x' figure that isn't in any extracted Rootly claim."
-    },
-    {
-      "vendor": "PagerDuty",
-      "objection": "cant_verify_reasoning",
-      "rating": "SAID",
-      "claimIds": [
-        "pagerduty-sre-agent#7",
-        "pagerduty-sre-agent#6"
-      ],
-      "reason": "Mentions human oversight and connecting dots across logs, but the SRE Agent page doesn't show an evidence trail an engineer could check.",
-      "note": "Phase 5 hostile review (20 Oct), proposed by Claude: 'never shows' generalised from one page."
-    },
-    {
-      "vendor": "Datadog",
-      "objection": "vendor_lock_in",
-      "rating": "NOT_YET",
-      "claimIds": [],
-      "reason": "The Bits Investigation page doesn't address lock-in, model choice or exporting investigations.",
-      "note": "Phase 5 hostile review (20 Oct), proposed by Claude: limits the reason to the page checked (Datadog's MCP blog sits in the DIY column)."
-    },
-    {
-      "vendor": "Datadog",
-      "objection": "alert_noise_unsolved",
-      "rating": "SHOWN",
-      "claimIds": [
-        "datadog-bits-investigation#16"
-      ],
-      "reason": "A named customer says it reduces noise, though with no figure and nothing on fixing alerts at source.",
-      "note": "Phase 5 hostile review (20 Oct), proposed by Claude: the second cited quote was about surfacing context, not alert noise."
-    },
-    {
-      "vendor": "Datadog",
-      "objection": "deskills_or_replaces_engineers",
-      "rating": "SAID",
-      "claimIds": [
-        "datadog-bits-investigation#13",
-        "datadog-bits-investigation#14"
-      ],
-      "reason": "Named customers say newer engineers get a head start and skills may rise, but nothing shows engineers learning or keeping their skills.",
-      "note": "Phase 5 hostile review (20 Oct), proposed by Claude: was SHOWN, but the proof doesn't bear on deskilling; consistent with incident.io's SAID on the same objection."
-    },
-    {
-      "vendor": "Resolve.ai",
-      "objection": "setup_and_integration_effort",
-      "rating": "SHOWN",
-      "claimIds": [
-        "resolve-ai-sre#4",
-        "resolve-ai-sre#8",
-        "resolve-ai-sre#12"
-      ],
-      "reason": "A named customer says it integrated cleanly into their existing stack, though no setup time is given.",
-      "note": "Phase 5 hostile review (20 Oct), proposed by Claude: a named customer speaking to the objection counts as proof under the site's rule, as in other cells."
-    },
-    {
-      "vendor": "Resolve.ai",
-      "objection": "lacks_context_of_our_systems",
-      "rating": "SHOWN",
-      "claimIds": [
-        "resolve-ai-sre#4",
-        "resolve-ai-sre#10"
-      ],
-      "reason": "A named customer says it identified dependencies across their systems; corrections becoming reusable knowledge is asserted.",
-      "note": "Phase 5 hostile review (20 Oct), proposed by Claude: consistent with Datadog's SHOWN on the same kind of named-customer quote."
-    },
-    {
-      "vendor": "DIY",
-      "objection": "setup_and_integration_effort",
-      "rating": "SAID",
-      "claimIds": [
-        "diy-magarcia#2",
-        "diy-hivebrite#10",
-        "diy-hivebrite#6"
-      ],
-      "reason": "Setup is called simple and MCP integrations the real prerequisite, but no effort figures are given. Hivebrite also says its prototype was not production-ready.",
-      "note": "Phase 5 hostile review (20 Oct), proposed by Claude: cites the Hivebrite claim the reason relies on."
-    }
-  ],
-  "findings": [
-    {
-      "id": "f1",
-      "headline": "{diy:uses} of {n_base} comments use or recommend a general AI tool for incident work ({diy:uses:positive} positive, {diy:uses:sceptical} sceptical), but only {diy:objection} raise \"I could do this myself\" as an objection.",
-      "short": "{diy:uses} of {n_base} engineers' comments use or recommend a general AI tool for incident work, yet only {diy:objection} call that a reason not to buy a dedicated product.",
-      "implication": "For these engineers the baseline is a general AI tool they already use, so the story has to show what Investigations adds over pasting an alert into one. incident.io already makes the argument: in-house tools rarely get their accuracy measured, and the value is in the work around the model. The next step is evidence, such as a side-by-side of a bare model and Investigations on the same past incidents, using the daily backtesting it describes.",
-      "claimIds": [
-        "iio-building#4",
-        "iio-building#21",
-        "iio-investigations#12"
-      ],
-      "note": "Phase 5 hostile review (20 Oct), shorter headline; implication reframed constructively (was 'these rest on unnamed anecdotes'). Hero line approved by Dany."
-    },
-    {
-      "id": "f2",
-      "headline": "Since 2025, the second most common objection is that these tools deskill or replace engineers: {count_since_2025:deskills_or_replaces_engineers} of {base_since_2025} comments, close behind \"AI can't do this job yet\" ({count_since_2025:not_capable_yet}).",
-      "implication": "The fear is concrete: who debugs when the tool is wrong, or when the person on call never built the knowledge? incident.io says engineers keep the final call and that Nexus raises the floor for new hires, and one real-incident write-up shows a responder new to that code checking the conclusion before acting. Evidence that responders can explain the cause afterwards would answer the concern.",
-      "quoteIds": [
-        "hn:49579634",
-        "hn:47276920"
-      ],
-      "claimIds": [
-        "iio-entered-chat#7",
-        "iio-nexus#8",
-        "iio-how-it-feels#4"
-      ],
-      "note": "Phase 5 hostile review (20 Oct), one quote was about AI-written code (now hidden); the implication misdescribed a real incident as a demo and mixed an all-time count into a since-2025 finding."
-    },
-    {
-      "id": "f3",
-      "headline": "{either:wrong_or_hallucinated_cause+cant_verify_reasoning} of {n_base} comments say the AI gets the cause wrong or that its reasoning can't be checked; {sceptical:wrong_or_hallucinated_cause} of the {count:wrong_or_hallucinated_cause} about wrong causes are sceptical.",
-      "implication": "Engineers want more than fewer wrong answers: they want to see what was checked and ruled out. incident.io's pages say it had to engineer against hallucination, that every hypothesis links to its sources and shows the theories it ruled out, and that invented citations are now rejected. Publishing misses alongside hits, with the timeline of a call it got wrong, would persuade this audience more than success stories alone.",
-      "claimIds": [
-        "iio-building#8",
-        "iio-launch#4",
-        "iio-cl-dark-mode#4"
-      ],
-      "note": "Phase 5 hostile review (20 Oct), tighter wording; uses the site's own label words."
-    }
-  ],
-  "quotes": {
-    "not_capable_yet": [
-      "hn:43037480",
-      "hn:46762024",
-      "hn:47354938"
-    ],
-    "deskills_or_replaces_engineers": [
-      "hn:49579634",
-      "hn:41587962",
-      "hn:47276920"
-    ],
-    "alert_noise_unsolved": [
-      "hn:41362246"
-    ]
+ "coverage": [
+  {
+   "vendor": "incident.io",
+   "objection": "wrong_or_hallucinated_cause",
+   "rating": "SHOWN",
+   "claimIds": [
+    "iio-cl-2x-faster#1",
+    "iio-investigations#5",
+    "iio-cl-ga#14",
+    "iio-how-it-feels#2"
+   ],
+   "reason": "68% of incidents now get an accurate update within five minutes (up from 8%), a named customer says its people trust what it tells them, and each customer's homepage tracks how often it's right. What isn't public is an overall rate of wrong answers.",
+   "note": "Post-launch review (20 Oct), simulated competitive PMM: added the named customer and the accuracy homepage, which the first reason left out."
   },
-  "hideQuotes": [
-    {
-      "id": "hn:46689907",
-      "why": "about AI-written code waved through review, not AI incident tools"
-    },
-    {
-      "id": "hn:46763607",
-      "why": "the author's own company benchmark, and the 'simple SRE task' was code instrumentation"
-    },
-    {
-      "id": "hn:47750993",
-      "why": "about coding agents writing over-clever code"
-    },
-    {
-      "id": "hn:46812683",
-      "why": "defends AI against a headline; not an objection"
-    },
-    {
-      "id": "hn:47058461",
-      "why": "cut out, it reads as an attack on the launched product; the author is describing their own Claude set-up"
-    },
-    {
-      "id": "hn:44383599",
-      "why": "'without enough context' refers to a person, not the AI"
-    },
-    {
-      "id": "hn:43396821",
-      "why": "about weak causal analysis, shown under alert noise"
-    },
-    {
-      "id": "hn:50116758",
-      "why": "a vendor pitching their own product"
-    },
-    {
-      "id": "hn:41358560",
-      "why": "the quoted lines are cut mid-list and don't express the labelled objection"
-    },
-    {
-      "id": "hn:41359817",
-      "why": "the author is defending LLM reliability, not objecting"
-    },
-    {
-      "id": "hn:47354488",
-      "why": "a cost question, shown as 'just a wrapper'"
-    }
+  {
+   "vendor": "incident.io",
+   "objection": "cant_verify_reasoning",
+   "rating": "SHOWN",
+   "claimIds": [
+    "iio-cl-ga#2",
+    "iio-how-it-feels#4",
+    "iio-how-it-feels#5"
+   ],
+   "reason": "Every finding links to its evidence, and a real incident write-up shows the responder judging the conclusion plausible, then Claude and Investigations checking it against the codebase.",
+   "note": "Phase 5 hostile review (20 Oct), proposed by Claude: the generated reason said the responder checked the code; the write-up says the responder judged it plausible and Claude/Investigations checked the code."
+  },
+  {
+   "vendor": "incident.io",
+   "objection": "setup_and_integration_effort",
+   "rating": "SAID",
+   "claimIds": [
+    "iio-5-best#8",
+    "iio-vs-resolve#1",
+    "iio-vs-pagerduty#3"
+   ],
+   "reason": "Being operational in days is asserted. The one named setup story is a migration to its on-call product, so a named Investigations onboarding would close this.",
+   "note": "Phase 5 hostile review (20 Oct), proposed by Claude: the generated reason said a page 'admits tuning is needed'; that page says competitors need tuning."
+  },
+  {
+   "vendor": "incident.io",
+   "objection": "not_capable_yet",
+   "rating": "SHOWN",
+   "claimIds": [
+    "iio-investigations#3",
+    "iio-cl-2x-faster#1",
+    "iio-how-it-feels#7",
+    "iio-entered-chat#3",
+    "iio-investigations#17"
+   ],
+   "reason": "A named customer and a measured jump in accurate early updates show it working; the incident write-up (April 2026) is an internal one, on a feature then only on demo accounts. A July 2025 post says it “resolves what it can autonomously”, while the current product page says its only change is a pull request you review. One line, such as “diagnoses on its own, changes only with your approval”, would settle it.",
+   "note": "Post-launch review (20 Oct), simulated competitive PMM: dated the older post and the write-up, said the write-up was internal and pre-launch, and proposed the line the current pages already support (autonomous diagnosis, approved change)."
+  },
+  {
+   "vendor": "incident.io",
+   "objection": "vendor_lock_in",
+   "rating": "SAID",
+   "claimIds": [
+    "iio-cl-plugin#2",
+    "iio-nexus#5",
+    "iio-cl-ga#15"
+   ],
+   "reason": "Works with your own coding agents over MCP and a plugin, and fixes can be handed to Cursor, GitLab Duo or your own agent. Nothing on exporting investigations or choosing the model.",
+   "note": "Post-launch review (20 Oct), simulated competitive PMM: the old reason said data export wasn't addressed, but the plugin changelog covers exporting chart data; narrowed to investigations and model choice."
+  },
+  {
+   "vendor": "incident.io",
+   "objection": "cost_or_pricing",
+   "rating": "SAID",
+   "claimIds": [
+    "iio-cl-ga#8",
+    "iio-cl-ga#6",
+    "iio-5-best#12"
+   ],
+   "reason": "Investigations is sold separately to Pro and Enterprise customers, with no public price; Nexus is included on every plan, and the per-user prices listed cover other products.",
+   "note": "Post-launch review (20 Oct), simulated competitive PMM: the old reason cited a post about a DIY build's token bill and left out that Investigations is a separate purchase."
+  },
+  {
+   "vendor": "incident.io",
+   "objection": "just_an_llm_wrapper",
+   "rating": "SAID",
+   "claimIds": [
+    "iio-building#21",
+    "iio-building#6",
+    "iio-investigations#9"
+   ],
+   "reason": "Explains the work around the model in detail: replaying frozen past incidents, an adversarial agent and Nexus. Nothing compares it with a bare model on the same incidents.",
+   "note": "Post-launch review (20 Oct), simulated competitive PMM: the old reason undersold the most technical answer any vendor gives; the gap is a side-by-side, not an explanation."
+  },
+  {
+   "vendor": "Rootly",
+   "objection": "not_capable_yet",
+   "rating": "SAID",
+   "claimIds": [
+    "rootly-ai-sre#1",
+    "rootly-ai-sre#2",
+    "rootly-ai-sre#22"
+   ],
+   "reason": "Claims root causes in minutes, and 10x faster resolution in a headline, with no method, named customer or real incident; the worked example is a sample screen.",
+   "note": "Post-launch review (20 Oct), simulated competitive PMM: replaces the Phase 5 note, which wrongly said 10x appears in no Rootly claim: it is in the page headline (see rootly-ai-sre#2's proof note), but with nothing behind it."
+  },
+  {
+   "vendor": "PagerDuty",
+   "objection": "cant_verify_reasoning",
+   "rating": "SAID",
+   "claimIds": [
+    "pagerduty-sre-agent#7",
+    "pagerduty-sre-agent#6"
+   ],
+   "reason": "Mentions human oversight and connecting dots across logs, but the SRE Agent page doesn't show an evidence trail an engineer could check.",
+   "note": "Phase 5 hostile review (20 Oct), proposed by Claude: 'never shows' generalised from one page."
+  },
+  {
+   "vendor": "Datadog",
+   "objection": "vendor_lock_in",
+   "rating": "NOT_YET",
+   "claimIds": [],
+   "reason": "The Bits Investigation page doesn't address lock-in, model choice or exporting investigations.",
+   "note": "Post-launch review (20 Oct), simulated competitive PMM: unchanged wording, kept as an override so every NOT_YET names its page."
+  },
+  {
+   "vendor": "Datadog",
+   "objection": "alert_noise_unsolved",
+   "rating": "SHOWN",
+   "claimIds": [
+    "datadog-bits-investigation#16"
+   ],
+   "reason": "A named customer says it reduces noise, though with no figure and nothing on fixing alerts at source.",
+   "note": "Phase 5 hostile review (20 Oct), proposed by Claude: the second cited quote was about surfacing context, not alert noise."
+  },
+  {
+   "vendor": "Datadog",
+   "objection": "deskills_or_replaces_engineers",
+   "rating": "SAID",
+   "claimIds": [
+    "datadog-bits-investigation#13",
+    "datadog-bits-investigation#14"
+   ],
+   "reason": "Named customers say newer engineers get a head start and skills may rise, but nothing shows engineers learning or keeping their skills.",
+   "note": "Phase 5 hostile review (20 Oct), proposed by Claude: was SHOWN, but the proof doesn't bear on deskilling; consistent with incident.io's SAID on the same objection."
+  },
+  {
+   "vendor": "Resolve.ai",
+   "objection": "setup_and_integration_effort",
+   "rating": "SAID",
+   "claimIds": [
+    "resolve-ai-sre#4",
+    "resolve-ai-sre#8",
+    "resolve-ai-sre#12"
+   ],
+   "reason": "A named customer says it integrated cleanly into their stack, and integrations are listed, but no setup time or effort is given.",
+   "note": "Post-launch review (20 Oct), simulated competitive PMM: was SHOWN on a passing clause; Datadog's equally brief \"from day one\" is SAID, so both are now SAID."
+  },
+  {
+   "vendor": "Resolve.ai",
+   "objection": "lacks_context_of_our_systems",
+   "rating": "SHOWN",
+   "claimIds": [
+    "resolve-ai-sre#4",
+    "resolve-ai-sre#10"
+   ],
+   "reason": "A named customer says it identified dependencies across their systems, in a constrained environment; corrections becoming reusable knowledge is asserted.",
+   "note": "Post-launch review (20 Oct), simulated competitive PMM: restored the quote's own qualifier."
+  },
+  {
+   "vendor": "DIY",
+   "objection": "setup_and_integration_effort",
+   "rating": "SAID",
+   "claimIds": [
+    "diy-magarcia#2",
+    "diy-hivebrite#10",
+    "diy-hivebrite#6"
+   ],
+   "reason": "Setup is called simple and MCP integrations the real prerequisite, but no effort figures are given. Hivebrite also says its prototype was not production-ready.",
+   "note": "Phase 5 hostile review (20 Oct), proposed by Claude: cites the Hivebrite claim the reason relies on."
+  },
+  {
+   "vendor": "incident.io",
+   "objection": "data_access_and_security",
+   "rating": "SAID",
+   "claimIds": [
+    "iio-investigations#15",
+    "iio-investigations#17",
+    "iio-cl-ga#13"
+   ],
+   "reason": "Sandboxed code analysis, redaction, zero data retention and a pull request as the only change are asserted. Sceptics would want to see how “pull request only” is enforced, or an audit of it.",
+   "note": "Post-launch review (20 Oct), simulated competitive PMM: the old reason asked how read-only is enforced, but incident.io claims PR-only change, not read-only access."
+  },
+  {
+   "vendor": "incident.io",
+   "objection": "alert_noise_unsolved",
+   "rating": "SAID",
+   "claimIds": [
+    "iio-nexus#4",
+    "iio-entered-chat#9",
+    "iio-launch#7"
+   ],
+   "reason": "Nexus is said to tell a real problem from noise, but nothing measures fewer alerts. A July 2025 post says it “Eliminates alert fatigue”, while the August 2026 launch post lists noise reduction as future work.",
+   "note": "Post-launch review (20 Oct), simulated competitive PMM: the old reason showed a July 2025 claim as if current; the launch post puts alert noise reduction on the roadmap."
+  },
+  {
+   "vendor": "incident.io",
+   "objection": "diy_with_general_agent",
+   "rating": "SAID",
+   "claimIds": [
+    "iio-building#3",
+    "iio-building#2",
+    "iio-building#4",
+    "iio-cl-plugin#2"
+   ],
+   "reason": "Says in-house builds tie up a full-time team and rarely measure accuracy, that its own took two years, and offers a plugin so your own agent can use its skills. No named customer or side-by-side against a DIY build.",
+   "note": "Post-launch review (20 Oct), simulated competitive PMM: \"anecdotes\" undersold the two-year build and the point about measuring accuracy."
+  },
+  {
+   "vendor": "PagerDuty",
+   "objection": "vendor_lock_in",
+   "rating": "SAID",
+   "claimIds": [
+    "pagerduty-sre-agent#4",
+    "pagerduty-sre-agent#9"
+   ],
+   "reason": "Its SRE Agent page says it works across observability, automation and cloud tools, with over 750 integrations. Nothing on exporting data or choosing the model.",
+   "note": "Post-launch review (20 Oct), simulated competitive PMM: was NOT_YET, but the page's \"Vendor Agnostic\" claim addresses it as much as incident.io's MCP claims do."
+  },
+  {
+   "vendor": "PagerDuty",
+   "objection": "cost_or_pricing",
+   "rating": "NOT_YET",
+   "claimIds": [],
+   "reason": "Its SRE Agent page mentions a free trial but not how the agent is priced or what usage costs.",
+   "note": "Post-launch review (20 Oct), simulated competitive PMM: scoped to the one page checked."
+  },
+  {
+   "vendor": "Rootly",
+   "objection": "cost_or_pricing",
+   "rating": "NOT_YET",
+   "claimIds": [],
+   "reason": "Its AI SRE page doesn't say how the agent is priced or how token use is charged.",
+   "note": "Post-launch review (20 Oct), simulated competitive PMM: scoped to the one page checked."
+  },
+  {
+   "vendor": "Rootly",
+   "objection": "cant_verify_reasoning",
+   "rating": "SAID",
+   "claimIds": [
+    "rootly-ai-sre#17",
+    "rootly-ai-sre#23",
+    "rootly-ai-sre#5"
+   ],
+   "reason": "Confidence scores and a visible reasoning chain are asserted. The only examples are sample screens with no named customer or date, so there's no real incident to inspect.",
+   "note": "Post-launch review (20 Oct), simulated competitive PMM: \"mock-up\" was our word, not the page's; described what the page shows instead."
+  },
+  {
+   "vendor": "Resolve.ai",
+   "objection": "not_capable_yet",
+   "rating": "SHOWN",
+   "claimIds": [
+    "resolve-ai-sre#4",
+    "resolve-ai-sre#6"
+   ],
+   "reason": "A named Coinbase engineer cites root causes 73% faster, in what the quote calls a constrained environment, and another customer reports the same cause found 4-5 hours early. No autonomous 3am fix is shown.",
+   "note": "Post-launch review (20 Oct), simulated competitive PMM: restored the quote's own qualifier, \"in a constrained environment\"."
+  },
+  {
+   "vendor": "Resolve.ai",
+   "objection": "wrong_or_hallucinated_cause",
+   "rating": "SHOWN",
+   "claimIds": [
+    "resolve-ai-sre#4",
+    "resolve-ai-sre#6"
+   ],
+   "reason": "Coinbase's named engineer reports accurate root causes 73% faster, in a constrained environment, and another customer says it matched the humans' root cause. Neither is independently measured.",
+   "note": "Post-launch review (20 Oct), simulated competitive PMM: restored the quote's own qualifier."
+  },
+  {
+   "vendor": "Resolve.ai",
+   "objection": "cant_verify_reasoning",
+   "rating": "SAID",
+   "claimIds": [
+    "resolve-ai-sre#3",
+    "resolve-ai-sre#13",
+    "resolve-ai-sre#10"
+   ],
+   "reason": "Evidence trails and engineer review are promised, but the trail shown is a sample screen with no named customer or date.",
+   "note": "Post-launch review (20 Oct), simulated competitive PMM: \"mock-up\" was our word, not the page's."
+  },
+  {
+   "vendor": "Resolve.ai",
+   "objection": "cost_or_pricing",
+   "rating": "NOT_YET",
+   "claimIds": [],
+   "reason": "Its AI SRE page doesn't say how the product is priced or what an investigation costs.",
+   "note": "Post-launch review (20 Oct), simulated competitive PMM: scoped to the one page checked."
+  },
+  {
+   "vendor": "Resolve.ai",
+   "objection": "diy_with_general_agent",
+   "rating": "NOT_YET",
+   "claimIds": [],
+   "reason": "Its AI SRE page doesn't compare the product with building your own on a general agent.",
+   "note": "Post-launch review (20 Oct), simulated competitive PMM: scoped to the one page checked."
+  },
+  {
+   "vendor": "Resolve.ai",
+   "objection": "vendor_lock_in",
+   "rating": "NOT_YET",
+   "claimIds": [],
+   "reason": "Its AI SRE page doesn't address lock-in, model choice or exporting data.",
+   "note": "Post-launch review (20 Oct), simulated competitive PMM: scoped to the one page checked."
+  },
+  {
+   "vendor": "DIY",
+   "objection": "cost_or_pricing",
+   "rating": "SHOWN",
+   "claimIds": [
+    "diy-magarcia#11",
+    "diy-magarcia#12",
+    "diy-magarcia#13"
+   ],
+   "reason": "One write-up gives an estimated $8–10 in tokens against $2–3 for one real incident, and says it is not for every investigation. That covers tokens, not the time to build and run it.",
+   "note": "Post-launch review (20 Oct), simulated competitive PMM: a token estimate isn't the whole cost of doing it yourself; said so."
+  },
+  {
+   "vendor": "DIY",
+   "objection": "alert_noise_unsolved",
+   "rating": "NOT_YET",
+   "claimIds": [],
+   "reason": "The three write-ups note that agents depend on data access, but none addresses noisy alerts or poor telemetry.",
+   "note": "Post-launch review (20 Oct), simulated competitive PMM: scoped to the pages checked."
+  }
+ ],
+ "findings": [
+  {
+   "id": "f2",
+   "rank": 1,
+   "scope": "all",
+   "headline": "Beyond whether it works, engineers' two biggest objections are that AI deskills or replaces them ({count:deskills_or_replaces_engineers} of {n_base} posts) and that it needs access to production ({count:data_access_and_security}). None of the {vendors_rated} options mapped here shows proof on either.",
+   "short": "Beyond “does it work?”, engineers' biggest objections are deskilling ({count:deskills_or_replaces_engineers} posts) and production access ({count:data_access_and_security}). None of the {vendors_rated} options mapped shows proof on either.",
+   "implication": "Investigations already shows proof that it works. On these two, its pages assert, as every option here does: you work the problem with the agent, and its only change is a pull request you review. Proof could be a responder explaining a cause afterwards, and a page showing how “pull request only” is enforced. The deskilling posts span {threads:deskills_or_replaces_engineers} threads.",
+   "quoteIds": [
+    "hn:49579634",
+    "hn:49220669"
+   ],
+   "claimIds": [
+    "iio-launch#3",
+    "iio-investigations#17",
+    "iio-investigations#15"
+   ],
+   "note": "Post-launch review (20 Oct): three simulated reviewers (marketing lead, hiring, engineer) found the proof gap newer to the team than the DIY point; the old 'second most common since 2025' ranked counts three apart on noisy labels and printed the wrong n. verify.ts asserts the ranking and the zero-proof claim."
+  },
+  {
+   "id": "f1",
+   "rank": 2,
+   "scope": "all",
+   "headline": "{diy:uses} of {n_base} posts use or recommend a general AI tool for incident work, {diy:uses:positive} of them positively, but only {diy:unneeded} argue that makes a dedicated product unnecessary.",
+   "implication": "Most aren't arguing against buying; they're using what they already have. incident.io already argues that in-house builds rarely measure accuracy, and ships a plugin for the agents engineers use. What's missing is a public side-by-side: Investigations and a bare model on the same past incidents, from the backtests it already runs daily.",
+   "quoteIds": [
+    "hn:49125357",
+    "hn:41360976"
+   ],
+   "claimIds": [
+    "iio-building#4",
+    "iio-cl-plugin#2",
+    "iio-investigations#12"
+   ],
+   "note": "Post-launch review (20 Oct): the old headline set 73 (Sonnet's DIY tag) against 12 (Haiku's objection label); 13 'says a product is unnecessary' comes from the same tagger as 73. Hero line moved to f2 (was approved by Dany for this finding; flagged to him)."
+  },
+  {
+   "id": "f3",
+   "rank": 3,
+   "scope": "all",
+   "headline": "{either:wrong_or_hallucinated_cause+cant_verify_reasoning} of {n_base} posts say the AI gets the cause wrong or that its reasoning can't be checked.",
+   "implication": "Investigations answers both with proof: a measured jump in accurate early updates, and every hypothesis linked to its sources. The next question is how often it's wrong. Each customer sees that on its own homepage, and incident.io's buyer's guide tells evaluators to push for precision and recall. No option here publishes a figure yet; one from its backtests would meet that bar first.",
+   "quoteIds": [
+    "hn:49207822",
+    "hn:49803288"
+   ],
+   "claimIds": [
+    "iio-cl-2x-faster#1",
+    "iio-launch#4",
+    "iio-cl-ga#14",
+    "iio-vs-resolve#4"
+   ],
+   "note": "Post-launch review (20 Oct): 'publish misses' ignored that customers already see wins and misses on their homepage; 'sceptical' clause was a near-tautology. The precision-and-recall bar comes from incident.io's own buyer's guide."
+  }
+ ],
+ "quotes": {
+  "not_capable_yet": [
+   "hn:43037480",
+   "hn:46762024",
+   "hn:47354938"
+  ],
+  "deskills_or_replaces_engineers": [
+   "hn:49579634",
+   "hn:41587962",
+   "hn:47276920"
+  ],
+  "alert_noise_unsolved": [
+   "hn:41362246"
   ]
+ },
+ "hideQuotes": [
+  {
+   "id": "hn:46689907",
+   "why": "about AI-written code waved through review, not AI incident tools"
+  },
+  {
+   "id": "hn:46763607",
+   "why": "the author's own company benchmark, and the 'simple SRE task' was code instrumentation"
+  },
+  {
+   "id": "hn:47750993",
+   "why": "about coding agents writing over-clever code"
+  },
+  {
+   "id": "hn:46812683",
+   "why": "defends AI against a headline; not an objection"
+  },
+  {
+   "id": "hn:47058461",
+   "why": "cut out, it reads as an attack on the launched product; the author is describing their own Claude set-up"
+  },
+  {
+   "id": "hn:44383599",
+   "why": "'without enough context' refers to a person, not the AI"
+  },
+  {
+   "id": "hn:43396821",
+   "why": "about weak causal analysis, shown under alert noise"
+  },
+  {
+   "id": "hn:50116758",
+   "why": "a vendor pitching their own product"
+  },
+  {
+   "id": "hn:41358560",
+   "why": "the quoted lines are cut mid-list and don't express the labelled objection"
+  },
+  {
+   "id": "hn:41359817",
+   "why": "the author is defending LLM reliability, not objecting"
+  },
+  {
+   "id": "hn:47354488",
+   "why": "a cost question, shown as 'just a wrapper'"
+  }
+ ],
+ "extraClaims": [
+  {
+   "id": "iio-launch-plans#1",
+   "vendor": "incident.io",
+   "url": "https://incident.io/blog/introducing-investigations-powered-by-nexus",
+   "pageTitle": "Introducing Investigations, powered by Nexus. | Blog | incident.io",
+   "quote": "Alert deflection and noise reduction",
+   "proof": "none",
+   "proofNote": "Listed among problems incident.io plans to apply the technology to next.",
+   "addresses": [
+    "alert_noise_unsolved"
+   ],
+   "note": "Added 20 Oct: a list item the claim extraction skipped; it shows alert noise reduction is future work as of the launch post."
+  }
+ ]
 }

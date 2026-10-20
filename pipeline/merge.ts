@@ -1,7 +1,8 @@
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { z } from "zod";
-import { ClassifiedFile, Objection, Rating, Stats, Synthesis, Vendor } from "../lib/schema";
+import { computeNumbers } from "../lib/numbers";
+import { Claim, ClassifiedFile, Objection, Rating, Stats, Synthesis, Vendor, VENDORS } from "../lib/schema";
 
 // data/synthesis.json + data/overrides.json (optional, hand-written by Dany) -> data/site.json.
 // Overrides may change a coverage rating, a finding's wording, rank or quotes, or an objection's
@@ -30,6 +31,7 @@ const Overrides = z.object({
         headline: z.string().optional(),
         short: z.string().optional(),
         implication: z.string().optional(),
+        scope: z.enum(["all", "since_2025"]).optional(),
         quoteIds: z.array(z.string()).length(2).optional(),
         claimIds: z.array(z.string()).optional(), // incident.io claims the edited wording rests on
         note: z.string().optional(),
@@ -39,6 +41,8 @@ const Overrides = z.object({
   quotes: z.partialRecord(Objection, z.array(z.string()).max(3)).default({}),
   // Quotes a review found misleading out of context: never shown anywhere (the items still count).
   hideQuotes: z.array(z.object({ id: z.string(), why: z.string() })).default([]),
+  // Vendor sentences the extraction missed but the page needs; verify.ts checks them verbatim like any claim.
+  extraClaims: z.array(Claim.extend({ note: z.string() })).default([]),
 });
 
 const readJson = (file: string) => JSON.parse(readFileSync(path.join(DATA, file), "utf8"));
@@ -62,6 +66,9 @@ function writeStats(site: Synthesis) {
     claims: site.claims.length,
     ratings: site.coverage.length,
     buyerSignal: site.items.filter((i) => i.buyer_signal === true).length,
+    nComments: site.numbers.n_comments,
+    nStories: site.numbers.n_stories,
+    pagesByVendor: Object.fromEntries(VENDORS.map((v) => [v, new Set(site.claims.filter((c) => c.vendor === v).map((c) => c.url)).size])),
     costUsd: Number(cost.runs.reduce((sum, r) => sum + r.costUsd, 0).toFixed(2)),
     agreement: {
       method: agreement.method,
@@ -69,6 +76,9 @@ function writeStats(site: Synthesis) {
       stanceAgree: agreement.stance.agree,
       kappa: agreement.stance.cohensKappa,
       objectionJaccard: agreement.objections.meanJaccard,
+      objectionLabelled: agreement.objections.labelled,
+      objectionExact: agreement.objections.exactMatch,
+      vendorAuthored: agreement.vendorAuthored,
     },
     audits: {
       by: audits.by,
@@ -82,6 +92,9 @@ function writeStats(site: Synthesis) {
       quotesFailed: audits.quoteReview.problems,
       ratingsReviewed: audits.ratingReview.n,
       ratingsCorrected: audits.ratingReview.corrected,
+      postLaunchRatingsChanged: audits.postLaunch.ratingsChanged,
+      postLaunchReasonsReworded: audits.postLaunch.reasonsReworded,
+      postLaunchQuotesChecked: audits.postLaunch.newQuotesChecked,
     },
   };
   writeFileSync(path.join(DATA, "stats.json"), JSON.stringify(Stats.parse(stats), null, 2));
@@ -115,6 +128,12 @@ function main() {
     return { id, quote: item.quote, url: item.url, date: item.date };
   };
 
+  for (const extra of ov.extraClaims) {
+    const c = Claim.parse(extra); // drops the note
+    if (site.claims.some((x) => x.id === c.id)) problems.push(`extra claim ${c.id} already exists`);
+    else site.claims.push(c);
+  }
+
   // Hide reviewed-out quotes first, so nothing below can pick them.
   const hidden = new Set(ov.hideQuotes.map((h) => h.id));
   for (const item of site.items) if (hidden.has(item.id)) item.quote = null;
@@ -142,6 +161,16 @@ function main() {
     });
   }
 
+  // Coverage tallies change with the corrections above, so recompute every number now.
+  site.numbers = computeNumbers(site.items, site.coverage, { nCollected: site.meta.nCollected, nRelevant: site.meta.nRelevant });
+
+  // Re-fill every finding from its template (or its override), so no text keeps a stale number.
+  const templates = raw.findingTemplates as Record<string, { headline: string; implication: string }>;
+  for (const f of site.findings) {
+    f.headline = fill(templates[f.id].headline);
+    f.implication = fill(templates[f.id].implication.replace(/^What this means[^:]*:\s*/i, ""));
+  }
+
   for (const o of ov.findings) {
     const f = site.findings.find((x) => x.id === o.id);
     if (!f) {
@@ -155,6 +184,7 @@ function main() {
       f[field] = fill(text);
     }
     if (o.rank !== undefined) f.rank = o.rank;
+    if (o.scope) f.scope = o.scope;
     if (o.claimIds) {
       const bad = o.claimIds.filter((id) => !site.claims.some((c) => c.id === id && c.vendor === "incident.io"));
       if (bad.length) problems.push(`${o.id}: not incident.io claims: ${bad.join(", ")}`);
@@ -166,6 +196,7 @@ function main() {
     }
     f.overridden = true;
   }
+  for (const f of site.findings) f.n = f.scope === "since_2025" ? site.numbers.base_since_2025 : site.numbers.n_base;
   site.findings.sort((a, b) => a.rank - b.rank);
   for (const f of site.findings) {
     const bad = f.quotes.filter((q) => hidden.has(q.id));

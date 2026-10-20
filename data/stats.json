@@ -7,16 +7,29 @@
   "quotesKept": 558,
   "quotesDropped": 18,
   "vendorPages": 28,
-  "claims": 351,
+  "claims": 352,
   "ratings": 72,
   "buyerSignal": 8,
   "costUsd": 6.83,
+  "nComments": 321,
+  "nStories": 109,
+  "pagesByVendor": {
+    "incident.io": 21,
+    "PagerDuty": 1,
+    "Rootly": 1,
+    "Datadog": 1,
+    "Resolve.ai": 1,
+    "DIY": 3
+  },
   "agreement": {
     "method": "model-to-model: claude-sonnet-5-5 (independent re-run, same prompt) vs claude-haiku-5-5",
     "n": 30,
     "stanceAgree": 27,
     "kappa": 0.85,
-    "objectionJaccard": 0.82
+    "objectionJaccard": 0.61,
+    "objectionLabelled": 14,
+    "objectionExact": 5,
+    "vendorAuthored": 9
   },
   "audits": {
     "by": "Claude, while building (reading each item in full); not hand-labelled by Dany",
@@ -29,6 +42,9 @@
     "quotesReviewed": 36,
     "quotesFailed": 12,
     "ratingsReviewed": 72,
-    "ratingsCorrected": 15
+    "ratingsCorrected": 15,
+    "postLaunchRatingsChanged": 2,
+    "postLaunchReasonsReworded": 21,
+    "postLaunchQuotesChecked": 3
   }
 }

@@ -118,7 +118,11 @@ async function main() {
     perItem.map((p) => p.haiku.stance),
     perItem.map((p) => p.reference.stance),
   );
-  const meanJaccard = perItem.reduce((s, p) => s + p.objectionJaccard, 0) / n;
+  // Two empty sets agree trivially, so the overlap is measured only where either side named an objection.
+  const labelled = perItem.filter((p) => p.haiku.objections.length || p.reference.objections.length);
+  const meanJaccard = labelled.reduce((s, p) => s + p.objectionJaccard, 0) / labelled.length;
+  const exactMatch = labelled.filter((p) => p.objectionJaccard === 1).length;
+  const vendorAuthored = sample.filter((s) => haiku.get(s.id)!.author_is_vendor).length;
   const relevantAgree = perItem.filter((p) => p.reference.relevant).length;
 
   const out = {
@@ -127,7 +131,8 @@ async function main() {
     measuredAt: new Date().toISOString(),
     relevance: { referenceAlsoRelevant: relevantAgree, of: n },
     stance: { agree: stanceAgree, of: n, cohensKappa: Number(kappa.toFixed(2)) },
-    objections: { meanJaccard: Number(meanJaccard.toFixed(2)) },
+    objections: { meanJaccard: Number(meanJaccard.toFixed(2)), labelled: labelled.length, exactMatch },
+    vendorAuthored,
     perItem,
   };
   writeFileSync(path.join(DATA, "agreement.json"), JSON.stringify(out, null, 2));
@@ -135,7 +140,8 @@ async function main() {
   console.log(`Agreement on ${n} sampled relevant items (${method})`);
   console.log(`  Relevance: the reference also marks ${relevantAgree} of ${n} as relevant`);
   console.log(`  Stance: same label on ${stanceAgree} of ${n}; Cohen's kappa ${kappa.toFixed(2)}`);
-  console.log(`  Objections: mean Jaccard overlap ${meanJaccard.toFixed(2)} (1 = identical sets; two empty sets count as 1)`);
+  console.log(`  Objections: on the ${labelled.length} items where either side named one, mean Jaccard overlap ${meanJaccard.toFixed(2)}; identical sets on ${exactMatch}`);
+  console.log(`  ${vendorAuthored} of the ${n} sampled items were written by vendors or founders (outside the counted base)`);
   console.log("\nDisagreements:");
   for (const p of perItem.filter((p) => !p.stanceMatch || p.objectionJaccard < 1)) {
     console.log(`  ${p.id}: haiku ${p.haiku.stance} [${p.haiku.objections.join(", ")}] vs ${p.reference.stance} [${p.reference.objections.join(", ")}]${p.reference.relevant ? "" : " (reference: not relevant)"}`);

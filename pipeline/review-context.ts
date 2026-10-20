@@ -33,8 +33,10 @@ async function main() {
     const node = await fetchJson<AlgoliaItem>(`https://hn.algolia.com/api/v1/items/${id.slice(3)}`);
     let parent = "";
     if (node.parent_id && node.type === "comment") {
-      const p = await fetchJson<AlgoliaItem>(`https://hn.algolia.com/api/v1/items/${node.parent_id}`);
-      parent = p.type === "story" ? `(top-level reply to the story "${p.title}")` : fragmentToText(p.text ?? "");
+      // A deleted parent returns 404; note it rather than stopping the review.
+      const p = await fetchJson<AlgoliaItem>(`https://hn.algolia.com/api/v1/items/${node.parent_id}`).catch((err: Error) => err);
+      if (p instanceof Error) parent = `(parent not available: ${p.message})`;
+      else parent = p.type === "story" ? `(top-level reply to the story "${p.title}")` : fragmentToText(p.text ?? "");
     }
     out.push({ id, url: item.url, date: item.date.slice(0, 10), shownIn: where, thread: item.title, labels: { stance: item.stance, objections: item.objections }, quote: item.best_quote, fullText: item.text, parentText: parent.slice(0, 2500) });
   }

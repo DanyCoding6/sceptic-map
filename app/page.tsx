@@ -1,4 +1,5 @@
 import { About } from "@/components/About";
+import { AtAGlance, MIN_ROW_COUNT } from "@/components/AtAGlance";
 import { BattleCard } from "@/components/BattleCard";
 import { Findings } from "@/components/Findings";
 import { Footer } from "@/components/Footer";
@@ -14,11 +15,13 @@ import { formatDate } from "@/lib/format";
 // The whole page is built from committed data at build time; nothing renders per request.
 export const ensureStatic = "navigation";
 
+const titleOf = (url: string) => site.claims.find((c) => c.url === url)?.pageTitle ?? url;
+
 // Only what the map needs crosses to the browser.
 function mapProps(): MapProps {
   const halves = site.meta.halves.map((h) => h.half);
   const half = (date: string) => halves.indexOf(`${date.slice(0, 4)}-H${Number(date.slice(5, 7)) <= 6 ? 1 : 2}`);
-  const rows = site.objections.map((s) => ({
+  const rows = site.objections.filter((s) => s.objection === "other" || s.count >= MIN_ROW_COUNT).map((s) => ({
     objection: s.objection,
     label: s.label,
     topQuotes: s.quotes,
@@ -26,11 +29,13 @@ function mapProps(): MapProps {
       .filter((c) => c.objection === s.objection)
       .map((c) => {
         const claims = c.claimIds.map((id) => claimById.get(id)!);
+        // A "not yet" rating cites no claim, so link the pages that were checked instead.
+        const pages = claims.length ? claims.map((x) => ({ url: x.url, pageTitle: x.pageTitle })) : c.urls.map((url) => ({ url, pageTitle: titleOf(url) }));
         return {
           vendor: c.vendor,
           rating: c.rating,
           reason: c.reason,
-          sources: [...new Map(claims.map((x) => [x.url, { url: x.url, pageTitle: x.pageTitle }])).values()],
+          sources: [...new Map(pages.map((x) => [x.url, x])).values()],
           ...(c.vendor === "incident.io" && claims[0] ? { quote: claims[0].quote } : {}),
         };
       }),
@@ -66,12 +71,15 @@ export default function Home() {
           wide
           intro={
             <>
-              Each row is an objection engineers raise about AI incident tools, most common first. Open a row for what they say, how incident.io&apos;s public pages answer
-              it, and how four competitors and the do-it-yourself route compare. <span className="font-medium text-foreground">Shown with proof</span> means a measured
-              result, a named customer or a real incident; <span className="font-medium text-foreground">said, not shown</span> means asserted without proof.
+              <span className="font-medium text-foreground">Shown with proof</span> means a measured result, a named customer or a real incident.{" "}
+              <span className="font-medium text-foreground">Said, not shown</span> means asserted without proof.{" "}
+              <span className="font-medium text-foreground">Not yet addressed</span> means the pages checked don&apos;t answer it.
             </>
           }
         >
+          <AtAGlance />
+          <h3 className="mt-12 text-lg font-semibold">Every objection, with quotes</h3>
+          <p className="mt-1 mb-4 text-[15px] text-ink-2">Most common first. Filter by what a post mentions, or open a row for what engineers say and each rating&apos;s reason.</p>
           <ScepticMap {...mapProps()} />
           <MethodsBox />
         </Section>

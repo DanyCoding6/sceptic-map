@@ -7,7 +7,7 @@ export const RATING_TEXT: Record<Rating, string> = {
 };
 
 // Icon shape and label carry the meaning; colour only reinforces it.
-function Icon({ rating }: { rating: Rating }) {
+export function Icon({ rating }: { rating: Rating }) {
   return (
     <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true" className="shrink-0">
       {rating === "SHOWN" && <circle cx="6" cy="6" r="5" fill="var(--accent)" />}

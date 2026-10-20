@@ -1,7 +1,7 @@
 {
   "method": "model-to-model: claude-sonnet-5-5 (independent re-run, same prompt) vs claude-haiku-5-5",
   "n": 30,
-  "measuredAt": "2026-10-20T18:13:03.215Z",
+  "measuredAt": "2026-10-20T21:17:44.932Z",
   "relevance": {
     "referenceAlsoRelevant": 29,
     "of": 30
@@ -12,8 +12,11 @@
     "cohensKappa": 0.85
   },
   "objections": {
-    "meanJaccard": 0.82
+    "meanJaccard": 0.61,
+    "labelled": 14,
+    "exactMatch": 5
   },
+  "vendorAuthored": 9,
   "perItem": [
     {
       "id": "hn:46855985",
