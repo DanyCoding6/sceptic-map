@@ -1,4 +1,4 @@
-import { CONFIG } from "@/lib/config";
+import { CONFIG, HEADLINE } from "@/lib/config";
 import { claimById, site } from "@/lib/data";
 import { formatMonth } from "@/lib/format";
 
@@ -45,19 +45,48 @@ export function Hero() {
   const n = site.numbers;
   const proven = provenOnWorks();
   const pr = claimById.get("iio-investigations#17")!;
+  const product = claimById.get("iio-ai-sre#1")!; // "starts debugging the moment you declare an incident … surface the root cause in minutes"
   return (
     <header className="mx-auto max-w-3xl px-4 pb-16 pt-10 sm:pt-16">
-      <p className="text-sm text-muted">Sceptic Map · an independent pitch · Made for the incident.io marketing team</p>
-      <h1 className="mt-6 text-[1.65rem] font-semibold leading-tight tracking-tight sm:text-[2.6rem] sm:leading-[1.12]">
-        What sceptical engineers say about AI incident tools, and which of their worries nobody has yet answered with proof
-      </h1>
-      <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-2">
-        A working tool, built as a pitch. It reads {nBase} Hacker News posts about AI incident tools ({formatMonth(window.from)} to {formatMonth(window.to)}),
-        sorts the worries engineers raise, and checks each one against what incident.io and its competitors show on their public pages.
-      </p>
+      <p className="text-sm text-muted">Sceptic Map · an independent pitch by Daniyaal Anawar · Made for the incident.io marketing team</p>
+      <h1 className="mt-6 text-[1.65rem] font-semibold leading-tight tracking-tight sm:text-[2.6rem] sm:leading-[1.12]">{HEADLINE}</h1>
+
+      <dl className="mt-8 space-y-4 text-[17px] leading-relaxed">
+        <div>
+          <dt className="inline font-semibold">The product. </dt>
+          <dd className="inline">
+            incident.io sells{" "}
+            <a href={product.url} className="underline decoration-line underline-offset-2 hover:text-accent-ink" target="_blank" rel="noopener noreferrer">
+              Investigations
+            </a>
+            , an AI agent that starts working out what broke the moment a team declares an incident, such as an outage.
+          </dd>
+        </div>
+        <div>
+          <dt className="inline font-semibold">The problem. </dt>
+          <dd className="inline">
+            The people who buy it are engineers, and many are sceptical of AI doing this job. incident.io&apos;s own job ad says its product marketers decide what to
+            claim and how to prove it.
+          </dd>
+        </div>
+        <div>
+          <dt className="inline font-semibold">What I built. </dt>
+          <dd className="inline">
+            A tool that collects {nBase} posts from Hacker News, a forum many engineers read, written between {formatMonth(window.from)} and{" "}
+            {formatMonth(window.to)}. It sorts the doubts they raise and checks each one against what incident.io and four competitors show on their public pages.
+          </dd>
+        </div>
+        <div>
+          <dt className="inline font-semibold">Why. </dt>
+          <dd className="inline">
+            I&apos;m Daniyaal Anawar, an Economics student at Cambridge, and I&apos;d like to do this for real as a summer product marketing intern. This is the
+            prototype.
+          </dd>
+        </div>
+      </dl>
 
       <div className="mt-8 rounded-lg border border-line p-5 sm:p-6">
-        <p className="text-xs font-semibold uppercase tracking-wide text-muted">The short version</p>
+        <p className="text-xs font-semibold uppercase tracking-wide text-muted">What it found</p>
         <ul className="mt-3 list-disc space-y-3 pl-5 text-[17px] leading-relaxed marker:text-accent-ink">
           <li>
             <strong className="font-semibold">Does it work?</strong> The most common doubt ({n["either:not_capable_yet+wrong_or_hallucinated_cause"]} posts).
@@ -78,8 +107,7 @@ export function Hero() {
       </div>
 
       <p className="mt-8 max-w-2xl text-lg leading-relaxed">
-        I&apos;m Daniyaal Anawar, an Economics student at Cambridge. I built this as a prototype of a summer product marketing project: the same analysis, run on your
-        sales calls. Could we talk for 15 minutes?
+        Over the summer I&apos;d run the same analysis on your sales calls. Could we talk for 15 minutes?
       </p>
       <div className="mt-6 flex flex-wrap gap-3">
         <a

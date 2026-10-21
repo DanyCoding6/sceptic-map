@@ -16,21 +16,21 @@ const siteUrl =
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Sceptic Map: what engineers say about AI incident tools",
+  title: "Sceptic Map: what engineers doubt about AI incident tools",
   description:
-    "An independent pitch: a tool that reads what engineers say about AI incident tools and maps it against how Investigations is told.",
+    "An independent pitch to incident.io's marketing team: what engineers doubt about AI that investigates outages, and which doubts incident.io and its competitors answer with proof.",
   robots: { index: false, follow: false }, // a pitch for one team, not for search engines (Daniyaal's call)
   openGraph: {
-    title: "Sceptic Map: what engineers say about AI incident tools",
-    description: "A tool that reads what engineers say about AI incident tools, and maps it against how Investigations is told. An independent pitch.",
+    title: "Sceptic Map: what engineers doubt about AI incident tools",
+    description: "An independent pitch to incident.io's marketing team: what engineers doubt about AI that investigates outages, and which doubts anyone answers with proof.",
     siteName: "Sceptic Map",
     type: "website",
     locale: "en_GB",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sceptic Map: what engineers say about AI incident tools",
-    description: "A tool that reads what engineers say about AI incident tools, and maps it against how Investigations is told. An independent pitch.",
+    title: "Sceptic Map: what engineers doubt about AI incident tools",
+    description: "An independent pitch to incident.io's marketing team: what engineers doubt about AI that investigates outages, and which doubts anyone answers with proof.",
   },
 };
 
