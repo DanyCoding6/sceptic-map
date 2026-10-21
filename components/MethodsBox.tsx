@@ -21,7 +21,7 @@ export function MethodsBox() {
           </span>
         </span>
         <span className="mt-2 block text-[15px] leading-relaxed text-ink-2">
-          Hacker News only. Labels come from Claude models, checked by a blind read from a larger Claude model, not by people. Only {stats.buyerSignal} of {stats.nBase} posts show a
+          Hacker News only. Labels come from Claude models, checked by a blind read from Claude Code, not by people. Only {stats.buyerSignal} of {stats.nBase} posts show a
           buyer signal.
         </span>
       </summary>
@@ -44,7 +44,8 @@ export function MethodsBox() {
         <div>
           <dt className="font-medium">How far to trust the labels</dt>
           <dd className="text-ink-2">
-            There are no human labels. A larger Claude model read {b.n} random posts from the {stats.nBase} in full, blind to the pipeline&apos;s labels:{" "}
+            There are no human labels. Claude Code, running a larger Claude model, read {b.n} random posts from the {stats.nBase} in full, blind to the pipeline&apos;s
+            labels. It is the same tool that wrote the labelling prompts, so this is a self-check, not an independent one:{" "}
             {b.onTopic} were clearly on topic, {b.offTopic} off topic and {b.unsure} borderline, and {b.ownProduct} of the on-topic posts were by people promoting their
             own tool, which should have been set aside. On the {b.onTopic} on topic, it gave the same stance on {b.stanceAgree} (Cohen&apos;s kappa {b.kappa}); where either named an objection (
             {b.objectionLabelled} posts), the overlap was {b.objectionJaccard} (Jaccard), with identical sets on {b.objectionExact}. Earlier, Sonnet re-labelled {a.n} random
@@ -63,7 +64,7 @@ export function MethodsBox() {
           <dd className="text-ink-2">
             Claude re-read every quote shown by default ({au.quotesReviewed}) with its full comment and the comment it replied to. {au.quotesFailed} were misleading out of
             context or sat under the wrong objection, so they are no longer shown; the counts still use the model&apos;s labels. All {au.ratingsReviewed} rating reasons were
-            checked against their claims and {au.ratingsCorrected} corrected. After launch, two more rounds of review by Claude changed {au.postLaunchRatingsChanged} ratings and
+            checked against their claims and {au.ratingsCorrected} corrected. After launch, three more rounds of review by Claude changed {au.postLaunchRatingsChanged} ratings and
             reworded {au.postLaunchReasonsReworded} reasons, mostly competitor cells that over-reached; the {au.postLaunchQuotesChecked} quotes added then were checked the
             same way. Each correction is in data/overrides.json with a note saying why. Claude also read every post in the two rows the lead finding rests on: {n["read:deskills_or_replaces_engineers:core"]} of{" "}
             {n["count:deskills_or_replaces_engineers"]} deskilling posts are squarely on the label and {n["read:deskills_or_replaces_engineers:related"]} more are related;{" "}

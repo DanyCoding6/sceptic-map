@@ -12,7 +12,7 @@ import { Section } from "@/components/Section";
 import { SummerProject } from "@/components/SummerProject";
 import { claimById, site } from "@/lib/data";
 import { half } from "@/lib/numbers";
-import { formatDate } from "@/lib/format";
+import { formatDate, formatMonth } from "@/lib/format";
 
 // The whole page is built from committed data at build time; nothing renders per request.
 export const ensureStatic = "navigation";
@@ -72,8 +72,9 @@ export default function Home() {
           title="The map"
           intro={
             <>
-              Each row is a worry engineers raise, most common first, with the number of posts raising it in brackets. Each column shows how that option&apos;s public
-              pages answer it. Read across a row to see whether anyone has proof; read down incident.io&apos;s column to see where Investigations stands.
+              Each row is a worry engineers raise, most common first, with the number of posts raising it in brackets (out of {site.meta.nBase}, {formatMonth(site.meta.window.from)} to {formatMonth(site.meta.window.to)}). Each column is an option a team could pick:
+              incident.io, four competitors, or DIY, meaning a team wiring a general AI tool such as Claude Code into its own systems. A dot shows how that option&apos;s
+              public pages answer the worry. Read across a row to see whether anyone has proof; read down incident.io&apos;s column to see where Investigations stands.
             </>
           }
         >

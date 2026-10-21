@@ -230,7 +230,7 @@ export const BattleCard = z.object({
     )
     .min(1)
     .max(3),
-  avoid: z.array(z.string()).max(5).default([]), // things a rep shouldn't say, each grounded in the cited pages
+  avoid: z.array(z.string()).max(6).default([]), // things a rep shouldn't say, each grounded in the cited pages
 });
 export type BattleCard = z.infer<typeof BattleCard>;
 

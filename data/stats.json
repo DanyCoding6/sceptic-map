@@ -7,7 +7,7 @@
   "quotesKept": 558,
   "quotesDropped": 18,
   "vendorPages": 28,
-  "claims": 352,
+  "claims": 354,
   "ratings": 72,
   "buyerSignal": 8,
   "costUsd": 6.83,
@@ -56,8 +56,8 @@
     "quotesFailed": 12,
     "ratingsReviewed": 72,
     "ratingsCorrected": 15,
-    "postLaunchRatingsChanged": 5,
-    "postLaunchReasonsReworded": 25,
-    "postLaunchQuotesChecked": 3
+    "postLaunchRatingsChanged": 6,
+    "postLaunchReasonsReworded": 30,
+    "postLaunchQuotesChecked": 4
   }
 }

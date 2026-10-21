@@ -82,21 +82,23 @@
     "corrected": 15
   },
   "postLaunch": {
-    "by": "Claude, acting on two rounds of simulated reviews (marketing lead, competitive PMM, AI engineer, hiring, editor) on 20 Oct",
-    "ratingsChanged": 5,
-    "reasonsReworded": 25,
+    "by": "Claude, acting on two rounds of simulated reviews (marketing lead, competitive PMM, AI engineer, hiring, editor) on 20 Oct; and a round 4 on 21 Oct (decision, competitive PMM, engineer, editor and accuracy panels)",
+    "ratingsChanged": 6,
+    "reasonsReworded": 30,
     "ratingChanges": [
       "PagerDuty / vendor_lock_in: NOT_YET -> SAID",
       "Datadog / alert_noise_unsolved: SHOWN -> SAID",
       "Resolve.ai / setup_and_integration_effort: SHOWN -> SAID",
       "DIY / just_an_llm_wrapper: NOT_YET -> NA",
-      "DIY / diy_with_general_agent: SHOWN -> NA"
+      "DIY / diy_with_general_agent: SHOWN -> NA",
+      "Resolve.ai / diy_with_general_agent: NOT_YET -> SAID"
     ],
-    "newQuotesChecked": 3,
+    "newQuotesChecked": 4,
     "newQuoteIds": [
       "hn:50009404",
       "hn:44772821",
-      "hn:49186977"
+      "hn:49186977",
+      "hn:41359874"
     ],
     "candidatesRejected": [
       "hn:49012516 (dead thread; the author was promoting their own blog)"

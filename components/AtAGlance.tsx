@@ -19,6 +19,7 @@ const LEAD: string[] = ["deskills_or_replaces_engineers", "data_access_and_secur
 
 export function AtAGlance() {
   const competitorPages = stats.pagesByVendor[COMPETITORS[0]];
+  const n = site.numbers;
   const rows = site.objections.filter((o) => o.objection !== "other" && o.count >= MIN_ROW_COUNT);
   const rating = (v: string, o: string) => site.coverage.find((c) => c.vendor === v && c.objection === o)!.rating as Rating;
   // Counted over the rows shown, so the line under the grid matches the column above it.
@@ -30,7 +31,7 @@ export function AtAGlance() {
         <thead>
           <tr>
             <th scope="col" className="w-[44%] pb-2 text-left align-bottom text-xs font-medium text-muted sm:w-[40%]">
-              Objection
+              Worry
             </th>
             {VENDORS.map((v) => (
               <th key={v} scope="col" className={`pb-2 align-bottom text-xs ${v === "incident.io" ? "font-semibold text-foreground" : "font-medium text-muted"}`}>
@@ -67,13 +68,13 @@ export function AtAGlance() {
         ))}
       </ul>
       <p className="mt-3 text-xs leading-relaxed text-ink-2">
-        The two rows in bold are the gap described in finding 1: every option makes claims there, and none shows proof.
+        The two rows in bold are finding 1, below.
       </p>
       <p className="mt-2 text-xs leading-relaxed text-muted">
         incident.io, on these {rows.length} rows: {tally("incident.io", "SHOWN")} shown, {tally("incident.io", "SAID")} said, {tally("incident.io", "NOT_YET")} not yet. Its column rests on{" "}
-        {stats.pagesByVendor["incident.io"]} of its pages; each competitor&apos;s on {competitorPages} AI SRE product page{competitorPages === 1 ? "" : "s"}; the DIY
-        column on {stats.pagesByVendor.DIY} pages (two engineers&apos; write-ups and Datadog&apos;s blog on its MCP server), so its proof is single cases, not a product&apos;s
-        record.
+        {stats.pagesByVendor["incident.io"]} of its pages, and each competitor&apos;s on {competitorPages} AI SRE product page{competitorPages === 1 ? "" : "s"}. The DIY
+        column rests on {stats.pagesByVendor.DIY} pages (two engineers&apos; write-ups and Datadog&apos;s blog on connecting AI agents to its data), so its {n["shown:vendor:DIY"]} &ldquo;shown&rdquo;
+        ratings rest on one engineer&apos;s write-up of one incident, not a product&apos;s record.
       </p>
     </div>
   );

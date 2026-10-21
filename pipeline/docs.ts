@@ -29,7 +29,7 @@ An independent student project, made for the incident.io marketing team. It coll
 | Check everything the page shows | \`npm run pipeline:verify\` (also runs before every build) | pass or fail |
 | Build the site | \`npm run build\` | static page |
 
-Code computes every number; the models only choose and write words, and code checks what they write. Every quote must be an exact substring of its source and links to it; numbers in written text are placeholders filled from the data by one function (\`lib/numbers.ts\`); \`pipeline/verify.ts\` fails the build if a quote isn't verbatim, any number doesn't recompute, a phrase such as "only" or "none" stops being true, a rating has no source, or a banned word appears.
+Models label the posts and write the sentences; code counts the labels, fills in every number and checks what the models write. Every quote must be an exact substring of its source and links to it; numbers in written text are placeholders filled from the data by one function (\`lib/numbers.ts\`); \`pipeline/verify.ts\` fails the build if a quote isn't verbatim, any number doesn't recompute, a phrase such as "only" or "none" stops being true, a rating has no source, or a banned word appears. Vendor claims are checked word for word against the fetched pages only where those pages exist: they aren't committed (\`data/raw\` is gitignored), so a fresh clone's build skips that one check until \`npm run pipeline:collect\` has run.
 
 Built by Daniyaal with Claude Code: Daniyaal wrote the brief and made the calls; Claude Code wrote the code, ran the pipeline and did most of the checking. \`notes/build-log.md\` records every mistake and how it was caught.
 

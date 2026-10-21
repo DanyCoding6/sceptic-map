@@ -3,11 +3,12 @@
   "rows": [
     {
       "quoteId": "hn:50009404",
-      "respond": "Agree that the model isn't the difference. Ask how they'd know their own setup is right: incident.io says teams that build their own rarely measure accuracy, while it replays frozen past incidents and grades every hypothesis against what responders actually did.",
+      "respond": "Agree that the model isn't the difference. Ask how they'd know their own setup is right: incident.io says teams that build their own rarely measure accuracy, while it replays frozen past incidents and grades every hypothesis against what responders actually did. If they ask for the score, say it isn't public yet, and offer to show how it does on their own incidents.",
       "respondClaimIds": [
         "iio-building#4",
         "iio-building#6",
-        "iio-building#5"
+        "iio-building#5",
+        "iio-cl-ga#cta"
       ],
       "ask": "The last time your agent named the wrong cause, how did you find out, and how long did it take?",
       "sendClaimId": "iio-building#6",
@@ -44,7 +45,8 @@
     "Arguing that the model is smarter. incident.io's own case is the work around the model.",
     "Saying it fixes things on its own. The product page says its only change is a pull request you review.",
     "Calling it read-only. The promise is about changes, not about what it can read.",
-    "Claiming it beats a bare model. Nothing public compares the two yet.",
-    "Knocking their setup. incident.io ships a plugin for it."
+    "Claiming it beats a general AI agent. Nothing public compares the two yet.",
+    "Knocking their setup. incident.io ships a plugin for it.",
+    "Calling the 3-minute median an accuracy rate. It measures how soon a first accurate message arrives, and the changelog credits part of the speed-up to messaging before the full review step."
   ]
 }

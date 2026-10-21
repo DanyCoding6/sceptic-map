@@ -1,7 +1,7 @@
 import { Section } from "@/components/Section";
 import { Sources } from "@/components/Sources";
 import { battleCard, claimById, itemById, site } from "@/lib/data";
-import { formatDate } from "@/lib/format";
+import { formatDate, formatMonth } from "@/lib/format";
 import type { BattleCard as Card } from "@/lib/schema";
 
 function Row({ row }: { row: Card["rows"][number] }) {
@@ -56,9 +56,8 @@ export function BattleCard() {
       title="If a rep hears this tomorrow"
       intro={
         <>
-          Finding 2 says the alternative engineers reach for first is the general AI tool they already use ({n["diy:uses"]} of {n.n_base} posts use or recommend one).
-          This is how a rep could answer that on a call, using only incident.io&apos;s public pages: three ways engineers put it, what to say, what to ask next, and what
-          to send afterwards.
+          Finding 2 means a rep should expect to be asked why not just use a general AI tool ({n["diy:uses"]} of {n.n_base} posts, {formatMonth(site.meta.window.from)} to {formatMonth(site.meta.window.to)}, use or recommend one). This is how a
+          rep could answer, using only incident.io&apos;s public pages: three ways engineers put it, what to say, what to ask next, and what to send afterwards.
         </>
       }
     >

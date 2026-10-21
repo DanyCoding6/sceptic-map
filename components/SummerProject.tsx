@@ -16,7 +16,7 @@ const PLAN = [
   {
     weeks: "Weeks 9–12",
     title: "Close the biggest proof gap",
-    what: "Brief the proof for the gap the calls confirm, such as a bare-model side-by-side or evidence on deskilling, then hand the tool over with a runbook.",
+    what: "Plan the proof for the biggest gap the calls confirm, such as Investigations side by side with a general AI agent, or evidence on deskilling. Then hand the tool over with a runbook.",
   },
 ];
 
@@ -32,7 +32,7 @@ export function SummerProject() {
     <Section
       id="summer"
       title="The summer project"
-      intro="This page is the prototype. Over the summer I'd point the same pipeline at incident.io's own sales calls, win/loss notes and deal channels, so that sales and marketing see every week what buyers object to and where the proof is missing. Call tracking already counts objections; this adds whether the messaging has proof for each one, and which proof a rep should send."
+      intro="This page is the prototype. Over the summer I'd point the same pipeline at incident.io's own sales calls, win/loss notes and deal channels. Each week, sales and marketing would see what buyers object to and where the proof is missing. Call tracking already counts objections; this adds whether the messaging has proof for each one, and which proof a rep should send."
     >
       <ol className="space-y-5">
         {PLAN.map((p) => (

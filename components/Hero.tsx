@@ -25,7 +25,8 @@ function provenOnWorks() {
     rows.every((o) => site.coverage.find((c) => c.vendor === v && c.objection === o)?.rating === "SHOWN"),
   );
   const others = names.filter((v) => v !== "incident.io");
-  return { iio: names.includes("incident.io"), others };
+  const diy = rows.every((o) => site.coverage.find((c) => c.vendor === "DIY" && c.objection === o)?.rating === "SHOWN");
+  return { iio: names.includes("incident.io"), others: diy ? [...others, "one engineer's do-it-yourself write-up"] : others };
 }
 
 const list = (xs: string[]) => (xs.length < 2 ? xs.join("") : `${xs.slice(0, -1).join(", ")} and ${xs.at(-1)}`);
@@ -39,11 +40,11 @@ export function Hero() {
     <header className="mx-auto max-w-3xl px-4 pb-16 pt-10 sm:pt-16">
       <p className="text-sm text-muted">Sceptic Map · an independent pitch · Made for the incident.io marketing team</p>
       <h1 className="mt-6 text-[1.9rem] font-semibold leading-tight tracking-tight sm:text-[2.6rem] sm:leading-[1.12]">
-        What sceptical engineers say about AI incident tools, and which of their worries nobody has answered yet
+        What sceptical engineers say about AI incident tools, and which of their worries nobody has yet answered with proof
       </h1>
       <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-2">
-        This page looks at {nBase} posts in which engineers discuss AI tools for incident response, and checks each worry they raise against what incident.io, four
-        competitors and the do-it-yourself route say on their public pages.
+        This page takes {nBase} Hacker News posts about AI tools for incident response, from {formatMonth(window.from)} to{" "}
+        {formatMonth(window.to)}, and checks each worry they raise against the public pages of incident.io, four competitors and the do-it-yourself route.
       </p>
 
       <div className="mt-8 rounded-lg border border-line p-5 sm:p-6">
@@ -51,30 +52,31 @@ export function Hero() {
         <ul className="mt-3 space-y-3 text-[17px] leading-relaxed">
           <li>
             The doubts raised most are about whether it works at all: {n["either:not_capable_yet+wrong_or_hallucinated_cause"]} posts say AI can&apos;t do incident work
-            yet, or gets the cause wrong. {proven.iio ? <>Investigations, like {list(proven.others)}, now shows proof that it can.</> : null}
+            yet, or gets the cause wrong. {proven.iio ? <>On the pages checked, Investigations answers both with proof, such as measured results and named customers, and so do {list(proven.others)}.</> : null}
           </li>
           <li>
-            Two other worries come up often, and no option on the map answers either with proof: that these tools will deskill or replace engineers (
-            {n["count:deskills_or_replaces_engineers"]} posts), and what they can touch in production ({n["count:data_access_and_security"]}).
+            Two other worries come up often: that these tools will deskill or replace engineers ({n["count:deskills_or_replaces_engineers"]} posts,{" "}
+            {n["read:deskills_or_replaces_engineers:core"]} of them squarely about it), and what they can reach in production, data included ({n["count:data_access_and_security"]}). Every
+            option makes claims on both; none shows proof.
           </li>
           <li>
-            Investigations is well placed on the second. Its{" "}
+            On production access, Investigations is well placed. Its{" "}
             <a href={pr.url} className="underline decoration-line underline-offset-2 hover:text-accent-ink" target="_blank" rel="noopener noreferrer">
               product page
             </a>{" "}
-            says its only change to your systems is a pull request you review, one of the two strictest promises on the map. Showing how that&apos;s enforced would make
-            it the first to prove it.
+            says its only change to your systems is a pull request you review; only Rootly, which requires sign-off on every change, promises as much. Showing how
+            that&apos;s enforced, and what it can read, would make Investigations the first option on this map to prove a promise on access.
           </li>
         </ul>
       </div>
 
       <p className="mt-8 max-w-2xl text-lg leading-relaxed">
-        I&apos;m Daniyaal Anawar, an Economics student at Cambridge. I built this as a working version of the summer project I&apos;d like to do with your team: the same
-        analysis, run on your sales calls.
+        I&apos;m Daniyaal Anawar, an Economics student at Cambridge. Since 2021 I&apos;ve built an audience of ~100K by making hard topics simple without making them
+        wrong. Explaining an AI agent to engineers who don&apos;t trust AI is the hardest version of that job I know of, and your team is doing it.
       </p>
-      <p className="mt-3 text-sm text-muted">
-        Based on {nBase} Hacker News posts by engineers ({n.n_comments} comments, {n.n_stories} stories), {formatMonth(window.from)} to {formatMonth(window.to)}, with
-        vendors&apos; own posts set aside.
+      <p className="mt-3 max-w-2xl text-lg leading-relaxed">
+        I built this as a working version of the summer project I&apos;d like to do with your team: the same analysis, run on your sales calls. Could we talk for 15
+        minutes?
       </p>
       <div className="mt-8 flex flex-wrap gap-3">
         <a href="#map" className="rounded-md bg-accent-ink px-4 py-2.5 text-sm font-medium text-white hover:bg-[#0b5f58]">

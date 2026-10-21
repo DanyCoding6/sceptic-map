@@ -258,7 +258,7 @@
   "said:cost_or_pricing": 2,
   "said:setup_and_integration_effort": 6,
   "said:just_an_llm_wrapper": 5,
-  "said:diy_with_general_agent": 4,
+  "said:diy_with_general_agent": 5,
   "said:lacks_context_of_our_systems": 3,
   "said:alert_noise_unsolved": 5,
   "said:deskills_or_replaces_engineers": 6,
@@ -268,7 +268,7 @@
   "said:vendor:PagerDuty": 11,
   "said:vendor:Rootly": 11,
   "said:vendor:Datadog": 8,
-  "said:vendor:Resolve.ai": 6,
+  "said:vendor:Resolve.ai": 7,
   "said:vendor:DIY": 5,
   "not_yet:wrong_or_hallucinated_cause": 0,
   "not_yet:cant_verify_reasoning": 0,
@@ -276,7 +276,7 @@
   "not_yet:cost_or_pricing": 3,
   "not_yet:setup_and_integration_effort": 0,
   "not_yet:just_an_llm_wrapper": 0,
-  "not_yet:diy_with_general_agent": 1,
+  "not_yet:diy_with_general_agent": 0,
   "not_yet:lacks_context_of_our_systems": 0,
   "not_yet:alert_noise_unsolved": 1,
   "not_yet:deskills_or_replaces_engineers": 0,
@@ -286,7 +286,7 @@
   "not_yet:vendor:PagerDuty": 1,
   "not_yet:vendor:Rootly": 1,
   "not_yet:vendor:Datadog": 1,
-  "not_yet:vendor:Resolve.ai": 3,
+  "not_yet:vendor:Resolve.ai": 2,
   "not_yet:vendor:DIY": 1,
   "na:wrong_or_hallucinated_cause": 0,
   "na:cant_verify_reasoning": 0,
@@ -5350,6 +5350,30 @@
    "addresses": [
     "alert_noise_unsolved"
    ]
+  },
+  {
+   "id": "iio-cl-ga#cta",
+   "vendor": "incident.io",
+   "url": "https://incident.io/changelog/investigations-now-available-powered-by-nexus",
+   "pageTitle": "Investigations now available, powered by Nexus | Changelog | incident.io",
+   "quote": "Get a demo to see how it performs on your own incidents",
+   "proof": "none",
+   "proofNote": "",
+   "addresses": [
+    "wrong_or_hallucinated_cause"
+   ]
+  },
+  {
+   "id": "rootly-ai-sre#sample-threshold",
+   "vendor": "Rootly",
+   "url": "https://rootly.com/ai-sre",
+   "pageTitle": "AI SRE: Automated Root Cause Analysis for Incidents",
+   "quote": "Review the alert threshold.",
+   "proof": "illustration",
+   "proofNote": "A recommendation in the sample investigation on the product page.",
+   "addresses": [
+    "alert_noise_unsolved"
+   ]
   }
  ],
  "coverage": [
@@ -5363,7 +5387,7 @@
     "iio-cl-ga#14",
     "iio-how-it-feels#2"
    ],
-   "reason": "68% of incidents now get an accurate update within five minutes (up from 8%), a named customer says its people trust what it tells them, and each customer's homepage tracks how often it's right. What isn't public is an overall rate of wrong answers.",
+   "reason": "A named customer says its people trust what it tells them, an incident write-up shows its cause checked against the code, and each customer's homepage tracks how often it's right. Accurate updates also arrive sooner: 68% of incidents get one within five minutes, up from 8%. No overall rate of wrong answers is public.",
    "urls": [
     "https://incident.io/changelog/investigations-are-2x-faster",
     "https://incident.io/investigations",
@@ -5398,7 +5422,7 @@
     "iio-cl-ga#13",
     "iio-investigations#15"
    ],
-   "reason": "Its only change is a pull request you review, and Kubernetes access can be limited to chosen namespaces; its product page also mentions SOC 2. Nothing lists everything it reads or shows how “pull request only” is enforced.",
+   "reason": "Its product page says its only change is a pull request you review, and Kubernetes access can be limited to chosen namespaces; its product page also mentions SOC 2. Nothing lists everything it reads or shows how “pull request only” is enforced.",
    "urls": [
     "https://incident.io/investigations",
     "https://incident.io/changelog/bidirectional-sync-for-incident-tickets",
@@ -5832,12 +5856,14 @@
    "rating": "SAID",
    "claimIds": [
     "rootly-ai-sre#3",
-    "rootly-ai-sre#2"
+    "rootly-ai-sre#2",
+    "rootly-ai-sre#sample-threshold"
    ],
-   "reason": "Claims automatic triage from the moment an alert fires. It doesn't address bad alerts or poor telemetry at source, and offers no noise-reduction figures.",
+   "reason": "Claims automatic triage from the moment an alert fires, and its sample investigation recommends reviewing an alert threshold. It offers no noise-reduction figures.",
    "urls": [
     "https://rootly.com/ai-sre"
-   ]
+   ],
+   "overridden": true
   },
   {
    "vendor": "Rootly",
@@ -6003,7 +6029,7 @@
     "datadog-bits-investigation#13",
     "datadog-bits-investigation#14"
    ],
-   "reason": "Named customers say newer engineers get a head start and that skills may rise, the closest any option comes. Neither shows engineers learning or keeping their skills.",
+   "reason": "One named customer says newer engineers now begin with a head start, and another that skills may rise, the closest any option comes. Neither shows engineers learning or keeping their skills.",
    "urls": [
     "https://www.datadoghq.com/product/ai/bits-investigation/"
    ],
@@ -6118,9 +6144,12 @@
   {
    "vendor": "Resolve.ai",
    "objection": "diy_with_general_agent",
-   "rating": "NOT_YET",
-   "claimIds": [],
-   "reason": "Its AI SRE page doesn't compare the product with building your own on a general agent.",
+   "rating": "SAID",
+   "claimIds": [
+    "resolve-ai-sre#2",
+    "resolve-ai-sre#12"
+   ],
+   "reason": "Offers domain-specialised agents that know each tool's query language as its advantage, but makes no direct comparison with a self-built agent.",
    "urls": [
     "https://resolve.ai/product/ai-sre"
    ],
@@ -6243,7 +6272,7 @@
     "diy-magarcia#12",
     "diy-magarcia#13"
    ],
-   "reason": "One write-up gives an estimated $8–10 in tokens against $2–3 for one real incident, and says it is not for every investigation. That covers tokens, not the time to build and run it.",
+   "reason": "One write-up estimates $8–10 in API credits for a four-agent run on one real incident, against about $2–3 for a single session, and says it isn't worth it for every investigation. That covers tokens, not the time to build and run it.",
    "urls": [
     "https://magarcia.io/using-claude-code-agent-teams-for-incident-investigation/"
    ],
@@ -6368,10 +6397,10 @@
    "rank": 1,
    "headline": "Deskilling or replacement, and production access: on the pages checked, every option asserts and none shows proof. Investigations and Rootly make the strictest promises on access.",
    "short": "Engineers worry that AI incident tools will deskill or replace them, and about what those tools can touch in production. On the pages checked, none of the 6 options shows proof on either.",
-   "title": "Two common worries have no proof behind them yet",
-   "explain": "Beyond whether the AI works, engineers worry about what it does to them and to their systems. 33 posts say these tools will deskill engineers or are meant to replace them, and 23 say they won't give an AI access to production. Every option on the map answers both with reassurance, and none shows evidence.",
-   "note": "The model counts 33 deskilling or replacement posts and 23 on access. Read one by one in full, 14 of the 33 are squarely about AI tools deskilling or replacing engineers, 14 are related (skills lost to AI-written code, who is accountable, or the trade-off mentioned in passing) and the rest don't fit; 20 of the 23 access posts fit squarely.",
-   "implication": "On deskilling, incident.io says engineers keep the final call and work alongside the agent. Nobody shows responders keeping their skills; Datadog comes closest, with named customers saying newer engineers get a head start. Showing what on-call engineers learn from its reasoning would be a first. On access, Investigations' only change is a pull request you review, and its product page mentions SOC 2, which none of the competitor pages checked does. PagerDuty's and Resolve's agents can act on their own within rules you set. Showing how “pull request only” is enforced, and everything it can read, would turn that promise into proof.",
+   "title": "No option answers two common worries with proof yet",
+   "explain": "Beyond whether the AI works, engineers worry about what it does to them and to their systems. The model counts 33 posts worrying that these tools will deskill or replace engineers, and 23 wary of giving an AI access to production systems or data. On the pages checked, every option makes claims on both, and none shows proof.",
+   "note": "The model counts 33 deskilling or replacement posts and 23 on access. Claude then read each in full: 14 of the 33 are squarely about AI tools deskilling or replacing engineers, and 14 are related (skills lost to AI-written code, who is accountable, or the trade-off mentioned in passing). The rest don't fit. 20 of the 23 access posts fit squarely. The pipeline first rated Datadog's deskilling answer as shown; a review changed it to said, because a head start isn't evidence that engineers keep or build skills.",
+   "implication": "On deskilling, incident.io says engineers keep the final call, and that Nexus raises the floor for new hires. Nobody shows responders keeping their skills; Datadog comes closest, with one named customer saying newer engineers now begin with a head start, and another that it could raise skill levels. Showing what on-call engineers learn from its reasoning would be the first proof on this row of the map. On access, incident.io's product page says Investigations' only change is a pull request you review, as strict a promise as Rootly's sign-off on every change. Listing everything it can read, and showing how “pull request only” is enforced, would turn that promise into proof.",
    "whyRanked": "It is the less obvious concern, it outweighs wrong-cause complaints since 2025 in this data, and incident.io's claims only assert a position with no proof.",
    "n": 430,
    "scope": "all",
@@ -6390,8 +6419,9 @@
     }
    ],
    "claimIds": [
-    "iio-investigations#17",
-    "iio-cl-ga#13"
+    "iio-entered-chat#7",
+    "iio-nexus#8",
+    "iio-investigations#17"
    ],
    "overridden": true
   },
@@ -6399,9 +6429,9 @@
    "id": "f1",
    "rank": 2,
    "headline": "73 of 430 posts use or recommend a general AI tool for incident work, 49 of them positive about it; only 8 of those 73 argue that makes a dedicated product unnecessary.",
-   "title": "The real alternative is the AI tool engineers already use",
-   "explain": "73 of the 430 posts describe using or recommending a general AI tool, such as Claude, ChatGPT or Cursor, for incident work, and 49 of them are positive about it. Only 8 of those 73 argue that this makes a dedicated product unnecessary. So when a sceptic weighs up Investigations, the comparison they reach for first is the AI tool they already use.",
-   "implication": "incident.io argues on its blog that in-house builds rarely measure accuracy, and ships a plugin for the agents engineers already use. What's missing is a published score from its daily backtests: Investigations against a general agent with the same access, on the same frozen past incidents. A total across incidents need show no customer's data.",
+   "title": "Many engineers already use a general AI tool for incident work",
+   "explain": "73 of the 430 posts describe using or recommending a general AI tool, such as Claude, ChatGPT or Cursor, for incident work, and 49 of them are positive about it. Only 8 of those 73 argue that this makes a dedicated product unnecessary. So it is less an objection than a habit, but it makes the tool they already use the likely yardstick for Investigations.",
+   "implication": "incident.io argues on its blog that in-house builds rarely measure accuracy, and ships a plugin for the agents engineers already use. It also tests Investigations daily on real past incidents, frozen so the agent sees only what responders had at the start. What's missing is a published score from those tests, and the same test run on a general agent with the same access. Showing the grading scale and how the incidents were chosen would let a sceptic judge the test as well as the score; a total needn't show any customer's data.",
    "whyRanked": "It answers the do-it-yourself question directly: the behaviour is real, the stated objection is rare, and incident.io's own coverage here is only anecdote.",
    "n": 430,
    "scope": "all",
@@ -6432,23 +6462,23 @@
    "rank": 3,
    "headline": "50 of 430 posts say the AI gets the cause wrong or that its reasoning can't be checked.",
    "title": "Engineers will ask how often it's wrong",
-   "explain": "50 posts say the AI gets the cause wrong, or that its reasoning can't be checked. This is where incident.io has done the most, and its pages show proof on both. The question sceptics ask next is how often it's wrong.",
-   "implication": "The proof so far is a measured jump in accurate early updates, and an incident write-up in which its conclusion was checked against the code. Each customer can see its own accuracy on the Investigations homepage, and incident.io's buyer's guide tells evaluators to ask vendors for precision and recall. A published figure from its backtests would be the first from any option here.",
+   "explain": "50 posts say the AI gets the cause wrong, or that its reasoning can't be checked. incident.io's pages show proof on both; on checking its reasoning, the only other option that does is one engineer's do-it-yourself write-up. The question sceptics ask next is how often it's wrong.",
+   "implication": "The proof so far is a measured jump in accurate early updates, and an incident write-up in which its conclusion was checked against the code. Each customer can see its own accuracy on the Investigations homepage, and incident.io's buyer's guide tells evaluators to ask vendors for precision and recall. No option on the map publishes such a figure yet; one from its daily backtests would answer its own guide's question.",
    "whyRanked": "It is well supported by the data but familiar, and incident.io already has proof on these objections, so the gain is in how it shows misses.",
    "n": 430,
    "scope": "all",
    "quotes": [
     {
+     "id": "hn:41359874",
+     "quote": "You need to quantify this. With actual numbers.",
+     "url": "https://news.ycombinator.com/item?id=41359874",
+     "date": "2024-08-26"
+    },
+    {
      "id": "hn:49207822",
      "quote": "Also in my experience, having my colleagues do root cause analysis (RCA) with LLM brings to me invalid RCAs which I have to rule out, instead of working on finding true RCA.",
      "url": "https://news.ycombinator.com/item?id=49207822",
      "date": "2026-08-07"
-    },
-    {
-     "id": "hn:49803288",
-     "quote": "Same problem with postmortems. You get a clean AI writeup with root cause, timeline, and action items all in the right sections, but none of it tells you what was actually checked or ruled out along the way.",
-     "url": "https://news.ycombinator.com/item?id=49803288",
-     "date": "2026-09-22"
     }
    ],
    "claimIds": [

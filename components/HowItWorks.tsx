@@ -9,15 +9,15 @@ export function HowItWorks() {
   const steps = [
     {
       title: "Collect",
-      text: `I gathered ${formatNumber(stats.nCollected)} Hacker News stories and comments from ${formatMonth(window.from)} to ${formatMonth(window.to)} that mention AI tools for incidents, on-call or root-cause analysis.`,
+      text: `I gathered ${formatNumber(stats.nCollected)} Hacker News stories and comments from ${formatMonth(window.from)} to ${formatMonth(window.to)}, found by searching for AI tools for incidents, on-call and root-cause analysis, plus full threads whose titles named both AI and incident work.`,
     },
     {
       title: "Sort",
-      text: `Claude models kept the ${stats.nRelevant} that are on topic and set aside ${stats.nVendorAuthored} written by vendors or founders about their own products. For each of the remaining ${stats.nBase}, they labelled the author's stance and the objections the post raises, such as “it gets the cause wrong” or “it deskills engineers”.`,
+      text: `Claude Haiku labelled every post, and Claude Sonnet re-checked the ones judged on topic and could only remove them. That left ${stats.nRelevant}, and ${stats.nVendorAuthored} by vendors or founders about their own products are set aside. For each of the remaining ${stats.nBase}, the labels give the author's stance and the worries the post raises, such as “it gets the cause wrong”.`,
     },
     {
       title: "Compare",
-      text: `Claude then pulled ${stats.claims} claims, word for word, from ${stats.vendorPages} public pages of incident.io, PagerDuty, Rootly, Datadog, Resolve.ai and engineers who built their own with a general AI tool, and rated how each answers each objection. Reviews checked and corrected the ratings.`,
+      text: `Next, the pipeline took ${stats.claims} claims, word for word, from ${stats.vendorPages} public pages: ${stats.pagesByVendor["incident.io"]} of incident.io's, one AI SRE product page for each competitor, and ${stats.pagesByVendor.DIY} on building your own with a general AI tool. Claude rated how each option's pages answer each worry, then re-checked all ${stats.audits.ratingsReviewed} ratings and corrected ${stats.audits.ratingsCorrected}; later reviews changed ${stats.audits.postLaunchRatingsChanged} more. Each correction is logged with a reason.`,
     },
   ];
   return (
@@ -47,13 +47,19 @@ export function HowItWorks() {
           <dt className="flex w-44 shrink-0 items-center gap-2 font-medium">
             <Icon rating="SHOWN" /> Shown with proof
           </dt>
-          <dd className="text-ink-2">The page backs the claim with a measured result, a named customer reporting a result on that worry, or a real incident.</dd>
+          <dd className="text-ink-2">
+            The page backs the claim with a measured result, a named customer reporting a result on that worry, or a real incident. That is evidence a buyer can see on
+            the page, such as a customer the vendor chose to quote, not independent checking.
+          </dd>
         </div>
         <div className="flex gap-3">
           <dt className="flex w-44 shrink-0 items-center gap-2 font-medium">
             <Icon rating="SAID" /> Said, not shown
           </dt>
-          <dd className="text-ink-2">The page makes the claim but doesn&apos;t back it up. Sample screens don&apos;t count as proof.</dd>
+          <dd className="text-ink-2">
+            The page makes the claim but doesn&apos;t back it with proof on this worry. Sample screens don&apos;t count as proof, and nor does naming a security audit such as SOC 2: it
+            doesn&apos;t show what an agent can read or change.
+          </dd>
         </div>
         <div className="flex gap-3">
           <dt className="flex w-44 shrink-0 items-center gap-2 font-medium">
@@ -61,10 +67,16 @@ export function HowItWorks() {
           </dt>
           <dd className="text-ink-2">The pages checked don&apos;t answer the worry at all.</dd>
         </div>
+        <div className="flex gap-3">
+          <dt className="flex w-44 shrink-0 items-center gap-2 font-medium">
+            <Icon rating="NA" /> Doesn&apos;t apply
+          </dt>
+          <dd className="text-ink-2">Only in the DIY column, on &ldquo;I could do this with a general AI tool myself&rdquo;, which is about that option itself.</dd>
+        </div>
       </dl>
       <p className="mt-6 text-[15px] leading-relaxed text-ink-2">
-        Every quote on this page is word for word from its source and links to it, every number is computed by code, and the limits of the data are set out under
-        &ldquo;Methods and limits&rdquo; below the map.
+        Every quote is word for word from its source and links to it, and code fills in every number. The limits of the data are under &ldquo;Methods and
+        limits&rdquo;, below the map.
       </p>
     </Section>
   );

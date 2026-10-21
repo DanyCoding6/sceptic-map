@@ -186,7 +186,10 @@ const phrases: [string, boolean][] = [
   ["f2/f3: Investigations shows proof on whether it works", worksObjections.every((o) => cell("incident.io", o) === "SHOWN")],
   ["hero: the doubts raised most are about whether it works (the top two rows)", rated[0] === "not_capable_yet" && rated[1] === "wrong_or_hallucinated_cause"],
   ["hero: Rootly also promises no change without sign-off", site.claims.some((c) => c.vendor === "Rootly" && /human sign-off/.test(c.quote))],
-  ["f2: incident.io names the only outside audit (SOC 2) among the claims", site.claims.filter((c) => /SOC ?2/.test(c.quote)).every((c) => c.vendor === "incident.io")],
+  ["hero: Investigations answers both 'does it work' rows with a measured result and a named customer", ["not_capable_yet", "wrong_or_hallucinated_cause"].every((o) => { const cited = site.coverage.find((c) => c.vendor === "incident.io" && c.objection === o)?.claimIds.map((id) => site.claims.find((x) => x.id === id)?.proof) ?? []; return cited.includes("number") && cited.includes("named_customer"); })],
+  ["f3: on checking its reasoning, only incident.io and the DIY write-up show proof", site.coverage.filter((c) => c.objection === "cant_verify_reasoning" && c.rating === "SHOWN").map((c) => c.vendor).sort().join() === "DIY,incident.io"],
+  ["map: every DIY 'shown' rests on one engineer's write-up", site.coverage.filter((c) => c.vendor === "DIY" && c.rating === "SHOWN").every((c) => c.claimIds.some((id) => id.startsWith("diy-magarcia#")) && c.claimIds.every((id) => id.startsWith("diy-magarcia#")))],
+  ["f2: one named Datadog customer says newer engineers get a head start", site.claims.filter((c) => c.vendor === "Datadog" && /head start/.test(c.quote) && c.proof === "named_customer").length === 1],
   ["f1: only a minority of general-AI users say a product is unnecessary", expected["diy:uses:unneeded"] * 2 < expected["diy:uses"]],
   ["map: every competitor column rests on the same number of pages", new Set(["PagerDuty", "Rootly", "Datadog", "Resolve.ai"].map((v) => stats.pagesByVendor[v])).size === 1],
 ];
