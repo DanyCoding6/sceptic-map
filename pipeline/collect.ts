@@ -215,14 +215,14 @@ async function collectHn(): Promise<void> {
   console.log(`\nHN: ${out.length} unique items written to data/raw/hn.json`);
 }
 
-// Reddit isn't collected: its public JSON returned 403 on the first probe, and Dany chose to skip
+// Reddit isn't collected: its public JSON returned 403 on the first probe, and Daniyaal chose to skip
 // it rather than register an OAuth app (19 Oct 2026). The data is Hacker News only.
 
 // ---------- Vendor pages ----------
 
 async function collectVendors(): Promise<void> {
   if (!VENDOR_LIST_APPROVED) {
-    console.log("Vendor pages: not fetched. The URL list in pipeline/vendor-urls.ts is waiting for Dany's OK.");
+    console.log("Vendor pages: not fetched. The URL list in pipeline/vendor-urls.ts is waiting for Daniyaal's OK.");
     return;
   }
   const out: RawItem[] = [];

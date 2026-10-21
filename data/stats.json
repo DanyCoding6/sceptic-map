@@ -45,7 +45,7 @@
     "vendorAuthored": 9
   },
   "audits": {
-    "by": "Claude, while building (reading each item in full); not hand-labelled by Dany",
+    "by": "Claude, while building (reading each item in full); not hand-labelled by Daniyaal",
     "keptN": 20,
     "keptOnTopic": 19,
     "removedN": 15,

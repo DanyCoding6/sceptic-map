@@ -1,5 +1,5 @@
 {
-  "method": "Claude, a larger model than the pipeline's, reading each post in full in the Claude Code session, blind to the pipeline's labels (21 Oct). Dany chose not to hand-label; these are not human labels. vs the pipeline's labels (Claude Haiku, after the Sonnet relevance check)",
+  "method": "Claude, a larger model than the pipeline's, reading each post in full in the Claude Code session, blind to the pipeline's labels (21 Oct). Daniyaal chose not to hand-label; these are not human labels. vs the pipeline's labels (Claude Haiku, after the Sonnet relevance check)",
   "n": 40,
   "relevance": {
     "onTopic": 33,

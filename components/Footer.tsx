@@ -4,7 +4,7 @@ export function Footer() {
       <div className="mx-auto max-w-3xl px-4 text-sm leading-relaxed text-muted">
         <p>Made for the incident.io marketing team.</p>
         <p className="mt-1">
-          An independent pitch by Dany Anawar, not affiliated with or endorsed by incident.io. Quotes are from public Hacker News posts; usernames are left out on purpose.
+          An independent pitch by Daniyaal Anawar, not affiliated with or endorsed by incident.io. Quotes are from public Hacker News posts; usernames are left out on purpose.
         </p>
       </div>
     </footer>

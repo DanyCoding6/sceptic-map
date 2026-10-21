@@ -1,6 +1,6 @@
-// Vendor messaging pages. Found by web search on 2026-10-19; nothing here is fetched until Dany
+// Vendor messaging pages. Found by web search on 2026-10-19; nothing here is fetched until Daniyaal
 // approves the list (then set VENDOR_LIST_APPROVED to true and run `npm run pipeline:collect -- vendors`).
-export const VENDOR_LIST_APPROVED = true; // approved by Dany, 19 Oct 2026
+export const VENDOR_LIST_APPROVED = true; // approved by Daniyaal, 19 Oct 2026
 
 export interface VendorPage {
   slug: string;

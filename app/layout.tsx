@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   title: "Sceptic Map: what engineers say about AI incident tools",
   description:
     "An independent pitch: a tool that reads what engineers say about AI incident tools and maps it against how Investigations is told.",
-  robots: { index: false, follow: false }, // a pitch for one team, not for search engines (Dany's call)
+  robots: { index: false, follow: false }, // a pitch for one team, not for search engines (Daniyaal's call)
   openGraph: {
     title: "Sceptic Map: what engineers say about AI incident tools",
     description: "A tool that reads what engineers say about AI incident tools, and maps it against how Investigations is told. An independent pitch.",

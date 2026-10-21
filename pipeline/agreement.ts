@@ -6,7 +6,7 @@ import { classifyBatch } from "./lib/classifier";
 import { reportSpend } from "./lib/llm";
 
 // Measures how far to trust the Haiku labels, on the 30-item sample in data/labels_sample.csv.
-// If Dany filled in my_stance and my_objections, compare against those (hand labels).
+// If Daniyaal filled in my_stance and my_objections, compare against those (hand labels).
 // Otherwise re-classify the same items independently with Sonnet (model-to-model), and say so.
 
 const DATA = path.join(process.cwd(), "data");
@@ -83,7 +83,7 @@ async function main() {
   const reference = new Map<string, Labels>();
 
   if (handLabelled) {
-    method = `Dany's hand labels vs ${MODELS.classify}`;
+    method = `Daniyaal's hand labels vs ${MODELS.classify}`;
     for (const s of sample) {
       if (!STANCES.includes(s.myStance as Stance)) throw new Error(`${s.id}: my_stance "${s.myStance}" is not one of ${STANCES.join(", ")}`);
       const objections = s.myObjections && s.myObjections !== "none" ? s.myObjections.split(/[;,\s]+/).filter(Boolean) : [];

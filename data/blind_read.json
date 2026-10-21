@@ -1,5 +1,5 @@
 {
-  "by": "Claude, a larger model than the pipeline's, reading each post in full in the Claude Code session, blind to the pipeline's labels (21 Oct). Dany chose not to hand-label; these are not human labels.",
+  "by": "Claude, a larger model than the pipeline's, reading each post in full in the Claude Code session, blind to the pipeline's labels (21 Oct). Daniyaal chose not to hand-label; these are not human labels.",
   "sample": "40 random posts from the 430 counted (pipeline/hand-sample.ts, seed 2027)",
   "labels": [
     {

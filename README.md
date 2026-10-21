@@ -16,7 +16,7 @@ An independent student project, made for the incident.io marketing team. It coll
 
 Code computes every number; the models only choose and write words, and code checks what they write. Every quote must be an exact substring of its source and links to it; numbers in written text are placeholders filled from the data by one function (`lib/numbers.ts`); `pipeline/verify.ts` fails the build if a quote isn't verbatim, any number doesn't recompute, a phrase such as "only" or "none" stops being true, a rating has no source, or a banned word appears.
 
-Built by Dany with Claude Code: Dany wrote the brief and made the calls; Claude Code wrote the code, ran the pipeline and did most of the checking. `notes/build-log.md` records every mistake and how it was caught.
+Built by Daniyaal with Claude Code: Daniyaal wrote the brief and made the calls; Claude Code wrote the code, ran the pipeline and did most of the checking. `notes/build-log.md` records every mistake and how it was caught.
 
 ## Rerunning it
 

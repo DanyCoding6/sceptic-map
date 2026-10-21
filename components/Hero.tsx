@@ -31,7 +31,7 @@ export function Hero() {
         show how &ldquo;pull request only&rdquo; is enforced.
       </p>
       <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-2">
-        I&apos;m Dany Anawar, an Economics student at Cambridge; since 2021 I&apos;ve built an education audience of ~100K followers. I built a tool that sorts what engineers
+        I&apos;m Daniyaal Anawar, an Economics student at Cambridge; since 2021 I&apos;ve built an education audience of ~100K followers. I built a tool that sorts what engineers
         say about AI incident tools and checks each objection against incident.io&apos;s public pages. Next summer I&apos;d like to run it on your sales calls.
       </p>
       <p className="mt-3 text-sm text-muted">

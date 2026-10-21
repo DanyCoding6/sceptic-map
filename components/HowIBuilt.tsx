@@ -2,7 +2,7 @@ import { Section } from "@/components/Section";
 import { site, stats } from "@/lib/data";
 import { formatNumber } from "@/lib/format";
 
-// Decisions Dany made, as recorded in notes/build-log.md and the project's working notes.
+// Decisions Daniyaal made, as recorded in notes/build-log.md and the project's working notes.
 const DECISIONS = [
   "Wrote the brief: the idea, the three ratings, and the rules (never invent a quote or a number, no usernames, respect robots.txt, say what the data can't tell you).",
   "Chose the lead finding, where no option shows proof, over an earlier headline about engineers using general AI tools.",
