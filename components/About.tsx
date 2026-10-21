@@ -20,7 +20,7 @@ export function About() {
         Since 2021 I&apos;ve built an audience of ~100K by making hard topics simple without making them wrong. Explaining an AI agent to engineers who don&apos;t trust AI is
         the hardest version of that job I know of, and your team is doing it.
       </p>
-      <p className="mt-8 text-lg font-semibold">Available from the end of June to the start of October 2027.</p>
+      <p className="mt-8 text-lg font-semibold">Based in London. Available from the end of June to the start of October 2027.</p>
       <ul className="mt-6 space-y-2">
         {links.map((l) => (
           <li key={l.label} className="text-[15px]">
