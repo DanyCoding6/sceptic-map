@@ -21,8 +21,8 @@ export function MethodsBox() {
           </span>
         </span>
         <span className="mt-2 block text-[15px] leading-relaxed text-ink-2">
-          Hacker News only. Labels come from Claude models, checked by a blind read from Claude Code, not by people. Only {stats.buyerSignal} of {stats.nBase} posts show a
-          buyer signal.
+          Hacker News only. Claude models labelled the posts and Claude re-checked a sample blind; no person labelled any. Only {stats.buyerSignal} of {stats.nBase}{" "}
+          posts come from someone who appears to run a team or buy its tools.
         </span>
       </summary>
       <dl className="mt-5 space-y-4 text-[15px] leading-relaxed">
@@ -44,8 +44,10 @@ export function MethodsBox() {
         <div>
           <dt className="font-medium">How far to trust the labels</dt>
           <dd className="text-ink-2">
-            There are no human labels. Claude Code, running a larger Claude model, read {b.n} random posts from the {stats.nBase} in full, blind to the pipeline&apos;s
-            labels. It is the same tool that wrote the labelling prompts, so this is a self-check, not an independent one:{" "}
+            There are no human labels. Each comment was labelled with its thread&apos;s title but not the comment it replied to; when Claude
+            re-read the quotes shown with that comment, {au.quotesFailed} of {au.quotesReviewed} failed, so the labels likely share this weakness. Claude Code, running a larger Claude model, read {b.n} random posts from the {stats.nBase} in full, blind to the pipeline&apos;s
+            labels. It is the same tool that wrote the labelling prompts, so this is a self-check, not an independent one, and {b.alreadyRead} of the {b.n} were
+            posts it had already read with their labels in the row reads below:{" "}
             {b.onTopic} were clearly on topic, {b.offTopic} off topic and {b.unsure} borderline, and {b.ownProduct} of the on-topic posts were by people promoting their
             own tool, which should have been set aside. On the {b.onTopic} on topic, it gave the same stance on {b.stanceAgree} (Cohen&apos;s kappa {b.kappa}); where either named an objection (
             {b.objectionLabelled} posts), the overlap was {b.objectionJaccard} (Jaccard), with identical sets on {b.objectionExact}. Earlier, Sonnet re-labelled {a.n} random
@@ -63,10 +65,11 @@ export function MethodsBox() {
           <dt className="font-medium">Reviews before and after publishing</dt>
           <dd className="text-ink-2">
             Claude re-read every quote shown by default ({au.quotesReviewed}) with its full comment and the comment it replied to. {au.quotesFailed} were misleading out of
-            context or sat under the wrong objection, so they are no longer shown; the counts still use the model&apos;s labels. All {au.ratingsReviewed} rating reasons were
-            checked against their claims and {au.ratingsCorrected} corrected. After launch, three more rounds of review by Claude changed {au.postLaunchRatingsChanged} ratings and
-            reworded {au.postLaunchReasonsReworded} reasons, mostly competitor cells that over-reached; the {au.postLaunchQuotesChecked} quotes added then were checked the
-            same way. Each correction is in data/overrides.json with a note saying why. Claude also read every post in the two rows the lead finding rests on: {n["read:deskills_or_replaces_engineers:core"]} of{" "}
+            context or sat under the wrong objection: {au.quotesHidden} are no longer shown and {au.quotesMoved} moved to the row it fits; the counts still use the
+            model&apos;s labels. All {au.ratingsReviewed} rating reasons were checked against their claims and {au.ratingsCorrected} corrected. Five more rounds of review by
+            Claude after launch changed more, mostly competitor cells that over-reached: in all, {stats.ratingsDifferFromDraft} ratings and {stats.reasonsDifferFromDraft}{" "}
+            reasons now differ from the pipeline&apos;s draft. The {au.postLaunchQuotesChecked} quotes added then were checked the same way. Each correction is in
+            data/overrides.json with a note saying why. Claude also read every post in full in the two rows the lead finding rests on: {n["read:deskills_or_replaces_engineers:core"]} of{" "}
             {n["count:deskills_or_replaces_engineers"]} deskilling posts are squarely on the label and {n["read:deskills_or_replaces_engineers:related"]} more are related;{" "}
             {n["read:data_access_and_security:core"]} of {n["count:data_access_and_security"]} access posts fit. Other rows are likely as loose, so read every count as an
             upper bound.
@@ -75,8 +78,8 @@ export function MethodsBox() {
         <div>
           <dt className="font-medium">Quotes and claims</dt>
           <dd className="text-ink-2">
-            Code checks that every quote is word for word in its source ({stats.quotesDropped} failed and were dropped). Vendor claims are {stats.claims} sentences taken
-            word for word from {stats.vendorPages} public pages: {stats.pagesByVendor["incident.io"]} of incident.io&apos;s, {competitorPages} AI SRE product page for each
+            Code checks that every quote is word for word in its source ({stats.quotesDropped} failed and were dropped). Vendor claims are {stats.claims} lines taken
+            word for word ({stats.claimsAddedByHand} added by hand where extraction skipped one) from {stats.vendorPages} public pages: {stats.pagesByVendor["incident.io"]} of incident.io&apos;s, {competitorPages} AI SRE product page for each
             competitor, and {stats.pagesByVendor.DIY} for the do-it-yourself route. Competitor ratings describe that page only. Each rating is a model&apos;s judgement under
             fixed rules, corrected where a review found it wrong: proof means a measured result, a named customer reporting a result on that objection, or a real
             incident, and sample screens don&apos;t count.

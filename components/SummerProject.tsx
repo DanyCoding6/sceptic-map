@@ -6,7 +6,7 @@ const PLAN = [
   {
     weeks: "Weeks 1–3",
     title: "Point it at real calls",
-    what: "Read a sample of Investigations calls myself, agree the objection list with the product marketing team, and run the pipeline on calls, win/loss notes and deal channels once a security review clears the data. Output: where buyers differ from Hacker News.",
+    what: "Read a sample of Investigations calls myself, agree the objection list with the product marketing team, and run the pipeline on them once a security review clears the data. Output: where buyers differ from Hacker News. If call data isn't cleared in time, I'd widen the public version instead: sources beyond Hacker News, and as many competitor pages as incident.io's.",
   },
   {
     weeks: "Weeks 4–8",

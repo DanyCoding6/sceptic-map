@@ -17,7 +17,7 @@ export function Findings() {
     <Section
       id="findings"
       title="What it means for Investigations"
-      intro="Three things the map shows, most useful first. Each says what engineers are worried about, what incident.io's pages say in reply, and what could close the gap."
+      intro="Three things the map shows, most useful first."
     >
       <ol className="space-y-16">
         {site.findings.map((f) => {

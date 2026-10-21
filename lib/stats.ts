@@ -12,7 +12,10 @@ export function buildStats(
   audits: any,
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   blind: any,
+  blindLabels: { id: string }[],
+  draft: Synthesis,
 ): Stats {
+  const draftCell = (v: string, o: string) => draft.coverage.find((c) => c.vendor === v && c.objection === o);
   const relevant = classified.items.filter((i) => i.relevant);
   const stats: Stats = {
     nCollected: classified.meta.nItems,
@@ -24,6 +27,9 @@ export function buildStats(
     quotesDropped: relevant.filter((i) => i.quote_check === "not_verbatim" || i.quote_check === "too_long").length,
     vendorPages: new Set(site.claims.map((c) => c.url)).size,
     claims: site.claims.length,
+    claimsAddedByHand: site.claims.filter((c) => !draft.claims.some((d) => d.id === c.id)).length,
+    ratingsDifferFromDraft: site.coverage.filter((c) => draftCell(c.vendor, c.objection)?.rating !== c.rating).length,
+    reasonsDifferFromDraft: site.coverage.filter((c) => draftCell(c.vendor, c.objection)?.reason !== c.reason).length,
     ratings: site.coverage.length,
     buyerSignal: site.items.filter((i) => i.buyer_signal === true).length,
     nComments: site.numbers.n_comments,
@@ -42,6 +48,7 @@ export function buildStats(
       objectionLabelled: blind.objections.labelled,
       objectionJaccard: blind.objections.meanJaccard,
       objectionExact: blind.objections.exactMatch,
+      alreadyRead: blindLabels.filter((l) => rowReadIds(audits.rowReads).has(l.id)).length,
     },
     agreement: {
       method: agreement.method,
@@ -63,6 +70,8 @@ export function buildStats(
       diyRight: audits.diyTags.right,
       quotesReviewed: audits.quoteReview.n,
       quotesFailed: audits.quoteReview.problems,
+      quotesHidden: audits.quoteReview.hidden.length,
+      quotesMoved: audits.quoteReview.removedFromRowOnly.length,
       ratingsReviewed: audits.ratingReview.n,
       ratingsCorrected: audits.ratingReview.corrected,
       postLaunchRatingsChanged: audits.postLaunch.ratingsChanged,
@@ -71,4 +80,13 @@ export function buildStats(
     },
   };
   return Stats.parse(stats);
+}
+
+// Every Hacker News id named anywhere in the row reads (audits.json), however they're grouped.
+function rowReadIds(node: unknown, ids = new Set<string>()): Set<string> {
+  if (typeof node === "string") {
+    if (/^hn:\d+$/.test(node)) ids.add(node);
+  } else if (Array.isArray(node)) node.forEach((x) => rowReadIds(x, ids));
+  else if (node && typeof node === "object") Object.values(node).forEach((x) => rowReadIds(x, ids));
+  return ids;
 }

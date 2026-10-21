@@ -13,11 +13,11 @@ export function HowItWorks() {
     },
     {
       title: "Sort",
-      text: `Claude Haiku labelled every post, and Claude Sonnet re-checked the ones judged on topic and could only remove them. That left ${stats.nRelevant}, and ${stats.nVendorAuthored} by vendors or founders about their own products are set aside. For each of the remaining ${stats.nBase}, the labels give the author's stance and the worries the post raises, such as “it gets the cause wrong”.`,
+      text: `Claude Haiku labelled every post, and Claude Sonnet re-checked the ones judged on topic and could only remove them. That left ${stats.nRelevant}; the ${stats.nVendorAuthored} written by vendors or founders about their own products were set aside. For each of the remaining ${stats.nBase}, the labels give the author's stance and the worries the post raises, such as “it gets the cause wrong”.`,
     },
     {
       title: "Compare",
-      text: `Next, the pipeline took ${stats.claims} claims, word for word, from ${stats.vendorPages} public pages: ${stats.pagesByVendor["incident.io"]} of incident.io's, one AI SRE product page for each competitor, and ${stats.pagesByVendor.DIY} on building your own with a general AI tool. Claude rated how each option's pages answer each worry, then re-checked all ${stats.audits.ratingsReviewed} ratings and corrected ${stats.audits.ratingsCorrected}; later reviews changed ${stats.audits.postLaunchRatingsChanged} more. Each correction is logged with a reason.`,
+      text: `Next, the pipeline took ${stats.claims} claims, word for word, from ${stats.vendorPages} public pages: ${stats.pagesByVendor["incident.io"]} of incident.io's, one AI SRE product page for each competitor, and ${stats.pagesByVendor.DIY} on building your own with a general AI tool. Claude Sonnet rated how each option's pages answer each worry. Claude Code then checked every rating against its claims; after that and later reviews, ${stats.ratingsDifferFromDraft} of the ${stats.ratings} ratings differ from Sonnet's draft, each change logged with a reason.`,
     },
   ];
   return (
@@ -48,8 +48,8 @@ export function HowItWorks() {
             <Icon rating="SHOWN" /> Shown with proof
           </dt>
           <dd className="text-ink-2">
-            The page backs the claim with a measured result, a named customer reporting a result on that worry, or a real incident. That is evidence a buyer can see on
-            the page, such as a customer the vendor chose to quote, not independent checking.
+            The page backs the claim with a measured result, a named customer reporting a result on that worry, or a real incident. It is evidence the vendor chose to show, not an
+            independent test.
           </dd>
         </div>
         <div className="flex gap-3">
@@ -57,8 +57,8 @@ export function HowItWorks() {
             <Icon rating="SAID" /> Said, not shown
           </dt>
           <dd className="text-ink-2">
-            The page makes the claim but doesn&apos;t back it with proof on this worry. Sample screens don&apos;t count as proof, and nor does naming a security audit such as SOC 2: it
-            doesn&apos;t show what an agent can read or change.
+            The page makes the claim but doesn&apos;t back it with proof on this worry. Sample screens don&apos;t count, and nor does a security audit such as SOC 2,
+            which doesn&apos;t show what an agent can read or change.
           </dd>
         </div>
         <div className="flex gap-3">
@@ -75,8 +75,8 @@ export function HowItWorks() {
         </div>
       </dl>
       <p className="mt-6 text-[15px] leading-relaxed text-ink-2">
-        Every quote is word for word from its source and links to it, and code fills in every number. The limits of the data are under &ldquo;Methods and
-        limits&rdquo;, below the map.
+        Every quote is word for word from its source and links to it. Code fills in every count and checks every vendor figure against the
+        claim it cites.
       </p>
     </Section>
   );

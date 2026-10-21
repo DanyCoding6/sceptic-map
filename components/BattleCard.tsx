@@ -56,8 +56,9 @@ export function BattleCard() {
       title="If a rep hears this tomorrow"
       intro={
         <>
-          Finding 2 means a rep should expect to be asked why not just use a general AI tool ({n["diy:uses"]} of {n.n_base} posts, {formatMonth(site.meta.window.from)} to {formatMonth(site.meta.window.to)}, use or recommend one). This is how a
-          rep could answer, using only incident.io&apos;s public pages: three ways engineers put it, what to say, what to ask next, and what to send afterwards.
+          After finding 2, a rep should expect buyers who already use a general AI tool ({n["diy:uses"]} of {n.n_base} posts use or recommend one,{" "}
+          {formatMonth(site.meta.window.from)} to {formatMonth(site.meta.window.to)}), and some who argue they could do the job with one ({n["diy:objection"]}). Here is
+          how a rep could answer, using only incident.io&apos;s public pages.
         </>
       }
     >

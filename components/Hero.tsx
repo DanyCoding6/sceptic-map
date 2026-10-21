@@ -39,12 +39,12 @@ export function Hero() {
   return (
     <header className="mx-auto max-w-3xl px-4 pb-16 pt-10 sm:pt-16">
       <p className="text-sm text-muted">Sceptic Map · an independent pitch · Made for the incident.io marketing team</p>
-      <h1 className="mt-6 text-[1.9rem] font-semibold leading-tight tracking-tight sm:text-[2.6rem] sm:leading-[1.12]">
+      <h1 className="mt-6 text-[1.65rem] font-semibold leading-tight tracking-tight sm:text-[2.6rem] sm:leading-[1.12]">
         What sceptical engineers say about AI incident tools, and which of their worries nobody has yet answered with proof
       </h1>
       <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-2">
-        This page takes {nBase} Hacker News posts about AI tools for incident response, from {formatMonth(window.from)} to{" "}
-        {formatMonth(window.to)}, and checks each worry they raise against the public pages of incident.io, four competitors and the do-it-yourself route.
+        This page checks the worries in {nBase} Hacker News posts about AI incident tools ({formatMonth(window.from)} to {formatMonth(window.to)}) against the
+        public pages of incident.io, four competitors and the do-it-yourself route.
       </p>
 
       <div className="mt-8 rounded-lg border border-line p-5 sm:p-6">
@@ -52,20 +52,20 @@ export function Hero() {
         <ul className="mt-3 space-y-3 text-[17px] leading-relaxed">
           <li>
             The doubts raised most are about whether it works at all: {n["either:not_capable_yet+wrong_or_hallucinated_cause"]} posts say AI can&apos;t do incident work
-            yet, or gets the cause wrong. {proven.iio ? <>On the pages checked, Investigations answers both with proof, such as measured results and named customers, and so do {list(proven.others)}.</> : null}
+            yet, or gets the cause wrong. {proven.iio ? <>On the pages checked, Investigations answers both with proof, as do {list(proven.others)}.</> : null}
           </li>
           <li>
             Two other worries come up often: that these tools will deskill or replace engineers ({n["count:deskills_or_replaces_engineers"]} posts,{" "}
-            {n["read:deskills_or_replaces_engineers:core"]} of them squarely about it), and what they can reach in production, data included ({n["count:data_access_and_security"]}). Every
-            option makes claims on both; none shows proof.
+            {n["read:deskills_or_replaces_engineers:core"]} of them squarely about it), and what they can reach in production, data included ({n["count:data_access_and_security"]}). On the
+            pages checked, every option makes claims on both and none shows proof.
           </li>
           <li>
             On production access, Investigations is well placed. Its{" "}
             <a href={pr.url} className="underline decoration-line underline-offset-2 hover:text-accent-ink" target="_blank" rel="noopener noreferrer">
               product page
             </a>{" "}
-            says its only change to your systems is a pull request you review; only Rootly, which requires sign-off on every change, promises as much. Showing how
-            that&apos;s enforced, and what it can read, would make Investigations the first option on this map to prove a promise on access.
+            says its only change to your systems is a pull request you review, as strict a promise as Rootly&apos;s sign-off on every change. Showing how that&apos;s
+            enforced, and what it can read, would make it the first option on this map with proof on access.
           </li>
         </ul>
       </div>

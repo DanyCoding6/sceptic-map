@@ -82,16 +82,17 @@
     "corrected": 15
   },
   "postLaunch": {
-    "by": "Claude, acting on two rounds of simulated reviews (marketing lead, competitive PMM, AI engineer, hiring, editor) on 20 Oct; and a round 4 on 21 Oct (decision, competitive PMM, engineer, editor and accuracy panels)",
-    "ratingsChanged": 6,
-    "reasonsReworded": 30,
+    "by": "Claude, acting on five rounds of simulated reviews after launch (20–21 Oct): marketing lead, competitive PMM, AI engineer, hiring and editor panels, then decision and accuracy panels",
+    "ratingsChanged": 7,
+    "reasonsReworded": 35,
     "ratingChanges": [
       "PagerDuty / vendor_lock_in: NOT_YET -> SAID",
       "Datadog / alert_noise_unsolved: SHOWN -> SAID",
       "Resolve.ai / setup_and_integration_effort: SHOWN -> SAID",
       "DIY / just_an_llm_wrapper: NOT_YET -> NA",
       "DIY / diy_with_general_agent: SHOWN -> NA",
-      "Resolve.ai / diy_with_general_agent: NOT_YET -> SAID"
+      "Resolve.ai / diy_with_general_agent: NOT_YET -> SAID",
+      "Resolve.ai / vendor_lock_in: NOT_YET -> SAID"
     ],
     "newQuotesChecked": 4,
     "newQuoteIds": [
@@ -105,7 +106,7 @@
     ]
   },
   "rowReads": {
-    "by": "Claude, reading every post in the two rows the lead finding rests on (20 Oct), regrouped more strictly after a further review, then re-read in full (21 Oct)",
+    "by": "Claude, reading every post in the two rows the lead finding rests on (20 Oct), regrouped more strictly after a further review, then re-read in full (21 Oct): first the posts marked 'doesn't fit', then (round 5) the 24 posts counted squarely on the label or related that were longer than the first read's excerpt",
     "deskills_or_replaces_engineers": {
       "skillFromIncidentTools": [
         "hn:41587962",
@@ -154,7 +155,7 @@
         "hn:48150419",
         "hn:50049303"
       ],
-      "fullTextReread": "21 Oct: the first read used the first 650 characters of each post; every post marked 'doesn't fit' was re-read in full, which moved 5 posts (one to squarely on the label, four to related)."
+      "fullTextReread": "21 Oct: the first read used the first 650 characters of each post; every post marked 'doesn't fit' was re-read in full, which moved 5 posts (one to squarely on the label, four to related). Round 5 (21 Oct): the 11 posts counted squarely on the label or related that were longer than 650 characters were also re-read in full; none moved."
     },
     "data_access_and_security": {
       "fit": [
@@ -187,7 +188,7 @@
         "hn:44383599",
         "hn:48022668"
       ],
-      "fullTextReread": "21 Oct: the first read used the first 420 characters of each post; re-read in full, 3 'doesn't fit' posts are squarely about access and 2 are related."
+      "fullTextReread": "21 Oct: the first read used the first 420 characters of each post; re-read in full, 3 'doesn't fit' posts are squarely about access and 2 are related. Round 5 (21 Oct): the 13 posts counted as fitting or related that were longer than 420 characters were also re-read in full; none moved."
     }
   }
 }

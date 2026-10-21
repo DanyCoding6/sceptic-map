@@ -262,13 +262,13 @@
   "said:lacks_context_of_our_systems": 3,
   "said:alert_noise_unsolved": 5,
   "said:deskills_or_replaces_engineers": 6,
-  "said:vendor_lock_in": 4,
+  "said:vendor_lock_in": 5,
   "said:not_capable_yet": 2,
   "said:vendor:incident.io": 8,
   "said:vendor:PagerDuty": 11,
   "said:vendor:Rootly": 11,
   "said:vendor:Datadog": 8,
-  "said:vendor:Resolve.ai": 7,
+  "said:vendor:Resolve.ai": 8,
   "said:vendor:DIY": 5,
   "not_yet:wrong_or_hallucinated_cause": 0,
   "not_yet:cant_verify_reasoning": 0,
@@ -280,13 +280,13 @@
   "not_yet:lacks_context_of_our_systems": 0,
   "not_yet:alert_noise_unsolved": 1,
   "not_yet:deskills_or_replaces_engineers": 0,
-  "not_yet:vendor_lock_in": 2,
+  "not_yet:vendor_lock_in": 1,
   "not_yet:not_capable_yet": 0,
   "not_yet:vendor:incident.io": 0,
   "not_yet:vendor:PagerDuty": 1,
   "not_yet:vendor:Rootly": 1,
   "not_yet:vendor:Datadog": 1,
-  "not_yet:vendor:Resolve.ai": 2,
+  "not_yet:vendor:Resolve.ai": 1,
   "not_yet:vendor:DIY": 1,
   "na:wrong_or_hallucinated_cause": 0,
   "na:cant_verify_reasoning": 0,
@@ -5374,6 +5374,18 @@
    "addresses": [
     "alert_noise_unsolved"
    ]
+  },
+  {
+   "id": "rootly-ai-sre#headline-10x",
+   "vendor": "Rootly",
+   "url": "https://rootly.com/ai-sre",
+   "pageTitle": "AI SRE: Automated Root Cause Analysis for Incidents",
+   "quote": "Resolve incidents 10x faster",
+   "proof": "none",
+   "proofNote": "A headline with no method or source given.",
+   "addresses": [
+    "not_capable_yet"
+   ]
   }
  ],
  "coverage": [
@@ -5422,7 +5434,7 @@
     "iio-cl-ga#13",
     "iio-investigations#15"
    ],
-   "reason": "Its product page says its only change is a pull request you review, and Kubernetes access can be limited to chosen namespaces; its product page also mentions SOC 2. Nothing lists everything it reads or shows how “pull request only” is enforced.",
+   "reason": "Its product page says its only change is a pull request you review, that code analysis runs in sandboxed containers with sensitive data redacted, and that it is SOC 2 compliant; a changelog adds that Kubernetes access can be limited to chosen namespaces. Nothing lists everything it reads or shows how “pull request only” is enforced.",
    "urls": [
     "https://incident.io/investigations",
     "https://incident.io/changelog/bidirectional-sync-for-incident-tickets",
@@ -5534,16 +5546,15 @@
    "objection": "deskills_or_replaces_engineers",
    "rating": "SAID",
    "claimIds": [
-    "iio-entered-chat#7",
     "iio-launch#3",
     "iio-nexus#8"
    ],
-   "reason": "Says engineers keep the final call and work alongside the agent. Nothing shows responders retain skills or that juniors learn from it.",
+   "reason": "Says you and the agent work the problem together, with its reasoning shown, and that Nexus raises the floor for new hires. Nothing shows responders keep their skills or that juniors learn from it.",
    "urls": [
-    "https://incident.io/blog/introducing-ai-sre",
     "https://incident.io/blog/introducing-investigations-powered-by-nexus",
     "https://incident.io/nexus"
-   ]
+   ],
+   "overridden": true
   },
   {
    "vendor": "incident.io",
@@ -5708,10 +5719,11 @@
     "pagerduty-sre-agent#10",
     "pagerduty-sre-agent#7"
    ],
-   "reason": "Says engineers focus on complex problems and keep oversight. It doesn't address how teams keep learning from incidents the agent handles.",
+   "reason": "Says engineers focus on complex problems and keep oversight. Nothing shows engineers keeping or building their skills.",
    "urls": [
     "https://www.pagerduty.com/platform/ai-agents/sre/"
-   ]
+   ],
+   "overridden": true
   },
   {
    "vendor": "PagerDuty",
@@ -5873,10 +5885,11 @@
     "rootly-ai-sre#15",
     "rootly-ai-sre#19"
    ],
-   "reason": "States it works alongside engineers and needs human sign-off. Nothing addresses skill erosion or how teams keep learning from incidents.",
+   "reason": "States it works alongside engineers and needs human sign-off. Nothing shows engineers keeping or building their skills.",
    "urls": [
     "https://rootly.com/ai-sre"
-   ]
+   ],
+   "overridden": true
   },
   {
    "vendor": "Rootly",
@@ -5897,7 +5910,8 @@
    "claimIds": [
     "rootly-ai-sre#1",
     "rootly-ai-sre#2",
-    "rootly-ai-sre#22"
+    "rootly-ai-sre#22",
+    "rootly-ai-sre#headline-10x"
    ],
    "reason": "Claims root causes in minutes, and 10x faster resolution in a headline, with no method or real incident and no customer quoted on the agent.",
    "urls": [
@@ -6029,7 +6043,7 @@
     "datadog-bits-investigation#13",
     "datadog-bits-investigation#14"
    ],
-   "reason": "One named customer says newer engineers now begin with a head start, and another that skills may rise, the closest any option comes. Neither shows engineers learning or keeping their skills.",
+   "reason": "One named customer says newer engineers now begin with a head start, and another that skills may rise, the closest any option comes. Neither shows engineers learning or keeping their skills. First rated shown; a review changed it, because a head start isn't evidence that engineers keep or build skills.",
    "urls": [
     "https://www.datadoghq.com/product/ai/bits-investigation/"
    ],
@@ -6190,17 +6204,20 @@
     "resolve-ai-sre#9",
     "resolve-ai-sre#5"
    ],
-   "reason": "Pages say engineers stay in the loop and make final calls. Nothing shows engineers learning from incidents, and the 2x lift is unnamed.",
+   "reason": "Its page says engineers stay “on the loop” and make the final call on high-severity issues. Nothing shows engineers learning from incidents, and the 2x lift is unnamed.",
    "urls": [
     "https://resolve.ai/product/ai-sre"
-   ]
+   ],
+   "overridden": true
   },
   {
    "vendor": "Resolve.ai",
    "objection": "vendor_lock_in",
-   "rating": "NOT_YET",
-   "claimIds": [],
-   "reason": "Its AI SRE page doesn't address lock-in, model choice or exporting data.",
+   "rating": "SAID",
+   "claimIds": [
+    "resolve-ai-sre#12"
+   ],
+   "reason": "Says it works with Datadog, Grafana, Prometheus and OpenTelemetry-based systems. Nothing on exporting data or choosing the model.",
    "urls": [
     "https://resolve.ai/product/ai-sre"
    ],
@@ -6272,7 +6289,7 @@
     "diy-magarcia#12",
     "diy-magarcia#13"
    ],
-   "reason": "One write-up estimates $8–10 in API credits for a four-agent run on one real incident, against about $2–3 for a single session, and says it isn't worth it for every investigation. That covers tokens, not the time to build and run it.",
+   "reason": "One write-up estimates $8–10 in API credits for a four-agent run on one real incident, against about $2–3 for a single session, and says it isn't worth it for every minor investigation. That covers tokens, not the time to build and run it.",
    "urls": [
     "https://magarcia.io/using-claude-code-agent-teams-for-incident-investigation/"
    ],
@@ -6399,8 +6416,8 @@
    "short": "Engineers worry that AI incident tools will deskill or replace them, and about what those tools can touch in production. On the pages checked, none of the 6 options shows proof on either.",
    "title": "No option answers two common worries with proof yet",
    "explain": "Beyond whether the AI works, engineers worry about what it does to them and to their systems. The model counts 33 posts worrying that these tools will deskill or replace engineers, and 23 wary of giving an AI access to production systems or data. On the pages checked, every option makes claims on both, and none shows proof.",
-   "note": "The model counts 33 deskilling or replacement posts and 23 on access. Claude then read each in full: 14 of the 33 are squarely about AI tools deskilling or replacing engineers, and 14 are related (skills lost to AI-written code, who is accountable, or the trade-off mentioned in passing). The rest don't fit. 20 of the 23 access posts fit squarely. The pipeline first rated Datadog's deskilling answer as shown; a review changed it to said, because a head start isn't evidence that engineers keep or build skills.",
-   "implication": "On deskilling, incident.io says engineers keep the final call, and that Nexus raises the floor for new hires. Nobody shows responders keeping their skills; Datadog comes closest, with one named customer saying newer engineers now begin with a head start, and another that it could raise skill levels. Showing what on-call engineers learn from its reasoning would be the first proof on this row of the map. On access, incident.io's product page says Investigations' only change is a pull request you review, as strict a promise as Rootly's sign-off on every change. Listing everything it can read, and showing how “pull request only” is enforced, would turn that promise into proof.",
+   "note": "The model counts 33 deskilling or replacement posts and 23 on access. Claude then read each in full: 14 of the 33 are squarely about AI tools deskilling or replacing engineers, and 14 are related (skills lost to AI-written code, who is accountable, or the trade-off mentioned in passing). The rest don't fit. 20 of the 23 access posts fit.",
+   "implication": "On deskilling, incident.io's launch post says you and the agent work the problem together, with its reasoning shown, and its Nexus page says it raises the floor for new hires. Nobody shows responders keeping or building their skills; Datadog comes closest, with one named customer saying newer engineers now begin with a head start, and another that it could raise skill levels. Evidence of what on-call engineers learn from its reasoning would be the first on this row. On access, incident.io's product page says Investigations' only change is a pull request you review, as strict a promise as Rootly's sign-off on every change. To turn that promise into proof, it could show exactly what Investigations can read, with which permissions, and how “pull request only” is enforced.",
    "whyRanked": "It is the less obvious concern, it outweighs wrong-cause complaints since 2025 in this data, and incident.io's claims only assert a position with no proof.",
    "n": 430,
    "scope": "all",
@@ -6419,7 +6436,7 @@
     }
    ],
    "claimIds": [
-    "iio-entered-chat#7",
+    "iio-launch#3",
     "iio-nexus#8",
     "iio-investigations#17"
    ],
@@ -6431,7 +6448,7 @@
    "headline": "73 of 430 posts use or recommend a general AI tool for incident work, 49 of them positive about it; only 8 of those 73 argue that makes a dedicated product unnecessary.",
    "title": "Many engineers already use a general AI tool for incident work",
    "explain": "73 of the 430 posts describe using or recommending a general AI tool, such as Claude, ChatGPT or Cursor, for incident work, and 49 of them are positive about it. Only 8 of those 73 argue that this makes a dedicated product unnecessary. So it is less an objection than a habit, but it makes the tool they already use the likely yardstick for Investigations.",
-   "implication": "incident.io argues on its blog that in-house builds rarely measure accuracy, and ships a plugin for the agents engineers already use. It also tests Investigations daily on real past incidents, frozen so the agent sees only what responders had at the start. What's missing is a published score from those tests, and the same test run on a general agent with the same access. Showing the grading scale and how the incidents were chosen would let a sceptic judge the test as well as the score; a total needn't show any customer's data.",
+   "implication": "incident.io argues on its blog that in-house builds rarely measure accuracy, and ships a plugin for the agents engineers already use. Its product page says it backtests Investigations daily against real past incidents, and its blog says it freezes each incident in time so every new version runs on exactly the same inputs, grading each hypothesis on a published scale from a bullseye to a miss. What's missing is a published score from those tests, and the same test run on a general agent given the same access. Saying how the incidents are chosen would let sceptics judge the test, not just the score. A score across many incidents needn't reveal any customer's data.",
    "whyRanked": "It answers the do-it-yourself question directly: the behaviour is real, the stated objection is rare, and incident.io's own coverage here is only anecdote.",
    "n": 430,
    "scope": "all",
@@ -6453,7 +6470,8 @@
     "iio-building#4",
     "iio-cl-plugin#2",
     "iio-investigations#12",
-    "iio-building#6"
+    "iio-building#6",
+    "iio-building#5"
    ],
    "overridden": true
   },
@@ -6462,8 +6480,8 @@
    "rank": 3,
    "headline": "50 of 430 posts say the AI gets the cause wrong or that its reasoning can't be checked.",
    "title": "Engineers will ask how often it's wrong",
-   "explain": "50 posts say the AI gets the cause wrong, or that its reasoning can't be checked. incident.io's pages show proof on both; on checking its reasoning, the only other option that does is one engineer's do-it-yourself write-up. The question sceptics ask next is how often it's wrong.",
-   "implication": "The proof so far is a measured jump in accurate early updates, and an incident write-up in which its conclusion was checked against the code. Each customer can see its own accuracy on the Investigations homepage, and incident.io's buyer's guide tells evaluators to ask vendors for precision and recall. No option on the map publishes such a figure yet; one from its daily backtests would answer its own guide's question.",
+   "explain": "50 posts say the AI gets the cause wrong, or that its reasoning can't be checked. incident.io's pages show proof on both. On the pages checked, the only other option with proof that its reasoning can be checked is one engineer's do-it-yourself write-up.",
+   "implication": "The proof so far is a measured jump in accurate early updates, and an incident write-up in which its conclusion was checked against the code. Each customer can see its own accuracy on its Investigations homepage, and incident.io's buyer's guide tells evaluators to ask vendors for accuracy figures (precision and recall). No option on the map publishes them yet. A score from the daily backtests described above would give buyers the figure its own guide tells them to ask for.",
    "whyRanked": "It is well supported by the data but familiar, and incident.io already has proof on these objections, so the gain is in how it shows misses.",
    "n": 430,
    "scope": "all",

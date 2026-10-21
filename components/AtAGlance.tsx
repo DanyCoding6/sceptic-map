@@ -21,6 +21,7 @@ export function AtAGlance() {
   const competitorPages = stats.pagesByVendor[COMPETITORS[0]];
   const n = site.numbers;
   const rows = site.objections.filter((o) => o.objection !== "other" && o.count >= MIN_ROW_COUNT);
+  const thin = site.objections.filter((o) => o.objection !== "other" && o.count < MIN_ROW_COUNT && site.coverage.some((c) => c.objection === o.objection));
   const rating = (v: string, o: string) => site.coverage.find((c) => c.vendor === v && c.objection === o)!.rating as Rating;
   // Counted over the rows shown, so the line under the grid matches the column above it.
   const tally = (v: string, r: Rating) => rows.filter((o) => rating(v, o.objection) === r).length;
@@ -71,10 +72,16 @@ export function AtAGlance() {
         The two rows in bold are finding 1, below.
       </p>
       <p className="mt-2 text-xs leading-relaxed text-muted">
-        incident.io, on these {rows.length} rows: {tally("incident.io", "SHOWN")} shown, {tally("incident.io", "SAID")} said, {tally("incident.io", "NOT_YET")} not yet. Its column rests on{" "}
-        {stats.pagesByVendor["incident.io"]} of its pages, and each competitor&apos;s on {competitorPages} AI SRE product page{competitorPages === 1 ? "" : "s"}. The DIY
-        column rests on {stats.pagesByVendor.DIY} pages (two engineers&apos; write-ups and Datadog&apos;s blog on connecting AI agents to its data), so its {n["shown:vendor:DIY"]} &ldquo;shown&rdquo;
-        ratings rest on one engineer&apos;s write-up of one incident, not a product&apos;s record.
+        incident.io, on these {rows.length} rows: {tally("incident.io", "SHOWN")} shown, {tally("incident.io", "SAID")} said, {tally("incident.io", "NOT_YET")} not yet. Its column draws on{" "}
+        {stats.pagesByVendor["incident.io"]} of its pages, each competitor&apos;s on {competitorPages} AI SRE product page{competitorPages === 1 ? "" : "s"}, and DIY&apos;s on{" "}
+        {stats.pagesByVendor.DIY} (two engineers&apos; write-ups and a Datadog blog post). All {n["shown:vendor:DIY"]} DIY &ldquo;shown&rdquo; ratings come from one
+        engineer&apos;s write-up of one incident, not a product&apos;s record.
+        {thin.map((o) => (
+          <span key={o.objection}>
+            {" "}
+            A further worry, &ldquo;{o.label}&rdquo; ({o.count} post{o.count === 1 ? "" : "s"}), was rated too but is left off the map as too thin.
+          </span>
+        ))}
       </p>
     </div>
   );

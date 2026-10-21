@@ -54,7 +54,7 @@ const readJson = (file: string) => JSON.parse(readFileSync(path.join(DATA, file)
 
 // Every pipeline fact the site quotes (lib/stats.ts), written to data/stats.json.
 function writeStats(site: Synthesis) {
-  const stats = buildStats(site, ClassifiedFile.parse(readJson("classified.json")), readJson("cost.json"), readJson("agreement.json"), readJson("audits.json"), readJson("blind_agreement.json"));
+  const stats = buildStats(site, ClassifiedFile.parse(readJson("classified.json")), readJson("cost.json"), readJson("agreement.json"), readJson("audits.json"), readJson("blind_agreement.json"), readJson("blind_read.json").labels, Synthesis.parse(readJson("synthesis.json")));
   writeFileSync(path.join(DATA, "stats.json"), JSON.stringify(stats, null, 2));
 }
 

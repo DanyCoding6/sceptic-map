@@ -27,7 +27,7 @@ export default async function Image() {
         <div style={{ display: "flex", fontSize: 54, fontWeight: 600, lineHeight: 1.18, color: "#111110", letterSpacing: -1 }}>{top.short ?? top.headline}</div>
         <div style={{ display: "flex", flexDirection: "column", gap: 6, fontSize: 24, color: "#4b4a46" }}>
           <div style={{ display: "flex" }}>
-            {nBase} Hacker News comments, {formatMonth(window.from)} to {formatMonth(window.to)}
+            {nBase} Hacker News posts, {formatMonth(window.from)} to {formatMonth(window.to)}
           </div>
           <div style={{ display: "flex", color: "#0f766e", fontWeight: 600 }}>Made for the incident.io marketing team</div>
         </div>

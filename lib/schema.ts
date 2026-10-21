@@ -95,6 +95,11 @@ export const OBJECTION_LABELS: Record<Objection, string> = {
   other: "Other objections",
 };
 
+// Labels the page shows where they differ from the pipeline's (which feed its prompts, so stay fixed).
+export const DISPLAY_LABELS: Partial<Record<Objection, string>> = {
+  data_access_and_security: "I won't give it access to production or our data",
+};
+
 export const VENDORS = ["incident.io", "PagerDuty", "Rootly", "Datadog", "Resolve.ai", "DIY"] as const;
 export const Vendor = z.enum(VENDORS);
 export type Vendor = z.infer<typeof Vendor>;
@@ -245,6 +250,9 @@ export const Stats = z.object({
   quotesDropped: z.number(),
   vendorPages: z.number(),
   claims: z.number(),
+  claimsAddedByHand: z.number(), // claims in overrides.json, not extracted by the pipeline
+  ratingsDifferFromDraft: z.number(), // ratings that differ from synthesis.json after every review
+  reasonsDifferFromDraft: z.number(),
   ratings: z.number(),
   buyerSignal: z.number(),
   costUsd: z.number(),
@@ -264,6 +272,7 @@ export const Stats = z.object({
     objectionLabelled: z.number(),
     objectionJaccard: z.number(),
     objectionExact: z.number(),
+    alreadyRead: z.number(), // blind-read posts Claude had already read, with labels, in the row reads
   }),
   agreement: z.object({
     method: z.string(),
@@ -285,6 +294,8 @@ export const Stats = z.object({
     diyRight: z.number(),
     quotesReviewed: z.number(),
     quotesFailed: z.number(),
+    quotesHidden: z.number(),
+    quotesMoved: z.number(),
     ratingsReviewed: z.number(),
     ratingsCorrected: z.number(),
     postLaunchRatingsChanged: z.number(),

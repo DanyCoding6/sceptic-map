@@ -103,7 +103,7 @@ const statsCheck: [string, number, number][] = [
 for (const [k, shown, actual] of statsCheck) if (shown !== actual) fail(`stats.${k}: ${shown} vs ${actual}`);
 // Every figure in stats.json (audits and agreement included) must be what the data files give.
 {
-  const rebuilt = buildStats(site, classified, readJson("cost.json"), readJson("agreement.json"), audits, readJson("blind_agreement.json"));
+  const rebuilt = buildStats(site, classified, readJson("cost.json"), readJson("agreement.json"), audits, readJson("blind_agreement.json"), readJson("blind_read.json").labels, Synthesis.parse(readJson("synthesis.json")));
   for (const [k, v] of Object.entries(rebuilt)) if (JSON.stringify(v) !== JSON.stringify((stats as Record<string, unknown>)[k])) fail(`stats.${k} doesn't match the data files`);
 }
 // The blind read's comparison must be of the labels in blind_read.json against the pipeline's.
@@ -212,6 +212,24 @@ for (const row of card.rows) {
     if (!site.claims.some((c) => c.id === id && c.vendor === "incident.io")) fail(`battle card: ${id} is not an incident.io claim`);
   }
 }
+
+// 6b. Vendor figures. Every figure we write about a vendor (a percentage, a price, a time, a multiple)
+// must appear in a claim the text cites, so a typed number can't drift from its source.
+// Times of day, years and "SOC 2" are names, not figures.
+const figures = (text: string) =>
+  text
+    .replace(/\b\d{1,2}\s?(am|pm)\b/gi, "")
+    .replace(/\b(19|20)\d{2}\b/g, "")
+    .replace(/SOC ?2/g, "")
+    .match(/\d+(?:\.\d+)?/g) ?? [];
+const checkFigures = (where: string, text: string, claimIds: string[]) => {
+  const source = new Set(claimIds.flatMap((id) => site.claims.find((c) => c.id === id)?.quote.match(/\d+(?:\.\d+)?/g) ?? []));
+  for (const f of figures(text)) if (!source.has(f)) fail(`${where}: the figure ${f} isn't in any claim it cites`);
+};
+for (const c of site.coverage) checkFigures(`reason ${c.vendor}/${c.objection}`, c.reason, c.claimIds);
+for (const f of site.findings) checkFigures(`finding ${f.id} implication`, f.implication, f.claimIds);
+for (const r of card.rows) checkFigures(`battle card ${r.quoteId}`, r.respond, r.respondClaimIds);
+checkFigures("battle card avoid", card.avoid.join(" "), site.claims.filter((c) => c.vendor === "incident.io").map((c) => c.id));
 
 // 7. Banned words in everything we wrote (vendor claims are their words, so they're excluded).
 const BANNED = /\b(ai-powered|revolutionary|game-changing|leverag(e|es|ed|ing)|unlock(s|ed|ing)?|seamless(ly)?|cutting-edge)\b|in today's fast-paced world/i;

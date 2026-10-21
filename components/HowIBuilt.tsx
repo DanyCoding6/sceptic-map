@@ -3,12 +3,11 @@ import { stats } from "@/lib/data";
 
 // Decisions Daniyaal made, as recorded in notes/build-log.md and the project's working notes.
 const DECISIONS = [
+  "Read the page fresh after three rounds of cuts, found it chopped and hard to follow, and had it rebuilt as one story: what I did, the map, then what it means.",
   "Wrote the brief: the idea, the three ratings, and the rules (never invent a quote or a number, no usernames, respect robots.txt, say what the data can't tell you).",
   "Chose the lead finding over an earlier headline about engineers using general AI tools.",
   "Kept some points about incident.io's own older pages off this public page, to raise privately instead.",
-  "Approved the vendor pages before any were fetched.",
   "Left Reddit out when it refused automated access, rather than set up its API, and said so in Methods.",
-  "Chose, from the options Claude laid out, to add “AI can't do this job yet” as an objection and to add a second model that can only remove items.",
   "Skipped hand-labelling to save time, and had a larger Claude model do a blind read of 40 posts instead. People's labels would still be better.",
 ];
 
@@ -64,8 +63,8 @@ export function HowIBuilt() {
       intro="I wrote the brief and made the decisions; Claude Code wrote the code, ran the pipeline and did most of the checking. Models label the posts and write the sentences; code counts the labels, fills in every number and checks every quote."
     >
       <p className="text-[17px] leading-relaxed">
-        The steps under &ldquo;What I did&rdquo; run as one pipeline. Total API cost: about <span className="font-semibold">${stats.costUsd.toFixed(2)}</span>, including runs I
-        threw away while tuning.
+        Pipeline API cost: about <span className="font-semibold">${stats.costUsd.toFixed(2)}</span>, including runs I threw away while tuning
+        (Claude Code&apos;s own use isn&apos;t counted).
       </p>
 
       <h3 className="mt-10 text-lg font-semibold">Decisions I made</h3>
