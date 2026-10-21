@@ -30,6 +30,7 @@ export const VENDOR_PAGES: VendorPage[] = [
   { slug: "iio-cl-2x-faster", vendor: "incident.io", group: "changelog", url: "https://incident.io/changelog/investigations-are-2x-faster", note: "22 Sep 2026: median investigation time 6.7 to 3 min" },
   { slug: "iio-cl-dark-mode", vendor: "incident.io", group: "changelog", url: "https://incident.io/changelog/dark-mode", note: "~Oct 2026: agent faster, auto-run, rejects invented citations" },
   { slug: "iio-cl-plugin", vendor: "incident.io", group: "changelog", url: "https://incident.io/changelog/the-incident-io-plugin-our-skills-in-your-agent", note: "~15 Oct 2026: incident.io skills inside coding agents" },
+  { slug: "iio-cl-extensions", vendor: "incident.io", group: "changelog", url: "https://incident.io/changelog/plug-your-internal-ai-stack-into-nexus", note: "19 Oct 2026: Extensions generally available (skills and connectors). Added 21 Oct 2026 with Daniyaal's OK" },
   // incident.io: comparison pages
   { slug: "iio-vs-pagerduty", vendor: "incident.io", group: "comparison", url: "https://incident.io/alternatives/pagerduty", note: "Only /alternatives/ page found" },
   { slug: "iio-vs-rootly", vendor: "incident.io", group: "comparison", url: "https://incident.io/blog/incident-io-vs-rootly", note: "Blog comparison with Rootly" },

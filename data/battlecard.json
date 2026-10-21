@@ -17,16 +17,18 @@
     },
     {
       "quoteId": "hn:44772821",
-      "respond": "Work with their setup: incident.io's plugin gives the coding agent they already use its skills, and Nexus answers questions from Claude or Cursor over MCP. What a home-made setup has to build and keep up is the context: Nexus keeps a model of their systems, and Investigations can hold a page until it has a first hypothesis.",
+      "respond": "Work with their setup: incident.io's plugin gives the coding agent they already use its skills, and Nexus answers questions from Claude or Cursor over MCP. What a home-made setup has to build and keep up is the context: Nexus keeps a model of their systems, and Investigations can hold a page until it has a first hypothesis. And they needn't throw away what they've built: Extensions loads the skills their team has already written for Claude Code, Cursor or Codex, and plugs their own tools into every investigation.",
       "respondClaimIds": [
         "iio-cl-plugin#2",
         "iio-nexus#5",
         "iio-cl-ga#6",
-        "iio-cl-ga#18"
+        "iio-cl-ga#18",
+        "iio-cl-extensions#1",
+        "iio-cl-extensions#2"
       ],
       "ask": "Who opens Claude Code at 3am, and how long after the page does it have the logs it needs?",
-      "sendClaimId": "iio-cl-plugin#2",
-      "sendLabel": "The plugin for the agent they already use"
+      "sendClaimId": "iio-cl-extensions#1",
+      "sendLabel": "Keep what they've built: Extensions"
     },
     {
       "quoteId": "hn:49186977",
@@ -47,7 +49,7 @@
     "Saying it fixes things on its own. The product page says its only change is a pull request you review.",
     "Calling it read-only. The promise is about changes, not about what it can read.",
     "Claiming it beats a general AI agent. incident.io hasn't published a comparison of the two.",
-    "Knocking their setup. incident.io ships a plugin for it.",
+    "Knocking their setup. incident.io ships a plugin for it, and Extensions brings their own skills and tools into investigations.",
     "Calling the 3-minute median an accuracy rate. It measures how soon a first message arrives that incident.io's own grading later judged accurate; the changelog calls messaging before the full review step its big change."
   ]
 }

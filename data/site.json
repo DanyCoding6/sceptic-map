@@ -5386,6 +5386,42 @@
    "addresses": [
     "not_capable_yet"
    ]
+  },
+  {
+   "id": "iio-cl-extensions#1",
+   "vendor": "incident.io",
+   "url": "https://incident.io/changelog/plug-your-internal-ai-stack-into-nexus",
+   "pageTitle": "Plug your internal AI stack into Nexus | Changelog | incident.io",
+   "quote": "Keep everything you've built, and we'll make it work in every incident.",
+   "proof": "none",
+   "proofNote": "",
+   "addresses": [
+    "diy_with_general_agent"
+   ]
+  },
+  {
+   "id": "iio-cl-extensions#2",
+   "vendor": "incident.io",
+   "url": "https://incident.io/changelog/plug-your-internal-ai-stack-into-nexus",
+   "pageTitle": "Plug your internal AI stack into Nexus | Changelog | incident.io",
+   "quote": "Skills use the same open format as Claude Code, Cursor and Codex, so the ones your team has already written load as they are, and anything you write for incident.io works in your coding agent too.",
+   "proof": "none",
+   "proofNote": "",
+   "addresses": [
+    "diy_with_general_agent"
+   ]
+  },
+  {
+   "id": "iio-cl-extensions#3",
+   "vendor": "incident.io",
+   "url": "https://incident.io/changelog/plug-your-internal-ai-stack-into-nexus",
+   "pageTitle": "Plug your internal AI stack into Nexus | Changelog | incident.io",
+   "quote": "You decide what each tool can do: every tool is classified as read, write or destructive, write and destructive tools never run in autonomous investigations, and access policies set which tools work where, and for whom.",
+   "proof": "none",
+   "proofNote": "",
+   "addresses": [
+    "data_access_and_security"
+   ]
   }
  ],
  "coverage": [
@@ -5432,13 +5468,15 @@
     "iio-investigations#17",
     "iio-cl-ticket-sync#1",
     "iio-cl-ga#13",
-    "iio-investigations#15"
+    "iio-investigations#15",
+    "iio-cl-extensions#3"
    ],
-   "reason": "Its product page says its only change is a pull request you review, that code analysis runs in sandboxed containers with sensitive data redacted, and that it is SOC 2 compliant; a changelog adds that Kubernetes access can be limited to chosen namespaces. Nothing lists everything it reads or shows how “pull request only” is enforced.",
+   "reason": "Its product page says its only change is a pull request you review, that code analysis runs in sandboxed containers with sensitive data redacted, and that it is SOC 2 compliant. Changelogs add that Kubernetes access can be limited to chosen namespaces, and that write and destructive tools never run in autonomous investigations. Nothing lists everything it reads or shows how these rules are enforced.",
    "urls": [
     "https://incident.io/investigations",
     "https://incident.io/changelog/bidirectional-sync-for-incident-tickets",
-    "https://incident.io/changelog/investigations-now-available-powered-by-nexus"
+    "https://incident.io/changelog/investigations-now-available-powered-by-nexus",
+    "https://incident.io/changelog/plug-your-internal-ai-stack-into-nexus"
    ],
    "overridden": true
   },
@@ -5499,12 +5537,15 @@
     "iio-building#3",
     "iio-building#2",
     "iio-building#4",
-    "iio-cl-plugin#2"
+    "iio-cl-plugin#2",
+    "iio-cl-extensions#1",
+    "iio-cl-extensions#2"
    ],
-   "reason": "Says people who build their own often end up with a full-time team keeping it running, and rarely measure accuracy; its own took two years. It also offers a plugin so your own agent can use its skills. No named customer or side-by-side against a DIY build.",
+   "reason": "Says people who build their own often end up with a full-time team keeping it running, and rarely measure accuracy; its own took two years. It also offers a plugin so your own agent can use its skills, and Extensions loads the skills a team has already written for coding agents into every investigation. No named customer or side-by-side against a DIY build.",
    "urls": [
     "https://incident.io/blog/building-investigations-what-it-takes-to-build-an-ai-sre",
-    "https://incident.io/changelog/the-incident-io-plugin-our-skills-in-your-agent"
+    "https://incident.io/changelog/the-incident-io-plugin-our-skills-in-your-agent",
+    "https://incident.io/changelog/plug-your-internal-ai-stack-into-nexus"
    ],
    "overridden": true
   },
@@ -6417,7 +6458,7 @@
    "title": "No option answers two common worries with proof yet",
    "explain": "Beyond whether the AI works, engineers worry about what it does to them and to their systems. The model counts 33 posts worrying that these tools will deskill or replace engineers, and 23 wary of giving an AI access to production systems or data. On the pages checked, every option makes claims on both, and none shows proof.",
    "note": "The model counts 33 deskilling or replacement posts and 23 on access. Claude then read each in full: 14 of the 33 are squarely about AI tools deskilling or replacing engineers, and 14 are related (skills lost to AI-written code, who is accountable, or the trade-off mentioned in passing). The rest don't fit. 20 of the 23 access posts fit.",
-   "implication": "On deskilling, incident.io's launch post says you and the agent work the problem together, with its reasoning shown, and its Nexus page says it raises the floor for new hires. Nobody shows responders keeping or building their skills; Datadog comes closest, with one named customer saying newer engineers now begin with a head start, and another that it could raise skill levels. Evidence of what on-call engineers learn from its reasoning would be the first on this row. On access, incident.io's product page says Investigations' only change is a pull request you review, as strict a promise as Rootly's sign-off on every change. To turn that promise into proof, it could show exactly what Investigations can read, with which permissions, and how “pull request only” is enforced.",
+   "implication": "On deskilling, incident.io's launch post says you and the agent work the problem together, with its reasoning shown, and its Nexus page says it raises the floor for new hires. Nobody shows responders keeping or building their skills; Datadog comes closest, with one named customer saying newer engineers now begin with a head start, and another that it could raise skill levels. Evidence of what on-call engineers learn from its reasoning would be the first on this row. On access, incident.io's product page says Investigations' only change is a pull request you review, as strict a promise as Rootly's sign-off on every change, and a recent changelog adds that write and destructive tools never run in autonomous investigations. To turn those promises into proof, it could show exactly what Investigations can read, with which permissions, and how the rules are enforced.",
    "whyRanked": "It is the less obvious concern, it outweighs wrong-cause complaints since 2025 in this data, and incident.io's claims only assert a position with no proof.",
    "n": 430,
    "scope": "all",
@@ -6438,7 +6479,8 @@
    "claimIds": [
     "iio-launch#3",
     "iio-nexus#8",
-    "iio-investigations#17"
+    "iio-investigations#17",
+    "iio-cl-extensions#3"
    ],
    "overridden": true
   },

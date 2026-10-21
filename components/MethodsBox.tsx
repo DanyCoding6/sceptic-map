@@ -79,7 +79,7 @@ export function MethodsBox() {
           <dt className="font-medium">Quotes and claims</dt>
           <dd className="text-ink-2">
             Code checks that every quote is word for word in its source ({stats.quotesDropped} failed and were dropped). Vendor claims are {stats.claims} lines taken
-            word for word ({stats.claimsAddedByHand} added by hand where extraction skipped one) from {stats.vendorPages} public pages: {stats.pagesByVendor["incident.io"]} of incident.io&apos;s, {competitorPages} AI SRE product page for each
+            word for word ({stats.claimsAddedByHand} added by hand, where extraction skipped a line or a page was added later) from {stats.vendorPages} public pages: {stats.pagesByVendor["incident.io"]} of incident.io&apos;s, {competitorPages} AI SRE product page for each
             competitor, and {stats.pagesByVendor.DIY} for the do-it-yourself route. Competitor ratings describe that page only. Each rating is a model&apos;s judgement under
             fixed rules, corrected where a review found it wrong: proof means a measured result, a named customer reporting a result on that objection, or a real
             incident, and sample screens don&apos;t count.

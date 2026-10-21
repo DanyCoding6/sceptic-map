@@ -181,10 +181,11 @@
     "iio-investigations#17",
     "iio-cl-ticket-sync#1",
     "iio-cl-ga#13",
-    "iio-investigations#15"
+    "iio-investigations#15",
+    "iio-cl-extensions#3"
    ],
-   "reason": "Its product page says its only change is a pull request you review, that code analysis runs in sandboxed containers with sensitive data redacted, and that it is SOC 2 compliant; a changelog adds that Kubernetes access can be limited to chosen namespaces. Nothing lists everything it reads or shows how “pull request only” is enforced.",
-   "note": "Round 3 review (20 Oct), simulated accuracy and decision panels: the old reason said nothing shows what it can read, but a September changelog lets you scope Kubernetes to chosen namespaces; 'only outside audit' rested on one page per competitor. Round 4 review (21 Oct), simulated decision, competitive, engineer, editor and accuracy panels: the promise is attributed to the page that makes it. Round 5 review (21 Oct), simulated accuracy panel: the reason undersold the product page (sandboxing, redaction) next to competitors' cells, and the namespace scoping is from a changelog."
+   "reason": "Its product page says its only change is a pull request you review, that code analysis runs in sandboxed containers with sensitive data redacted, and that it is SOC 2 compliant. Changelogs add that Kubernetes access can be limited to chosen namespaces, and that write and destructive tools never run in autonomous investigations. Nothing lists everything it reads or shows how these rules are enforced.",
+   "note": "Round 3 review (20 Oct), simulated accuracy and decision panels: the old reason said nothing shows what it can read, but a September changelog lets you scope Kubernetes to chosen namespaces; 'only outside audit' rested on one page per competitor. Round 4 review (21 Oct), simulated decision, competitive, engineer, editor and accuracy panels: the promise is attributed to the page that makes it. Round 5 review (21 Oct), simulated accuracy panel: the reason undersold the product page (sandboxing, redaction) next to competitors' cells, and the namespace scoping is from a changelog. Extensions changelog added (21 Oct, Daniyaal's OK): a changelog says write and destructive tools never run in autonomous investigations, and access policies set which tools work where; still SAID, since nothing shows how it is enforced."
   },
   {
    "vendor": "incident.io",
@@ -206,10 +207,12 @@
     "iio-building#3",
     "iio-building#2",
     "iio-building#4",
-    "iio-cl-plugin#2"
+    "iio-cl-plugin#2",
+    "iio-cl-extensions#1",
+    "iio-cl-extensions#2"
    ],
-   "reason": "Says people who build their own often end up with a full-time team keeping it running, and rarely measure accuracy; its own took two years. It also offers a plugin so your own agent can use its skills. No named customer or side-by-side against a DIY build.",
-   "note": "Round 3 review (20 Oct), simulated accuracy and decision panels: closer to the source's wording."
+   "reason": "Says people who build their own often end up with a full-time team keeping it running, and rarely measure accuracy; its own took two years. It also offers a plugin so your own agent can use its skills, and Extensions loads the skills a team has already written for coding agents into every investigation. No named customer or side-by-side against a DIY build.",
+   "note": "Round 3 review (20 Oct), simulated accuracy and decision panels: closer to the source's wording. Extensions changelog added (21 Oct, Daniyaal's OK): the reason now includes bringing a team's own skills and tools into investigations; still SAID, with no proof against a DIY build."
   },
   {
    "vendor": "PagerDuty",
@@ -493,7 +496,7 @@
    "short": "Engineers worry that AI incident tools will deskill or replace them, and about what those tools can touch in production. On the pages checked, none of the {vendors_rated} options shows proof on either.",
    "headline": "Deskilling or replacement, and production access: on the pages checked, every option asserts and none shows proof. Investigations and Rootly make the strictest promises on access.",
    "note": "The model counts {count:deskills_or_replaces_engineers} deskilling or replacement posts and {count:data_access_and_security} on access. Claude then read each in full: {read:deskills_or_replaces_engineers:core} of the {count:deskills_or_replaces_engineers} are squarely about AI tools deskilling or replacing engineers, and {read:deskills_or_replaces_engineers:related} are related (skills lost to AI-written code, who is accountable, or the trade-off mentioned in passing). The rest don't fit. {read:data_access_and_security:core} of the {count:data_access_and_security} access posts fit.",
-   "implication": "On deskilling, incident.io's launch post says you and the agent work the problem together, with its reasoning shown, and its Nexus page says it raises the floor for new hires. Nobody shows responders keeping or building their skills; Datadog comes closest, with one named customer saying newer engineers now begin with a head start, and another that it could raise skill levels. Evidence of what on-call engineers learn from its reasoning would be the first on this row. On access, incident.io's product page says Investigations' only change is a pull request you review, as strict a promise as Rootly's sign-off on every change. To turn that promise into proof, it could show exactly what Investigations can read, with which permissions, and how “pull request only” is enforced.",
+   "implication": "On deskilling, incident.io's launch post says you and the agent work the problem together, with its reasoning shown, and its Nexus page says it raises the floor for new hires. Nobody shows responders keeping or building their skills; Datadog comes closest, with one named customer saying newer engineers now begin with a head start, and another that it could raise skill levels. Evidence of what on-call engineers learn from its reasoning would be the first on this row. On access, incident.io's product page says Investigations' only change is a pull request you review, as strict a promise as Rootly's sign-off on every change, and a recent changelog adds that write and destructive tools never run in autonomous investigations. To turn those promises into proof, it could show exactly what Investigations can read, with which permissions, and how the rules are enforced.",
    "quoteIds": [
     "hn:49579634",
     "hn:49220669"
@@ -501,9 +504,10 @@
    "claimIds": [
     "iio-launch#3",
     "iio-nexus#8",
-    "iio-investigations#17"
+    "iio-investigations#17",
+    "iio-cl-extensions#3"
    ],
-   "why": "Round 2 review (20 Oct), simulated: no ranking words (23 vs 20 is within label noise); counts given with a full read of both rows; credits incident.io's access promise and SOC 2; names Datadog as the nearest to proof on deskilling (engineer, competitive PMM and marketing-lead reviews). Round 3 review (20 Oct), simulated accuracy and decision panels: 'closest on access' was an opinion; 'only option to name an outside audit' rested on one page per competitor (their trust pages weren't checked); the read is regrouped more strictly; counts moved from the headline to the note. Daniyaal approved this as the lead (20 Oct). Round 4 review (21 Oct), simulated decision, competitive, engineer, editor and accuracy panels: the SOC 2 comparison rested on one page per competitor and doesn't answer 'what can it touch'; 'PagerDuty's and Resolve's agents act on their own' was a comparison for a private card, not a public page; only one Datadog customer mentions a head start; the pull-request promise is attributed to the product page; the note says Claude did the reading. Round 5 review (21 Oct), simulated decision, competitive, engineer, editor and accuracy panels: the deskilling answer now cites the August 2026 launch post rather than the July 2025 one; the Datadog disclosure moved to that cell's reason in the full map.",
+   "why": "Round 2 review (20 Oct), simulated: no ranking words (23 vs 20 is within label noise); counts given with a full read of both rows; credits incident.io's access promise and SOC 2; names Datadog as the nearest to proof on deskilling (engineer, competitive PMM and marketing-lead reviews). Round 3 review (20 Oct), simulated accuracy and decision panels: 'closest on access' was an opinion; 'only option to name an outside audit' rested on one page per competitor (their trust pages weren't checked); the read is regrouped more strictly; counts moved from the headline to the note. Daniyaal approved this as the lead (20 Oct). Round 4 review (21 Oct), simulated decision, competitive, engineer, editor and accuracy panels: the SOC 2 comparison rested on one page per competitor and doesn't answer 'what can it touch'; 'PagerDuty's and Resolve's agents act on their own' was a comparison for a private card, not a public page; only one Datadog customer mentions a head start; the pull-request promise is attributed to the product page; the note says Claude did the reading. Round 5 review (21 Oct), simulated decision, competitive, engineer, editor and accuracy panels: the deskilling answer now cites the August 2026 launch post rather than the July 2025 one; the Datadog disclosure moved to that cell's reason in the full map. Extensions changelog added (21 Oct, Daniyaal's OK): the access promise now includes the rule that write and destructive tools never run in autonomous investigations.",
    "title": "No option answers two common worries with proof yet",
    "explain": "Beyond whether the AI works, engineers worry about what it does to them and to their systems. The model counts {count:deskills_or_replaces_engineers} posts worrying that these tools will deskill or replace engineers, and {count:data_access_and_security} wary of giving an AI access to production systems or data. On the pages checked, every option makes claims on both, and none shows proof."
   },
@@ -662,6 +666,45 @@
     "not_capable_yet"
    ],
    "note": "Added 21 Oct (round 5 engineer review): the 'can't do it yet' reason cites this headline, which the claim extraction skipped."
+  },
+  {
+   "id": "iio-cl-extensions#1",
+   "vendor": "incident.io",
+   "url": "https://incident.io/changelog/plug-your-internal-ai-stack-into-nexus",
+   "pageTitle": "Plug your internal AI stack into Nexus | Changelog | incident.io",
+   "proof": "none",
+   "proofNote": "",
+   "quote": "Keep everything you've built, and we'll make it work in every incident.",
+   "addresses": [
+    "diy_with_general_agent"
+   ],
+   "note": "Added 21 Oct 2026: the Extensions changelog (19 Oct 2026), added to the vendor pages with Daniyaal's OK after the team research found it."
+  },
+  {
+   "id": "iio-cl-extensions#2",
+   "vendor": "incident.io",
+   "url": "https://incident.io/changelog/plug-your-internal-ai-stack-into-nexus",
+   "pageTitle": "Plug your internal AI stack into Nexus | Changelog | incident.io",
+   "proof": "none",
+   "proofNote": "",
+   "quote": "Skills use the same open format as Claude Code, Cursor and Codex, so the ones your team has already written load as they are, and anything you write for incident.io works in your coding agent too.",
+   "addresses": [
+    "diy_with_general_agent"
+   ],
+   "note": "Added 21 Oct 2026: the Extensions changelog (19 Oct 2026), added to the vendor pages with Daniyaal's OK after the team research found it."
+  },
+  {
+   "id": "iio-cl-extensions#3",
+   "vendor": "incident.io",
+   "url": "https://incident.io/changelog/plug-your-internal-ai-stack-into-nexus",
+   "pageTitle": "Plug your internal AI stack into Nexus | Changelog | incident.io",
+   "proof": "none",
+   "proofNote": "",
+   "quote": "You decide what each tool can do: every tool is classified as read, write or destructive, write and destructive tools never run in autonomous investigations, and access policies set which tools work where, and for whom.",
+   "addresses": [
+    "data_access_and_security"
+   ],
+   "note": "Added 21 Oct 2026: the Extensions changelog (19 Oct 2026), added to the vendor pages with Daniyaal's OK after the team research found it."
   }
  ]
 }
