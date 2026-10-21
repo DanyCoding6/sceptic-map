@@ -153,6 +153,8 @@ export const Finding = z.object({
   rank: z.number(),
   headline: z.string(),
   short: z.string().optional(), // a shorter one-sentence version for the hero, set in overrides.json
+  title: z.string().optional(), // a plain-English heading (overrides.json)
+  explain: z.string().optional(), // what engineers are worried about and why it matters (overrides.json)
   note: z.string().optional(), // a line shown under the n (set in overrides.json)
   implication: z.string(),
   whyRanked: z.string(),

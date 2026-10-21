@@ -56,8 +56,9 @@ export function BattleCard() {
       title="If a rep hears this tomorrow"
       intro={
         <>
-          A mini battle card on the alternative engineers already use: {n["diy:uses"]} of {n.n_base} posts use or recommend a general AI tool for incident work. Below are
-          three ways they put it, with answers built only from incident.io&apos;s public pages.
+          Finding 2 says the alternative engineers reach for first is the general AI tool they already use ({n["diy:uses"]} of {n.n_base} posts use or recommend one).
+          This is how a rep could answer that on a call, using only incident.io&apos;s public pages: three ways engineers put it, what to say, what to ask next, and what
+          to send afterwards.
         </>
       }
     >

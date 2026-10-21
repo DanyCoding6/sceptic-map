@@ -1,6 +1,5 @@
 import { Section } from "@/components/Section";
-import { site, stats } from "@/lib/data";
-import { formatNumber } from "@/lib/format";
+import { stats } from "@/lib/data";
 
 // Decisions Daniyaal made, as recorded in notes/build-log.md and the project's working notes.
 const DECISIONS = [
@@ -58,38 +57,15 @@ function Lesson({ l }: { l: (typeof LESSONS)[number] }) {
 }
 
 export function HowIBuilt() {
-  const steps = [
-    { name: "Collect", detail: `${formatNumber(stats.nCollected)} Hacker News items and ${stats.vendorPages} vendor pages` },
-    { name: "Classify", detail: `${stats.nRelevant} relevant, after a second model's check` },
-    { name: "Verify quotes", detail: `${stats.quotesKept} quotes, each word for word in its source` },
-    { name: "Synthesise", detail: `${stats.claims} vendor claims, ${stats.ratings} ratings, ${site.findings.length} findings` },
-    { name: "Site", detail: "A static page; no live API calls" },
-  ];
   return (
     <Section
       id="build"
       title="How I built it"
       intro="I wrote the brief and made the decisions; Claude Code wrote the code, ran the pipeline and did most of the checking. Code computes every number; the models only choose and write words, and code checks what they write."
     >
-      <ol className="flex flex-col gap-2 sm:flex-row sm:items-stretch" aria-label="Pipeline, in order">
-        {steps.map((s, i) => (
-          <li key={s.name} className="flex flex-1 flex-col gap-2 sm:flex-row sm:items-center">
-            <div className="flex-1 self-stretch rounded-lg border border-line p-3">
-              <p className="text-sm font-semibold">
-                <span className="text-accent-ink">{i + 1}.</span> {s.name}
-              </p>
-              <p className="mt-1 text-xs leading-snug text-ink-2">{s.detail}</p>
-            </div>
-            {i < steps.length - 1 && (
-              <span aria-hidden="true" className="hidden text-muted sm:block">
-                →
-              </span>
-            )}
-          </li>
-        ))}
-      </ol>
-      <p className="mt-6 text-[17px] leading-relaxed">
-        Total API cost: <span className="font-semibold">${stats.costUsd.toFixed(2)}</span>, including runs I threw away while tuning.
+      <p className="text-[17px] leading-relaxed">
+        The steps under &ldquo;What I did&rdquo; run as one pipeline. Total API cost: <span className="font-semibold">${stats.costUsd.toFixed(2)}</span>, including runs I
+        threw away while tuning.
       </p>
 
       <h3 className="mt-10 text-lg font-semibold">Decisions I made</h3>

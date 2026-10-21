@@ -1,10 +1,11 @@
 import { About } from "@/components/About";
-import { MIN_ROW_COUNT } from "@/components/AtAGlance";
+import { AtAGlance, MIN_ROW_COUNT } from "@/components/AtAGlance";
 import { BattleCard } from "@/components/BattleCard";
 import { Findings } from "@/components/Findings";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/Hero";
 import { HowIBuilt } from "@/components/HowIBuilt";
+import { HowItWorks } from "@/components/HowItWorks";
 import { MethodsBox } from "@/components/MethodsBox";
 import { type MapProps, ScepticMap } from "@/components/ScepticMap";
 import { Section } from "@/components/Section";
@@ -65,17 +66,22 @@ export default function Home() {
     <>
       <Hero />
       <main>
-        <Findings />
+        <HowItWorks />
         <Section
           id="map"
-          title="The Sceptic Map"
-          wide
-          intro="Every objection, most common first, with what engineers say and the reason behind each rating. Filter by what a post mentions."
+          title="The map"
+          intro={
+            <>
+              Each row is a worry engineers raise, most common first, with the number of posts raising it in brackets. Each column shows how that option&apos;s public
+              pages answer it. Read across a row to see whether anyone has proof; read down incident.io&apos;s column to see where Investigations stands.
+            </>
+          }
         >
-          <details className="group rounded-lg border border-line p-4 sm:p-5">
+          <AtAGlance />
+          <details className="group mt-10 rounded-lg border border-line p-4 sm:p-5">
             <summary className="cursor-pointer list-none">
               <span className="flex items-baseline justify-between gap-4">
-                <span className="font-semibold">Open the full map</span>
+                <span className="font-semibold">Open the full map: what engineers say, and the reason behind every rating</span>
                 <span aria-hidden="true" className="text-sm text-accent-ink group-open:hidden">
                   Show
                 </span>
@@ -90,6 +96,7 @@ export default function Home() {
           </details>
           <MethodsBox />
         </Section>
+        <Findings />
         <BattleCard />
         <SummerProject />
         <HowIBuilt />

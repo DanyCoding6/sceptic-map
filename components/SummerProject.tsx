@@ -32,7 +32,7 @@ export function SummerProject() {
     <Section
       id="summer"
       title="The summer project"
-      intro="Turn this prototype into a tool that tells sales and marketing, every week, what buyers object to and where the proof is missing. Call tracking counts objections; this adds whether the messaging has proof for each one, and which proof a rep should send."
+      intro="This page is the prototype. Over the summer I'd point the same pipeline at incident.io's own sales calls, win/loss notes and deal channels, so that sales and marketing see every week what buyers object to and where the proof is missing. Call tracking already counts objections; this adds whether the messaging has proof for each one, and which proof a rep should send."
     >
       <ol className="space-y-5">
         {PLAN.map((p) => (

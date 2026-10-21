@@ -431,7 +431,7 @@
    "short": "Engineers worry that AI incident tools will deskill or replace them, and about what those tools can touch in production. On the pages checked, none of the {vendors_rated} options shows proof on either.",
    "headline": "Deskilling or replacement, and production access: on the pages checked, every option asserts and none shows proof. Investigations and Rootly make the strictest promises on access.",
    "note": "The model counts {count:deskills_or_replaces_engineers} deskilling or replacement posts and {count:data_access_and_security} on access. Read one by one in full, {read:deskills_or_replaces_engineers:core} of the {count:deskills_or_replaces_engineers} are squarely about AI tools deskilling or replacing engineers, {read:deskills_or_replaces_engineers:related} are related (skills lost to AI-written code, who is accountable, or the trade-off mentioned in passing) and the rest don't fit; {read:data_access_and_security:core} of the {count:data_access_and_security} access posts fit squarely.",
-   "implication": "Closest to proof on deskilling is Datadog: named customers say newer engineers get a head start, but nobody shows anyone learning. On access, Investigations' only change is a pull request you review, and its product page mentions SOC 2, which none of the competitor pages checked does; PagerDuty's and Resolve's agents can act on their own within rules you set. Showing how “pull request only” is enforced, and everything it can read, would turn that promise into proof.",
+   "implication": "On deskilling, incident.io says engineers keep the final call and work alongside the agent. Nobody shows responders keeping their skills; Datadog comes closest, with named customers saying newer engineers get a head start. Showing what on-call engineers learn from its reasoning would be a first. On access, Investigations' only change is a pull request you review, and its product page mentions SOC 2, which none of the competitor pages checked does. PagerDuty's and Resolve's agents can act on their own within rules you set. Showing how “pull request only” is enforced, and everything it can read, would turn that promise into proof.",
    "quoteIds": [
     "hn:49579634",
     "hn:49220669"
@@ -440,7 +440,9 @@
     "iio-investigations#17",
     "iio-cl-ga#13"
    ],
-   "why": "Round 2 review (20 Oct), simulated: no ranking words (23 vs 20 is within label noise); counts given with a full read of both rows; credits incident.io's access promise and SOC 2; names Datadog as the nearest to proof on deskilling (engineer, competitive PMM and marketing-lead reviews). Round 3 review (20 Oct), simulated accuracy and decision panels: 'closest on access' was an opinion; 'only option to name an outside audit' rested on one page per competitor (their trust pages weren't checked); the read is regrouped more strictly; counts moved from the headline to the note. Daniyaal approved this as the lead (20 Oct)."
+   "why": "Round 2 review (20 Oct), simulated: no ranking words (23 vs 20 is within label noise); counts given with a full read of both rows; credits incident.io's access promise and SOC 2; names Datadog as the nearest to proof on deskilling (engineer, competitive PMM and marketing-lead reviews). Round 3 review (20 Oct), simulated accuracy and decision panels: 'closest on access' was an opinion; 'only option to name an outside audit' rested on one page per competitor (their trust pages weren't checked); the read is regrouped more strictly; counts moved from the headline to the note. Daniyaal approved this as the lead (20 Oct).",
+   "title": "Two common worries have no proof behind them yet",
+   "explain": "Beyond whether the AI works, engineers worry about what it does to them and to their systems. {count:deskills_or_replaces_engineers} posts say these tools will deskill engineers or are meant to replace them, and {count:data_access_and_security} say they won't give an AI access to production. Every option on the map answers both with reassurance, and none shows evidence."
   },
   {
    "id": "f1",
@@ -458,14 +460,16 @@
     "iio-investigations#12",
     "iio-building#6"
    ],
-   "why": "Round 2 review (20 Oct), simulated: the 13 'product unnecessary' included 5 posts outside the 73 users; the subset is now computed (diy:uses:unneeded). Backtests can give a score without publishing customer incidents. Round 3 review (20 Oct), simulated accuracy and decision panels: the fair comparison is a general agent with the same access, not a bare model; an outsider shouldn't say what incident.io's data allows."
+   "why": "Round 2 review (20 Oct), simulated: the 13 'product unnecessary' included 5 posts outside the 73 users; the subset is now computed (diy:uses:unneeded). Backtests can give a score without publishing customer incidents. Round 3 review (20 Oct), simulated accuracy and decision panels: the fair comparison is a general agent with the same access, not a bare model; an outsider shouldn't say what incident.io's data allows.",
+   "title": "The real alternative is the AI tool engineers already use",
+   "explain": "{diy:uses} of the {n_base} posts describe using or recommending a general AI tool, such as Claude, ChatGPT or Cursor, for incident work, and {diy:uses:positive} of them are positive about it. Only {diy:uses:unneeded} of those {diy:uses} argue that this makes a dedicated product unnecessary. So when a sceptic weighs up Investigations, the comparison they reach for first is the AI tool they already use."
   },
   {
    "id": "f3",
    "rank": 3,
    "scope": "all",
    "headline": "{either:wrong_or_hallucinated_cause+cant_verify_reasoning} of {n_base} posts say the AI gets the cause wrong or that its reasoning can't be checked.",
-   "implication": "Investigations shows proof on both: a measured jump in accurate early updates, and an incident write-up in which its conclusion was checked against the code. The next question is how often it's wrong. Each customer can see its own rate on the Investigations homepage, and incident.io's buyer's guide tells evaluators to ask vendors for precision and recall; a published figure from its backtests would be the first from any option here.",
+   "implication": "The proof so far is a measured jump in accurate early updates, and an incident write-up in which its conclusion was checked against the code. Each customer can see its own accuracy on the Investigations homepage, and incident.io's buyer's guide tells evaluators to ask vendors for precision and recall. A published figure from its backtests would be the first from any option here.",
    "quoteIds": [
     "hn:49207822",
     "hn:49803288"
@@ -476,7 +480,9 @@
     "iio-cl-ga#14",
     "iio-vs-resolve#4"
    ],
-   "why": "Round 2 review (20 Oct), simulated: 'every hypothesis linked to its sources' is a feature claim, not proof; the cant-verify rating rests on the incident write-up."
+   "why": "Round 2 review (20 Oct), simulated: 'every hypothesis linked to its sources' is a feature claim, not proof; the cant-verify rating rests on the incident write-up.",
+   "title": "Engineers will ask how often it's wrong",
+   "explain": "{either:wrong_or_hallucinated_cause+cant_verify_reasoning} posts say the AI gets the cause wrong, or that its reasoning can't be checked. This is where incident.io has done the most, and its pages show proof on both. The question sceptics ask next is how often it's wrong."
   }
  ],
  "quotes": {

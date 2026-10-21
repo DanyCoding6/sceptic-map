@@ -26,9 +26,7 @@ export function AtAGlance() {
   return (
     <div>
       <table className="w-full table-fixed border-collapse text-sm">
-        <caption className="mb-3 text-left text-sm text-ink-2">
-          How each option&apos;s public pages answer each objection. Posts raising it in brackets.
-        </caption>
+        <caption className="sr-only">How each option&apos;s public pages answer each worry engineers raise; posts raising it in brackets.</caption>
         <thead>
           <tr>
             <th scope="col" className="w-[44%] pb-2 text-left align-bottom text-xs font-medium text-muted sm:w-[40%]">
@@ -69,8 +67,7 @@ export function AtAGlance() {
         ))}
       </ul>
       <p className="mt-3 text-xs leading-relaxed text-ink-2">
-        Shown with proof means a measured result, a named customer reporting a result on that objection, or a real incident; said, not shown means asserted without
-        proof. The two rows in bold are finding 1.
+        The two rows in bold are the gap described in finding 1: every option makes claims there, and none shows proof.
       </p>
       <p className="mt-2 text-xs leading-relaxed text-muted">
         incident.io, on these {rows.length} rows: {tally("incident.io", "SHOWN")} shown, {tally("incident.io", "SAID")} said, {tally("incident.io", "NOT_YET")} not yet. Its column rests on{" "}

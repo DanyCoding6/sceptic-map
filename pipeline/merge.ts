@@ -32,6 +32,8 @@ const Overrides = z.object({
         rank: z.number().optional(),
         headline: z.string().optional(),
         short: z.string().optional(),
+        title: z.string().optional(),
+        explain: z.string().optional(),
         note: z.string().optional(), // a line under the n, e.g. what a hand read of the posts found
         implication: z.string().optional(),
         scope: z.enum(["all", "since_2025"]).optional(),
@@ -134,7 +136,7 @@ function main() {
       problems.push(`no finding ${o.id}`);
       continue;
     }
-    for (const field of ["headline", "short", "implication", "note"] as const) {
+    for (const field of ["headline", "short", "title", "explain", "implication", "note"] as const) {
       const text = o[field];
       if (text === undefined) continue;
       if (handTyped(text)) problems.push(`${o.id}.${field} has a typed number; use a {placeholder} from synthesis.json "numbers"`);

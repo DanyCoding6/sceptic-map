@@ -161,13 +161,15 @@ const templates = readJson("synthesis.json").findingTemplates as Record<string, 
 const overrides = existsSync(path.join(DATA, "overrides.json")) ? readJson("overrides.json") : { findings: [] };
 const fill = (t: string) => t.replace(/\{([^{}]+)\}/g, (_, k: string) => (k in site.numbers ? site.numbers[k].toLocaleString("en-GB") : `{${k}}`));
 for (const f of site.findings) {
-  const o = (overrides.findings as { id: string; headline?: string; short?: string; implication?: string; note?: string }[]).find((x) => x.id === f.id);
+  const o = (overrides.findings as { id: string; headline?: string; short?: string; implication?: string; note?: string; title?: string; explain?: string }[]).find((x) => x.id === f.id);
   const headline = fill(o?.headline ?? templates[f.id].headline);
   const implication = fill(o?.implication ?? templates[f.id].implication.replace(/^What this means[^:]*:\s*/i, ""));
   if (headline !== f.headline) fail(`finding ${f.id}: headline doesn't match its template`);
   if (implication !== f.implication) fail(`finding ${f.id}: implication doesn't match its template`);
   if (o?.short && fill(o.short) !== f.short) fail(`finding ${f.id}: short headline doesn't match its template`);
   if (o?.note && fill(o.note) !== f.note) fail(`finding ${f.id}: note doesn't match its template`);
+  if (o?.title && fill(o.title) !== f.title) fail(`finding ${f.id}: title doesn't match its template`);
+  if (o?.explain && fill(o.explain) !== f.explain) fail(`finding ${f.id}: explanation doesn't match its template`);
   if (f.n !== (f.scope === "since_2025" ? expected.base_since_2025 : base.length)) fail(`finding ${f.id}: n ${f.n} doesn't match its scope (${f.scope})`);
   if (f.quotes.length !== 2) fail(`finding ${f.id}: needs 2 quotes`);
   for (const id of f.claimIds) if (!site.claims.some((c) => c.id === id && c.vendor === "incident.io")) fail(`finding ${f.id}: claim ${id} is not an incident.io claim`);
@@ -182,6 +184,8 @@ const phrases: [string, boolean][] = [
   ["f2: deskilling and production access are common objections (both in the five most raised)", rated.slice(0, 5).includes("deskills_or_replaces_engineers") && rated.slice(0, 5).includes("data_access_and_security")],
   ["f2: none of the options shows proof on either", expected["shown:deskills_or_replaces_engineers"] === 0 && expected["shown:data_access_and_security"] === 0],
   ["f2/f3: Investigations shows proof on whether it works", worksObjections.every((o) => cell("incident.io", o) === "SHOWN")],
+  ["hero: the doubts raised most are about whether it works (the top two rows)", rated[0] === "not_capable_yet" && rated[1] === "wrong_or_hallucinated_cause"],
+  ["hero: Rootly also promises no change without sign-off", site.claims.some((c) => c.vendor === "Rootly" && /human sign-off/.test(c.quote))],
   ["f2: incident.io names the only outside audit (SOC 2) among the claims", site.claims.filter((c) => /SOC ?2/.test(c.quote)).every((c) => c.vendor === "incident.io")],
   ["f1: only a minority of general-AI users say a product is unnecessary", expected["diy:uses:unneeded"] * 2 < expected["diy:uses"]],
   ["map: every competitor column rests on the same number of pages", new Set(["PagerDuty", "Rootly", "Datadog", "Resolve.ai"].map((v) => stats.pagesByVendor[v])).size === 1],
@@ -209,7 +213,7 @@ for (const row of card.rows) {
 // 7. Banned words in everything we wrote (vendor claims are their words, so they're excluded).
 const BANNED = /\b(ai-powered|revolutionary|game-changing|leverag(e|es|ed|ing)|unlock(s|ed|ing)?|seamless(ly)?|cutting-edge)\b|in today's fast-paced world/i;
 const ours: [string, string][] = [
-  ...site.findings.flatMap((f) => [[`finding ${f.id}`, `${f.headline} ${f.short ?? ""} ${f.implication} ${f.note ?? ""}`]] as [string, string][]),
+  ...site.findings.flatMap((f) => [[`finding ${f.id}`, `${f.headline} ${f.short ?? ""} ${f.title ?? ""} ${f.explain ?? ""} ${f.implication} ${f.note ?? ""}`]] as [string, string][]),
   ...site.coverage.map((c) => [`reason ${c.vendor}/${c.objection}`, c.reason] as [string, string]),
   ...card.rows.map((r) => [`battle card ${r.quoteId}`, `${r.respond} ${r.ask} ${r.sendLabel}`] as [string, string]),
   ["battle card avoid", card.avoid.join(" ")],
