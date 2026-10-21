@@ -103,7 +103,7 @@
     ]
   },
   "rowReads": {
-    "by": "Claude, reading every post in the two rows the lead finding rests on (20 Oct); regrouped more strictly after a further review",
+    "by": "Claude, reading every post in the two rows the lead finding rests on (20 Oct), regrouped more strictly after a further review, then re-read in full (21 Oct)",
     "deskills_or_replaces_engineers": {
       "skillFromIncidentTools": [
         "hn:41587962",
@@ -113,7 +113,8 @@
         "hn:49574872",
         "hn:49579634",
         "hn:49993252",
-        "hn:44662746"
+        "hn:44662746",
+        "hn:47234272"
       ],
       "replaced": [
         "hn:45634856",
@@ -128,7 +129,9 @@
         "hn:47248184",
         "hn:48044576",
         "hn:47533663",
-        "hn:49851589"
+        "hn:49851589",
+        "hn:43902800",
+        "hn:46689907"
       ],
       "relatedAccountability": [
         "hn:49467332",
@@ -137,19 +140,19 @@
         "hn:43285975"
       ],
       "notFit": [
-        "hn:43902800",
         "hn:45043842",
         "hn:45109894",
         "hn:46855985",
-        "hn:48150419",
-        "hn:50049303",
         "hn:44261849",
-        "hn:46839811",
-        "hn:47234272",
-        "hn:46689907"
+        "hn:46839811"
       ],
-      "notFitWhy": "general complaints about AI coding or AI-written code, sarcasm about AI post-mortems, and one positive story",
-      "regrouped": "Round 3 (20 Oct): a simulated accuracy panel called the first read generous; posts about understanding lost through AI-written code, and about accountability or management mandates, are now counted as related rather than squarely on the objection."
+      "notFitWhy": "off-topic products (infrastructure-as-code, DevOps chat), sarcasm about AI post-mortems, and a positive story that argues against the worry",
+      "regrouped": "Round 3 (20 Oct): a simulated accuracy panel called the first read generous; posts about understanding lost through AI-written code, and about accountability or management mandates, are now counted as related rather than squarely on the objection.",
+      "relatedMentioned": [
+        "hn:48150419",
+        "hn:50049303"
+      ],
+      "fullTextReread": "21 Oct: the first read used the first 650 characters of each post; every post marked 'doesn't fit' was re-read in full, which moved 5 posts (one to squarely on the label, four to related)."
     },
     "data_access_and_security": {
       "fit": [
@@ -169,17 +172,20 @@
         "hn:49191341",
         "hn:49220669",
         "hn:45109894",
-        "hn:47276920"
-      ],
-      "notFit": [
-        "hn:44383599",
+        "hn:47276920",
         "hn:44662746",
         "hn:46354836",
-        "hn:46838068",
-        "hn:48022668",
         "hn:49191089"
       ],
-      "notFitWhy": "about jobs, engineers' familiarity with code, or comparisons with other tools"
+      "notFit": [
+        "hn:46838068"
+      ],
+      "notFitWhy": "about engineers' familiarity with code, not access",
+      "related": [
+        "hn:44383599",
+        "hn:48022668"
+      ],
+      "fullTextReread": "21 Oct: the first read used the first 420 characters of each post; re-read in full, 3 'doesn't fit' posts are squarely about access and 2 are related."
     }
   }
 }

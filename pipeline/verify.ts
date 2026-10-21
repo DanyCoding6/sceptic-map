@@ -103,8 +103,29 @@ const statsCheck: [string, number, number][] = [
 for (const [k, shown, actual] of statsCheck) if (shown !== actual) fail(`stats.${k}: ${shown} vs ${actual}`);
 // Every figure in stats.json (audits and agreement included) must be what the data files give.
 {
-  const rebuilt = buildStats(site, classified, readJson("cost.json"), readJson("agreement.json"), audits);
+  const rebuilt = buildStats(site, classified, readJson("cost.json"), readJson("agreement.json"), audits, readJson("blind_agreement.json"));
   for (const [k, v] of Object.entries(rebuilt)) if (JSON.stringify(v) !== JSON.stringify((stats as Record<string, unknown>)[k])) fail(`stats.${k} doesn't match the data files`);
+}
+// The blind read's comparison must be of the labels in blind_read.json against the pipeline's.
+{
+  const blind = readJson("blind_read.json").labels as { id: string; relevant: string; stance: string; objections: string[] }[];
+  const cmp = readJson("blind_agreement.json") as { n: number; perItem: { id: string; hand: { stance: string; objections: string[] }; model: { stance: string; objections: string[] } }[] };
+  const model = new Map(classified.items.map((i) => [i.id, i]));
+  const onTopic = blind.filter((b) => b.relevant === "yes");
+  if (cmp.n !== blind.length || cmp.perItem.length !== onTopic.length) fail("blind read: comparison doesn't match blind_read.json");
+  for (const p of cmp.perItem) {
+    const b = onTopic.find((x) => x.id === p.id);
+    const m = model.get(p.id);
+    if (!b || !m || b.stance !== p.hand.stance || JSON.stringify(b.objections) !== JSON.stringify(p.hand.objections) || m.stance !== p.model.stance || JSON.stringify(m.objections) !== JSON.stringify(p.model.objections))
+      fail(`blind read: ${p.id} doesn't match its sources`);
+  }
+  // And its summary recomputes from those pairs.
+  const sum = readJson("blind_agreement.json");
+  const jac = (a: string[], b: string[]) => [...new Set(a)].filter((x) => b.includes(x)).length / new Set([...a, ...b]).size;
+  const labelled = cmp.perItem.filter((p) => p.hand.objections.length || p.model.objections.length);
+  const agree = cmp.perItem.filter((p) => p.hand.stance === p.model.stance).length;
+  const mean = Number((labelled.reduce((s, p) => s + jac(p.hand.objections, p.model.objections), 0) / labelled.length).toFixed(2));
+  if (sum.stance.agree !== agree || sum.objections.labelled !== labelled.length || sum.objections.meanJaccard !== mean) fail("blind read: summary doesn't recompute");
 }
 // Every rating cell is the pipeline's, or a correction logged in overrides.json.
 {

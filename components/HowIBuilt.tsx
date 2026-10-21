@@ -10,7 +10,7 @@ const DECISIONS = [
   "Approved the vendor pages before any were fetched.",
   "Left Reddit out when it refused automated access, rather than set up its API, and said so in Methods.",
   "Chose, from the options Claude laid out, to add “AI can't do this job yet” as an objection and to add a second model that can only remove items.",
-  "Skipped hand-labelling to save time. It's the first thing I'd change.",
+  "Skipped hand-labelling to save time, and had a larger Claude model do a blind read of 40 posts instead. People's labels would still be better.",
 ];
 
 // Entries from notes/build-log.md, shortened. They happened as described.

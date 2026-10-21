@@ -4,6 +4,7 @@ import { formatDate, formatNumber } from "@/lib/format";
 export function MethodsBox() {
   const { window } = site.meta;
   const a = stats.agreement;
+  const b = stats.blindRead;
   const au = stats.audits;
   const competitorPages = stats.pagesByVendor.PagerDuty;
   const n = site.numbers;
@@ -20,7 +21,7 @@ export function MethodsBox() {
           </span>
         </span>
         <span className="mt-2 block text-[15px] leading-relaxed text-ink-2">
-          Hacker News only. Labels come from Claude models checked against each other, not from hand labels. Only {stats.buyerSignal} of {stats.nBase} posts show a
+          Hacker News only. Labels come from Claude models, checked by a blind read from a larger Claude model, not by people. Only {stats.buyerSignal} of {stats.nBase} posts show a
           buyer signal.
         </span>
       </summary>
@@ -43,7 +44,11 @@ export function MethodsBox() {
         <div>
           <dt className="font-medium">How far to trust the labels</dt>
           <dd className="text-ink-2">
-            There are no hand labels yet. Sonnet re-labelled {a.n} random relevant items on its own ({a.vendorAuthored} of them vendor posts, outside the count): the same
+            There are no human labels. A larger Claude model read {b.n} random posts from the {stats.nBase} in full, blind to the pipeline&apos;s labels:{" "}
+            {b.onTopic} were clearly on topic, {b.offTopic} off topic and {b.unsure} borderline, and {b.ownProduct} of the on-topic posts were by people promoting their
+            own tool, which should have been set aside. On the {b.onTopic} on topic, it gave the same stance on {b.stanceAgree} (Cohen&apos;s kappa {b.kappa}); where either named an objection (
+            {b.objectionLabelled} posts), the overlap was {b.objectionJaccard} (Jaccard), with identical sets on {b.objectionExact}. Earlier, Sonnet re-labelled {a.n} random
+            relevant items on its own ({a.vendorAuthored} of them vendor posts, outside the count): the same
             stance on {a.stanceAgree} of {a.n} (Cohen&apos;s kappa {a.kappa}). Where either model named an objection ({a.objectionLabelled} items), the overlap was{" "}
             {a.objectionJaccard} (Jaccard), with identical sets on {a.objectionExact}. That is agreement between two models, not accuracy, and it is loose for objections:
             treat a gap of a few posts between rows as noise. While building, Claude read samples in full: {au.keptOnTopic} of {au.keptN} kept items were on topic,{" "}

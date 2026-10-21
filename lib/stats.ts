@@ -10,6 +10,8 @@ export function buildStats(
   agreement: any,
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   audits: any,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  blind: any,
 ): Stats {
   const relevant = classified.items.filter((i) => i.relevant);
   const stats: Stats = {
@@ -28,6 +30,19 @@ export function buildStats(
     nStories: site.numbers.n_stories,
     pagesByVendor: Object.fromEntries(VENDORS.map((v) => [v, new Set(site.claims.filter((c) => c.vendor === v).map((c) => c.url)).size])),
     costUsd: Number(cost.runs.reduce((sum, r) => sum + r.costUsd, 0).toFixed(2)),
+    blindRead: {
+      n: blind.n,
+      onTopic: blind.relevance.onTopic,
+      offTopic: blind.relevance.offTopic,
+      unsure: blind.relevance.unsure,
+      ownProduct: blind.ownProduct.yes,
+      ownProductUnsure: blind.ownProduct.unsure,
+      stanceAgree: blind.stance.agree,
+      kappa: blind.stance.cohensKappa,
+      objectionLabelled: blind.objections.labelled,
+      objectionJaccard: blind.objections.meanJaccard,
+      objectionExact: blind.objections.exactMatch,
+    },
     agreement: {
       method: agreement.method,
       n: agreement.n,

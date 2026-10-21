@@ -21,6 +21,19 @@
     "Resolve.ai": 1,
     "DIY": 3
   },
+  "blindRead": {
+    "n": 40,
+    "onTopic": 33,
+    "offTopic": 1,
+    "unsure": 6,
+    "ownProduct": 3,
+    "ownProductUnsure": 2,
+    "stanceAgree": 26,
+    "kappa": 0.7,
+    "objectionLabelled": 14,
+    "objectionJaccard": 0.71,
+    "objectionExact": 7
+  },
   "agreement": {
     "method": "model-to-model: claude-sonnet-5-5 (independent re-run, same prompt) vs claude-haiku-5-5",
     "n": 30,

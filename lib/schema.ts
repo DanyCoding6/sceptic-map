@@ -249,6 +249,20 @@ export const Stats = z.object({
   nComments: z.number(),
   nStories: z.number(),
   pagesByVendor: z.record(z.string(), z.number()),
+  // A blind read of a random sample by a larger Claude model (not human labels).
+  blindRead: z.object({
+    n: z.number(),
+    onTopic: z.number(),
+    offTopic: z.number(),
+    unsure: z.number(),
+    ownProduct: z.number(),
+    ownProductUnsure: z.number(),
+    stanceAgree: z.number(),
+    kappa: z.number(),
+    objectionLabelled: z.number(),
+    objectionJaccard: z.number(),
+    objectionExact: z.number(),
+  }),
   agreement: z.object({
     method: z.string(),
     n: z.number(),
