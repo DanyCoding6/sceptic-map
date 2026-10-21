@@ -72,9 +72,9 @@ export default function Home() {
           title="The map"
           intro={
             <>
-              Each row is a worry engineers raise, most common first, with the number of posts raising it in brackets (out of {site.meta.nBase}, {formatMonth(site.meta.window.from)} to {formatMonth(site.meta.window.to)}). Each column is an option a team could pick:
-              incident.io, four competitors, or DIY, meaning a team wiring a general AI tool such as Claude Code into its own systems. A dot shows how that option&apos;s
-              public pages answer the worry. Read across a row to see whether anyone has proof; read down incident.io&apos;s column to see where Investigations stands.
+              Rows are worries, most common first, with the number of posts in brackets (out of {site.meta.nBase}, {formatMonth(site.meta.window.from)} to{" "}
+              {formatMonth(site.meta.window.to)}). Columns are the options a team could pick; DIY means wiring a general AI tool such as Claude Code into your own
+              systems. Read across a row to see if anyone has proof.
             </>
           }
         >

@@ -15,6 +15,11 @@ export function About() {
         for the St John&apos;s May Ball and events for the Cambridge University Trading Society. I build with Claude Code: my latest, JuniorTrader, is a live app that turns
         market news into quizzes and trade calls for people starting out as traders. I&apos;m also President of the Cambridge University Pakistani Society, and I run a free mentoring programme for disadvantaged students applying to Cambridge Economics.
       </p>
+      <h3 className="mt-8 text-lg font-semibold">Why incident.io</h3>
+      <p className="mt-2 text-[17px] leading-relaxed">
+        Since 2021 I&apos;ve built an audience of ~100K by making hard topics simple without making them wrong. Explaining an AI agent to engineers who don&apos;t trust AI is
+        the hardest version of that job I know of, and your team is doing it.
+      </p>
       <p className="mt-8 text-lg font-semibold">Based in London. Available from the end of June to the start of October 2027.</p>
       <ul className="mt-6 space-y-2">
         {links.map((l) => (

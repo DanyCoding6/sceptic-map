@@ -27,21 +27,31 @@ export function Findings() {
               <p className="text-sm font-medium text-accent-ink">Finding {f.rank}</p>
               <h3 className="mt-2 text-2xl font-semibold leading-snug tracking-tight">{f.title ?? f.headline}</h3>
               {f.explain && <p className="mt-4 text-[17px] leading-relaxed">{f.explain}</p>}
-              <p className="mt-6 text-xs font-semibold uppercase tracking-wide text-muted">What engineers say</p>
-              <div className="mt-3 space-y-4">
-                {/* The lead finding shows one quote per worry; the others show their strongest one. */}
-                {(f.rank === 1 ? f.quotes : f.quotes.slice(0, 1)).map((q) => (
-                  <Quote key={q.id} {...q} />
-                ))}
+              <div className="mt-5">
+                <Quote {...f.quotes[0]} />
               </div>
-              <div className="mt-6 rounded-lg bg-wash p-5">
-                <p className="text-xs font-semibold uppercase tracking-wide text-muted">What incident.io&apos;s pages say, and what could close the gap</p>
-                <p className="mt-2 text-[15px] leading-relaxed">{f.implication}</p>
-                <Sources claims={claims} label="incident.io pages this draws on" />
-              </div>
-              <p className="mt-4 text-xs leading-relaxed text-muted">
-                {scopeLine(f.scope)}.{f.note ? ` ${f.note}` : ""}
-              </p>
+              {f.fix && (
+                <div className="mt-5 rounded-lg bg-wash p-5">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-muted">What could close the gap</p>
+                  <p className="mt-2 text-[17px] leading-relaxed">{f.fix}</p>
+                </div>
+              )}
+              <details className="group mt-4">
+                <summary className="cursor-pointer list-none text-sm font-medium text-accent-ink">
+                  <span className="group-open:hidden">The detail: what incident.io&apos;s pages say now, and how it was counted</span>
+                  <span className="hidden group-open:inline">Hide the detail</span>
+                </summary>
+                <div className="mt-4 space-y-4">
+                  <p className="text-[15px] leading-relaxed">{f.implication}</p>
+                  <Sources claims={claims} label="incident.io pages this draws on" />
+                  {f.quotes.slice(1, f.rank === 1 ? 2 : 1).map((q) => (
+                    <Quote key={q.id} {...q} />
+                  ))}
+                  <p className="text-xs leading-relaxed text-muted">
+                    {scopeLine(f.scope)}.{f.note ? ` ${f.note}` : ""}
+                  </p>
+                </div>
+              </details>
             </li>
           );
         })}

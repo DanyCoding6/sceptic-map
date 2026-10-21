@@ -6,17 +6,17 @@ const PLAN = [
   {
     weeks: "Weeks 1–3",
     title: "Point it at real calls",
-    what: "Sit in on calls and agree the objection list with product marketing. Then, once security clears the data, run the pipeline on Gong calls, win/loss notes and deal channels, and check what it finds with solutions engineers, who hear objections first-hand. Output: where buyers differ from Hacker News. If call data isn't cleared in time, I'd widen the public version instead: more sources, and as many competitor pages as incident.io's.",
+    what: "Sit in on calls, agree the objection list, then run the tool on Gong calls, win/loss notes and deal channels once security clears the data, checking what it finds with solutions engineers. If that data isn't cleared in time, I'd widen the public version instead.",
   },
   {
     weeks: "Weeks 4–8",
     title: "Feed what the team already ships",
-    what: "A weekly brief, posted where reps work: which objections rose or fell, the best new quotes, and which ones the messaging can't answer yet. From it, battle-card drafts for the AI SRE set (Resolve.ai, Datadog's Bits AI SRE, PagerDuty's and Rootly's agents, and do-it-yourself), an AI version of the “objections we hear most” post, and a register of every AI claim on comparison, pricing and launch pages, checked against what the product does now.",
+    what: "A weekly objections brief for sales; battle cards for the AI competitors and the do-it-yourself route; an AI version of the “objections we hear most” post; and a register checking every AI claim on the website against what the product does now.",
   },
   {
     weeks: "Weeks 9–12",
     title: "Close the biggest proof gap",
-    what: "With the AI team, pick the gap the calls confirm. On this map that could be a published accuracy score, a side-by-side with a general AI agent, or evidence on deskilling or access. For an accuracy score, that means a method note, a kit solutions engineers can use to test it on a prospect's own past incidents, and Investigations customer stories with dashboard numbers. Then hand the tool over with a runbook and write the summer up publicly.",
+    what: "With the AI team, pick the gap the calls confirm, such as a published accuracy score, and build the proof: a method note, a kit for solutions engineers to test it on a prospect's own incidents, and customer stories with real numbers. Then hand over the tool and write it up.",
   },
 ];
 
@@ -33,7 +33,7 @@ export function SummerProject() {
     <Section
       id="summer"
       title="The summer project"
-      intro="This page is the prototype. Over the summer I'd point the same pipeline at incident.io's own sales calls, win/loss notes and deal channels, and feed what it finds into work the team already ships: battle cards, objection-handling posts and comparison pages. Call tracking already counts objections; this adds whether the messaging has proof for each one, and which proof a rep should send. It would take the same shape as incident.io's Product Engineer Summer Internship: three months, one project owned end to end."
+      intro="This page is the prototype. Over the summer I'd run the same tool on incident.io's own sales calls and feed what it finds into work the team already ships: battle cards, objection posts and comparison pages. Same shape as your Product Engineer Summer Internship: three months, one project owned end to end."
     >
       <ol className="space-y-5">
         {PLAN.map((p) => (

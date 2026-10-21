@@ -1,7 +1,7 @@
 import { Section } from "@/components/Section";
 import { Sources } from "@/components/Sources";
-import { battleCard, claimById, itemById, site } from "@/lib/data";
-import { formatDate, formatMonth } from "@/lib/format";
+import { battleCard, claimById, itemById } from "@/lib/data";
+import { formatDate } from "@/lib/format";
 import type { BattleCard as Card } from "@/lib/schema";
 
 function Row({ row }: { row: Card["rows"][number] }) {
@@ -48,7 +48,6 @@ function Said({ id }: { id: string }) {
 }
 
 export function BattleCard() {
-  const n = site.numbers;
   const [first, ...rest] = battleCard.rows;
   return (
     <Section
@@ -56,9 +55,7 @@ export function BattleCard() {
       title="If a rep hears this tomorrow"
       intro={
         <>
-          After finding 2, a rep should expect buyers who already use a general AI tool ({n["diy:uses"]} of {n.n_base} posts use or recommend one,{" "}
-          {formatMonth(site.meta.window.from)} to {formatMonth(site.meta.window.to)}), and some who argue they could do the job with one ({n["diy:objection"]}). Here is
-          how a rep could answer, using only incident.io&apos;s public pages.
+          Finding 2 means reps will meet buyers who already use a general AI tool. Here is how a rep could answer them, using only incident.io&apos;s public pages.
         </>
       }
     >

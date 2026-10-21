@@ -82,7 +82,8 @@ export function MethodsBox() {
             word for word ({stats.claimsAddedByHand} added by hand, where extraction skipped a line or a page was added later) from {stats.vendorPages} public pages: {stats.pagesByVendor["incident.io"]} of incident.io&apos;s, {competitorPages} AI SRE product page for each
             competitor, and {stats.pagesByVendor.DIY} for the do-it-yourself route. Competitor ratings describe that page only. Each rating is a model&apos;s judgement under
             fixed rules, corrected where a review found it wrong: proof means a measured result, a named customer reporting a result on that objection, or a real
-            incident, and sample screens don&apos;t count.
+            incident, and sample screens don&apos;t count. That is evidence the vendor chose to show, not an independent test, and naming a security audit such as SOC 2 isn&apos;t
+            proof on access, since it doesn&apos;t show what an agent can read or change. Claude Sonnet drafted the ratings and Claude Code checked them.
           </dd>
         </div>
         <div>

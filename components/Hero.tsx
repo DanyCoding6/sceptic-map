@@ -29,7 +29,16 @@ function provenOnWorks() {
   return { iio: names.includes("incident.io"), others: diy ? [...others, "one engineer's do-it-yourself write-up"] : others };
 }
 
-const list = (xs: string[]) => (xs.length < 2 ? xs.join("") : `${xs.slice(0, -1).join(", ")} and ${xs.at(-1)}`);
+const SECTIONS: [string, string][] = [
+  ["how", "What I did"],
+  ["map", "The map"],
+  ["findings", "What it means"],
+  ["card", "A rep's answer"],
+  ["summer", "The summer project"],
+  ["build", "How I built it"],
+  ["me", "About me"],
+];
+
 
 export function Hero() {
   const { window, nBase } = site.meta;
@@ -43,55 +52,59 @@ export function Hero() {
         What sceptical engineers say about AI incident tools, and which of their worries nobody has yet answered with proof
       </h1>
       <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-2">
-        This page checks the worries in {nBase} Hacker News posts about AI incident tools ({formatMonth(window.from)} to {formatMonth(window.to)}) against the
-        public pages of incident.io, four competitors and the do-it-yourself route.
+        A working tool, built as a pitch. It reads {nBase} Hacker News posts about AI incident tools ({formatMonth(window.from)} to {formatMonth(window.to)}),
+        sorts the worries engineers raise, and checks each one against what incident.io and its competitors show on their public pages.
       </p>
 
       <div className="mt-8 rounded-lg border border-line p-5 sm:p-6">
         <p className="text-xs font-semibold uppercase tracking-wide text-muted">The short version</p>
-        <ul className="mt-3 space-y-3 text-[17px] leading-relaxed">
+        <ul className="mt-3 list-disc space-y-3 pl-5 text-[17px] leading-relaxed marker:text-accent-ink">
           <li>
-            The doubts raised most are about whether it works at all: {n["either:not_capable_yet+wrong_or_hallucinated_cause"]} posts say AI can&apos;t do incident work
-            yet, or gets the cause wrong. {proven.iio ? <>On the pages checked, Investigations answers both with proof, as do {list(proven.others)}.</> : null}
+            <strong className="font-semibold">Does it work?</strong> The most common doubt ({n["either:not_capable_yet+wrong_or_hallucinated_cause"]} posts).
+            {proven.iio ? <> Investigations already shows proof here{proven.others.length ? ", as do some competitors" : ""}.</> : null}
           </li>
           <li>
-            Two other worries come up often: that these tools will deskill or replace engineers ({n["count:deskills_or_replaces_engineers"]} posts,{" "}
-            {n["read:deskills_or_replaces_engineers:core"]} of them squarely about it), and what they can reach in production, data included ({n["count:data_access_and_security"]}). On the
-            pages checked, every option makes claims on both and none shows proof.
+            <strong className="font-semibold">The gap:</strong> deskilling or replacing engineers, and access to production ({n["count:deskills_or_replaces_engineers"]} and{" "}
+            {n["count:data_access_and_security"]} posts). On the pages checked, everyone makes promises and no one shows proof.
           </li>
           <li>
-            On production access, Investigations is well placed. Its{" "}
+            <strong className="font-semibold">The opening:</strong> Investigations&apos;{" "}
             <a href={pr.url} className="underline decoration-line underline-offset-2 hover:text-accent-ink" target="_blank" rel="noopener noreferrer">
-              product page
+              &ldquo;only change is a pull request you review&rdquo;
             </a>{" "}
-            says its only change to your systems is a pull request you review, as strict a promise as Rootly&apos;s sign-off on every change. Showing how that&apos;s
-            enforced, and what it can read, would make it the first option on this map with proof on access.
+            is one of the two strictest promises on the map. Proving it would be a first on this map.
           </li>
         </ul>
       </div>
 
       <p className="mt-8 max-w-2xl text-lg leading-relaxed">
-        I&apos;m Daniyaal Anawar, an Economics student at Cambridge. Since 2021 I&apos;ve built an audience of ~100K by making hard topics simple without making them
-        wrong. Explaining an AI agent to engineers who don&apos;t trust AI is the hardest version of that job I know of, and your team is doing it.
+        I&apos;m Daniyaal Anawar, an Economics student at Cambridge. I built this as a prototype of a summer product marketing project: the same analysis, run on your
+        sales calls. Could we talk for 15 minutes?
       </p>
-      <p className="mt-3 max-w-2xl text-lg leading-relaxed">
-        I built this as a working version of the summer project I&apos;d like to do with your team: the same analysis, run on your sales calls. Could we talk for 15
-        minutes?
-      </p>
-      <div className="mt-8 flex flex-wrap gap-3">
-        <a href="#map" className="rounded-md bg-accent-ink px-4 py-2.5 text-sm font-medium text-white hover:bg-[#0b5f58]">
-          See the map
-        </a>
-        <a href="#summer" className="rounded-md px-4 py-2.5 text-sm font-medium text-accent-ink ring-1 ring-line hover:bg-wash">
-          The summer project
-        </a>
+      <div className="mt-6 flex flex-wrap gap-3">
         <a
           href={`mailto:${CONFIG.email}?subject=${encodeURIComponent("Sceptic Map: 15 minutes")}`}
-          className="rounded-md px-4 py-2.5 text-sm font-medium text-accent-ink ring-1 ring-line hover:bg-wash"
+          className="rounded-md bg-accent-ink px-4 py-2.5 text-sm font-medium text-white hover:bg-[#0b5f58]"
         >
           Email me
         </a>
+        <a href="#map" className="rounded-md px-4 py-2.5 text-sm font-medium text-accent-ink ring-1 ring-line hover:bg-wash">
+          See the map
+        </a>
       </div>
+
+      <nav aria-label="On this page" className="mt-10 border-t border-line pt-5 text-sm">
+        <p className="font-medium text-muted">On this page</p>
+        <ol className="mt-2 flex flex-wrap gap-x-5 gap-y-2">
+          {SECTIONS.map(([id, label], i) => (
+            <li key={id}>
+              <a href={`#${id}`} className="text-accent-ink underline decoration-line underline-offset-2 hover:decoration-accent-ink">
+                {i + 1}. {label}
+              </a>
+            </li>
+          ))}
+        </ol>
+      </nav>
       {CONFIG.videoUrl && (
         <div className="mt-10">
           <Video url={CONFIG.videoUrl} />

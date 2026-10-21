@@ -161,7 +161,7 @@ const templates = readJson("synthesis.json").findingTemplates as Record<string, 
 const overrides = existsSync(path.join(DATA, "overrides.json")) ? readJson("overrides.json") : { findings: [] };
 const fill = (t: string) => t.replace(/\{([^{}]+)\}/g, (_, k: string) => (k in site.numbers ? site.numbers[k].toLocaleString("en-GB") : `{${k}}`));
 for (const f of site.findings) {
-  const o = (overrides.findings as { id: string; headline?: string; short?: string; implication?: string; note?: string; title?: string; explain?: string }[]).find((x) => x.id === f.id);
+  const o = (overrides.findings as { id: string; headline?: string; short?: string; implication?: string; note?: string; title?: string; explain?: string; fix?: string }[]).find((x) => x.id === f.id);
   const headline = fill(o?.headline ?? templates[f.id].headline);
   const implication = fill(o?.implication ?? templates[f.id].implication.replace(/^What this means[^:]*:\s*/i, ""));
   if (headline !== f.headline) fail(`finding ${f.id}: headline doesn't match its template`);
@@ -170,6 +170,7 @@ for (const f of site.findings) {
   if (o?.note && fill(o.note) !== f.note) fail(`finding ${f.id}: note doesn't match its template`);
   if (o?.title && fill(o.title) !== f.title) fail(`finding ${f.id}: title doesn't match its template`);
   if (o?.explain && fill(o.explain) !== f.explain) fail(`finding ${f.id}: explanation doesn't match its template`);
+  if (o?.fix && fill(o.fix) !== f.fix) fail(`finding ${f.id}: fix line doesn't match its template`);
   if (f.n !== (f.scope === "since_2025" ? expected.base_since_2025 : base.length)) fail(`finding ${f.id}: n ${f.n} doesn't match its scope (${f.scope})`);
   if (f.quotes.length !== 2) fail(`finding ${f.id}: needs 2 quotes`);
   for (const id of f.claimIds) if (!site.claims.some((c) => c.id === id && c.vendor === "incident.io")) fail(`finding ${f.id}: claim ${id} is not an incident.io claim`);
@@ -234,7 +235,7 @@ checkFigures("battle card avoid", card.avoid.join(" "), site.claims.filter((c) =
 // 7. Banned words in everything we wrote (vendor claims are their words, so they're excluded).
 const BANNED = /\b(ai-powered|revolutionary|game-changing|leverag(e|es|ed|ing)|unlock(s|ed|ing)?|seamless(ly)?|cutting-edge)\b|in today's fast-paced world/i;
 const ours: [string, string][] = [
-  ...site.findings.flatMap((f) => [[`finding ${f.id}`, `${f.headline} ${f.short ?? ""} ${f.title ?? ""} ${f.explain ?? ""} ${f.implication} ${f.note ?? ""}`]] as [string, string][]),
+  ...site.findings.flatMap((f) => [[`finding ${f.id}`, `${f.headline} ${f.short ?? ""} ${f.title ?? ""} ${f.explain ?? ""} ${f.fix ?? ""} ${f.implication} ${f.note ?? ""}`]] as [string, string][]),
   ...site.coverage.map((c) => [`reason ${c.vendor}/${c.objection}`, c.reason] as [string, string]),
   ...card.rows.map((r) => [`battle card ${r.quoteId}`, `${r.respond} ${r.ask} ${r.sendLabel}`] as [string, string]),
   ["battle card avoid", card.avoid.join(" ")],
