@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { CONFIG, HEADLINE } from "@/lib/config";
 import { claimById, site } from "@/lib/data";
 import { formatMonth } from "@/lib/format";
@@ -40,6 +41,16 @@ const SECTIONS: [string, string][] = [
 ];
 
 
+// One question and its answer, so a cold reader gets what, why and what's new before any detail.
+function QA({ q, children }: { q: string; children: ReactNode }) {
+  return (
+    <div>
+      <h2 className="text-lg font-semibold tracking-tight">{q}</h2>
+      <div className="mt-1.5 text-ink-2">{children}</div>
+    </div>
+  );
+}
+
 export function Hero() {
   const { window, nBase } = site.meta;
   const n = site.numbers;
@@ -51,64 +62,49 @@ export function Hero() {
       <p className="text-sm text-muted">Sceptic Map · an independent pitch by Daniyaal Anawar · Made for the incident.io marketing team</p>
       <h1 className="mt-6 text-[1.65rem] font-semibold leading-tight tracking-tight sm:text-[2.6rem] sm:leading-[1.12]">{HEADLINE}</h1>
 
-      <dl className="mt-8 space-y-4 text-[17px] leading-relaxed">
-        <div>
-          <dt className="inline font-semibold">The product. </dt>
-          <dd className="inline">
-            incident.io sells{" "}
-            <a href={product.url} className="underline decoration-line underline-offset-2 hover:text-accent-ink" target="_blank" rel="noopener noreferrer">
-              Investigations
-            </a>
-            , an AI agent that starts working out what broke the moment a team declares an incident, such as an outage.
-          </dd>
-        </div>
-        <div>
-          <dt className="inline font-semibold">The problem. </dt>
-          <dd className="inline">
-            The people who buy it are engineers, and many are sceptical of AI doing this job. incident.io&apos;s own job ad says its product marketers decide what to
-            claim and how to prove it.
-          </dd>
-        </div>
-        <div>
-          <dt className="inline font-semibold">What I built. </dt>
-          <dd className="inline">
-            A tool that collects {nBase} posts from Hacker News, a forum many engineers read, written between {formatMonth(window.from)} and{" "}
-            {formatMonth(window.to)}. It sorts the doubts they raise and checks each one against what incident.io and four competitors show on their public pages.
-          </dd>
-        </div>
-        <div>
-          <dt className="inline font-semibold">Why. </dt>
-          <dd className="inline">
-            I&apos;m Daniyaal Anawar, an Economics student at Cambridge, and I&apos;d like to do this for real as a summer product marketing intern. This is the
-            prototype.
-          </dd>
-        </div>
-      </dl>
-
-      <div className="mt-8 rounded-lg border border-line p-5 sm:p-6">
-        <p className="text-xs font-semibold uppercase tracking-wide text-muted">What it found</p>
-        <ul className="mt-3 list-disc space-y-3 pl-5 text-[17px] leading-relaxed marker:text-accent-ink">
-          <li>
-            <strong className="font-semibold">Does it work?</strong> The most common doubt ({n["either:not_capable_yet+wrong_or_hallucinated_cause"]} posts).
-            {proven.iio ? <> Investigations already shows proof here{proven.others.length ? ", as do some competitors" : ""}.</> : null}
-          </li>
-          <li>
-            <strong className="font-semibold">The gap:</strong> deskilling or replacing engineers, and access to production ({n["count:deskills_or_replaces_engineers"]} and{" "}
-            {n["count:data_access_and_security"]} posts). On the pages checked, everyone makes promises and no one shows proof.
-          </li>
-          <li>
-            <strong className="font-semibold">The opening:</strong> Investigations&apos;{" "}
-            <a href={pr.url} className="underline decoration-line underline-offset-2 hover:text-accent-ink" target="_blank" rel="noopener noreferrer">
-              &ldquo;only change is a pull request you review&rdquo;
-            </a>{" "}
-            is one of the two strictest promises on the map. Proving it would be a first on this map.
-          </li>
-        </ul>
+      <div className="mt-10 space-y-8 text-[17px] leading-relaxed">
+        <QA q="What is this?">
+          A pitch for a summer product marketing internship at incident.io, made as a working tool instead of a CV. By Daniyaal Anawar, an Economics student at
+          Cambridge.
+        </QA>
+        <QA q="What problem does it solve?">
+          incident.io sells{" "}
+          <a href={product.url} className="underline decoration-line underline-offset-2 hover:text-accent-ink" target="_blank" rel="noopener noreferrer">
+            Investigations
+          </a>
+          , an AI agent that starts working out what broke the moment a team declares an incident, such as an outage. The people who buy it are engineers, and many
+          are sceptical of AI doing this job. To win them over, marketing needs to know which doubts come up most, and which ones its website can&apos;t yet back with
+          proof. incident.io&apos;s own job ad for this team asks for a tool that analyses a few hundred sales calls. This is that tool, run on public data.
+        </QA>
+        <QA q="What's hard or new about it?">
+          The data isn&apos;t the new part: the {nBase} posts are public Hacker News comments and stories ({formatMonth(window.from)} to {formatMonth(window.to)}), and
+          summarising them is easy. The new part is the next step: matching every doubt to what incident.io and four competitors say on their websites, and grading
+          whether each one proves it (with a measured result, a named customer or a real incident) or only claims it. Code checks every quote, claim and number against
+          its source, so nothing here is made up.
+        </QA>
+        <QA q="What did it find?">
+          <ul className="list-disc space-y-3 pl-5 marker:text-accent-ink">
+            <li>
+              <strong className="font-semibold">Does it work?</strong> The most common doubt ({n["either:not_capable_yet+wrong_or_hallucinated_cause"]} posts).
+              {proven.iio ? <> Investigations already shows proof here{proven.others.length ? ", as do some competitors" : ""}.</> : null}
+            </li>
+            <li>
+              <strong className="font-semibold">The gap:</strong> deskilling or replacing engineers, and access to production ({n["count:deskills_or_replaces_engineers"]}{" "}
+              and {n["count:data_access_and_security"]} posts). On the pages checked, everyone makes promises and no one shows proof.
+            </li>
+            <li>
+              <strong className="font-semibold">The opening:</strong> Investigations&apos;{" "}
+              <a href={pr.url} className="underline decoration-line underline-offset-2 hover:text-accent-ink" target="_blank" rel="noopener noreferrer">
+                &ldquo;only change is a pull request you review&rdquo;
+              </a>{" "}
+              is one of the two strictest promises on the map. Proving it would be a first on this map.
+            </li>
+          </ul>
+        </QA>
+        <QA q="What am I asking for?">
+          A summer internship running this on your real sales calls. Available from the end of June to the start of October 2027. Could we talk for 15 minutes?
+        </QA>
       </div>
-
-      <p className="mt-8 max-w-2xl text-lg leading-relaxed">
-        Over the summer I&apos;d run the same analysis on your sales calls. Could we talk for 15 minutes?
-      </p>
       <div className="mt-6 flex flex-wrap gap-3">
         <a
           href={`mailto:${CONFIG.email}?subject=${encodeURIComponent("Sceptic Map: 15 minutes")}`}
